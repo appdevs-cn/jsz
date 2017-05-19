@@ -1,0 +1,213 @@
+<include file="Common:head" /> 
+<body class="body-bg">
+    <div class="loader">
+        <div class="loader-inner ball-pulse-rise">
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+    <div class="JszContent" style="display: none">
+	<!-- <>顶部区域 -->
+	<include file="Common:menu" />
+	
+	<!-- <>轮播图区域 -->
+	<div class="zone__idx-slider js_idxSlider zone__slider-electronicGames mid mt--10">
+		<div class="slider-inner">
+			<ul class="slider-list">
+				<li style="background-image: url(/Resourse/Home/images/placeholder/realLive-banner-img01-1200x345.jpg);"></li>
+				<li style="background-image: url(/Resourse/Home/images/placeholder/realLive-banner-img02-1200x345.jpg);"></li>
+			</ul>
+			<div class="slider-nav">
+				<i></i><i></i>
+			</div>
+			<div class="slider-ctlbtn">
+				<a class="js-btn-prev"></a>
+				<a class="js-btn-next"></a>
+			</div>
+		</div>
+	</div> <!-- END.zone-idx-slider -->
+	
+	<!-- <>主体容器区域 -->
+	<div class="container">
+		<div class="mid clearfix">
+			<!-- 真人娱乐页面 -->
+			<div class="zone__live-entertainment pg__live-entertainment similarHd mt--30 pb--60 clearfix">
+				<div class="mc">
+					<!-- //火爆、热门 -->
+					<ul class="entertainment-list mt--20 clearfix">
+						<li>
+							<div class="aimg" style="background: #ffa016;">
+								<a href="javascript:void(0)"><img src="/Resourse/Home/images/uimg/pic_BBIN.png" height="275" /></a>
+							</div>
+							<div class="info clearfix">
+								<div class="fl">
+									<h2>AG琪琪<i class="tag fire">火爆</i></h2>
+									<label>业界首创 先发8张</label>
+								</div>
+								<if condition="$IsCreateAg eq 1">
+								<a class="btn transit fr" data-title="AGIN" data_method="agGame" data-field="2" href="javascript:void(0)">进入游戏</a>
+								<else/>
+								<a class="btn transit fr" href="javascript:void(0)" data-method="CreateAgAccount">免费开户</a>
+								</if>
+							</div>
+							<!-- //滚动信息 -->
+							<div class="js-goods-pic-thumb m-goods-pic-thumb clearfix">
+								<a class="js-btn-prev prev-btn fl disabled" id="ctl-prev" href="javascript:"></a>
+								<div class="g-thumblist">
+									<dl class="js-thumb-ls thumb-ls fl pos-rel">
+										<dd><a href="javascript:void(0)"><img src="/Resourse/Home/images/live/game-img02.png" height="23" /><h4>百家乐</h4></a></dd>
+										<dd><a href="javascript:void(0)"><img src="/Resourse/Home/images/live/game-img07.png" height="23" /><h4>轮盘</h4></a></dd>
+										<dd><a href="javascript:void(0)"><img src="/Resourse/Home/images/live/game-img06.png" height="23" /><h4>龙虎</h4></a></dd>
+										<dd><a href="javascript:void(0)"><img src="/Resourse/Home/images/live/game-img12.png" height="23" /><h4>骰宝</h4></a></dd>
+									</dl>
+								</div>
+								<a class="js-btn-next next-btn fl" id="ctl-next" href="javascript:;"></a>
+							</div>
+						</li>
+						<li>
+							<div class="aimg" style="background: #993d15;">
+								<a data_method="ebetGame" href="javascript:void(0)"><img src="/Resourse/Home/images/uimg/pic_linlin.png" height="275" /></a>
+							</div>
+							<div class="info clearfix">
+								<div class="fl">
+									<h2>eBET果果<i class="tag hot">火爆</i></h2>
+									<label>真人平台 历史悠久</label>
+								</div>
+								<if condition="$IsCreateEbet eq 1">
+								<a class="btn transit fr" data_method="ebetGame" href="javascript:void(0)">进入游戏</a>
+								<else/>
+								<a class="btn transit fr" href="javascript:void(0)" data-method="CreateEbetAccount">免费开户</a>
+								</if>
+							</div>
+							<!-- //滚动信息 -->
+							<div class="js-goods-pic-thumb m-goods-pic-thumb clearfix">
+								<a class="js-btn-prev prev-btn fl disabled" id="ctl-prev" href="javascript:"></a>
+								<div class="g-thumblist">
+									<dl class="js-thumb-ls thumb-ls fl pos-rel">
+										<dd><a href="javascript:void(0)"><img src="/Resourse/Home/images/live/game-img02.png" height="23" /><h4>百家乐</h4></a></dd>
+										<dd><a href="javascript:void(0)"><img src="/Resourse/Home/images/live/game-img01.png" height="23" /><h4>21点</h4></a></dd>
+										<dd><a href="javascript:void(0)"><img src="/Resourse/Home/images/live/game-img06.png" height="23" /><h4>龙虎</h4></a></dd>
+										<dd><a href="javascript:void(0)"><img src="/Resourse/Home/images/live/game-img12.png" height="23" /><h4>骰宝</h4></a></dd>
+										<dd><a href="javascript:void(0)"><img src="/Resourse/Home/images/live/game-img07.png" height="23" /><h4>轮盘</h4></a></dd>
+									</dl>
+								</div>
+								<a class="js-btn-next next-btn fl" id="ctl-next" href="javascript:;"></a>
+							</div>
+						</li>
+						<li>
+							<div class="aimg" style="background: #df3c3c;">
+								<a href="javascript:void(0)"><img src="/Resourse/Home/images/uimg/pic_opus.png" height="275" /></a>
+							</div>
+							<div class="info clearfix">
+								<div class="fl">
+									<h2>OPUS婷</h2>
+									<label>3D真人 高清画质</label>
+								</div>
+								<a class="btn transit fr" href="javascript:void(0)">即将上线</a>
+							</div>
+							<!-- //滚动信息 -->
+							<div class="js-goods-pic-thumb m-goods-pic-thumb clearfix">
+								<a class="js-btn-prev prev-btn fl disabled" id="ctl-prev" href="javascript:"></a>
+								<div class="g-thumblist">
+									<dl class="js-thumb-ls thumb-ls fl pos-rel">
+										<dd><a href="javascript:void(0)"><img src="/Resourse/Home/images/live/game-img02.png" height="23" /><h4>百家乐</h4></a></dd>
+										<dd><a href="javascript:void(0)"><img src="/Resourse/Home/images/live/game-img01.png" height="23" /><h4>21点</h4></a></dd>
+										<dd><a href="javascript:void(0)"><img src="/Resourse/Home/images/live/game-img06.png" height="23" /><h4>龙虎</h4></a></dd>
+										<dd><a href="javascript:void(0)"><img src="/Resourse/Home/images/live/game-img12.png" height="23" /><h4>骰宝</h4></a></dd>
+										<dd><a href="javascript:void(0)"><img src="/Resourse/Home/images/live/game-img07.png" height="23" /><h4>轮盘</h4></a></dd>
+									</dl>
+								</div>
+								<a class="js-btn-next next-btn fl" id="ctl-next" href="javascript:;"></a>
+							</div>
+						</li>
+					</ul>
+					
+					<ul class="entertainment-list entertainment-list2 clearfix">
+						<li>
+							<div class="aimg">
+								<a href="javascript:void(0)"><img src="/Resourse/Home/images/uimg/pic_HG.png" height="180" /></a>
+							</div>
+							<div class="info clearfix">
+								<div class="fl">
+									<h2>HG芳芳</h2>
+									<label>美女荷官 业界权威</label>
+								</div>
+								<a class="btn transit fr" href="javascript:void(0)">即将上线</a>
+							</div>
+							<!-- //滚动信息 -->
+							<div class="js-goods-pic-thumb m-goods-pic-thumb clearfix">
+								<a class="js-btn-prev prev-btn fl disabled" id="ctl-prev" href="javascript:"></a>
+								<div class="g-thumblist">
+									<dl class="js-thumb-ls thumb-ls fl pos-rel">
+										<dd><a href="javascript:void(0)"><img src="/Resourse/Home/images/live/game-img02.png" height="23" /><h4>百家乐</h4></a></dd>
+										<dd><a href="javascript:void(0)"><img src="/Resourse/Home/images/live/game-img01.png" height="23" /><h4>21点</h4></a></dd>
+										<dd><a href="javascript:void(0)"><img src="/Resourse/Home/images/live/game-img06.png" height="23" /><h4>龙虎</h4></a></dd>
+										<dd><a href="javascript:void(0)"><img src="/Resourse/Home/images/live/game-img12.png" height="23" /><h4>骰宝</h4></a></dd>
+										<dd><a href="javascript:void(0)"><img src="/Resourse/Home/images/live/game-img07.png" height="23" /><h4>轮盘</h4></a></dd>
+									</dl>
+								</div>
+								<a class="js-btn-next next-btn fl" id="ctl-next" href="javascript:;"></a>
+							</div>
+						</li>
+						<li>
+							<div class="aimg">
+								<a href="javascript:void(0)"><img src="/Resourse/Home/images/uimg/pic_MG.png" height="180" /></a>
+							</div>
+							<div class="info clearfix">
+								<div class="fl">
+									<h2>MG梅梅</h2>
+									<label>欧美风情 playboy女郎</label>
+								</div>
+								<a class="btn transit fr" href="javascript:void(0)">即将上线</a>
+							</div>
+							<!-- //滚动信息 -->
+							<div class="js-goods-pic-thumb m-goods-pic-thumb clearfix">
+								<a class="js-btn-prev prev-btn fl disabled" id="ctl-prev" href="javascript:"></a>
+								<div class="g-thumblist">
+									<dl class="js-thumb-ls thumb-ls fl pos-rel">
+										<dd><a href="javascript:void(0)"><img src="/Resourse/Home/images/live/game-img02.png" height="23" /><h4>百家乐</h4></a></dd>
+										<dd><a href="javascript:void(0)"><img src="/Resourse/Home/images/live/game-img01.png" height="23" /><h4>21点</h4></a></dd>
+										<dd><a href="javascript:void(0)"><img src="/Resourse/Home/images/live/game-img06.png" height="23" /><h4>龙虎</h4></a></dd>
+										<dd><a href="javascript:void(0)"><img src="/Resourse/Home/images/live/game-img12.png" height="23" /><h4>骰宝</h4></a></dd>
+										<dd><a href="javascript:void(0)"><img src="/Resourse/Home/images/live/game-img07.png" height="23" /><h4>轮盘</h4></a></dd>
+									</dl>
+								</div>
+								<a class="js-btn-next next-btn fl" id="ctl-next" href="javascript:;"></a>
+							</div>
+						</li>
+						<li>
+							<div class="aimg">
+								<a href="javascript:void(0)"><img src="/Resourse/Home/images/uimg/pic_AG.png" height="180" /></a>
+							</div>
+							<div class="info clearfix">
+								<div class="fl">
+									<h2>AG杲杲</h2>
+									<label>实时视频 现场投注</label>
+								</div>
+								<a class="btn transit fr" href="javascript:void(0)">即将上线</a>
+							</div>
+							<!-- //滚动信息 -->
+							<div class="js-goods-pic-thumb m-goods-pic-thumb clearfix">
+								<a class="js-btn-prev prev-btn fl disabled" id="ctl-prev" href="javascript:"></a>
+								<div class="g-thumblist">
+									<dl class="js-thumb-ls thumb-ls fl pos-rel">
+										<dd><a href="#"><img src="/Resourse/Home/images/live/game-img02.png" height="23" /><h4>百家乐</h4></a></dd>
+										<dd><a href="#"><img src="/Resourse/Home/images/live/game-img01.png" height="23" /><h4>21点</h4></a></dd>
+										<dd><a href="#"><img src="/Resourse/Home/images/live/game-img06.png" height="23" /><h4>龙虎</h4></a></dd>
+										<dd><a href="#"><img src="/Resourse/Home/images/live/game-img12.png" height="23" /><h4>骰宝</h4></a></dd>
+										<dd><a href="#"><img src="/Resourse/Home/images/live/game-img07.png" height="23" /><h4>轮盘</h4></a></dd>
+									</dl>
+								</div>
+								<a class="js-btn-next next-btn fl" id="ctl-next" href="javascript:;"></a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- <>底部区域 -->
+	<include file="Common:foot" /> 
+    </div>
+    <script src="/Resourse/Home/js/app/live.js" type="text/javascript"></script>
+</body>
+</html>

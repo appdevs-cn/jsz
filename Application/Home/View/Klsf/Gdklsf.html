@@ -1,0 +1,882 @@
+<include file="Common:head" />
+<style>
+.a-upload {
+	padding: 0px 77px;
+	right:-14px;
+	top:2px;
+	height: 45px;
+	line-height: 40px;
+	cursor: pointer;
+	color: #333;
+	background: #eee;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	overflow: hidden;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1
+}
+
+.a-upload  input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer
+}
+
+.a-upload:hover {
+    color: #444;
+    background: #eee;
+    border-color: #ccc;
+    text-decoration: none
+}
+</style>
+<body class="body-bg">
+	<input type="hidden" id="lottery_id" value="klsf">
+	<input type="hidden" name="lid" value="9">
+	<input type="hidden" name="d" value="">
+	<span id="current_endtime" style="display:none"></span>
+	<div class="loader">
+        <div class="loader-inner ball-pulse-rise">
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+	<div class="JszContent" style="display: none">
+	<!-- <>顶部区域 -->
+	<include file="Common:lotteryMenu" />
+	
+	<!-- <>主体容器区域 -->
+	<div class="container" style="margin-top: 130px!important">
+		<div class="mid pb--50 clearfix">
+			<!-- 游戏中心(任选) -->
+			<div class="gc__head-wrapper mt--30 clearfix lm0">
+				<!--面板内容-->
+				<div style="height: 100%;text-align:center">
+					<div style="padding-top: 40px">
+						<i class="icon-spinner icon-spin"></i>
+            			<span style="color:#de4501;font-weight:700"><strong>加载中...</strong></span>
+					</div>
+				</div>
+			</div>
+			
+			<div class="pM__panel mt--10">
+				<div class="proxyM__panel-tabLink">
+					<div class="head__nav clearfix" id="barea_tab">
+						<!--玩法选择-->
+					</div>
+					<div class="sub__menu clearfix" id="game_search">
+						<!--具体玩法-->
+					</div>
+				</div>
+			</div>
+			
+			<div class="pM__panel mt--10">
+				<div class="lottery__panel-pickNumber">
+					<div class="head__tips" id="howtoplay">
+						<!--玩法说明-->
+					</div>
+					
+					<div class="padding30">
+						<div class="main__selNums" id="game_betting">
+							<!--选号区域-->
+						</div>
+						<div class="choose-amount clearfix">
+							<ul class="lt-choose fl">
+								<li><span>已选 <em class="c--f35c19" id="singernote">0</em> 注</span> <span class="ml--10">共 <em class="c--f35c19" id="singermoney">0</em> 元</span></li>
+								<li class="mem-choose">
+									<label class="lbl fl mr--10">倍数</label>
+									<div class="mem-amount fl">
+										<input class="ipt-num" placeholder="1" value="1" name="multiple"/>
+										<a class="btn-dec" href="javascript:;" id="plus">﹣</a>
+										<a class="btn-inc" id="diff" href="javascript:;">＋</a>
+									</div>
+								</li>
+								<li class="unit" id="J__selUnit">
+									<i class="on" data-field="0">元</i>
+									<i data-field="1">角</i>
+									<i data-field="2">分</i>
+									<i data-field="3">厘</i>
+								</li>
+								<li>
+									<select class="select-control v__top" name="prize" style="height: 36px;">
+									</select>
+								</li>
+							</ul>
+							<div class="rt-btns fr">
+								<a class="btn_def quickBet" href="javascript:void(0)" data-method="quickBet">一键投注</a>
+								<a class="btn_def" href="javascript:void(0)" data-method='addCartlist'>确定选号<i class="arr"></i></a>
+							</div>
+						</div>
+						<div class="choose-list">
+							<ul class="clearfix" id="cartlist">
+							</ul>
+						</div>
+						<div class="choose-machine clearfix">
+							<div class="lt-desc fl">
+								<p class="ff-hv fs14">第 <span id="bottomSearis"></span> 期截止投注时间：<span id="bottomTime"></span> 已选择<span id="orderCount">0</span>单，总金额<span id="orderMoney">0</span>元</p>
+								<p class="mt--5"><a class="btn_def J__addNumber" data-method="chase" href="javascript:;">我要追号</a> <em class="c--999 fs14 ml--10">追号可提高中奖率</em></p>
+							</div>
+							<div class="rt-btns mt--10 fr">
+								<a class="btn_def" href="javascript:void(0)" data-method='cleanOrderItem'>清空选号</a>
+							</div>
+						</div>
+						<div class="cls"></div>
+						<div class="pt--20 align-c"><a class="btn_def orderSubmit" href="javascript:void(0)" data-method="orderSubmit">立即投注</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- …… 右侧浮动工具条.Start-->
+	<div class="game__toolbar-panel" style="top:300px">
+		<div class="panel__inner">
+			<ul class="clearfix">
+				<li class="first"><a href="/InBox"><img src="/Resourse/Home/images/cp/icon_message.png" /><p>消息</p></a></li>
+				<li class="J__floatToolbar">
+					<a href="#"><img src="/Resourse/Home/images/cp/icon_edit.png" /><p>订单</p></a>
+					
+					<!--//浮动弹窗-->
+					<div class="popup__floatBox">
+						<i class="arr1"></i><i class="arr2"></i>
+						<h2 class="fs20 align-c mt--20">最近投注</h2>
+						<div style="margin: 10px 30px 20px; overflow-y: auto; height: 401px;position: relative;" id="buyrecorditem">
+							<!--最近投注-->
+						</div>
+					</div>
+				</li>
+				<li class="J__floatAddToolbar">
+					<a href="#"><img src="/Resourse/Home/images/cp/icon_edit.png" /><p>追号</p></a>
+					
+					<!--//浮动弹窗-->
+					<div class="popup__floatBox popup__floatBox_add">
+						<i class="arr1"></i><i class="arr2"></i>
+						<h2 class="fs20 align-c mt--20">最近追号</h2>
+						<div style="margin: 10px 30px 20px; overflow-y: auto; height: 401px;" id="buyrecordadditem">
+							<!--追加追号-->
+						</div>
+					</div>
+				</li>
+				<li><a href="/appdown"><img src="/Resourse/Home/images/cp/icon_phone.png" /><p>手机</p></a></li>
+				<li><a href="/appdown"><img src="/Resourse/Home/images/cp/icon_pc.png" /><p>PC</p></a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- …… 右侧浮动工具条.End-->
+	
+	<!-- <>底部区域 -->
+	<include file="Common:foot" /> 
+	<div id="newMessageDIV" style="display:none"></div>
+	<div id="newMessageDIV0" style="display:none"></div>
+	<div id="newMessageDIV1" style="display:none"></div>
+	<div id="newMessageDIV2" style="display:none"></div>
+	<div id="newMessageDIV3" style="display:none"></div>
+	<div id="newMessageDIV4" style="display:none"></div>
+    </div>
+	<script type="text/javascript" src="/Resourse/Home/js/lib/angular.min.js"></script>
+	<script type="text/javascript" src="/Resourse/Home/js/app/util.js"></script>
+	<script src="/Resourse/Home/js/lib/jquery.cookie.js" type="text/javascript"></script>
+	<script src="/Resourse/Home/js/app/klsf.js" type="text/javascript"></script>
+
+	<!--面板内容-->
+	<script type="text/template" id="display_tpl">
+		<a class="game-logo fl" href="javascript:;"><img style="width:110px;height:50px" src="/Resourse/Home/images/lottery/广东快乐十分.png" /></a>
+			<div class="pM__panel panelTime fl">
+				<div class="lottery__panel-deadline clearfix">
+					<div class="stage-text fl ff-hv fs16 mt--20 ml--30">
+						<label class="db">第 <span id="current_issue"><#=rows[0]['series_number']#></span></label>
+						<em>截止时间</em>
+					</div>
+					<div class="deadline-num" id="count_down">
+						<i>00</i>
+						<i>00</i>
+						<i>00</i>
+					</div>
+				</div>
+			</div>
+			<div class="pM__panel panelResult fr">
+				<div class="lottery__panel-stageResult clearfix">
+					<div class="stage-text fl ff-hv fs16 mt--20 ml--30">
+						<label class="db">第 <span id="lastSeries"><#=rows[0]['last_series_number']#></span></label>
+						<em>期开奖结果</em>
+					</div>
+					<div class="lottery-num lottery-num2_2 ml--20 fl" id="opennumer">
+                        <# var number = rows[0]['last_number'].split(",")#>
+						<#for(var m=0; m<number.length; m++){#>
+						<i id="num<#=m#>"><#=number[m]#></i>
+						<#}#>
+					</div>
+					<div class="lottery-recent fr">
+						<div class="lotteryRecord J__lotteryRecord pos-rel">
+							<a class="label">近期开奖<em class="arr"></em></a>
+							<div class="lotteryRecord-list">
+								<i class="arr1"></i><i class="arr2"></i>
+								
+								<h2 class="fs20 align-c mt--20">近期开奖</h2>
+								<div style="padding: 10px 30px 20px; overflow-y: auto; height: 350px;">
+									<table class="ff-hv" border="0" cellspacing="0" cellpadding="0" id="game_jwuqi">
+										<thead>
+											<tr>
+												<th class="align-l" width="28%">期号</th>
+												<th class="align-l">开奖号</th>
+											</tr>
+										</thead>
+										<tbody>
+											<#for(var i=0; i<rows[0]['recentBit'].length; i++){#>
+											<tr>
+												<td><#=rows[0]['recentBit'][i]['series_number']#></td>
+												<td>
+													<div class="number">
+                                                        <#var number = rows[0]['recentBit'][i]['lottery_number'].split(",")#>
+														<#for(var n=0; n<number.length; n++){#>
+														<i><#=number[n]#></i>
+														<#}#>
+													</div>
+												</td>
+											</tr>
+											<#}#>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</script>
+
+	<!--玩法选择-->
+	<script type="text/template" id="tabs_tpl">
+		<div class="navList ml--10 fl">
+			<#for (var i = 0; i < tabs.length; i++) {#>
+			<a href="javascript:void(0)" id="<#=tabs[i].id#>"><#=tabs[i].name#></a>
+			<#}#>
+		</div>
+	</script>
+
+	<!--具体玩法-->
+	<script type="text/template" id="search_tpl">
+		<div class="filterList ml--10 padding20 fl">
+			<#for (var i = 0; i < search.length; i++) {#>
+			<div <#(i==0) ? echo('class="clearfix"') : echo('class="clearfix mt--20"')#>>
+				<label class="lbl"><#=search[i].name#></label>
+				<#for (var n = 0; n < search[i].games.length; n++) {#>
+				<a href="javascript:void(0)" id="<#=search[i].games[n].id#>" data-field="<#=search[i].games[n].alias#>" <# search[i].games[n].id === on ? echo('class="selected"'): '' #> ><#=search[i].games[n].name#></a>
+				<#}#>
+			</div>
+			<#}#>
+		</div>
+	</script>
+
+	<!--玩法说明-->
+	<script type="text/template" id="howtoplay_tpl">
+		<i class="txt"><#=games.describe.title#></i>
+		<div class="dib helpCt J__popHelp pos-rel">
+			<a class="label">示例<em class="arr"></em></a>
+			<span class="cont">
+				<i class="arr1"></i><i class="arr2"></i>
+				<#=games.describe.content#>
+			</span>
+		</div>
+	</script>
+
+	<!--选号区-->
+	<script type="text/template" id="bet_tpl">
+	<#if(games.checkbox){#>
+	<div class="choose-chkboxForm">
+		<ul class="clearfix">
+			<li>
+				选择位置：
+				<span class="chkbox" id="J__chkBit">
+					<#
+						for (var i = 0; i < games.checkbox.length; i++) {
+					#>
+					<i class="on" data-field="<#=games.deff#>"><#=games.checkbox[i].name#></i>
+					<#}#>
+				</span>
+			</li>
+			<li>
+				<span class="pos"><#=games.prompt#></span>
+			</li>
+			<#if(games.textarea){#>
+				<li>
+					<div class="box" style="float:left;width:80%">
+						<textarea placeholder="单注号码请用空格将号码数字分开，每一注请用空格逗号进行分割！" id="lt_write_box" data-method="<#=games.fn#>" data-fn="<#=games.filter#>" data-field="<#=games.limit#>"></textarea>
+					</div>
+					<div style="float:left;">
+						<div class="rt-btns" style="margin-top:20px;padding:10px">
+							<a href="javascript:void(0)" class="btn_def" data-method="filter-data">删除重复</a>
+						</div>
+						<div class="rt-btns" style="margin-top:5px;padding:10px">
+							<a href="javascript:void(0)" class="btn_def" data-method="import-file">导入文件</a>
+						</div>
+						<div class="rt-btns" style="margin-top:5px;padding:10px">
+							<a href="javascript:void(0)" class="btn_def" data-method="empty-text">清空所有</a>
+						</div>
+					</div>
+				</li>
+			<#}#>
+		</ul>
+	</div>
+	<#}#>
+	<ul class="clearfix" id="J__selNums">
+		<#if(games.items){#>
+		<#for (var i = 0; i < games.items.length; i++) {#>
+		<li>
+			<#playname = jQuery("#game_search").find(".selected").attr("id")#>
+			<#
+			if(playname=="dds"){
+			#>
+			<div class="rect rect2 dib v__top" style="padding-left: 70px; padding-right: 390px;width:100%">
+			<#}else{#>
+			<div class="cicle fl" style="padding-left: 70px; padding-right: 390px;">
+			<#}#>
+				<label class="lbl pos-abs" style="left: 0;"><#=games.items[i].title#></label>
+				<span class="list clearfix">
+					<#if (games.items[i].nums) {#>
+					<#for (var k = 0; k < games.items[i].nums.length; k++) {#>
+					<#
+						if(games.items[i].title.indexOf("龙虎")!=-1)
+							var til = games.items[i].nums[k].split("_")[0]
+						else
+							var til = games.items[i].nums[k]
+					#>
+					<i class="lottery-ball" data-val="<#=til#>"><#=til#></i>
+					<#}#>
+					<#}#>
+				</span>
+			</div>
+			<#if (games.items[i].tools) {#>
+			<div class="rect fr" style="position: absolute; right: 0;">
+				<#for (var n = 0; n < games.items[i].tools.length; n++) {#>
+				<i class="lottery-ball-other" data-fn="<#=games.items[i].tools[n].fn#>"><#=games.items[i].tools[n].name#></i>
+				<#}#>
+			</div>
+			<#}#>
+		</li>
+		<#}}#>
+		<#if(games.textarea && !games.checkbox){#>
+			<li>
+				<div class="box" style="border: 1px solid rgba(100,100,100,.15);border-radius: 3px; padding: 10px; height: 240px;float:left;width:80%">
+					<textarea placeholder="单注号码请用空格将号码数字分开，每一注请用空格逗号进行分割！" style="border: 0 none; font-size: 14px; font-family: 'Microsoft Yahei'; resize: none; height: 240px; width: 100%;" id="lt_write_box" data-method="<#=games.fn#>" data-fn="<#=games.filter#>" data-field="<#=games.limit#>"></textarea>
+				</div>
+				<div style="float:left;">
+					<div class="rt-btns" style="margin-top:20px;padding:10px">
+						<a href="javascript:void(0)" class="btn_def" data-method="filter-data">删除重复</a>
+					</div>
+					<div class="rt-btns" style="margin-top:5px;padding:10px">
+						<a href="javascript:void(0)" class="btn_def" data-method="import-file">导入文件</a>
+					</div>
+					<div class="rt-btns" style="margin-top:5px;padding:10px">
+						<a href="javascript:void(0)" class="btn_def" data-method="empty-text">清空所有</a>
+					</div>
+				</div>
+			</li>
+		<#}#>
+	</ul>
+	</script>
+
+	<!--投注记录-->
+	<script type="text/template" id="buyrecord_tpl">
+		<table class="ff-hv" border="0" cellspacing="0" cellpadding="0">
+			<thead>
+				<tr>
+					<th class="align-l">期号</th>
+					<th>彩种</th>
+					<th>金额</th>
+					<th>奖金</th>
+					<th>状态</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+			<#
+				if(rows[0].length!=0){
+			#>
+			<#for(var i=0; i<rows.length; i++){#>
+			<#for(var j=0; j<rows[i].length; j++){#>
+				<tr>
+					<td>
+						<#=rows[i][j]['serial']#>
+					</td>
+					<td class="align-c">
+						<#=rows[i][j]['lotteryName']#>
+					</td>
+					<td class="align-c">
+						<#=rows[i][j]['monetary']#>
+					</td>
+					<td class="align-c">
+						<#=rows[i][j]['bonus']#>
+					</td>
+					<td class="align-c">
+						<#=rows[i][j]['status']#>
+					</td>
+					<td class="align-c">
+						<#=rows[i][j]['operate']#>
+					</td>
+				</tr>
+			<#}}#>
+			<#} else {#>
+				<tr>
+					<td colspan="6" style="border-bottom: 0;">
+						<div class="c--999 fs16 align-c" style="padding: 100px 0;">当前没有投注记录！</div>
+					</td>
+				</tr>
+			<#}#>
+			</tbody>
+		</table>
+</script>
+
+<!-- 订单详情 -->
+<script type="text/template" id="detail_record">
+<div class="popup_box" id="detailrecord" style="position: relative;">
+    <div class="popup_main">
+        <div class="popup_txt2">
+            <div class="popup_txtl">
+                <h3>注单编号：<#=rows[0]['serial_number']#></h3>
+                <ul class="popup_txtul">
+                    <li><span>用户名:</span><p><#=rows[0]['username']#></p></li>
+                    <li><span>期号:</span><p><#=rows[0]['series']#></p></li>
+                    <li><span>彩种:</span><p><#=rows[0]['lotteryName']#></p></li>
+                    <li><span>彩种玩法:</span><p><#=rows[0]['name']#></p></li>
+                    <li><span>投注时间:</span><p><#=rows[0]['buy_time']#></p></li>
+                    <li><span>号码位置:</span><p><#=rows[0]['position']#></p></li>
+                    <li><span>开奖号码:</span>
+                        <p>
+							<#
+								if(rows[0]['lottery_number'].indexOf(",")!=-1){
+							#>
+							<#var num = rows[0]['lottery_number'].split(",")#>
+                            <#for(var i=0; i<num.length; i++){#>
+                            <i><#=num[i]#></i>
+                            <#}#>
+							<#
+								} else {
+							#>
+							<#for(var i=0; i<rows[0]['lottery_number'].length; i++){#>
+                            <i><#=rows[0]['lottery_number'].charAt(i)#></i>
+                            <#}#>
+							<#
+								}
+							#>
+                        </p>
+                    </li>
+                    <li><span>倍数:</span><p><#=rows[0]['multiple']#>倍</p></li>
+                    <li><span>注单金额:</span><p><#=rows[0]['monetary']#>元</p></li>
+                    <li><span>注单状态:</span><p class="red"><#=rows[0]['status']#></p></li>
+                    <li><span>中奖金额:</span><p><#=rows[0]['bonus']#>元</p></li>
+                    <li><span>动态奖金:</span><p><#=rows[0]['fd']#></p></li>
+                </ul>
+            </div>
+
+            <div class="popup_txtr" style="height: 300px">
+                <h3>投注内容</h3>
+                <div class="popup_txtin" id="nomallcontent" style="height: 480px; overflow-y: auto">
+                    <#=rows[0]['buy_number']#>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</script>
+
+<!-- 追号记录-->
+<script type="text/template" id="buyaddrecord_tpl">
+<table class="ff-hv" border="0" cellspacing="0" cellpadding="0">
+    <thead>
+    <tr>
+        <th class="align-l">彩种</th>
+        <th>开始期号</th>
+        <th>金额</th>
+        <th>奖金</th>
+        <th>状态</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <#
+        if(rows[0].length!=0){
+    #>
+    <#for(var i=0; i<rows.length; i++){#>
+    <#for(var j=0; j<rows[i].length; j++){#>
+        <tr>
+            <td>
+                <#=rows[i][j]['lotteryName']#>
+            </td>
+            <td class="align-c">
+                <#=rows[i][j]['lottery_serial_number']#>
+            </td>
+            <td class="align-c">
+                <#=rows[i][j]['monetary']#>
+            </td>
+            <td class="align-c">
+                <#=rows[i][j]['bonusAmount']#>
+            </td>
+            <td class="align-c">
+                <#=rows[i][j]['status']#>
+            </td>
+            <td class="align-c">
+                <#=rows[i][j]['operate']#>
+            </td>
+        </tr>
+    <#}}#>
+    <#} else {#>
+        <tr>
+			<td colspan="6" style="border-bottom: 0;">
+				<div class="c--999 fs16 align-c" style="padding: 100px 0;">当前没有投注记录！</div>
+			</td>
+		</tr>
+    <#}#>
+</table>
+</script>
+
+<!-- 追号订单详情 -->
+<script type="text/template" id="detail_add_record">
+<div class="popup_box" id="detailaddrecord" style="position: relative;">
+    <div class="popup_main">
+        <div class="popup_txt2">
+            <div class="popup_txtl">
+                <h3>注单编号：<#=rows[0]['serial_number']#></h3>
+                <ul class="popup_txtul">
+                    <li><span>用户名:</span><p><#=rows[0]['username']#></p></li>
+                    <li><span>追号时间:</span><p><#=rows[0]['buy_time']#></p></li>
+                    <li><span>游戏名称:</span><p><#=rows[0]['lotteryName']#></p></li>
+                    <li><span>玩法名称:</span><p><#=rows[0]['play_way']#></p></li>
+                    <li><span>资金模式:</span><p><#=rows[0]['model']#></p></li>
+                    <li><span>开始期号:</span><p><#=rows[0]['series']#></p></li>
+                    <li><span>追号期数:</span><p><#=rows[0]['add_number']#>期</p></li>
+                    <li><span>完成期数:</span><p><#=rows[0]['compCount']#>期</p></li>
+                    <li><span>取消期数:</span><p><#=rows[0]['cancelCount']#>期</p></li>
+                    <li><span>追号金额:</span><p><#=rows[0]['monetary']#>元</p></li>
+                    <li><span>完成金额:</span><p><#=rows[0]['compAmount']#>元</p></li>
+                    <li><span>中奖期数:</span><p><#=rows[0]['bonusCount']#>期</p></li>
+                    <li><span>派奖金额:</span><p><#=rows[0]['bonusAmount']#>元</p></li>
+                    <li><span>取消金额:</span><p><#=rows[0]['cancelAmount']#>元</p></li>
+                    <li><span>中奖终止:</span><p><#=rows[0]['isStop']#></p></li>
+                    <li><span>追号状态:</span><p><#=rows[0]['status']#></p></li>
+                </ul>
+            </div>
+            <div class="popup_txtr">
+                <h3>追号内容</h3>
+                <div class="popup_txtin">
+                    <#=rows[0]['buy_number']#>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</script>
+
+<!--追号列表-->
+<script type="text/template" id="record_list">
+    <table class="layui-table" lay-even lay-skin="nob">
+        <thead>
+            <tr>
+                <th>订单号</th>
+                <th>彩种</th>
+                <th>期号</th>
+                <th>玩法</th>
+                <th>模式</th>
+                <th>金额</th>
+                <th>倍数</th>
+                <th>奖金</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr> 
+        </thead>
+        <tbody>
+            <#for(var i=0 ; i < rows.length; i++){#>
+                <#for(var j=0 ; j < rows[i].length; j++){#>
+                    <tr>
+                        <td>
+                            <#=rows[i][j][ 'serial_number']#>
+                        </td>
+                        <td>
+                            <#=rows[i][j][ 'lottery_name']#>
+                        </td>
+                        <td>
+                            <#=rows[i][j][ 'lottery_serial_number']#>
+                        </td>
+                        <td>
+                            <#=rows[i][j][ 'playName']#>
+                        </td>
+                        <td>
+                            <#=rows[i][j][ 'mode']#>
+                        </td>
+                        <td>
+                            <#=rows[i][j][ 'monetary']#>
+                        </td>
+                        <td>
+                            <#=rows[i][j][ 'multiple']#>
+                        </td>
+                        <td>
+                            <#=rows[i][j][ 'bonus']#>
+                        </td>
+                        <td>
+                            <#=rows[i][j][ 'status']#>
+                        </td>
+                        <td>
+                            <#=rows[i][j][ 'operate']#>
+                        </td>
+                    </tr>
+                <#}}#>
+        </tbody>
+    </table>
+    <#
+        if(rows[0][0]['showcancelbtn']){
+    #>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+        <button class="layui-btn" type="button" data-method="allCancel" style="margin-left:35%" lay-submit="">全部撤单</button>
+        </div>
+    </div>
+    <#
+        }
+    #>
+</script>
+
+<!--过滤重复-->
+<script type="text/template" id="filternumber_tpl">
+    <form class="layui-form">
+		<div class="layui-form-item layui-form-text">
+          <label class="layui-form-label">重复号码</label>
+          <div class="layui-input-block">
+            <textarea name="desc" class="layui-textarea"><#=rows#></textarea>
+          </div>
+        </div>
+	</form>
+</script>
+
+<script type="text/template" id="chase_tpl">
+<div class="popup_box">
+    <div class="popup_main">
+        <div class="popup_tab" id="tabs0">
+            <ul class="popup_tabtop" id="menu0">
+                <li onclick="setTab(0,0)" class="hover" aria-controls="t1">同倍追号</li>
+                <li onclick="setTab(0,1)" aria-controls="t2">翻倍追号</li>
+                <li onclick="setTab(0,2)" aria-controls="t3">利润率追号</li>
+            </ul>
+            <div class="popup_tabbottom" id="main0">
+                <!--tab1-->
+                <ul style="display: block">
+                    <li>
+                        <div class="popup_tabtxtfr">
+                            <p>
+                                <label>追号期数：</label>
+                                <select name="addPeriods" class="select-control v__top game_sel">
+                                    <option value="5">5期</option>
+                                    <option value="10" selected>10期</option>
+                                    <option value="15">15期</option>
+                                    <option value="25">25期</option>
+                                    <option value="30">30期</option>
+                                    <option value="<#=rows[0][0]['count']#>">全部</option>
+                                </select>
+                                <input type="checkbox" name="stop" checked><label>中奖后停止追号</label>
+                            </p>
+                        </div>
+                        <div class="popup_tabtxtfr">
+                            <p>
+                                <label>追号计划：</label>
+                                <label>起始倍数<input class="popup_tbtxt" maxlength="5" onkeyup="this.value=this.value.replace(/^0|[^\d]/g,'');" onchange="this.value=this.value.replace(/^0|[^\d]/g,'');" onblur="this.value=(this.value=='') ? 1 : this.value" type="text" name="t1_startBate" value="1"></label>
+                                <label>追号期数<input class="popup_tbtxt" maxlength="5" onkeyup="this.value=this.value.replace(/^0|[^\d]/g,'');" onchange="this.value=this.value.replace(/^0|[^\d]/g,'');" onblur="this.value=(this.value=='') ? 1 : this.value" type="text" value="10" name="t1_addPeriodsInput"></label>
+                                <button type="button" class="popup_qd popup_sczhd" data-method="createAddList">生成追号单<i class="isczhd"></i></button>
+                            </p>
+                        </div>
+
+                        <div class="popup_fgx"></div>
+                        <div class="popup_txt">
+                            <h4 class="txt_align_c">总期数:<span class="red t1_totalPeriods"><#=rows[0][0]['count']#></span>期，总金额:<span class="red t1_addTotalMoney">0</span>元</h4>
+                            <div class="chase_list" style="height: 300px;position: relative;overflow-y: auto;">
+                                <table cellpadding="0" cellspacing="0" align="center" class="popup_table t1_addItemList">
+                                    <thead>
+                                    <tr>
+                                        <td><input type="checkbox" name="allselect" disabled></td>
+                                        <td>期号</td>
+                                        <td>倍数</td>
+                                        <td>金额</td>
+                                        <td>代购截止时间</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#for(var i = 0; i < rows.length; i++){#>
+                                    <#for(var j = 0; j < rows[i].length; j++){#>
+                                    <tr id="<#=rows[i][j]['id']#>">
+                                        <td>
+                                            <input type="checkbox" disabled class="addid" value="<#=rows[i][j]['id']#>">
+                                        </td>
+                                        <td>
+                                            <#=rows[i][j]['issue']#>
+                                        </td>
+                                        <td>
+                                            <input type="text" maxlength="5" onblur="this.value=(this.value=='' || this.value<0) ? 1 : this.value" class="popup_tbtxt" value="1" disabled style="height: 25px">倍
+                                        </td>
+                                        <td class="amoney">0元</td>
+                                        <td><#=rows[i][j]['time']#></td>
+                                    </tr>
+                                    <#}}#>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+						<div class="layui-form-item">
+							<div class="layui-input-block">
+							<button class="layui-btn" type="button" data-method="addBuy" style="margin-left:35%;margin-top:10px" lay-submit="">购买</button>
+							</div>
+						</div>
+                    </li>
+                </ul>
+
+
+                <!--tab2-->
+                <ul>
+                    <li>
+                        <div class="popup_tabtxtfr">
+                            <p>
+                                <label>追号期数：</label>
+                                <select  name="addPeriods" class="select-control v__top game_sel">
+                                    <option value="5">5期</option>
+                                    <option value="10" selected>10期</option>
+                                    <option value="15">15期</option>
+                                    <option value="25">25期</option>
+                                    <option value="30">30期</option>
+                                    <option value="<#=rows[0][0]['count']#>">全部</option>
+                                </select>
+                                <input type="checkbox" name="stop" checked><label>中奖后停止追号</label>
+                            </p>
+                        </div>
+                        <div class="popup_tabtxtfr">
+                            <p>
+                                <label>追号计划：</label>
+                                <label>翻倍倍数<input class="popup_tbtxt" maxlength="5" onkeyup="this.value=this.value.replace(/^0|[^\d]/g,'');" onchange="this.value=this.value.replace(/^0|[^\d]/g,'');" onblur="this.value=(this.value=='') ? 1 : this.value" type="text" name="t2_startBate" value="2"></label>
+                                <label>追号期数<input class="popup_tbtxt" maxlength="5" onkeyup="this.value=this.value.replace(/^0|[^\d]/g,'');" onchange="this.value=this.value.replace(/^0|[^\d]/g,'');" onblur="this.value=(this.value=='') ? 1 : this.value" type="text" value="10" name="t2_addPeriodsInput"></label>
+                                <button type="button" class="popup_qd popup_sczhd" data-method="createAddList">生成追号单<i class="isczhd"></i></button>
+                            </p>
+                        </div>
+
+                        <div class="popup_fgx"></div>
+                        <div class="popup_txt"><h4 class="txt_align_c">总期数:<span class="red t2_totalPeriods"><#=rows[0][0]['count']#></span>期，总金额:<span class="red t2_addTotalMoney">0</span>元</h4>
+                            <div class="chase_list" style="height: 300px;position: relative;overflow-y: auto;">
+                                <table cellpadding="0" cellspacing="0" align="center" class="popup_table t2_addItemList">
+                                    <thead>
+                                    <tr>
+                                        <td><input type="checkbox" name="allselect" disabled></td>
+                                        <td>期号</td>
+                                        <td>倍数</td>
+                                        <td>金额</td>
+                                        <td>代购截止时间</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#for(var i = 0; i < rows.length; i++){#>
+                                    <#for(var j = 0; j < rows[i].length; j++){#>
+                                    <tr id="<#=rows[i][j]['id']#>">
+                                        <td>
+                                            <input type="checkbox" disabled class="addid" value="<#=rows[i][j]['id']#>">
+                                        </td>
+                                        <td>
+                                            <#=rows[i][j]['issue']#>
+                                        </td>
+                                        <td>
+                                            <input type="text" maxlength="5" onblur="this.value=(this.value=='' || this.value<0) ? 1 : this.value" class="popup_tbtxt" value="1" disabled style="height: 25px">倍
+                                        </td>
+                                        <td class="amoney">0元</td>
+                                        <td><#=rows[i][j]['time']#></td>
+                                    </tr>
+                                    <#}}#>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+						<div class="layui-form-item">
+							<div class="layui-input-block">
+							<button class="layui-btn" type="button" data-method="addBuy" style="margin-left:35%;margin-top:10px" lay-submit="">购买</button>
+							</div>
+						</div>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <div class="popup_tabtxtfr">
+                            <p>
+                                <label>追号期数：</label>
+                                    <select name="addPeriods" class="select-control v__top game_sel">
+                                        <option value="5">5期</option>
+                                        <option value="10" selected>10期</option>
+                                        <option value="15">15期</option>
+                                        <option value="25">25期</option>
+                                        <option value="30">30期</option>
+                                        <option value="<#=rows[0][0]['count']#>">全部</option>
+                                    </select>
+                                <input type="checkbox" name="stop" checked><label>中奖后停止追号</label>
+                            </p>
+                        </div>
+                        <div class="popup_tabtxtfr">
+                            <p>
+                                <label>追号计划：</label>
+                                <label>起始倍数<input class="popup_tbtxt" maxlength="5" onkeyup="this.value=this.value.replace(/^0|[^\d]/g,'');" onchange="this.value=this.value.replace(/^0|[^\d]/g,'');" onblur="this.value=(this.value=='') ? 1 : this.value" type="text" name="t3_startBate" value="1"></label>
+                                <label>最低利润率<input class="popup_tbtxt" maxlength="5" onkeyup="this.value=this.value.replace(/^0|[^\d]/g,'');" onchange="this.value=this.value.replace(/^0|[^\d]/g,'');" onblur="this.value=(this.value=='') ? 1 : this.value" type="text" value="50" name="profit">%</label>
+                                <label>追号期数<input class="popup_tbtxt" maxlength="5" onkeyup="this.value=this.value.replace(/^0|[^\d]/g,'');" onchange="this.value=this.value.replace(/^0|[^\d]/g,'');" onblur="this.value=(this.value=='') ? 1 : this.value" type="text" value="10" name="t3_addPeriodsInput"></label>
+                                <button type="button" class="popup_qd popup_sczhd" data-method="createAddList">生成追号单<i class="isczhd"></i></button>
+                            </p>
+                        </div>
+
+                        <div class="popup_fgx"></div>
+                        <div class="popup_txt"><h4 class="txt_align_c">总期数:<span class="red t3_totalPeriods"><#=rows[0][0]['count']#></span>期，总金额:<span class="red t3_addTotalMoney">0</span>元</h4>
+                            <div class="chase_list" style="height: 300px;position: relative;overflow-y: auto;">
+                                <table cellpadding="0" cellspacing="0" align="center" class="popup_table t3_addItemList">
+                                    <thead>
+                                    <tr>
+                                        <td><input type="checkbox" name="allselect" disabled></td>
+                                        <td>期号</td>
+                                        <td>倍数</td>
+                                        <td>金额</td>
+                                        <td>代购截止时间</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#for(var i = 0; i < rows.length; i++){#>
+                                    <#for(var j = 0; j < rows[i].length; j++){#>
+                                    <tr id="<#=rows[i][j]['id']#>">
+                                        <td>
+                                            <input type="checkbox" disabled class="addid" value="<#=rows[i][j]['id']#>">
+                                        </td>
+                                        <td>
+                                            <#=rows[i][j]['issue']#>
+                                        </td>
+                                        <td>
+                                            <input type="text" maxlength="5" onblur="this.value=(this.value=='' || this.value<0) ? 1 : this.value" class="popup_tbtxt" value="1" disabled style="height: 25px">倍
+                                        </td>
+                                        <td class="amoney">0元</td>
+                                        <td><#=rows[i][j]['time']#></td>
+                                    </tr>
+                                    <#}}#>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </li>
+					<div class="layui-form-item">
+						<div class="layui-input-block">
+						<button class="layui-btn" type="button" data-method="addBuy" style="margin-left:35%;margin-top:10px" lay-submit="">购买</button>
+						</div>
+					</div>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</script>
+<script type="text/javascript">
+    function setTab(m,n){
+        var tli=document.getElementById("menu"+m).getElementsByTagName("li");
+        var mli=document.getElementById("main"+m).getElementsByTagName("ul");
+        for(i=0;i<tli.length;i++){
+            tli[i].className=i==n?"hover":"";
+            mli[i].style.display=i==n?"block":"none";
+        }
+    }
+</script>
+</body>
+</html>

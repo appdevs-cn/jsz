@@ -1,0 +1,68 @@
+<include file="Common:head" />
+<link rel="stylesheet" href="/Resourse/Home/js/plugins/datepicker/datepicker.css" />
+<body class="body-bg">
+    <div class="loader">
+        <div class="loader-inner ball-pulse-rise">
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+    <div class="JszContent" style="display: none">
+	<!-- <>顶部区域 -->
+	<include file="Common:menu" />
+	
+	<!-- <>主体容器区域 -->
+	<div class="container">
+		<div class="mid pb--50 clearfix">
+			<!-- 代理管理(存取款记录) -->
+			<include file="Common::memberMenu" />
+			
+			<div class="pM__panel mt--10">
+				<div class="proxyM__panel-tabLink">
+					<div class="head__nav clearfix">
+						<include file="Common::memberSecondMenu" />
+					</div>
+					<div class="sub__menu clearfix">
+						<div class="head__filter padding30 clearfix">
+							<div class="form fl">
+                                <blockquote class="layui-elem-quote">
+								 <volist name="temp" id="item">
+                                    <a href="/bonus/{$item.id}" class="layui-btn layui-btn-small layui-btn-danger">{$item.name}</a>
+                                </volist>
+                                </blockquote>
+							</div>
+						</div>
+					</div>
+					<div class="panel-lkList" id="list">
+                        <table class="ff-hv" border="0" cellspacing="0" cellpadding="0">
+                            <thead>
+                                <tr>
+                                    <th width="20%">彩种</th>
+                                    <th width="20%">玩法组</th>
+                                    <th width="20%">奖金（元）</th>
+                                    <th width="10%">返点</th>
+                                    <th width="10%">状态</th>
+                                </tr>
+                            </thead>
+                            <tbody id="J__trHover">
+                                <volist name="_temp" id="item">
+                                    <tr>
+                                        <td width="20%" style="text-align: center">{$item.lotteryName}</td>
+                                        <td width="20%" style="text-align: center">{$item.playWay}</td>
+                                        <td width="20%" style="text-align: center">{$item.bonus}</td>
+                                        <td width="10%" style="text-align: center">{$item.fandian}</td>
+                                        <td width="10%" style="text-align: center">使用中</td>
+                                    </tr>
+                                </volist>
+                            </tbody>
+                        </table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- <>底部区域 -->
+	<include file="Common:foot" /> 
+    <script src="/Resourse/Home/js/app/about.js" type="text/javascript"></script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,548 @@
+/*
+   mend-game.css   
+   Created by Andy on 2017-03-30.
+*/
+
+/* __ ÃƒÆ’Ã‚Â¦Ãƒâ€¦Ã¢â‚¬â„¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°ÃƒÆ’Ã‚Â©ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢Ãƒâ€šÃ‚Â®ÃƒÆ’Ã‚Â©Ãƒâ€šÃ‚Â»Ãƒâ€¹Ã…â€œÃƒÆ’Ã‚Â¨Ãƒâ€šÃ‚Â®Ãƒâ€šÃ‚Â¤ÃƒÆ’Ã‚Â¦Ãƒâ€šÃ‚Â Ãƒâ€šÃ‚Â·ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚Â¼Ãƒâ€šÃ‚Â */
+.btn_def{
+	background:#ff621c;border-radius:3px;color:#fff;display:inline-block;font-size:14px;text-align:center;padding:0 48px;line-height:48px;
+	transition:background-color .4s;-webkit-transition:background-color .4s;-moz-transition:background-color .4s;
+}
+.btn_def:hover{background-color:#ff8048;}
+
+
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦ ÃƒÆ’Ã‚Â©Ãƒâ€šÃ‚Â¡Ãƒâ€šÃ‚Â¶ÃƒÆ’Ã‚Â©Ãƒâ€ Ã¢â‚¬â„¢Ãƒâ€šÃ‚Â¨.sec_header {{{ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦ */
+/* ÃƒÆ’Ã‚Â¦Ãƒâ€šÃ‚Â¸Ãƒâ€šÃ‚Â¸ÃƒÆ’Ã‚Â¦Ãƒâ€¹Ã¢â‚¬Â Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚Â¯Ãƒâ€šÃ‚Â¼ÃƒÆ’Ã‚Â¨Ãƒâ€¹Ã¢â‚¬Â Ãƒâ€šÃ‚ÂªÃƒÆ’Ã‚Â¤Ãƒâ€šÃ‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¹ÃƒÆ’Ã‚Â¦ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¹ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°ÃƒÆ’Ã‚Â¨Ãƒâ€šÃ‚ÂÃƒâ€¦Ã¢â‚¬Å“ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢(ÃƒÆ’Ã‚Â¥ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦Ãƒâ€šÃ‚Â¨ÃƒÆ’Ã‚Â©Ãƒâ€ Ã¢â‚¬â„¢Ãƒâ€šÃ‚Â¨ÃƒÆ’Ã‚Â¦Ãƒâ€šÃ‚Â¸Ãƒâ€šÃ‚Â¸ÃƒÆ’Ã‚Â¦Ãƒâ€¹Ã¢â‚¬Â Ãƒâ€šÃ‚Â|ÃƒÆ’Ã‚Â¨Ãƒâ€šÃ‚Â´Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚ÂÃƒâ€šÃ‚Â·ÃƒÆ’Ã‚Â§Ãƒâ€šÃ‚Â®Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã‚Â§Ãƒâ€šÃ‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã‚Â |ÃƒÆ’Ã‚Â¦Ãƒâ€¦Ã‚Â Ãƒâ€šÃ‚Â¥ÃƒÆ’Ã‚Â¨Ãƒâ€šÃ‚Â¡Ãƒâ€šÃ‚Â¨ÃƒÆ’Ã‚Â§Ãƒâ€šÃ‚Â®Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã‚Â§Ãƒâ€šÃ‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ) */
+.lay_navbar .hd-menu2 li{display: inline; float: left; margin-left: 1px; position: relative;}
+.lay_navbar .hd-menu2 li a.menu{
+	color: #F3F4F4; display: block; font-size: 15px; padding: 0 20px; line-height: 70px;
+	transition: all .3s; -webkit-transition: all .3s; -moz-transition: all .3s;
+}
+.lay_navbar .hd-menu2 li i{transition: all .3s; -webkit-transition: all .3s; -moz-transition: all .3s;}
+.lay_navbar .hd-menu2 li.on a,
+.lay_navbar .hd-menu2 li a:hover{
+	background: #de4501; color: #fff;
+}
+.lay_navbar .hd-menu2 li.on i,
+.lay_navbar .hd-menu2 li a:hover i{
+	background: #fff; height: 2px; width: 100%; position: absolute; left: 0; bottom: 0;
+}
+.lay_navbar .hd-menu2 li.unlg a{font-size: 14px;padding: 0 10px;}
+.lay_navbar .hd-menu2 li.u-info a{font-size: 14px;}
+.lay_navbar .hd-menu2 li.u-info .uimg{border-radius: 50%; margin: 20px 10px 0 0;vertical-align: top;}
+.lay_navbar .hd-menu2 li.u-info .arr{
+	background: url(../images/cp/nav_arrow.png) no-repeat center; display: inline-block; margin-left: 5px; height: 6px; width: 10px;
+	transition: transform .3s; -webkit-transition: -webkit-transform .3s; -moz-transition: -moz-transform .3s;
+}
+.lay_navbar .hd-menu2 li.u-info.active .arr{
+	transform: rotate(180deg); -webkit-transform: rotate(180deg); -moz-transform: rotate(180deg);
+}
+
+.lay_navbar .hd-menu2 li.u-info .lbl{display: block; font-size: 14px; line-height: 40px;}
+.lay_navbar .hd-menu2 li .dropdownMenu2{display:none;background:#fff;border:2px solid #f35c19;text-align:left;width: 240px;position:absolute;right:0;top:78px;z-index:10001;}
+.lay_navbar .hd-menu2 li .dropdownMenu2 .arr1, .lay_navbar .hd-menu2 li .dropdownMenu2 .arr2{border-color:transparent transparent #f35c19 transparent;border-style:dashed dashed solid dashed;border-width:8px;font-size:0;margin-left:15px;overflow:hidden;height:0;width:0; position:absolute;left:50%;top:-18px;}
+.lay_navbar .hd-menu2 li .dropdownMenu2 i.arr2{border-color:transparent transparent #fff transparent;top:-15px;}
+
+/* ÃƒÆ’Ã‚Â¥ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦Ãƒâ€šÃ‚Â¨ÃƒÆ’Ã‚Â©Ãƒâ€ Ã¢â‚¬â„¢Ãƒâ€šÃ‚Â¨ÃƒÆ’Ã‚Â¦Ãƒâ€šÃ‚Â¸Ãƒâ€šÃ‚Â¸ÃƒÆ’Ã‚Â¦Ãƒâ€¹Ã¢â‚¬Â Ãƒâ€šÃ‚Â */
+.lay_navbar .hd-menu2 li.nav__gameAll.active{background: #de4501;}
+.lay_navbar .hd-menu2 li.nav__gameAll.active i{background: #fff; height: 2px; width: 100%; position: absolute; left: 0; bottom: 0;}
+.lay_navbar .hd-menu2 li.nav__gameAll .dropdownMenu2{
+	border-width:1px;border-top:0 none;width: 1198px; top:70px; right: -405px;
+}
+.lay_navbar .hd-menu2 li.nav__gameAll .dropdownMenu2 i{left: 59.2%;}
+.lay_navbar .hd-menu2 li.nav__gameAll .game__list .item{display:inline;float: left; margin-left: 30px; width: 160px;}
+.lay_navbar .hd-menu2 li.nav__gameAll .game__list .item.col2{width: 322px;}
+.lay_navbar .hd-menu2 li.nav__gameAll .game__list .item ul{display: block; margin-top: 10px;}
+.lay_navbar .hd-menu2 li.nav__gameAll .game__list .item ul li{display: inline; float: left; width:160px;}
+.lay_navbar .hd-menu2 li.nav__gameAll .game__list .item ul li a{background:#fff;color: #333; border:1px solid #ddd; display: inline;float: left; margin-top: -1px; padding-left: 20px; line-height: 40px; width: 140px;}
+.lay_navbar .hd-menu2 li.nav__gameAll .game__list .item ul li a:hover{background: #fff;color: #F35C19;}
+.lay_navbar .hd-menu2 li.nav__gameAll .game__list .item ul li .hot{background: #F35C19; border-radius: 3px; color: #fff; display: inline-block; font-size: 12px; padding: 0 6px; line-height: 20px;}
+.lay_navbar .hd-menu2 li.nav__gameAll .game__list .item ul li .new{background: #63bf4e; border-radius: 3px; color: #fff; display: inline-block; font-size: 12px; padding: 0 6px; line-height: 20px;}
+.lay_navbar .hd-menu2 li.nav__gameAll .game__pic a{display: inline; float: left; margin-left: 30px; margin-bottom: 30px; width: 360px;}
+.lay_navbar .hd-menu2 li.nav__gameAll .game__pic a img{border-radius:0; display: block;}
+
+/* ÃƒÆ’Ã‚Â¨Ãƒâ€šÃ‚Â´Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚ÂÃƒâ€šÃ‚Â·ÃƒÆ’Ã‚Â§Ãƒâ€šÃ‚Â®Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã‚Â§Ãƒâ€šÃ‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã‚Â  */
+.lay_navbar .hd-menu2 li.nav__accountManage.active{background: #de4501;}
+.lay_navbar .hd-menu2 li.nav__accountManage.active i{background: #fff; height: 2px; width: 100%; position: absolute; left: 0; bottom: 0;}
+.lay_navbar .hd-menu2 li.nav__accountManage .dropdownMenu2{
+	border-width:1px;border-top:0 none;width: 170px; top:70px; right: -30px;
+}
+.lay_navbar .hd-menu2 li.nav__accountManage .dropdownMenu2 i{left: 59.2%;}
+.lay_navbar .hd-menu2 li.nav__accountManage .dropdownMenu2 a{color: #333; display: block; font-size: 14px; padding:0 20px; line-height: 40px;}
+.lay_navbar .hd-menu2 li.nav__accountManage .dropdownMenu2 a:hover{background: #fff3ed; color: #f35c19;}
+.lay_navbar .hd-menu2 li.nav__accountManage .dropdownMenu2 i{left: 65%;}
+
+/* ÃƒÆ’Ã‚Â¦Ãƒâ€¦Ã‚Â Ãƒâ€šÃ‚Â¥ÃƒÆ’Ã‚Â¨Ãƒâ€šÃ‚Â¡Ãƒâ€šÃ‚Â¨ÃƒÆ’Ã‚Â§Ãƒâ€šÃ‚Â®Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã‚Â§Ãƒâ€šÃ‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã‚Â  */
+.lay_navbar .hd-menu2 li.nav__reportManage.active{background: #de4501;}
+.lay_navbar .hd-menu2 li.nav__reportManage.active i{background: #fff; height: 2px; width: 100%; position: absolute; left: 0; bottom: 0;}
+.lay_navbar .hd-menu2 li.nav__reportManage .dropdownMenu2{
+	border-width:1px;border-top:0 none;width: 170px; top:70px; right: -30px;
+}
+.lay_navbar .hd-menu2 li.nav__reportManage .dropdownMenu2 i{left: 59.2%;}
+.lay_navbar .hd-menu2 li.nav__reportManage .dropdownMenu2 a{color: #333; display: block; font-size: 14px; padding:0 20px; line-height: 40px;}
+.lay_navbar .hd-menu2 li.nav__reportManage .dropdownMenu2 a:hover{background: #fff3ed; color: #f35c19;}
+.lay_navbar .hd-menu2 li.nav__reportManage .dropdownMenu2 i{left: 65%;}
+
+/* ÃƒÆ’Ã‚Â§ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒâ€šÃ‚Â¨ÃƒÆ’Ã‚Â¦Ãƒâ€¹Ã¢â‚¬Â Ãƒâ€šÃ‚Â·ÃƒÆ’Ã‚Â¤Ãƒâ€šÃ‚Â¿Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã‚Â¦Ãƒâ€šÃ‚ÂÃƒâ€šÃ‚Â¯ */
+.lay_navbar .hd-menu2 li.u-gameInfo .dropdownMenu2 a{color: #333; display: block; font-size: 14px; padding:0 20px; line-height: 40px;}
+.lay_navbar .hd-menu2 li.u-gameInfo .dropdownMenu2 a:hover{background: #fff3ed; color: #f35c19;}
+.lay_navbar .hd-menu2 li.u-gameInfo .dropdownMenu2 i{left: 65%;}
+/* }}} */
+
+
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦ ÃƒÆ’Ã‚Â¦Ãƒâ€šÃ‚Â¸Ãƒâ€šÃ‚Â¸ÃƒÆ’Ã‚Â¦Ãƒâ€¹Ã¢â‚¬Â Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¤Ãƒâ€šÃ‚Â¸Ãƒâ€šÃ‚Â­ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚Â¿Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â©Ãƒâ€šÃ‚Â¡Ãƒâ€šÃ‚ÂµÃƒÆ’Ã‚Â©Ãƒâ€šÃ‚ÂÃƒâ€šÃ‚Â¢ {{{ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦ */
+/* ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚Â¯Ãƒâ€šÃ‚Â¼ÃƒÆ’Ã‚Â¨Ãƒâ€¹Ã¢â‚¬Â Ãƒâ€šÃ‚ÂªÃƒÆ’Ã‚Â©ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°ÃƒÆ’Ã‚Â©Ãƒâ€šÃ‚Â¡Ãƒâ€šÃ‚Â¹ */
+.sub__menu .filterList .lbl{color: #999; float: left; font-size: 14px; margin-right: 15px; line-height: 30px;}
+.sub__menu .filterList a{
+	border-radius: 3px; display: inline; float: left; font-size: 14px; margin: 0 10px; padding: 0 10px; line-height: 30px;
+	transition: color .3s; -webkit-transition: color .3s; -moz-transition: color .3s;
+}
+.sub__menu .filterList a:hover{color: #F35C19;}
+.sub__menu .filterList a.selected{background: #FF621C; color: #fff;}
+
+/* logo-ÃƒÆ’Ã‚Â¦ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬ÂÃƒâ€šÃ‚Â¶ÃƒÆ’Ã‚Â©ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬ÂÃƒâ€šÃ‚Â´-ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚Â¼ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚Â¥ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ÃƒÆ’Ã‚Â§Ãƒâ€šÃ‚Â»ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œÃƒÆ’Ã‚Â¦Ãƒâ€¦Ã‚Â¾Ãƒâ€¦Ã¢â‚¬Å“ */
+.gc__head-wrapper{height: 94px;}
+.game-logo{color: #2c9373; font-size: 20px; font-style: italic;}
+.game-logo img{margin-right: 5px; margin-top: 20px; vertical-align: top; width: 80px;}
+.game-logo span{display: inline-block; vertical-align: top; margin-top: 38px;}
+.pM__panel.panelTime{margin-left: 15px; height: 100%; width: 400px;}
+.pM__panel.panelResult{height: 100%; width: 648px;}
+.lottery__panel-deadline{height: 100%; position: relative;}
+.lottery__panel-deadline .deadline-num{position: absolute; top: 17px; right: 17px;}
+.lottery__panel-deadline .deadline-num i{
+	background: url(../images/cp/board_mini.png) no-repeat; color: #fff; display: inline; float: left; font-size: 32px; font-family: helvetica; margin-right: 10px; text-align: center; height: 60px; line-height: 60px; width: 50px;
+}
+/*--*/
+.lottery__panel-stageResult .lottery-num{margin-top: 17px;}
+.lottery__panel-stageResult .lottery-num i{
+	background: url(../images/cp/number.png) no-repeat; color: #fff; display: inline; float: left; font-size: 32px; font-family: helvetica; margin-right: 20px; text-align: center; height: 50px; line-height: 50px; width: 50px;
+}
+.lottery__panel-stageResult .lottery-num2{margin-top: 14px;}
+.lottery__panel-stageResult .lottery-num2 i{
+	background: url(../images/cp/number@1x.png) no-repeat; color: #fff; display: inline; float: left; font-size: 20px; font-family: helvetica; margin-right: 5px; text-align: center; height: 30px; line-height: 30px; width: 30px;
+}
+.lottery__panel-stageResult .lottery-num2_2{margin-top: 24px;}
+.lottery__panel-stageResult .lottery-num2_2 i{
+	background: url(../images/cp/number@2x.png) no-repeat; color: #fff; display: inline; float: left; font-size: 20px; font-family: helvetica; margin-right: 5px; text-align: center; height: 40px; line-height: 40px; width: 40px;
+}
+.lottery__panel-stageResult .lottery-num3{margin-top: 24px;}
+.lottery__panel-stageResult .lottery-num3 i{
+	background: none; color: #fff; display: inline; float: left; font-size: 24px; font-family: helvetica; margin-right: 5px; text-align: center; height: 46px; line-height: 46px; width: 46px;
+}
+.lottery__panel-stageResult .lottery-num3 i.red{background: url(../images/cp/number_red.png) no-repeat;}
+.lottery__panel-stageResult .lottery-num3 i.green{background: url(../images/cp/number_green.png) no-repeat;}
+.lottery__panel-stageResult .lottery-num3 i.blue{background: url(../images/cp/number_blue.png) no-repeat;}
+.lottery__panel-stageResult .lottery-num3 i.bg--ff621c{background: #ff621c; border-radius: 50%;}
+.lottery__panel-stageResult .lottery-num3 i.plus{color: #FF621C; font-size: 20px; width: 16px;}
+.lottery__panel-stageResult .lottery-num3 i.plus2{color: #333; font-size: 20px; width: 40px;}
+.lottery__panel-stageResult .lottery-num4{margin-top: 22px;}
+.lottery__panel-stageResult .lottery-num4 i{
+	background: #ccc; border-radius: 3px; color: #fff; display: inline; float: left; font-size: 24px; font-family: helvetica; margin-right: 5px; text-align: center; height: 40px; line-height: 40px; width: 33px;
+}
+
+.lottery__panel-stageResult .lottery-recent .lotteryRecord .arr{
+	background: url(../images/cp/icon_arrow_filter.png) no-repeat center; display: inline-block; margin-left: 5px; height: 6px; width: 10px;
+	transition: transform .3s; -webkit-transition: -webkit-transform .3s; -moz-transition: -moz-transform .3s;
+}
+.lottery__panel-stageResult .lottery-recent .lotteryRecord.active .arr{
+	transform: rotate(180deg); -webkit-transform: rotate(180deg); -moz-transform: rotate(180deg);
+}
+.lottery__panel-stageResult .lottery-recent .lotteryRecord .label{color: #F35C19; cursor: pointer; display: block; font-size: 14px; padding: 0 20px; line-height: 94px;}
+.lottery__panel-stageResult .lottery-recent .lotteryRecord-list{
+	display:none;background:#fff;border:1px solid #f35c19;text-align:left;width:655px; position:absolute;right:0;top:92px;z-index:1001;
+	border-radius: 2px; box-shadow: 0 1px 4px rgba(100,100,100,.3);
+}
+.lottery__panel-stageResult .lottery-recent .lotteryRecord-list .arr1,
+.lottery__panel-stageResult .lottery-recent .lotteryRecord-list .arr2{
+	border-color:transparent transparent #f35c19 transparent;border-style:dashed dashed solid dashed;border-width:10px;font-size:0;
+	overflow:hidden;height:0;width:0; position:absolute;right:50px;top:-20px;
+}
+.lottery__panel-stageResult .lottery-recent .lotteryRecord-list i.arr2{border-color:transparent transparent #fff transparent;top:-19px;}
+/* table */
+.lottery__panel-stageResult .lottery-recent .lotteryRecord-list table{border-collapse:collapse;table-layout:fixed; margin: 0 auto; width: 100%;}
+.lottery__panel-stageResult .lottery-recent .lotteryRecord-list table tr{background:#fff; transition: all .3s;}
+.lottery__panel-stageResult .lottery-recent .lotteryRecord-list table tr.on{background: #fafafa;}
+.lottery__panel-stageResult .lottery-recent .lotteryRecord-list table th,
+.lottery__panel-stageResult .lottery-recent .lotteryRecord-list table td{
+	border-bottom: 1px solid #eee;font-size:12px;word-break:break-all;word-wrap:break-word; padding: 10px 0; height: 20px; line-height: 20px;
+}
+.lottery__panel-stageResult .lottery-recent .lotteryRecord-list table th{color:#333; font-size: 12px; font-weight: 700; text-align: center;}
+.lottery__panel-stageResult .lottery-recent .lotteryRecord-list table td{color: #333;}
+.lottery__panel-stageResult .lottery-recent .lotteryRecord-list .number i{
+	background:#FF621C; border-radius: 50%; color: #fff; display: inline; float: left; font-size: 16px; font-family: helvetica; margin-right: 10px; text-align: center; height: 30px; line-height: 30px; width: 30px;
+}
+
+/* ÃƒÆ’Ã‚Â¦Ãƒâ€¦Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÆ’Ã‚Â¦Ãƒâ€šÃ‚Â³Ãƒâ€šÃ‚Â¨ÃƒÆ’Ã‚Â©ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚ÂÃƒâ€šÃ‚Â· */
+.lottery__panel-pickNumber .head__tips{background: #fff6e6; font-size: 14px; padding: 15px 30px; line-height: 20px;}
+.lottery__panel-pickNumber .head__tips .txt{color: #844d29;}
+
+.lottery__panel-pickNumber .head__tips .helpCt .label{color: #F35C19; cursor: pointer; display: block; font-size: 14px; padding-left: 20px; line-height: 20px;}
+.lottery__panel-pickNumber .head__tips .helpCt .cont{
+	display:none;background:#fff;border:1px solid #f35c19;text-align:left;padding: 20px;width:350px; position:absolute;right:-100px;top:35px;z-index:1001;
+	border-radius: 2px; box-shadow: 0 1px 4px rgba(100,100,100,.3);
+}
+.lottery__panel-pickNumber .head__tips .helpCt .cont .arr1,
+.lottery__panel-pickNumber .head__tips .helpCt .cont .arr2{
+	border-color:transparent transparent #f35c19 transparent;border-style:dashed dashed solid dashed;border-width:10px;font-size:0;
+	overflow:hidden;height:0;width:0; position:absolute;right:105px;top:-20px;
+}
+.lottery__panel-pickNumber .head__tips .helpCt .cont i.arr2{border-color:transparent transparent #fff transparent;top:-19px;}
+/*---*/
+.lottery__panel-pickNumber .main__selNums{border-bottom: 1px solid rgba(100,100,100,.15);}
+.lottery__panel-pickNumber .main__selNums ul li{margin-bottom: 20px;display: inline; float: left; width: 100%; position: relative;}
+.lottery__panel-pickNumber .main__selNums ul li .cicle .lbl{display: table;font-size: 16px;margin-right: 10px;height: 54px;width: 65px;line-height: 54px;}
+.lottery__panel-pickNumber .main__selNums ul li .cicle .lbl i{display: table-cell; vertical-align: middle; line-height: 18px;}
+.lottery__panel-pickNumber .main__selNums ul li .cicle .list i{
+	background: url(../images/cp/number_normal.png) no-repeat;
+	color: #333;
+	cursor: pointer;
+	display: inline;
+	float: left;
+	font-size: 19px;
+	font-family: helvetica;
+	margin-left: 5px;
+	margin-top: 2px;
+	margin-bottom: 5px;
+	text-align: center;
+	height: 54px;
+	line-height: 54px;
+	width: 54px;
+}
+.lottery__panel-pickNumber .main__selNums ul li .cicle .list i.on{background: url(../images/cp/number_selected.png) no-repeat;color: #FF621C;}
+.lottery__panel-pickNumber .main__selNums ul li .rect{margin-top: 5px;}
+.lottery__panel-pickNumber .main__selNums ul li .rect i{
+	background: url(../images/cp/text_normal.png) no-repeat; color: #333; cursor: pointer; display: inline; float: left; font-size: 20px; font-family: helvetica; margin-left: 5px; text-align: center; height: 48px; line-height: 48px; width: 48px;
+}
+.lottery__panel-pickNumber .main__selNums ul li .rect i.on{background: url(../images/cp/text_selected.png) no-repeat; color: #FF621C;}
+.lottery__panel-pickNumber .main__selNums ul li .rect2 i{background: #fff; border: 1px solid #999; border-radius: 3px; padding: 0 20px; width: auto;}
+.lottery__panel-pickNumber .main__selNums ul li .rect2 i.on{background: #ffede5; border-color: #FF621C;}
+/*---*/
+.lottery__panel-pickNumber .choose-amount{border-bottom: 1px solid rgba(100,100,100,.15); padding: 20px 0;}
+.lottery__panel-pickNumber .choose-amount .lt-choose li{display:inline-block;float:left;font-size: 14px; font-family: helvetica; margin-right: 30px; line-height:36px;}
+/*ÃƒÆ’Ã‚Â¦ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚Â°ÃƒÆ’Ã‚Â©ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â©ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°ÃƒÆ’Ã‚Â¦ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¹Ãƒâ€šÃ‚Â©*/
+.lottery__panel-pickNumber .choose-amount .lt-choose li.mem-choose .lbl{}
+.lottery__panel-pickNumber .choose-amount .lt-choose li .mem-amount{width:130px; position:relative;}
+.lottery__panel-pickNumber .choose-amount .lt-choose li .mem-amount input{
+	background:#fff;border:1px solid #ccc;border-radius:3px;font:14px/20px Arial;outline:none;padding:9px 0;text-align:center;height:16px;width:36px; position:absolute;left:46px;top:0;
+}
+.lottery__panel-pickNumber .choose-amount .lt-choose li .mem-amount a{display:block;font-size:0;overflow:hidden;height:36px;width:36px; position:absolute;top:0;}
+.lottery__panel-pickNumber .choose-amount .lt-choose li .mem-amount a.btn-inc{background:url(../images/cp/add.png) no-repeat; right:0;}
+.lottery__panel-pickNumber .choose-amount .lt-choose li .mem-amount a.btn-dec{background:url(../images/cp/Minus.png) no-repeat; left:0;}
+/*ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÆ’Ã‚Â¤Ãƒâ€šÃ‚Â½Ãƒâ€šÃ‚Â*/
+.lottery__panel-pickNumber .choose-amount .lt-choose li.unit i{border: 1px solid #ccc; border-radius: 2px; cursor: pointer; display: inline-block; margin-right: 10px; text-align: center; height: 34px; line-height: 34px; width: 34px;}
+.lottery__panel-pickNumber .choose-amount .lt-choose li.unit i.on{background: #FF621C;border-color: #FF621C; color: #fff;}
+.lottery__panel-pickNumber .choose-amount .rt-btns .btn_def{margin-left: 7px; padding: 0 20px; line-height: 36px;}
+.lottery__panel-pickNumber .choose-amount .rt-btns .btn_def .arr{
+	background: url(../images/cp/nav_arrow.png) no-repeat center; display: inline-block; margin-left: 5px; vertical-align: middle; height: 6px; width: 10px;
+}
+/*---*/
+.lottery__panel-pickNumber .choose-chkboxForm ul li{font-size: 14px; margin-bottom: 20px;}
+.lottery__panel-pickNumber .choose-chkboxForm ul li .chkbox i{background: url(../images/cp/icon_chkbox.png) no-repeat 0 2px; cursor: pointer; margin-left: 15px; padding-left: 22px; height: 16px; line-height: 16px;}
+.lottery__panel-pickNumber .choose-chkboxForm ul li .chkbox i.on{background-position: 0 -30px;}
+.lottery__panel-pickNumber .choose-chkboxForm ul li .pos em{background: #5cbe36; color: #fff; display: inline-block; margin:0 4px; padding: 0 7px;}
+.lottery__panel-pickNumber .choose-chkboxForm ul li .plan em{background: #ff4747; color: #fff; display: inline-block; margin:0 4px; padding: 0 7px;}
+.lottery__panel-pickNumber .choose-chkboxForm ul li .box{border: 1px solid rgba(100,100,100,.15);border-radius: 3px; padding: 10px; height: 240px;}
+.lottery__panel-pickNumber .choose-chkboxForm ul li .box textarea{border: 0 none; font-size: 14px; font-family: "Microsoft Yahei"; resize: none; height: 240px; width: 100%;}
+/*---*/
+.lottery__panel-pickNumber .choose-list ul li{border-bottom: 1px solid rgba(100,100,100,.15); padding: 20px 0;}
+.lottery__panel-pickNumber .choose-list ul li em{display: inline-block; margin-right: 100px;}
+/*---*/
+.lottery__panel-pickNumber .choose-machine{border-bottom: 1px solid rgba(100,100,100,.15); padding: 20px 0;}
+.lottery__panel-pickNumber .choose-machine .lt-desc .btn_def{background: #fff; border: 1px solid #FF621C; color: #FF621C; font-size: 14px; padding: 0 20px; line-height: 28px;}
+.lottery__panel-pickNumber .choose-machine .rt-btns .btn_def{background: #fff; border: 1px solid #ccc; color: #333; margin-left: 7px; padding: 0 20px; line-height: 34px;}
+.lottery__panel-pickNumber .choose-machine .rt-btns .btn_def:hover{background: #F7F7F7;}
+
+/* ÃƒÆ’Ã‚Â§ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°Ãƒâ€šÃ‚Â¹ÃƒÆ’Ã‚Â§Ãƒâ€šÃ‚Â Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â©ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚ÂÃƒâ€šÃ‚Â· */
+.lottery__panel-pickNumber .choose-specialNumber .item{display: inline; float: left; text-align: center; width: 300px;}
+.lottery__panel-pickNumber .choose-specialNumber .item .col1{display:inline; float: left; width: 33.3%;}
+.lottery__panel-pickNumber .choose-specialNumber .item .col2{display:inline; float: left; width: 33.3%;}
+.lottery__panel-pickNumber .choose-specialNumber .item .col3{display:inline; float: left; width: 33.3%;}
+.lottery__panel-pickNumber .choose-specialNumber .item .hd{border-left: 1px solid rgba(100,100,100,.1);border-bottom: 1px solid rgba(100,100,100,.1);font-size: 14px; height: 50px; line-height: 50px;}
+.lottery__panel-pickNumber .choose-specialNumber .item .hd.first{border-left: 0 none;}
+.lottery__panel-pickNumber .choose-specialNumber .item ul{display: block; border-left: 1px solid rgba(100,100,100,.1);border-bottom: 1px solid rgba(100,100,100,.1); padding: 15px 0;}
+.lottery__panel-pickNumber .choose-specialNumber .item ul.first{border-left: 0 none;}
+.lottery__panel-pickNumber .choose-specialNumber .item ul li{font-size:14px; padding: 4px 0; height: 46px; line-height: 46px;}
+.lottery__panel-pickNumber .choose-specialNumber .item ul li .col1 em{
+	color: #fff; display: inline-block; font-size: 24px; font-family: helvetica; margin-right: 5px; text-align: center; height: 46px; line-height: 46px; width: 46px;
+}
+.lottery__panel-pickNumber .choose-specialNumber .item ul li .col1 em.red{background: url(../images/cp/number_red.png) no-repeat;}
+.lottery__panel-pickNumber .choose-specialNumber .item ul li .col1 em.green{background: url(../images/cp/number_green.png) no-repeat;}
+.lottery__panel-pickNumber .choose-specialNumber .item ul li .col1 em.blue{background: url(../images/cp/number_blue.png) no-repeat;}
+.lottery__panel-pickNumber .choose-specialNumber .item ul li .ipt{background: #fff; border: 1px solid #ddd; border-radius: 2px; font-family: "Microsoft Yahei"; padding: 8px; line-height: 14px; width: 50px;}
+
+/* ÃƒÆ’Ã‚Â¥Ãƒâ€¦Ã¢â‚¬â„¢ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬ÂÃƒÆ’Ã‚Â¤Ãƒâ€šÃ‚ÂºÃƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¨Ãƒâ€šÃ‚ÂµÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂºÃƒÆ’Ã‚Â¨Ãƒâ€šÃ‚Â½Ãƒâ€šÃ‚Â¦pk10 */
+.pk10__panelShow .lt-stage{height: 330px; width: 450px; background: #fee;}
+.pk10__panelShow .rt-record{border: 1px solid #9fb8d6; border-radius: 4px; font-size: 14px; font-family: helvetica; text-align: center; height: 328px; width: 670px;}
+.pk10__panelShow .rt-record .head{background: #d2e3f7; text-align: center; height: 40px; line-height: 40px;}
+.pk10__panelShow .rt-record .col1{display: inline; float: left; width: 30%;}
+.pk10__panelShow .rt-record .col2{display: inline; float: left; width: 70%;}
+.pk10__panelShow .rt-record .list ul li{border-top: 1px solid #d3e3f6; float: left; padding: 10px 0; width: 100%;}
+.pk10__panelShow .rt-record .list ul li .col2 i{display: inline-block; margin: 0 5px;}
+/* ÃƒÆ’Ã‚Â¥ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°Ãƒâ€šÃ‚Â©ÃƒÆ’Ã‚Â¤Ãƒâ€šÃ‚Â½ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã‚Â¦Ãƒâ€¦Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÆ’Ã‚Â¦Ãƒâ€šÃ‚Â³Ãƒâ€šÃ‚Â¨ÃƒÆ’Ã‚Â¦ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬ÂÃƒâ€šÃ‚Â¶ÃƒÆ’Ã‚Â©ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬ÂÃƒâ€šÃ‚Â´ */
+.pk10__panelShow .remaining-betTime{background: url(../images/cp/placeholder/time_bg.png) no-repeat; color: #fff; font-family: helvetica; text-align: center; height: 100%;}
+.remaining-betTime h2{font-size: 28px; padding-top: 75px;}
+.remaining-betTime p{font-size: 18px;}
+.remaining-betTime .timeline{display: block; margin-top: 15px;}
+.remaining-betTime .timeline i{
+	background: url(../images/cp/board_mini.png) no-repeat; color: #fff; display: inline-block; font-size: 32px; font-family: helvetica; margin-right: 10px; text-align: center; height: 60px; line-height: 60px; width: 50px;
+}
+/* ÃƒÆ’Ã‚Â¦Ãƒâ€¦Ã¢â‚¬Å“Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¦Ãƒâ€¦Ã¢â‚¬Å“Ãƒâ€¦Ã‚Â¸ÃƒÆ’Ã‚Â¦Ãƒâ€¦Ã‚Â½ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚ÂÃƒâ€šÃ‚Â */
+.pk10__panelShow .current-ranking{background: url(../images/cp/placeholder/Ranking_bg.png) no-repeat; text-align: center; height: 100%;}
+.current-ranking h2{color: #fff; font-size: 20px; padding-top: 10px;}
+.current-ranking ul li{display: inline-block; margin: 10px 20px;}
+.current-ranking ul li .item{margin-top: 20px;}
+.current-ranking ul li .item i{background: #ff7074; border-radius: 20px; color: #fff; display: inline-block; font-size: 14px; font-family: helvetica; line-height: 30px; width: 75px;}
+/*.current-ranking ul li .item img{margin-left: 15px; vertical-align: middle;}*/
+.current-ranking ul li .item .car{display: inline-block; vertical-align: top; margin-left: 15px; margin-top: 5px; height: 20px; width: 72px;}
+.divcar1{ background:url(../images/cp/pk_car_bg.png) no-repeat 0px 0px;}
+.divcar2{ background:url(../images/cp/pk_car_bg.png) no-repeat 0px -38px;}
+.divcar3{ background:url(../images/cp/pk_car_bg.png) no-repeat 0px -77px;}
+.divcar4{ background:url(../images/cp/pk_car_bg.png) no-repeat 0px -115px;}
+.divcar5{ background:url(../images/cp/pk_car_bg.png) no-repeat 0px -154px;}
+.divcar6{ background:url(../images/cp/pk_car_bg.png) no-repeat 0px -192px;}
+.divcar7{ background:url(../images/cp/pk_car_bg.png) no-repeat 0px -231px;}
+.divcar8{ background:url(../images/cp/pk_car_bg.png) no-repeat 0px -269px;}
+.divcar9{ background:url(../images/cp/pk_car_bg.png) no-repeat 0px -308px;}
+.divcar10{ background:url(../images/cp/pk_car_bg.png) no-repeat 0px -346px;}
+/* pk10ÃƒÆ’Ã‚Â¦Ãƒâ€šÃ‚Â¸Ãƒâ€šÃ‚Â¸ÃƒÆ’Ã‚Â¦Ãƒâ€¹Ã¢â‚¬Â Ãƒâ€šÃ‚Â */
+.pk10__panelShow .pk10__gamePanel{/*background: url(../images/cp/pk10-bg.jpg) no-repeat center #1f3959; */ background-color: #1F3959; height: 100%; position: relative;}
+.pk10__gamePanel .car-run{width: 72px; position: absolute; right: 12px; top: 70px; border: 1px solid blue;}
+.pk10__gamePanel .car-run img{margin-bottom:1px; vertical-align: top;}
+.pk10__gamePanel .rank-list{position: absolute; left: 12px; bottom: 15px;}
+.pk10__gamePanel .rank-list i{color: #fff; display: inline; float: left; font-size: 14px; font-family: helvetica; font-style: italic; text-align: center; text-shadow: 0 0 3px #000; height: 26px; line-height: 26px; width: 26px;}
+/*---*/
+.pkkaijiang_dh{ margin: 15px 0 0 11px; display: inline-block; vertical-align: top; width:426px; height:300px; background:url(../images/cp/bg_goalGround.jpg) #1f3959;}
+.pkkaijiang_dh{ width:426px; height:300px; position:relative; overflow:hidden;}
+.divTrackFinal{ background:url(../images/cp/bg_goalGround.jpg); height:300px; width:900px; left:0px; top:0px; position:absolute;}
+.checker{ position:absolute; bottom:25px; left:78px; width:41px; height:34px; background:url(../images/cp/icon_checker.gif);}
+#divTrack1{ width:12000px; background:url(../images/cp/bg_raceGround.jpg); height:300px; position:absolute; z-index:100; top:0px;}
+
+.pkkaijiang_dh .car{height: 20px; width: 72px; position: absolute;}
+#divGameCar1 div{ top:53px; right:0px; z-index:1000;}
+#divGameCar2 div{ top:75px; right:0px; z-index:1000;}
+#divGameCar3 div{ top:96px; right:0px; z-index:1000;}
+#divGameCar4 div{ top:118px; right:0px; z-index:1000;}
+#divGameCar5 div{ top:140px; right:0px; z-index:1000;}
+#divGameCar6 div{ top:160px; right:0px; z-index:1000;}
+#divGameCar7 div{ top:183px; right:0px; z-index:1000;}
+#divGameCar8 div{ top:204px; right:0px; z-index:1000;}
+#divGameCar9 div{ top:227px; right:0px; z-index:1000;}
+#divGameCar10 div{ top:247px; right:0px; z-index:1000;}
+
+.car_qushi{ height:26px; position:absolute; bottom:0px; left:0px; z-index:1000;}
+.car_qushi ul li{ width:26px; height:26px; float:left;}
+.car_qushi ul li .small_car1{ background:url(../images/cp/1.png); width:26px; height:26px;}
+.car_qushi ul li .small_car2{ background:url(../images/cp/2.png); width:26px; height:26px;}
+.car_qushi ul li .small_car3{ background:url(../images/cp/3.png); width:26px; height:26px;}
+.car_qushi ul li .small_car4{ background:url(../images/cp/4.png); width:26px; height:26px;}
+.car_qushi ul li .small_car5{ background:url(../images/cp/5.png); width:26px; height:26px;}
+.car_qushi ul li .small_car6{ background:url(../images/cp/6.png); width:26px; height:26px;}
+.car_qushi ul li .small_car7{ background:url(../images/cp/7.png); width:26px; height:26px;}
+.car_qushi ul li .small_car8{ background:url(../images/cp/8.png); width:26px; height:26px;}
+.car_qushi ul li .small_car9{ background:url(../images/cp/9.png); width:26px; height:26px;}
+.car_qushi ul li .small_car10{ background:url(../images/cp/10.png); width:26px; height:26px;}
+/*ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚Â£Ãƒâ€šÃ‚Â°ÃƒÆ’Ã‚Â©Ãƒâ€¦Ã‚Â¸Ãƒâ€šÃ‚Â³*/
+.sound_on{ display:block; width:16px; height:16px; overflow:hidden; background:url(../images/cp/btn_soundOn.png) no-repeat 0px 0px; position:absolute; right:12px; bottom:5px; z-index:100;}
+a:hover.sound_on{ background:url(../images/cp/btn_soundOff.png) no-repeat 0px -16px;}
+.sound_off{ display:block; width:16px; height:16px; overflow:hidden; background:url(../images/cp/btn_soundOff.png) no-repeat 0px 0px; position:absolute; right:12px; bottom:5px; z-index:100;}
+a:hover.sound_off{ background:url(../images/cp/btn_soundOff.png) no-repeat 0px -16px;}
+
+
+/* ÃƒÆ’Ã‚Â¦ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬ÂÃƒâ€šÃ‚Â¶ÃƒÆ’Ã‚Â¦ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬ÂÃƒâ€šÃ‚Â¶ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚Â½Ãƒâ€šÃ‚Â©ÃƒÆ’Ã‚Â¦Ãƒâ€šÃ‚Â¸Ãƒâ€šÃ‚Â¸ÃƒÆ’Ã‚Â¦Ãƒâ€¹Ã¢â‚¬Â Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â§ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€¦Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â©Ãƒâ€šÃ‚ÂÃƒâ€šÃ‚Â¢ */
+.game__platform-head{
+	background: url(../images/cp/board_bg.png) no-repeat; margin: 0 auto; text-align: center; height: 218px; width: 1204px; position: relative;
+}
+.game__platform-head .lt-timeline{width: 310px; position: absolute; left: 50px; top: 16px;}
+.game__platform-head .lt-timeline .gimg img{margin-top: 35px; vertical-align: top;}
+.game__platform-head .lt-timeline .diffTime h4{color: #778593; font-weight: 500; padding-bottom: 10px; text-align: left;}
+.game__platform-head .lt-timeline .diffTime .countDown i{
+	background: url(../images/cp/board.png) no-repeat; color: #fff; display: inline; float: left; font-size: 42px; font-family: helvetica; margin-right: 5px; text-align: center; height: 94px; line-height: 94px; width: 74px;
+}
+.game__platform-head .lt-timeline .diffTime .countDown i.dot{background: none; width: auto;}
+.game__platform-head .lt-timeline .btn{margin-top: 7px;}
+.game__platform-head .lt-timeline .btn a{background: url(../images/cp/game-head01.png) no-repeat; float: left; color: #778593; font-size: 14px; margin-left: 45px; text-align: center; line-height: 37px; width: 82px;}
+.game__platform-head .lt-timeline .btn i{background: url(../images/cp/game-head02.png) no-repeat; float: right; color: #778593; font-size: 14px; margin-right: 6px; text-align: center; line-height: 37px; width: 169px;}
+/*---*/
+.game__platform-head .md-result{display:inline-block; padding-top: 20px; width: 382px;}
+.game__platform-head .md-result .lottery-res{background: url(../images/cp/number_bg.png) no-repeat; margin-top: 5px; height: 102px;}
+.game__platform-head .md-result .lottery-res i{
+	background: url(../images/cp/number.png) no-repeat; color: #fff; display: inline-block; font-size: 32px; font-family: helvetica; margin: 25px 7px 0; text-align: center; height: 50px; line-height: 50px; width: 50px;
+}
+/*---*/
+.game__platform-head .rt-record{background: url(../images/cp/game-head03.png) no-repeat; font-family: helvetica; height: 160px; width: 302px; position: absolute; top: 26px; right: 80px;}
+.game__platform-head .rt-record .hd{color: #778593; font-size: 14px; text-align: center; height: 30px; line-height: 30px;}
+.game__platform-head .rt-record .col1{display: inline; float: left; width: 40%;}
+.game__platform-head .rt-record .col2{display: inline; float: left; width: 40%;}
+.game__platform-head .rt-record .col3{display: inline; float: left; width: 20%;}
+.game__platform-head .rt-record .list ul{overflow: hidden;height: 128px;}
+.game__platform-head .rt-record .list ul li{border-top: 1px solid rgba(255,255,255,.15); height: 31px; line-height: 30px;}
+.game__platform-head .rt-record .list ul li .col1{color: #778593; font-size: 12px;}
+.game__platform-head .rt-record .list ul li .col2 i{background: #FF621C; border-radius: 50%; color: #fff; display: inline-block; text-align: center; height: 20px; line-height: 20px; width: 20px;}
+.game__platform-head .rt-record .list ul li .col3 i{background: #d72c2c; border-radius: 50%; color: #fff; display: inline-block; text-align: center; height: 20px; line-height: 20px; width: 20px;}
+
+/* ÃƒÆ’Ã‚Â¦Ãƒâ€šÃ‚Â¸Ãƒâ€šÃ‚Â¸ÃƒÆ’Ã‚Â¦Ãƒâ€¹Ã¢â‚¬Â Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¦Ãƒâ€šÃ‚Â¡Ãƒâ€¦Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚Â­Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¥Ãƒâ€¦Ã¢â‚¬â„¢Ãƒâ€šÃ‚ÂºÃƒÆ’Ã‚Â¥Ãƒâ€¦Ã‚Â¸Ãƒâ€¦Ã‚Â¸ */
+.game__platform-box{
+	background: url(../images/cp/table.png) no-repeat; margin: 0 auto; text-align: center; height: 658px; width: 1300px; position: relative;
+}
+.game__platform-box .hd__label{width: 100%; position: absolute;top: 110px;}
+.game__platform-box .hd__label span{display: inline-block; margin: 0 95px;}
+.game__platform-box .unit__list{width: 100%; position: absolute; top: 270px;}
+.game__platform-box .unit__list ul{display: inline-block;}
+.game__platform-box .unit__list ul li{display: inline; float: left; margin: 0 5px; height: 60px; width: 94px;}
+.game__platform-box .unit__list ul li a{background: #174c31; border:2px solid #498b69; color: #569c78; display: block; font-size: 20px; line-height: 60px;}
+.game__platform-box .unit__list ul li.on a{border-color: #ffe931; color: #ffe931;}
+.game__platform-box .turn__btn{width: 100%; position: absolute;bottom: 120px;}
+.game__platform-box .turn__btn .item{position: relative;}
+.game__platform-box .turn__btn .item .diceTag{width: 78px; position: absolute; top: 30px; right: 30px;}
+.game__platform-box .turn__btn .item .diceTag .img{display: inline-block;vertical-align: top; margin-bottom: -75px; position: relative;}
+.game__platform-box .turn__btn .item .diceTag .img input{
+	background: #fff!important; border:0 none; border-radius: 20px; font-size: 12px; font-family: helvetica; text-align: center; line-height: 43px; width: 43px; position: absolute; left: 18px; top: 15px; z-index: 11;
+}
+.game__platform-box .turn__btn .dragon{background: url(../images/cp/button_2.png) no-repeat; float: left; margin: 0 5px; height: 177px; width: 301px;}
+.game__platform-box .turn__btn .dragon.current{background: url(../images/cp/button_2_selected.png) no-repeat;}
+.game__platform-box .turn__btn .tie{background: url(../images/cp/button_3.png) no-repeat; float: left; margin: 0 5px; height: 178px; width: 406px;}
+.game__platform-box .turn__btn .tie.current{background: url(../images/cp/button_3_Selected.png) no-repeat;}
+.game__platform-box .turn__btn .tiger{background: url(../images/cp/button_4.png) no-repeat; float: left; margin: 0 5px; height: 177px; width: 301px;}
+.game__platform-box .turn__btn .tiger.current{background: url(../images/cp/button_4_Selected.png) no-repeat;}
+.game__platform-box .turn__btn .word{font-size: 60px; padding-top: 20px;}
+.game__platform-box .turn__btn .ratio{color: #91d2b0; font-size: 24px; margin: 18px 0 0 10px; vertical-align: top; text-align: left;}
+.game__platform-box .turn__btn .ratio i{font-size: 18px; display: block;}
+.game__platform-box .turn__btn .dragon .word{color: #b04a36;}
+.game__platform-box .turn__btn .tie .word{color: #ffe931; padding-top: 40px;}
+.game__platform-box .turn__btn .tiger .word{color: #c9aa3d;}
+
+/* ÃƒÆ’Ã‚Â¤Ãƒâ€šÃ‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¹ÃƒÆ’Ã‚Â¦Ãƒâ€šÃ‚Â³Ãƒâ€šÃ‚Â¨-ÃƒÆ’Ã‚Â¤Ãƒâ€šÃ‚Â½ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã‚Â©Ãƒâ€šÃ‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¥Ãƒâ€¹Ã¢â‚¬Â Ãƒâ€šÃ‚Â·ÃƒÆ’Ã‚Â¦ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“Ãƒâ€šÃ‚Â° */
+.game__platform-nums{background: #343d46; height: 180px;}
+.game__platform-nums .text-bet{border-right: 1px solid #21272c; margin-top: 40px; padding-top: 28px; padding-right: 20px; vertical-align: top; height: 74px;}
+.game__platform-nums .text-bet .text{color: #778593; font-size: 16px; text-align: left;}
+.game__platform-nums .text-bet .text label{display: inline-block; margin-right: 15px; width: 50px;}
+.game__platform-nums .text-bet .text i{color: #fff; font-size: 14px; font-family: arial;}
+.game__platform-nums .text-bet .btn{vertical-align: top; margin-top: 5px;}
+.game__platform-nums .text-bet .btn a{background: #4e575f; box-shadow: 0 2px 2px #21272c; border-radius: 3px; color: #fff; display: inline-block; font-size: 14px; margin-left: 10px; line-height: 40px; width: 80px;}
+.game__platform-nums .chip-list{background: url(../images/cp/chip-bg.png) no-repeat; margin-left: 15px; margin-top: 40px; height: 102px; width: 519px;}
+.game__platform-nums .chip-list i{
+	cursor: pointer; display: inline-block; margin-top: 12px; opacity: .5; filter: alpha(opacity=50); position: relative;
+	transition: all .3s; -webkit-transition: all .3s; -moz-transition: all .3s;
+}
+.game__platform-nums .chip-list i.on{opacity: 1; filter: alpha(opacity=100);}
+.game__platform-nums .chip-list i input{
+	background: #fff; border:0 none; border-radius: 20px; font-size: 12px; font-family: helvetica; text-align: center; line-height: 43px; width: 43px; position: absolute; left: 18px; top: 15px;
+}
+
+/* ÃƒÆ’Ã‚Â¦Ãƒâ€¦Ã¢â‚¬â„¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°ÃƒÆ’Ã‚Â©ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢Ãƒâ€šÃ‚Â®ÃƒÆ’Ã‚Â¥Ãƒâ€¦Ã¢â‚¬â„¢Ãƒâ€šÃ‚ÂºÃƒÆ’Ã‚Â¥Ãƒâ€¦Ã‚Â¸Ãƒâ€¦Ã‚Â¸ */
+.game__platform-btns{background: #222930;box-shadow: 0 2px 10px rgba(0,0,0,.5) inset; height: 180px;}
+.game__platform-btns a{
+	background: #589eea; border-radius: 3px; color: #fff; display: inline-block; font-size: 16px; margin: 65px 7px 0; text-align: center; line-height: 50px; width: 110px;
+	box-shadow: 0 1px 3px #000;
+}
+.game__platform-btns a.t1{background: #c14730;}
+.game__platform-btns a:hover{opacity: .9; filter: alpha(opacity=9);}
+/* }}} */
+
+
+
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦ ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚ÂÃƒâ€šÃ‚Â³ÃƒÆ’Ã‚Â¤Ãƒâ€šÃ‚Â¾Ãƒâ€šÃ‚Â§ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚Â·Ãƒâ€šÃ‚Â¥ÃƒÆ’Ã‚Â¥ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦Ãƒâ€šÃ‚Â·ÃƒÆ’Ã‚Â¦Ãƒâ€šÃ‚Â Ãƒâ€šÃ‚Â.toolbar {{{ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦ */
+.game__toolbar-panel{
+	background: #fff; border-bottom: 1px solid rgba(100,100,100,.15); border-radius: 3px; width: 60px; position: fixed; top: 140px; right: 10px;
+	box-shadow: 0 1px 1px rgba(100,100,100,.05);
+}
+.game__toolbar-panel .panel__inner{padding: 0 10px;}
+.game__toolbar-panel .panel__inner ul li{border-top: 1px solid rgba(50,50,50,.1); text-align: center; position: relative;}
+.game__toolbar-panel .panel__inner ul li a{color: #ff621c; display: block; padding: 15px 0;}
+.game__toolbar-panel .panel__inner ul li p{margin-top: 2px;}
+.game__toolbar-panel .panel__inner ul li.first{border-top: 0 none;}
+.game__toolbar-panel .panel__inner ul li.J__floatToolbar{margin-left:-10px;width:60px;}
+.game__toolbar-panel .panel__inner ul li.J__floatAddToolbar{margin-left:-10px;width:60px;}
+/* ÃƒÆ’Ã‚Â¦Ãƒâ€šÃ‚ÂµÃƒâ€šÃ‚Â®ÃƒÆ’Ã‚Â¥Ãƒâ€¦Ã‚Â Ãƒâ€šÃ‚Â¨ÃƒÆ’Ã‚Â¦Ãƒâ€šÃ‚ÂÃƒâ€šÃ‚Â¡ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚Â¼Ãƒâ€šÃ‚Â¹ÃƒÆ’Ã‚Â§Ãƒâ€šÃ‚ÂªÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â */
+.game__toolbar-panel .popup__floatBox{
+	display:none;background:#fff;border:1px solid #f35c19;text-align:left;width:655px; position:absolute;right:60px;top:-207px;z-index:1001;
+	border-radius: 2px; box-shadow: 0 1px 4px rgba(100,100,100,.3);
+}
+.game__toolbar-panel .popup__floatBox .arr1,
+.game__toolbar-panel .popup__floatBox .arr2{
+	border-color:transparent transparent transparent #f35c19;border-style:dashed dashed dashed solid;border-width:10px;font-size:0;
+	overflow:hidden;height:0;width:0; position:absolute;right:-20px;top:230px;
+}
+.game__toolbar-panel .popup__floatBox i.arr2{border-color:transparent transparent transparent #fff;right:-19px;}
+/* table */
+.game__toolbar-panel .popup__floatBox table{border-collapse:collapse;table-layout:fixed; margin: 0 auto; width: 100%;}
+.game__toolbar-panel .popup__floatBox table tr{background:#fff; transition: all .3s;}
+.game__toolbar-panel .popup__floatBox table tr.on{background: #fafafa;}
+.game__toolbar-panel .popup__floatBox table th,
+.game__toolbar-panel .popup__floatBox table td{
+	border-bottom: 1px solid #eee;font-size:12px;word-break:break-all;word-wrap:break-word; padding: 10px 0; height: 20px; line-height: 20px;
+}
+.game__toolbar-panel .popup__floatBox table th{color:#333; font-size: 12px; font-weight: 700; text-align: center;}
+.game__toolbar-panel .popup__floatBox table td{color: #333;}
+.game__toolbar-panel .popup__floatBox .number i{
+	background:#FF621C; border-radius: 50%; color: #fff; display: inline; float: left; font-size: 16px; font-family: helvetica; margin-right: 10px; text-align: center; height: 30px; line-height: 30px; width: 30px;
+}
+/* }}} */
+
+
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦ ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚Â¼Ãƒâ€šÃ‚Â¹ÃƒÆ’Ã‚Â§Ãƒâ€šÃ‚ÂªÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬ÂÃƒÆ’Ã‚Â¦Ãƒâ€šÃ‚Â Ãƒâ€šÃ‚Â·ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚Â¼Ãƒâ€šÃ‚Â {{{ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦ */
+.dlg-gameCenter {
+	background:#FEFEFE; border-radius: 4px; min-height: 300px;width: 540px;
+	display: none;
+}
+.dlg-gameCenter .inner {float:left;height: 100%;width: 100%;}
+.dlg-gameCenter .inner .close-btn{background: url(../images/cp/icon_close.png) no-repeat; cursor: pointer; display: block; height: 13px; width: 13px; position:  absolute; top: 18px; right: 15px; z-index: 99;}
+.dlg-gameCenter .tit {background:#f7f7f7;border-bottom: 1px solid #ddd; height: 50px;}
+.dlg-gameCenter .tit .text{color: #555; display: block; font-size: 15px; padding: 0 20px; line-height: 50px;}
+.dlg-gameCenter .ct {padding: 20px;}
+.dlg-gameCenter .ct .protocol p{margin-bottom: 15px;}
+/*ÃƒÆ’Ã‚Â¨Ãƒâ€šÃ‚Â¡Ãƒâ€šÃ‚Â¨ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢*/
+.dlg-gameCenter .ct .form ul li{margin-bottom: 20px;}
+.dlg-gameCenter .ct .form ul li .type-num a{background: #F7F7F7; border: 1px solid #ddd;display: inline-block; margin-right: 7px; padding: 0 20px; line-height: 30px;}
+.dlg-gameCenter .ct .form ul li .type-num a.on{background: #ff621c; border-color: #FF621C; color: #fff;}
+.dlg-gameCenter .ct .form ul li .chkbox{background: url(../images/cp/icon_chkbox.png) no-repeat 0 0; cursor: pointer; padding-left: 22px; height: 16px; line-height: 16px;}
+.dlg-gameCenter .ct .form ul li .chkbox.on{background-position: 0 -32px;}
+
+.dlg-gameCenter .ct .form ul li table{border-collapse:collapse;table-layout:fixed; margin: 0 auto; width: 100%;}
+.dlg-gameCenter .ct .form ul li table td{
+	border: 1px solid #eee;font-size:12px;word-break:break-all;word-wrap:break-word; padding: 10px 0; height: 20px; line-height: 20px;
+}
+.dlg-gameCenter .ct .form ul li table td{color: #333;}
+
+.dlg-gameCenter .ct .form ul li .ipt-text{border: 1px solid #ddd; border-radius: 2px;font-family:"Microsoft Yahei"; padding: 8px; line-height: 14px; width: 250px;}
+.dlg-gameCenter .ct .ipt-area {
+	background:#fff;border-color:#ddd;border-style:solid;border-width:1px;border-radius:2px;color:#333;font-size:12px;font-family:"Microsoft Yahei";outline:none;resize:none;padding:10px;height:100px;width:97.3%;
+}
+/*ÃƒÆ’Ã‚Â¦Ãƒâ€¦Ã¢â‚¬â„¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°ÃƒÆ’Ã‚Â©ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢Ãƒâ€šÃ‚Â®*/
+.dlg-gameCenter .btns{text-align: center; width: 100%;position: absolute; left: 0; bottom: 30px;}
+.dlg-gameCenter .btns button{
+	background: #f8f8f8; border:1px solid #ddd;border-radius:2px;color:#333;cursor:pointer;display:inline-block;font-size:14px;font-family:"Microsoft Yahei"; outline: none; line-height: 36px; width: 120px;
+}
+.dlg-gameCenter .btns .cancel-btn:hover {background: #f2f2f2;}
+.dlg-gameCenter .btns .submit-btn {background: #ff621c; border-color: #ff621c; color: #fff;}
+.dlg-gameCenter .btns .submit-btn:hover{background: #ff8048;}
+
+/* ÃƒÆ’Ã‚Â¦Ãƒâ€šÃ‚Â¼Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚ÂÃƒâ€šÃ‚Â·ÃƒÆ’Ã‚Â¥Ãƒâ€¹Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¦Ãƒâ€¦Ã‚Â¾Ãƒâ€šÃ‚Â */
+.dlg-leakNumAnalysis .ct ul .hdFilter .menu{margin-left: 50px;}
+.dlg-leakNumAnalysis .ct ul .hdFilter .menu a{margin-right: 15px;}
+.dlg-leakNumAnalysis .ct ul .hdFilter .menu a.on{color: #F35C19;}
+.dlg-leakNumAnalysis .ct ul .hdFilter .datetime .ipt-date{background: url(../images/cp/icon_calendar.png) no-repeat 95% center #fff; width: 150px;}
+.dlg-leakNumAnalysis .ct ul .hdFilter .datetime .btn-sear{
+	background: #ff621c; border:1px solid #ff621c;border-radius:2px;color:#fff;cursor:pointer;display:inline-block;font-size:14px;font-family:"Microsoft Yahei"; outline: none; line-height: 30px; width: 90px;
+}
+.dlg-leakNumAnalysis .ct ul li .showLine{background: url(../images/cp/icon_chkbox.png) no-repeat 0 0; cursor: pointer; padding-left: 22px; height: 16px; line-height: 16px;}
+.dlg-leakNumAnalysis .ct ul li .showLine.on{background-position: 0 -32px;}
+
+.dlg-leakNumAnalysis .ct ul li .chartTabs{position: relative;}
+.dlg-leakNumAnalysis .ct ul li table th, .dlg-leakNumAnalysis .ct ul li table td{
+	border: 1px solid #eee;text-align: center; padding: 5px 0!important; position: relative; z-index: 11;
+}
+.dlg-leakNumAnalysis .ct ul li table .bg-stageNum i{background: #FF621C; border-radius: 50%; color: #fff; display: inline-block; margin: 0 3px; text-align: center; height: 18px; line-height: 18px; width: 18px;}
+.dlg-leakNumAnalysis .ct ul li table .ball-gblue, .dlg-leakNumAnalysis .ct ul li table .ball-yred{
+	background: url(../images/cp/icon-chartball.png) no-repeat; color: #fff!important;
+}
+.dlg-leakNumAnalysis .ct ul li table .ball-gblue{background-position: center 5px;}
+.dlg-leakNumAnalysis .ct ul li table .ball-yred{background-position: center -21px;}
+.dlg-leakNumAnalysis .ct ul li table.nomiss .miss-gblue, .dlg-leakNumAnalysis .ct ul li table.nomiss .miss-yred{color: #fff;}
+/* }}} */
+
+
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦ layerÃƒÆ’Ã‚Â¦Ãƒâ€šÃ‚Â Ãƒâ€šÃ‚Â·ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚Â¼Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚Â®Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã‚Â¥Ãƒâ€¹Ã¢â‚¬Â Ãƒâ€šÃ‚Â¶ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦ */
+/*.layui-layer-title{background-color:#f35c19!important;color:#fff!important;}
+.layui-layer-btn .layui-layer-btn0{background-color:#fc8000!important; border-color:#fc8000!important;}*/
+

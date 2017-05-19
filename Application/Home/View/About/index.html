@@ -1,0 +1,76 @@
+<include file="Common:head" /> 
+
+<body class="body-bg">
+	<div class="loader">
+        <div class="loader-inner ball-pulse-rise">
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+    <div class="JszContent" style="display: none">
+	<!-- <>顶部区域 -->
+	<include file="Common:menu" />
+	
+	<!-- <>主体容器区域 -->
+	<div class="container">
+		<div class="mid clearfix">
+			<!-- 关于我们 -->
+			<div class="pg__brandHistory-list mt--30 pb--60 clearfix">
+				<div class="main clearfix mt--10">
+					<!-- //侧边 -->
+					<div class="sidebar fl" id="J__sidebar">
+                        <a <if condition="$menu eq 'about'">class="on current"</if> href="/about">关于我们<i></i></a>
+                        <a <if condition="$menu eq 'contact'">class="on current"</if>  href="/contact">联系我们<i></i></a>
+                        <a <if condition="$menu eq 'betting'">class="on current"</if>  href="/betting">博彩责任<i></i></a>
+                        <a <if condition="$menu eq 'privacy'">class="on current"</if>  href="/privacy">隐私安全<i></i></a>
+                        <a <if condition="$menu eq 'disclaimer'">class="on current"</if>  href="/disclaimer">免责声明<i></i></a>
+                    </div>
+					<!-- //列表 -->
+					<div class="brandHistory_list fr">
+						<div class="pg__others-panel">
+							<h2 class="tit c--f35c19">这样的人生才是我想要的终极享受</h2>
+							<p>&nbsp;&nbsp;一支在少女大腿上卷成的古巴Trinidad雪茄，入口时那一丝陶然的沉醉，与一杯62年的Macallan威士忌最般配；一位来自欧洲繁华都市的美女荷官，弯腰发牌时那一身柔美的曲线，与沉淀了人生智慧的您最般配。这一切难道只是海市蜃楼，难道只是一缕迷梦？不！这一切，“金手指”在线博彩娱乐网站为您实现！在这里，精彩的牌局日日不断，绝伦的表演夜夜笙歌，为尊贵的您带来24小时不间断的欢乐。</p>
+							<p><img src="Resourse/Home/images/about/高逼格.jpg" height="300" width="935"></p>
+							
+							<h2 class="tit c--f35c19">前BAT核心人员联袂打造安全博彩</h2>
+							<p>&nbsp;&nbsp;为您璀璨人生的终极享受保驾护航的，是我们24小时不间断奋战在岗位上的安全团队——他们来自百度、阿里巴巴和腾讯，也就是我们常说的BAT。“金手指”不惜重金，将这些曾经服务于BAT的核心员工聘请过来，从网站安全、游戏规则安全、账户安全、交易安全直至您的个人隐私安全，全面构建了严密的安全网络。更加令我们安心的是，“金手指”团队独立研发的<a class="lay__tooltips trip1" href="###" tooltips="Web应用防护系统（也称：网站应用级入侵防御系统。英文：Web Application Firewall，简称： WAF）。利用国际上公认的一种说法：Web应用防火墙是通过执行一系列针对HTTP/HTTPS的安全策略来专门为Web应用提供保护的一款产品。而GoldWaf则是我们独立研发的WAF应用防火墙">GoldWaf</a> ，实现了未知风险感知、主动式风险感知、被动式风险感知合为一体的高智能未知漏洞黑客攻击防御体系，结合我们独有的大数据风险情报系统，<a class="lay__tooltips trip2" href="###" tooltips="Security Response Center简称SRC，主要针对科技互联网企业常见的安全漏洞而特别设立的机构。">SRC</a>安全响应团队，不仅仅领先博彩行业，更已经领先于世界级安全水准。</p>
+							<p><img src="Resourse/Home/images/about/网络安全.jpg" height="300" width="935"></p>
+							<h2 class="tit c--f35c19">博彩执照安全合法营造监管网络</h2>
+							<p>&nbsp;“金手指”拥有的博彩执照是由pagcor（Philippine Amusement and Gaming Corporation）颁发，“金手指”所有的博彩内容、游戏软件测试、公司运作流程均受菲律宾卡格扬经济特区(CEZA, Cagayan Special Economic Zone Authority)和pagcor的监管，监管机构定时审查公司的运作情况，确保客户与公司之间的公平与公正。</p>
+							<p><img src="Resourse/Home/images/about/牌照.jpg" height="625" width="935"></p>
+							<h2 class="tit c--f35c19">本土化策略独享芝麻信用接入</h2>
+							<p>&nbsp;“金手指”作为业内第一家具有BAT血统的博彩平台，与蚂蚁金服旗下独立的第三方征信机构——芝麻信用开展了深度合作。“金手指”重金聘请前阿里巴巴核心成员，打造最懂中国本土电子交易和信用服务的博彩平台。“金手指”面向所有新老用户，全面推出登记芝麻信用分，送大额礼金的活动，做到极致的让利。</p>
+					     	<p><img src="Resourse/Home/images/about/芝麻信用接入.jpg" height="300" width="935"></p>
+					     	<h2 class="tit c--f35c19">匠心智造勾勒绝妙网站体验</h2>
+					     	<p>&nbsp;&nbsp;来到“金手指”平台，所有玩家第一感受就是操作流畅、响应迅捷、页面美观养眼。这当然也是得益于“金手指”平台深厚的BAT底蕴，我们的网站体验架构师，全部来自于腾讯阿里的<a class="lay__tooltips trip3" href="###" tooltips="User Experience Design(用户体验设计)，简称UED。UED是进行产品策划的主力之一，我们用自己的知识、经验、设计能力拿出设计方案。UED不只是互联网专家，还是行业专家。UED团队包括：交互设计师(Interaction Designer)、视觉设计师(Vision Designer)、用户体验设计师(User Experience Designer)、用户界面设计师(User Interface Designer)和前端开发工程师(Web Developer)等等。">UED</a>用户体验研究中心。在网站所有环节上，做到了视觉享受、安全保障和人性化操作的有机结合。前端的匠心独运，与服务器端的深度优化，相得益彰，方才达到如今低延迟、无卡顿的真人荷官游戏体验，也是您极速上分、提款的润滑剂。</p>
+					     	<p><img src="Resourse/Home/images/about/极速提款.jpg" height="300" width="935"></p>
+					     	<h2 class="tit c--f35c19">存款提现轻松便利乐享红利</h2>
+					     	<p>&nbsp;“金手指”拥有BAT血统，手握雄厚资金，我们先进的技术架构，确保交易系统24小时安全、无中断，随时可存取。1分钟内上分，取款秒到账，最长1分钟内到账。网站单日取款最高400万元人民币，实地赌厅取款单日最高2000万元人民币、港币或者筹码。</p>
+					     	<p><img src="Resourse/Home/images/about/存款提现.jpg" height="300" width="935"></p>
+					     	<h2 class="tit c--f35c19">线下活动美女相陪美酒相伴</h2>
+					     	<p>&nbsp;“金手指”不定期为尊贵会员举办各类线下活动，不论是澳门、马尼拉甚至是大洋彼岸的欧美世界，都有“金手指”的合作伙伴，为会员献上豪华游轮、泳池派对、贵宾厅现场出码等精彩活动。实弹射击、海岛浮潜、飞机驾驶、空中伞降，各种精彩活动，为您赌场冲杀之余，增添顶级奢华生活乐趣。我们还跟各类明星演唱会长期赞助合作关系，已经举行过多届会员现场与工作后台参观活动，票源稀缺我们也能搞定。可以说，为了尊贵会员的快乐，只有想不到，没有“金手指”办不到！</p>
+					     	<p><img src="Resourse/Home/images/about/线下活动美女相陪.jpg" height="300" width="935"></p>
+					     	<h2 class="tit c--f35c19">点燃璀璨人生给您终极享受</h2>
+					     	<p>&nbsp;&nbsp;总投资超过8千万美金，“金手指”主营实体赌场贵宾厅和线上博彩业务。本公司集团在澳门与菲律宾的多家赌场都持有股份并经营贵宾厅业务，其中包括目前菲律宾规模最大最奢华的顶级赌场Solaire，以及澳门银河、凯旋门都有深度合作。线上博彩业务总部于2010年设立于菲律宾博彩特区第一卡加延，多年以来一直致力于打造极致的安全博彩服务环境。今时今日，良辰美景，我们备好了香槟雪茄，召集了窈窕荷官，一切就绪，超豪华线上博彩游轮扬帆再启航，诚邀您登船享乐，点燃璀璨人生！</p>
+					     	<p><img src="Resourse/Home/images/about/点燃璀璨人生.jpg" height="300" width="935"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- <>底部区域 -->
+	<!-- <>底部区域 -->
+	<include file="Common:foot" />
+    </div>
+    <script src="/Resourse/Home/js/app/about.js" type="text/javascript"></script>
+	<script src="/Resourse/Home/js/lib/jquery.tooltip.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	$(function(){
+		$(".trip1").hoverTips();
+		$(".trip2").hoverTips();
+		$(".trip3").hoverTips();
+	})
+	</script>
+</body>
+</html>

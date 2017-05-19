@@ -1,0 +1,139 @@
+<include file="Common:head" /> 
+<body>
+	<!-- <>顶部区域 -->
+	<div class="sec_header">
+		<!-- 顶部链接 -->
+		<div class="lay_topbar clearfix">
+			<div class="mid clearfix">
+				<div class="rt-info fr">
+					<span class="license">合法牌照</span>
+					<span class="call ml--30">客服热线：<i class="ff-hv">400-082-6666</i></span>
+				</div>
+			</div>
+		</div>
+		
+		<!-- //菜单及分类导航 -->
+		<div class="lay_navbar">
+			<div class="mid clearfix">
+				<div class="logo fl">
+					<a href="index.html"><img src="/Resourse/Home/images/logo.png" alt="金手指" /></a>
+				</div>
+			</div>
+		</div>
+	</div>	<!-- END.sec_header -->
+	
+	<!-- <>登录|注册|忘记密码 -->
+	<div class="sec_lgReg_wrapper">
+		<div class="lgreg-form-panel mid clearfix">
+			<img class="moden" src="/Resourse/Home/images/pic_moden.png" height="470" />
+			<img class="slogan" src="/Resourse/Home/images/text.png" height="300" />
+			
+			<div class="form">
+				<div class="tabs">
+					<!--<span class="first on"><a data-st-panel-cls="J__swtLgReg">手机注册</a></span>-->
+					<span class="on"><a data-st-panel-cls="J__swtLgReg">账号注册</a></span>
+				</div>
+				<div class="conts fl">
+					<!--<form name="updateform" action="/Regeist/regiestByTelHandler" method="post" onsubmit="return checkform(this)">
+						<!-- 1、手机注册 
+						<div class="J__swtLgReg" style="display: block;">
+							<div class="row">
+								<div class="iptbox">
+									<input class="ipt-text" type="text" name="tel" placeholder="请输入手机号" />
+								</div>
+							</div>
+							<div class="row">
+								<div class="iptbox" style="width: 185px;">
+									<input class="ipt-text" type="text" name="validcode" placeholder="请输入验证码" style="width: 160px;" />
+								</div>
+								<button class="btn_sendcode" data-method="getRegiestValidCode" type="button">获取验证码</button>
+							</div>
+                            <div class="error_tips">
+								<span id="error"></span>
+						    </div>
+                            <div class="row">
+							<a class="btn-submit bg__f35c19-hover transit dib regiestbtn" id="J__lgRegtel-submit" href="javascript:;">免费注册</a>
+                            </div>
+                            <div class="row ckbox-radio">
+                                <label class="J_chk_agree"><input type="checkbox" name="agree" checked />同意并接受金手指</label><a class="J_agreement" href="javascript:;" style="color:#f35c19;">《游戏条款》</a>
+                            </div>
+                            <input type="hidden" name="reg" value="{$regist}" />
+						</div>
+					</form>-->
+						<!-- 2、账号注册 -->
+                    <form name="updateform" method="post">
+                        <div class="J__swtLgReg">
+							<div class="row">
+								<div class="iptbox">
+									<input class="ipt-text" type="text" name="username" placeholder="请输入账号:例如：zhangsan" />
+								</div>
+							</div>
+							<div class="row">
+								<div class="iptbox">
+									<input class="ipt-text" type="password" name="password1" placeholder="设置密码:最好是数字、字母加特殊字符" />
+								</div>
+							</div>
+							<div class="row">
+								<div class="iptbox" style="width: 185px;">
+									<input class="ipt-text" type="text" name="code" placeholder="验证码" style="width: 160px;" />
+								</div>
+								<div class="vcode_img">
+									<img src="/registverify/38343323234" height="40" width="120" onclick="javascript:this.src='/registverify/'"/>
+								</div>
+							</div>
+                            <div class="error_tips">
+								<span id="error"></span>
+						    </div>
+                            <div class="row">
+							<a class="btn-submit bg__f35c19-hover transit dib regiestbtn" id="J__lgReg-submit" href="javascript:;">免费注册</a>
+                            </div>
+                            <div class="row ckbox-radio">
+                                <label class="J_chk_agree"><input type="checkbox" name="agree" checked />同意并接受金手指</label><a class="J_agreement" href="javascript:;" style="color:#f35c19;">《游戏条款》</a>
+                            </div>
+                            <input type="hidden" name="reg" value="{$regist}" />
+						</div>
+					</form>
+					<div class="foot-info">
+						<span class="text"><i>合法牌照，实地赌厅认证</i></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- <>底部区域 -->
+<div class="sec_footer">
+    <div class="mid clearfix ff-hv">
+        <ul class="links dib">
+            <li><a href="/index">首页</a></li>
+            <li><a href="/about">关于我们</a></li>
+            <li><a href="/contact">联系我们</a></li>
+            <li><a href="/betting">博彩责任</a></li>
+            <li><a href="/privacy">隐私安全</a></li>
+            <li><a href="/disclaimer">免责声明</a></li>
+            <li><a href="/PeopleIntroduction">游戏介绍</a></li>
+            <li><a href="#">代理合作</a></li>
+            <li><a href="/Zchelp">帮助中心</a></li>
+        </ul>
+        <div class="copyright">
+            <p>Copyright © 2010-2017 金手指官方网站   jinshouzhi.com Online Game. All rights reserved.</p>
+        </div>
+        <p><img src="/Resourse/Home/images/inx_footer.png" /></p>
+    </div>
+</div>
+<!--[if IE]>
+    <script src="/Resourse/Home/js/effect/jquery.placeholder.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("[placeholder]").placeholder();
+        });
+    </script>
+<![endif]--> 
+<script src="/Resourse/Home/js/effect/simple-switch-tab.js"></script>
+<script src="/Resourse/Home/js/plugins/dialog/dialog.js" type="text/javascript"></script>
+<script src="/Resourse/Home/js/plugins/tpl/tpl.js" type="text/javascript"></script>
+<script src="/Resourse/Home/js/plugins/layui/layui.js" type="text/javascript"></script>
+<script src="/Resourse/Home/js/app/regiest.js"></script>
+
+</body>
+</html>

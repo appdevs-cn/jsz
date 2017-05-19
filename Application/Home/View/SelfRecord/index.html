@@ -1,0 +1,204 @@
+<include file="Common:head" />
+<link rel="stylesheet" href="/Resourse/Home/js/plugins/datepicker/datepicker.css" />
+<body class="body-bg">
+    <div class="loader">
+        <div class="loader-inner ball-pulse-rise">
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+    <div class="JszContent" style="display: none">
+	<!-- <>顶部区域 -->
+	<include file="Common:menu" />
+	
+	<!-- <>主体容器区域 -->
+	<div class="container">
+		<div class="mid pb--50 clearfix">
+			<!-- 代理管理(存取款记录) -->
+			<include file="Common::memberMenu" />
+			
+			<div class="pM__panel mt--10">
+				<div class="proxyM__panel-tabLink">
+					<div class="head__nav clearfix">
+						<include file="Common::memberSecondMenu" />
+					</div>
+                    <form id="selfRecordFrom" method="post">
+					<div class="sub__menu clearfix">
+						<div class="head__filter padding30 clearfix">
+							<div class="form fl">
+								<input class="ipt-text" type="text" name="username" placeholder="用户名" />
+								<input class="ipt-text" type="text" name="orderNumber" placeholder="订单号" />
+								<input class="ipt-text" type="text" name="serialNumber" placeholder="期号" />
+								<select class="select-control v__top ml--20" name="lotteryName" style="height: 36px; min-width: 250px;">
+                                    <option value="">彩票种类(全部)</option>
+									<php>
+                                        foreach($lottery as $id=>$item){
+                                    </php>
+                                    <option value="{$id}">{$item['name']}</option>
+                                    <php>
+                                        }
+                                    </php>
+								</select>
+								
+								<select class="select-control v__top" name="status" style="height: 36px; min-width: 250px;">
+                                    <option value="">彩票状态(全部)</option>
+									<option value="1">未开奖</option>
+                                    <option value="2">未中奖</option>
+                                    <option value="3">已中奖</option>
+                                    <option value="4">已撤单</option>
+								</select>
+								<p class="mt--10"></p>
+								<input class="ipt-text ipt-date" type="text" name="starttime" data-datepicker="d1[lt]d2" placeholder="开始日期" />　至　<input class="ipt-text ipt-date" data-datepicker="d2[gt]d1" type="text" name="endtime" placeholder="结束日期" />
+								<button type="button" class="btn bg__f5f5f5-hover" data-method="search">查询</button>
+							</div>
+						</div>
+					</div>
+                    <input type="hidden" name="p" value="1" />
+                    </form>
+					<div class="panel-lkList" id="list">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- <>底部区域 -->
+	<include file="Common:foot" /> 
+    <script src="/Resourse/Home/js/plugins/datepicker/datepicker.js"></script> 
+    <script src="/Resourse/Home/js/app/self_record.js" type="text/javascript"></script>
+    </div>
+
+<script type="text/template" id="record_list">
+<table class="ff-hv" border="0" cellspacing="0" cellpadding="0">
+    <thead>
+        <tr>
+            <th>订单号</th>
+            <th>彩种</th>
+            <th>期号</th>
+            <th>模式</th>
+            <th>金额</th>
+            <th>倍数</th>
+            <th>奖金</th>
+            <th>状态</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody id="J__trHover">
+         <#for(var i = 0; i < rows.length; i++){#>
+        <#for(var j = 0; j < rows[i].length; j++){#>
+        <tr>
+            <td style="text-align:center"><#=rows[i][j]['serial_number']#></td>
+            <td style="text-align:center"><#=rows[i][j]['lottery_name']#></td>
+            <td style="text-align:center"><#=rows[i][j]['lottery_serial_number']#></td>
+            <td style="text-align:center"><#=rows[i][j]['mode']#></td>
+            <td style="text-align:center"><#=rows[i][j]['monetary']#></td>
+            <td style="text-align:center"><#=rows[i][j]['multiple']#></td>
+            <td style="text-align:center"><#=rows[i][j]['bonus']#></td>
+            <td style="text-align:center"><#=rows[i][j]['status']#></td>
+            <td style="text-align:center"><#=rows[i][j]['operate']#></td>
+        </tr>
+        <#}}#>
+    </tbody>
+</table>
+<div class="zone-g-pagination mt--20 clearfix">
+    <div class="pagination-inner">
+        <div class="p-body" id="page">
+            <#=rows[0][0]['page']#>
+        </div>
+    </div>
+</div>
+</script>
+
+<script type="text/template" id="empty_record_list">
+    <table class="table text-center">
+        <thead>
+            <tr>
+                <th>订单号</th>
+                <th>彩种</th>
+                <th>期号</th>
+                <th>模式</th>
+                <th>金额</th>
+                <th>倍数</th>
+                <th>奖金</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="height:150px">
+                <td colspan="9" style="font-size:16px;text-align:center">查询暂无记录</td>
+            </tr>
+        </tbody>
+    </table>
+</script>
+
+<script type="text/template" id="loading_list">
+    <table class="table text-center">
+        <thead>
+            <tr>
+                <th>订单号</th>
+                <th>彩种</th>
+                <th>期号</th>
+                <th>模式</th>
+                <th>金额</th>
+                <th>倍数</th>
+                <th>奖金</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="height:150px">
+                <td colspan="9" style="font-size:16px;text-align:center"><i class="icon-spinner icon-spin icon-2x pull-center"></i></td>
+            </tr>
+        </tbody>
+    </table>
+</script>
+
+<script type="text/template" id="detail_record">
+<div class="popup_box" id="detailrecord" style="position: relative;">
+    <div class="popup_main">
+        <div class="popup_txt2">
+            <div class="popup_txtl">
+                <h3>注单编号：<#=rows[0]['serial_number']#></h3>
+                <ul class="popup_txtul">
+                    <li><span>用户名:</span><p><#=rows[0]['username']#></p></li>
+                    <li><span>期号:</span><p><#=rows[0]['series']#></p></li>
+                    <li><span>彩种:</span><p><#=rows[0]['lotteryName']#></p></li>
+                    <li><span>彩种玩法:</span><p><#=rows[0]['name']#></p></li>
+                    <li><span>投注时间:</span><p><#=rows[0]['buy_time']#></p></li>
+                    <li><span>号码位置:</span><p><#=rows[0]['position']#></p></li>
+                    <li><span>开奖号码:</span>
+                        <p>
+                            <#
+                                if(rows[0]['lottery_number'].indexOf(",")==-1){
+                            #>
+                            <#for(var i=0; i<rows[0]['lottery_number'].length; i++){#>
+                            <i><#=rows[0]['lottery_number'].charAt(i)#></i>
+                            <#}#>
+                            <#}else{#>
+                            <#numberarr = rows[0]['lottery_number'].split(",")#>
+                            <#for(var i=0; i<numberarr.length; i++){#>
+                            <i><#=numberarr[i]#></i>
+                            <#}#>
+                            <#}#>
+                        </p>
+                    </li>
+                    <li><span>倍数:</span><p><#=rows[0]['multiple']#>倍</p></li>
+                    <li><span>注单金额:</span><p><#=rows[0]['monetary']#>元</p></li>
+                    <li><span>注单状态:</span><p class="red"><#=rows[0]['status']#></p></li>
+                    <li><span>中奖金额:</span><p><#=rows[0]['bonus']#>元</p></li>
+                    <li><span>动态奖金:</span><p><#=rows[0]['fd']#></p></li>
+                </ul>
+            </div>
+
+            <div class="popup_txtr" style="height: 300px">
+                <h3>投注内容</h3>
+                <div class="popup_txtin" id="nomallcontent" style="height: 200px; overflow-y: auto">
+                    <#=rows[0]['buy_number']#>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<include file="Common:head" /> 
+<body class="body-bg">
+	<div class="loader">
+        <div class="loader-inner ball-pulse-rise">
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+    <div class="JszContent" style="display: none">
+	<!-- <>顶部区域 -->
+	<include file="Common:menu" />
+	
+	<!-- <>主体容器区域 -->
+	<div class="container">
+		<div class="mid clearfix">
+			<!-- 关于我们 -->
+			<div class="pg__brandHistory-list mt--30 pb--60 clearfix">
+				<div class="main clearfix mt--10">
+					<!-- //侧边 -->
+					<div class="sidebar fl" id="J__sidebar">
+						<h2 class="hdTit">游戏介绍</h2>
+						<a <if condition="$menu eq 'PeopleIntroduction'">class="on current"</if> href="/PeopleIntroduction">真人娱乐<i></i></a>
+						<a <if condition="$menu eq 'ComputerIntroduction'">class="on current"</if> href="/ComputerIntroduction">电子游戏<i></i></a>
+						<a <if condition="$menu eq 'CpIntroduction'">class="on current"</if> href="/CpIntroduction">彩票投注<i></i></a>
+                        <!--<a <if condition="$menu eq 'QipaiIntroduction'">class="on current"</if> href="/QipaiIntroduction">棋牌游戏<i></i></a>
+                        <a <if condition="$menu eq 'TiyuIntroduction'">class="on current"</if> href="/TiyuIntroduction">体育投注<i></i></a>-->
+					</div>
+					<!-- //列表 -->
+					<!-- //列表 -->
+					<style type="text/css">
+						.casino_nav a{background:#fc8e5d;display: block;width: 108px;height: 33px;text-align: center;color: #fff;line-height: 33px;border: solid 1px #f35c19;float: left;margin-right: -1px;margin-bottom: -1px;}
+						.casino_nav a:hover,.casino_nav a.cur{background:#f35c19;}
+						.casino .cas_vid{
+							display: block;float: left;margin-right: 22px;width: 196px;color: #333;text-align: center;
+						}
+						.casino .cas_vid img{margin-bottom:0;}
+						.casino table tr th{background:#aaa;color:#fff;text-align:center;font-weight:700;padding:5px 0;}
+						.casino table tr td{background:#f8f8f8;border-bottom:1px solid #eee;color:#333;text-align:center;padding:5px 0;}
+						.br_box{padding:20px 35px;margin-top:10px;}
+						.br_box .box2{display:inline-block;width:203px; margin-right:60px;}
+					</style>
+					<div class="brandHistory_list fr">
+						<div class="pg__others-panel casino">
+							<div class="sub_con">
+							<div class="casino_nav">
+								<a href="/PeopleIntroduction">百家乐</a>
+								<a href="/PeopleIntroduction/baozuo">包桌百家乐</a>
+								<a href="/PeopleIntroduction/jingmi" class="cur">竞咪百家乐</a>
+								<a href="/PeopleIntroduction/longbao">龙宝百家乐</a>
+								<a href="/PeopleIntroduction/baoxian">保险百家乐</a>
+								<a href="/PeopleIntroduction/dezhou">德州扑克</a>
+								<a href="/PeopleIntroduction/erbagang">二八杠</a>
+								<a href="/PeopleIntroduction/oushi21dian">欧式21点/21点</a>
+								<a href="/PeopleIntroduction/fantan">番摊</a>
+								<a href="/PeopleIntroduction/longhu">龙虎</a>
+								<a href="/PeopleIntroduction/lunpan">轮盘</a>
+								<a href="/PeopleIntroduction/niuniu">牛牛</a>
+								<a href="/PeopleIntroduction/sangong">三公</a>
+								<a href="/PeopleIntroduction/sedie">色碟</a>
+								<a href="/PeopleIntroduction/shaibao">骰宝</a>
+								<a href="/PeopleIntroduction/paijiu">温州牌九</a>
+							</div>
+							<div id="js_data"></div>
+							<p><input type="hidden" value="0" id="casino_nav"></p>
+							<p class="cls"></p>
+							<h5>竞咪百家乐</h5>
+							<p><img src="Resourse/Home/images/casino/mib1.jpg" alt="" /></p>
+							<p class="cls"></p>
+							
+							<h5>下注模式：</h5>
+							<p>
+								1.竞咪（LED）百家乐有“旁观下注”和“进桌下注”两种方式；<br>
+								2.当桌台为空（人数为0）时，玩家只能选择进桌下注，进桌下注有最低VIP 额度, 低于此额度的只能选择旁观下注；<br>
+								3.当桌台人数已满（7人）时，玩家只能选择旁观下注，旁观下注玩家所在桌台，如果其他进桌玩家都离开了。若此局旁观 下注的玩家有下注，那么此局结算完之后旁观玩家会被踢出桌台；若此局旁观玩家没有下注，会立刻被踢出桌台；<br>
+								4.其他情况玩家可以自由选择旁观下注或者进桌下注。 
+							</p>
+							
+							<h5>下注限红：</h5>
+							<p>
+								1.进桌下注：下注限红是游戏桌台定义的限红，不受个人限红的限制；<br>
+								2.旁观下注：下注限红是玩家的个人限红与对应不同玩法限红的交集。<br>
+							</p>
+							
+							<h5>咪牌（竞咪）：</h5>
+							<p>
+								1.只有“进桌下注”的玩家才有咪牌资格；<br>
+								2.不同玩家下注庄/闲，下注金额多的玩家获得对应庄/闲的咪牌资格；<br>
+								3.不同玩家下注庄/闲相同的金额，先下注成功的玩家拥有咪庄/闲家牌的资格；<br>
+								4.同一玩家，如果一局中下注庄和闲的金额一样，那么默认该玩家咪闲家牌；（前提：其他玩家没有下注庄/闲，或者下注金额没有高于这一玩家）
+							</p>
+							
+							<h5>其他功能：</h5>
+							<p>
+								1.等我：在下注倒计时内，玩家可以点击“等我”按键，请求荷官延长下注时间；<br>
+								2.开牌：<br>
+									&nbsp;&nbsp;&nbsp;&nbsp; a. 只有进座下注的玩家才有开牌的权限；<br>
+									&nbsp;&nbsp;&nbsp;&nbsp; b. 当玩家点击“开牌”申请荷官开牌时,荷官会根据桌面上玩家投注情况决定是否直接开牌或提示其他玩家继续下注。<br>
+							</p>
+							
+							<br />
+							<p>以上游戏规则为通用规则，具体情况视各游戏平台而论，如有需要请查阅选择的游戏厅规则说明，最终解释权归游戏平台和博天堂所有。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- <>底部区域 -->
+	<!-- <>底部区域 -->
+	<include file="Common:foot" />
+    </div>
+    <script src="/Resourse/Home/js/app/about.js" type="text/javascript"></script>
+</body>
+</html>

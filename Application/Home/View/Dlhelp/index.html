@@ -1,0 +1,50 @@
+<include file="Common:head" /> 
+<body class="body-bg">
+	<div class="loader">
+        <div class="loader-inner ball-pulse-rise">
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+    <div class="JszContent" style="display: none">
+	<!-- <>顶部区域 -->
+	<include file="Common:menu" />
+	
+	<!-- <>主体容器区域 -->
+	<div class="container">
+		<div class="mid clearfix">
+			<!-- 关于我们 -->
+			<div class="pg__brandHistory-list mt--30 pb--60 clearfix">
+				<div class="main clearfix mt--10">
+					<!-- //侧边 -->
+					<div class="sidebar fl" id="J__sidebar">
+                        <a <if condition="$menu eq 'Zchelp'">class="on current"</if> href="/Zchelp">如何注册<i></i></a>
+                        <a <if condition="$menu eq 'Swhelp'">class="on current"</if>  href="/Swhelp">如何试玩<i></i></a>
+                        <a <if condition="$menu eq 'Ckhelp'">class="on current"</if>  href="/Ckhelp">存款问题<i></i></a>
+                        <a <if condition="$menu eq 'Qkhelp'">class="on current"</if>  href="/Qkhelp">取款问题<i></i></a>
+                        <a <if condition="$menu eq 'Dlhelp'">class="on current"</if>  href="/Dlhelp">登录问题<i></i></a>
+                        <a <if condition="$menu eq 'Gjxzhelp'">class="on current"</if>  href="/Gjxzhelp">工具下载<i></i></a>
+                    </div>
+					<!-- //列表 -->
+					<div class="brandHistory_list fr">
+						<div class="pg__others-panel">
+						    <h1 class="mt--30">忘记账号/密码了怎么办？</h1>
+					    	<h3 class="mt--30">请您联系在线客服，提供注册时填写的基本信息，为了保证您的账号信息安全，我们会通过您绑定的联系电话与您致电核实，核实无误帮助您找回账号/密码。</h3>
+					     	<h1 class="mt--30">怎么总是进不去网站或者平台？</h1>
+							<h3 class="mt--30">建议您使用IE/谷歌/火狐浏览器进入我们网站。不要使用360/搜狗/百度等国内浏览器，并在关闭杀毒软件后尝试进入。如果仍然无法进入网站或者平台，您可以 联系在线客服获得帮助。</h3>
+					     	<h1 class="mt--30">在网吧可以游戏吗？</h1>
+							<h3 class="mt--30">网吧或者酒店这样的公共区域，会对网络造成限制，为了您的个人信息安全，请您在家中游戏避免在公共场合游戏。</h3>
+					     
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- <>底部区域 -->
+	<!-- <>底部区域 -->
+	<include file="Common:foot" />
+    </div>
+    <script src="/Resourse/Home/js/app/about.js" type="text/javascript"></script>
+</body>
+</html>

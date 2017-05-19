@@ -1,0 +1,672 @@
+<include file="Common:head" />
+<body class="body-bg">
+    <div class="loader">
+        <div class="loader-inner ball-pulse-rise">
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+    <div class="JszContent" style="display: none">
+	<!-- <>顶部区域 -->
+	<include file="Common:menu" />
+	
+	<!-- <>主体容器区域 -->
+	<div class="container">
+		<div class="mid pb--50 clearfix">
+			<!-- 资金管理(我要存款) -->
+			<include file="Common::memberMenu" />
+			
+			<div class="pM__panel mt--10">
+				<div class="proxyM__panel-tabLink">
+					<div class="head__nav clearfix">
+						<div class="navList ml--10 fl">
+							<a <if condition="$type eq 1">class="on"</if> style="cursor: pointer" data-field="rechargeContent">我要存款</a>
+							<a <if condition="$type eq 2">class="on"</if> data-field="withDrawContent" style="cursor: pointer">我要取款</a>
+							<a <if condition="$type eq 3">class="on"</if> data-field="transferContent" style="cursor: pointer">我要转账</a>
+							<a href="/WashCode">我要洗码</a>
+						</div>
+					</div>
+					<div id="rechargeContent" <if condition="$type eq 1">style="display:block"<else/>style="display:none"</if> >
+                        <div class="sub__menu clearfix">
+                            <div class="menuList ml--10 fl">
+								<php>
+									if($showThirdRecharge){
+								</php>
+                                <a class="selected" data-method="th" style="cursor: pointer">网银在线一 <i class="btn_view" style="background: #ffaa55; font-size: 12px; padding: 0 5px; line-height: 19px;">推荐</i></a>
+                                <a data-method="wx" style="cursor: pointer">微信扫码一</a>
+								<a data-method="zhf" style="cursor: pointer">网银在线二 </a>
+								<a data-method="thwx" style="cursor: pointer">微信扫码二</a>
+								<!--<a data-method="zfb" style="cursor: pointer">支付宝</a>-->
+								<a data-method="qq" style="cursor: pointer">QQ支付</a>
+								<a data-method="thzfb" style="cursor: pointer">支付宝</a>
+								<!--<a data-method="bank" style="cursor: pointer">网银转账</a>-->
+								<php>
+									}else{
+								</php>
+								<a data-method="th" style="cursor: pointer">网银在线一 <i class="btn_view" style="background: #ffaa55; font-size: 12px; padding: 0 5px; line-height: 19px;">推荐</i></a>
+								<a data-method="zhf" style="cursor: pointer">网银在线二</a>
+								<a data-method="wx" style="cursor: pointer">微信扫码一</a>
+								<a data-method="thwx" style="cursor: pointer">微信扫码二</a>
+								<a data-method="qq" style="cursor: pointer">QQ支付</a>
+								<a data-method="thzfb" style="cursor: pointer">支付宝</a>
+								<!--<a class="selected" data-method="bank" style="cursor: pointer">网银转账<i class="btn_view" style="background: #ffaa55; font-size: 12px; padding: 0 5px; line-height: 19px;">推荐</i></a>-->
+								<php>
+									}
+								</php>
+                            </div>
+                        </div>
+						<div class="panel-form">
+                            <php>
+                                $arr = explode("-",$money);
+                            </php>
+                            <h3 class="fs15 mt--20 ml--20">联系电话　<i class="ff-hv">{$tel}</i><i class="c--999 fs12 ml--20" id="illustrate">(如电话不正确，请暂停存款并立即联系电话客服，我们将第一时间为您处理！)</i></h3>
+                            <div class="mt--30">
+                                <div class="row">
+                                    <span class="lbl">充值金额</span>
+                                    <input class="ipt-text" type="text" name="rechargeMoney" placeholder="请输入存款金额"/> <i class="c--999 ml--10">单笔金额为<span class="c-fc-red01" id="isNotWx">50~100000</span>元</i>
+                                </div>
+                                <div class="error_tips" style="padding-left:90px;color: #f57239">
+                                    <span class="errorMsg"></span>
+                                </div>
+								<div id="payContent">
+									
+								</div>
+                                
+                                <div class="row">
+                                    <button class="btn_view mt--20" data-method='sure'>进入支付</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="withDrawContent" <if condition="$type eq 2">style="display:block"<else/>style="display:none"</if>>
+                        <input type="hidden" name="appkey" value="{$appKey}" />
+                    	<input type="hidden" name="account" value="{$arr[0]}" />
+						<div class="panel-form">
+                            <div class="mt--10">
+								<div class="row">
+								<blockquote class="layui-elem-quote">提款要求：1、银行卡绑定<span style="color:red">6</span>小时后才能进行提款。2、消费必须大于充值金额的<span style="color:red">30%</span>。3、充值<span style="color:red">30</span>分钟后才能进行提款。</blockquote>
+								</div>
+                                <div class="row">
+                                    <span class="lbl">可用额度</span>
+                                    <i class="ff-hv">
+										<input class="ipt-text" name="financeMoneyName" disabled type="text" value="{$arr[0]}" />
+									</i>
+                                </div>
+                                <div class="row">
+                                    <span class="lbl">提款金额</span>
+                                    <input class="ipt-text" type="text" name="real_money" value="" placeholder="请输入取现金额"/><i class="c--999 ml--10">单笔金额为<span id="withdrawmin">100</span>~<span id="withdrawmax">49999</span>元,当天前五次提款免收手续费，当天提款超过五次每次按提款金额1%收取手续费，最高25元</i>
+                                </div>
+                                <div class="row">
+                                    <span class="lbl fl">您的银行</span>
+                                    <div class="bank__name-list clearfix" style="padding: 0 100px 0 94px;">
+										<php>
+											if(!empty($bankList)){
+											foreach($bankList as $key=>$item){
+											$bnum = $item['id'];
+											$bank = C('BANKNAME')[$item['bank_id']];
+											$bnums = C('bankimg')[$item['bank_id']];
+											$card = substr($item['account_num'],0,4)." **** ".substr($item['account_num'],8,4)." ****";
+											$realname = mb_substr($item['realname'],0,1)."xx";
+										</php>
+										<a data-field="{$item['id']}" <if condition="$item['moren'] eq 1">class="selected withdrawBank"<else/>class="withdrawBank"</if> href="javascript:;" style="margin-top: 0;"><i class="i{$bnums}"></i>{$bank}</a>
+										<php>
+											}}
+										</php>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <span class="lbl">资金密码</span>
+                                    <input class="ipt-text" type="password" name="accPwd" id="accPwd" value=""/>
+                                </div>
+                                <div class="row">
+                                    <span class="lbl">密保问题</span>
+									<php>
+										if(!empty($question)){
+									</php>
+                                    <input class="ipt-text" type="text" readonly value="{$question}?" />
+									<php>
+										}else{
+									</php>
+									<input class="ipt-text" type="text" readonly value="请先设定密保问题" />
+									<php>
+										}
+									</php>
+                                </div>
+                                <div class="row">
+                                    <span class="lbl">问题答案</span>
+                                    <input class="ipt-text" type="text" name="answer" id="answer" placeholder="输入问题答案"/>
+                                </div>
+								<!--<div class="row">            
+									<span class="lbl">电话号码</span>            
+									<input class="ipt-text" type="text" name="withDrawTelphone" placeholder="输入绑定的手机号码">       
+								</div>
+								<div class="row">            
+									<span class="lbl">验证码</span>            
+									<input class="ipt-text" type="text" name="withDrawVcode">            
+									<button class="btn_view ml--10" data-method="GetWithdrawMessageCode" style="background: none; color: #ff7800; padding: 0;">获取验证码</button>        
+								</div>-->
+								<div class="error_tips" style="padding-left:90px;color: #f57239">
+                                    <span class="errorMsg"></span>
+                                </div>
+                                <div class="row">
+                                    <button class="btn_view mt--20" data-method='sub'>提交</button>
+                                </div>
+                            </div>
+					    </div>
+                    </div>
+
+					<div id="transferContent" <if condition="$type eq 3">style="display:block"<else/>style="display:none"</if>>
+						<div class="panel-form">
+							<div class="mt--10">
+								<div class="row" style="padding-left:44px;">
+									<span class="fs18">总账户：<i class="c--f35c19 ff-hv financeMoney">{$arr[0]}</i></span>
+									<span class="fs18 ml--30">分红钱包：<i class="c--f35c19 ff-hv wallet_account">{$arr[1]}</i></span>
+									
+									<div class="foot__menu clearfix" style="border-top:0 none;padding-left:0;">
+										<div class="item i1" style="background:#eaf5ff;">
+											<h4>AG真人</h4><label class="ff-hv agAccount">{$agAccount}</label>
+										</div>
+										<div class="item i2" style="background:#fff4ea;">
+											<h4>EBET真人</h4><label class="ff-hv ebetAccount">{$ebetAccount}</label>
+										</div>
+										<div class="item i3" style="background:#eaffee;">
+											<h4>MG电游</h4><label class="ff-hv mgAccount">{$mgAccount}</label>
+										</div>
+										<div class="item i4" style="background:#eaf5ff;">
+											<h4>PT电游</h4><label class="ff-hv chessAccount">{$ptAccount}</label>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<span class="lbl">转移从</span>
+									<select class="select-control" name="fromAccount" style="height: 36px; min-width: 273px;">
+										<option value="1">主账户</option>
+										<option value="2">MG账户</option>
+										<option value="3">eBET账户</option>
+										<option value="4">AG账户</option>
+										<option value="5">PT账户</option>
+										<php>
+											if($share_switch==1){
+										</php>
+										<option value="6">分红钱包</option>
+										<php>
+											}
+										</php>
+									</select>
+								</div>
+								<div class="row">
+									<span class="lbl">转移从</span>
+									<select class="select-control" name="toAccount" style="height: 36px; min-width: 273px;">
+										<option value="1">主账户</option>
+										<option value="2">MG账户</option>
+										<option value="3">eBET账户</option>
+										<option value="4">AG账户</option>
+										<option value="5">PT账户</option>
+										<php>
+											if($share_switch==1){
+										</php>
+										<option value="6">分红钱包</option>
+										<php>
+											}
+										</php>
+									</select>
+								</div>
+								<div class="row">
+									<span class="lbl">转移金额</span>
+									<input class="ipt-text" type="text" name="transMoney" />
+								</div>
+								<div class="row">
+									<span class="lbl">资金密码</span>
+									<input class="ipt-text" type="password" name="fundcode" />
+								</div>
+								<div class="error_tips" style="padding-left:90px;color: #f57239">
+                                    <span class="errorMsg"></span>
+                                </div>
+								<div class="row">
+									<button class="btn_view mt--20" data-method="transferSub">确定</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- <>底部区域 -->
+	<input type="hidden" name="min" value="50" />
+    <input type="hidden" name="max" value="" />
+  	<input type="hidden" name="type" value="4" />
+	<include file="Common:foot" /> 
+    <script src="/Resourse/Home/js/plugins/datepicker/datepicker.js"></script> 
+	<script src="/Resourse/Home/js/plugins/clipboard/clipboard.min.js"></script> 
+    <script src="/Resourse/Home/js/app/finance.js" type="text/javascript"></script>
+    </div>
+
+	<script type="text/javascript">
+		$(function(){
+			var show = "{$showThirdRecharge}"
+			var type = "{$type}"
+			if(type==2)
+			{
+                index.CheckUserBank()
+			}
+			if(show)
+			{
+				var $o = $('#payContent');
+                $o.html(tpl('#pay_th'));
+                $min.val(50);
+                $max.val("");
+                $type.val(4);
+                $rechargeMoney.val("");
+                $("#isNotWx").html('50~100000')
+                $(".error_tips").hide()
+                index.SelThBank()
+			}
+			else
+			{
+				$.post('/SearchBankInfo',function(data){
+                    $('#payContent').html(tpl('#pay_bank',{rows:data}));
+                    index.InitCopy()
+                    $doc.on("click", '.rechargebank', function(e){
+                        $(".rechargebank").removeClass("selected")
+                        $(this).addClass("selected")
+                        rechargebankId = $(this).attr("data-field")
+                    })
+                },'json')
+                $min.val(50);
+                $max.val("");
+                $type.val(10);
+                $rechargeMoney.val("");
+                $("#isNotWx").html('50~1000000')
+                $(".error_tips").hide()
+			}
+		})
+	</script>
+	<!--通汇充值-->
+	<script type="text/template" id="pay_th">
+		<div class="row">
+			<span class="lbl fl pt--10">您的银行</span>
+			<!-- 银行支付 -->
+			<div class="bank__name-list clearfix" style="padding: 0 100px 0 94px;">
+				<a class="bank" href="javascript:;" data-field="ICBC"><i class="i1"></i>中国工商银行</a>
+				<a class="bank" href="javascript:;" data-field="ABC"><i class="i2"></i>中国农业银行</a>
+				<a class="bank" href="javascript:;" data-field="CCB"><i class="i3"></i>中国建设银行</a>
+				<a class="bank" href="javascript:;" data-field="ECITIC"><i class="i4"></i>中信银行</a>
+				<a class="bank" href="javascript:;" data-field="CMBCS"><i class="i5"></i>民生银行</a>
+				<a class="bank" href="javascript:;" data-field="CMBC"><i class="i6"></i>招商银行</a>
+				<a class="bank" href="javascript:;" data-field="BOCOM"><i class="i7"></i>中国交通银行</a>
+				<a class="bank" href="javascript:;" data-field="CGB"><i class="i8"></i>广东发展银行</a>
+				<a class="bank" href="javascript:;" data-field="CIB"><i class="i10"></i>兴业银行</a>
+				<a class="bank" href="javascript:;" data-field="CEBBANK"><i class="i11"></i>光大银行</a>
+				<a class="bank" href="javascript:;" data-field="PINGAN"><i class="i12"></i>平安银行</a>
+				<a class="bank" href="javascript:;" data-field="BOC"><i class="i13"></i>中国银行</a>
+				<a class="bank" href="javascript:;" data-field="HXB"><i class="i14"></i>华夏银行</a>
+				<a class="bank" href="javascript:;" data-field="PSBC"><i class="i15"></i>邮政储蓄银行</a>
+				<a class="bank" href="javascript:;" data-field="SPDB"><i class="i17"></i>上海浦东发展银行</a>
+				<a class="bank" href="javascript:;" data-field="BOS"><i class="i17"></i>上海银行</a>
+			</div>
+		</div>
+	</script>
+
+	<!--智慧付充值-->
+	<script type="text/template" id="pay_zhf">
+		<div class="row">
+			<span class="lbl fl pt--10">您的银行</span>
+			<!-- 银行支付 -->
+			<div class="bank__name-list clearfix" style="padding: 0 100px 0 94px;">
+				<a class="bank" href="javascript:;" data-field="ICBC"><i class="i1"></i>中国工商银行</a>
+				<a class="bank" href="javascript:;" data-field="ABC"><i class="i2"></i>中国农业银行</a>
+				<a class="bank" href="javascript:;" data-field="CCB"><i class="i3"></i>中国建设银行</a>
+				<a class="bank" href="javascript:;" data-field="ECITIC"><i class="i4"></i>中信银行</a>
+				<a class="bank" href="javascript:;" data-field="CMBC"><i class="i5"></i>民生银行</a>
+				<a class="bank" href="javascript:;" data-field="CMB"><i class="i6"></i>招商银行</a>
+				<a class="bank" href="javascript:;" data-field="BCOM"><i class="i7"></i>中国交通银行</a>
+				<a class="bank" href="javascript:;" data-field="GDB"><i class="i8"></i>广东发展银行</a>
+				<a class="bank" href="javascript:;" data-field="CIB"><i class="i10"></i>兴业银行</a>
+				<a class="bank" href="javascript:;" data-field="CEBB"><i class="i11"></i>光大银行</a>
+				<a class="bank" href="javascript:;" data-field="SPABANK"><i class="i12"></i>平安银行</a>
+				<a class="bank" href="javascript:;" data-field="BOC"><i class="i13"></i>中国银行</a>
+				<a class="bank" href="javascript:;" data-field="HXB"><i class="i14"></i>华夏银行</a>
+				<a class="bank" href="javascript:;" data-field="PSBC"><i class="i15"></i>邮政储蓄银行</a>
+				<a class="bank" href="javascript:;" data-field="SPDB"><i class="i17"></i>上海浦东发展银行</a>
+				<a class="bank" href="javascript:;" data-field="SHB"><i class="i17"></i>上海银行</a>
+			</div>
+		</div>
+	</script>
+
+	<!--通汇微信支付-->
+	<script type="text/template" id="pay_th_wx">
+		<div class="row">
+			<span class="lbl fl pt--10">支付方式</span>
+			<!-- 银行支付 -->
+			<div class="bank__name-list clearfix" style="padding: 0 100px 0 94px;">
+			<a class="selected bank" href="javascript:;" data-field="WEIXIN"><i class="wepay"></i>微信支付</a>
+			</div>
+		</div>
+	</script>
+
+	<!--微信支付-->
+	<script type="text/template" id="pay_wx">
+		<div class="row">
+			<span class="lbl fl pt--10">支付方式</span>
+			<!-- 银行支付 -->
+			<div class="bank__name-list clearfix" style="padding: 0 100px 0 94px;">
+			<a class="selected bank" href="javascript:;" data-field="weixin_scan"><i class="wepay"></i>微信支付</a>
+			</div>
+		</div>
+	</script>
+
+
+	<!--QQ支付-->
+	<script type="text/template" id="pay_qq">
+		<div class="row">
+			<span class="lbl fl pt--10">支付方式</span>
+			<!-- 银行支付 -->
+			<div class="bank__name-list clearfix" style="padding: 0 100px 0 94px;">
+			<a class="selected bank" href="javascript:;" data-field="tenpay_scan"><i class="wepay"></i>QQ支付</a>
+			</div>
+		</div>
+	</script>
+	
+
+	<!--支付宝支付-->
+	<script type="text/template" id="pay_alipay">
+		<div class="row">
+			<span class="lbl fl pt--10">支付方式</span>
+			<!-- 银行支付 -->
+			<div class="bank__name-list clearfix" style="padding: 0 100px 0 94px;">
+			<a class="selected bank" href="javascript:;" data-field="alipay_scan"><i class="alipay"></i>支付宝</a>
+			</div>
+		</div>
+	</script>
+
+	<!--通汇支付宝支付-->
+	<script type="text/template" id="pay_th_alipay">
+		<div class="row">
+			<span class="lbl fl pt--10">支付方式</span>
+			<!-- 银行支付 -->
+			<div class="bank__name-list clearfix" style="padding: 0 100px 0 94px;">
+			<a class="selected bank" href="javascript:;" data-field="alipay_scan"><i class="alipay"></i>支付宝</a>
+			</div>
+		</div>
+	</script>
+	
+	<!--网银支付-->
+	<script type="text/template" id="pay_bank">
+		<div class="row">
+			<span class="lbl">存款人</span>
+			<input class="ipt-text" type="text" value="{$trueName}" name="depositor">
+		</div>
+		<div class="row">
+			<span class="lbl fl pt--10">您的银行</span>
+			<!-- 银行支付 -->
+			<div class="bank__name-list clearfix" style="padding: 0 100px 0 94px;">
+				<#
+					for(var o in rows.banklist){
+				#>
+				<a class="rechargebank" href="javascript:;" data-field="<#=o#>"><i class="i<#=rows.bankimg[o]#>"></i><#=rows.banklist[o]#></a>
+				<#
+					}
+				#>
+			</div>
+		</div>
+	</script>
+
+	<!--网银支付订单详情-->
+	<script type="text/template" id="pay_bank_order">
+		<form class="layui-form" method="post">
+			<div class="layui-form-item">
+				<label class="layui-form-label">温馨提示</label>
+				<div class="layui-input-block">
+				<blockquote class="layui-elem-quote">进行网银转账充值时请务必填写以下信息，并在30分钟内转账才能准确到账!</blockquote>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">转账银行</label>
+				<div class="layui-input-inline">
+				<blockquote class="layui-elem-quote"><i class="i<#=rows.bankimage#>"></i><#=rows.bankname#></blockquote>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">转账卡号</label>
+				<div class="layui-input-inline">
+				<blockquote class="layui-elem-quote">
+					<#=rows.bankNumber#>
+				</blockquote>
+				</div>
+				<label><button type="button" class="layui-btn layui-btn-normal layui-btn-big copybankcard" data-clipboard-text="<#=rows.bankNumber#>">复制</button></label>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">转账用户</label>
+				<div class="layui-input-inline">
+				<blockquote class="layui-elem-quote"><#=rows.bankUsername#></blockquote>
+				</div>
+				<label><button type="button" class="layui-btn layui-btn-normal layui-btn-big copybankUser" data-clipboard-text="<#=rows.bankUsername#>">复制</button></label>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">转账附言</label>
+				<div class="layui-input-inline">
+				<blockquote class="layui-elem-quote"><#=rows.fuyan#></blockquote>
+				</div>
+				<label><button type="button" class="layui-btn layui-btn-normal layui-btn-big copyFuyan" data-clipboard-text="<#=rows.fuyan#>">复制</button></label>
+			</div>
+			<div class="layui-form-item">
+				<div class="layui-input-block">
+				<button class="layui-btn" lay-submit lay-filter="rechargeBankBtn">登录网银转账</button>
+				</div>
+			</div>
+		</form>
+	</script>
+
+	<!--通汇订单详情-->
+	<script type="text/template" id="pay_order">
+		<form class="layui-form" action="/pay" name="payInfo" method="post" target="_blank">
+			<#for(var i = 0; i < rows.length; i++){#>
+			<div class="layui-form-item">
+				<label class="layui-form-label">充值银行</label>
+				<div class="layui-input-block">
+				<blockquote class="layui-elem-quote"><#=rows[i].bankName#></blockquote>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">充值金额</label>
+				<div class="layui-input-block">
+				<blockquote class="layui-elem-quote"><#=rows[i].orderAmount#></blockquote>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">订单编号</label>
+				<div class="layui-input-block">
+				<blockquote class="layui-elem-quote"><#=rows[i].orderNo#></blockquote>
+				</div>
+			</div>
+			<input type="hidden" name="order_no" value="<#=rows[i].orderNo#>" />
+			<input type="hidden" name="order_amount" value="<#=rows[i].orderAmount#>" />
+			<input type="hidden" name="order_time" value="<#=rows[i].currentDate#>" />
+			<input type="hidden" name="input_charset" maxlength="6" value="<#=rows[i].CHARSET#>"  />
+			<input type="hidden" name="notify_url" maxlength="6" value="<#=rows[i].BACK_NOTIFY_URL#>"  />
+			<input type="hidden" name="return_url" maxlength="30" value="<#=rows[i].PAGE_NOTIFY_URL#>"  />
+			<input type="hidden" name="pay_type" maxlength="10" value="<#=rows[i].PAY_TYPE#>"  />
+			<input type="hidden" name="bank_code" maxlength="8" value="<#=rows[i].bankCode#>"  />
+			<input type="hidden" name="merchant_code" value="<#=rows[i].MER_NO#>" readonly />
+			<input type="hidden" name="product_name" value="<#=rows[i].productName#>"  />
+			<input type="hidden" name="product_num" value="<#=rows[i].productNum#>"   />
+			<input type="hidden" name="req_referer" value="<#=rows[i].referer#>"   />
+			<input type="hidden" name="customer_ip" value="<#=rows[i].customerIp#>"/>
+			<input type="hidden" name="customer_phone" value="<#=rows[i].customerPhone#>" />
+			<input type="hidden" name="receive_address"  value="<#=rows[i].receiveAddr#>"/>
+			<input type="hidden" name="sub_url" value="<#=rows[i].SUB_URL#>"/>
+			<#}#>
+			<div class="layui-form-item">
+				<div class="layui-input-block">
+				<button class="layui-btn" lay-submit lay-filter="rechargeBtn">充  值</button>
+				</div>
+			</div>
+		</form>
+	</script>
+
+	<!--通汇微信订单详情-->
+	<script type="text/template" id="thwx_pay_order">
+		<form class="layui-form" action="/thwxpay" name="payInfo" method="post" target="_blank">
+			<#for(var i = 0; i < rows.length; i++){#>
+			<div class="layui-form-item">
+				<label class="layui-form-label">充值方式</label>
+				<div class="layui-input-block">
+				<blockquote class="layui-elem-quote">微信充值</blockquote>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">充值金额</label>
+				<div class="layui-input-block">
+				<blockquote class="layui-elem-quote"><#=rows[i].orderAmount#></blockquote>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">订单编号</label>
+				<div class="layui-input-block">
+				<blockquote class="layui-elem-quote"><#=rows[i].orderNo#></blockquote>
+				</div>
+			</div>
+			<input type="hidden" name="order_no" value="<#=rows[i].orderNo#>" />
+			<input type="hidden" name="order_amount" value="<#=rows[i].orderAmount#>" />
+			<input type="hidden" name="order_time" value="<#=rows[i].currentDate#>" />
+			<input type="hidden" name="input_charset" maxlength="6" value="<#=rows[i].CHARSET#>"  />
+			<input type="hidden" name="notify_url" maxlength="6" value="<#=rows[i].BACK_NOTIFY_URL#>"  />
+			<input type="hidden" name="return_url" maxlength="30" value="<#=rows[i].PAGE_NOTIFY_URL#>"  />
+			<input type="hidden" name="pay_type" maxlength="10" value="<#=rows[i].PAY_TYPE#>"  />
+			<input type="hidden" name="bank_code" maxlength="8" value="<#=rows[i].bankCode#>"  />
+			<input type="hidden" name="merchant_code" value="<#=rows[i].MER_NO#>" readonly />
+			<input type="hidden" name="product_name" value="<#=rows[i].productName#>"  />
+			<input type="hidden" name="product_num" value="<#=rows[i].productNum#>"   />
+			<input type="hidden" name="req_referer" value="<#=rows[i].referer#>"   />
+			<input type="hidden" name="customer_ip" value="<#=rows[i].customerIp#>"/>
+			<input type="hidden" name="customer_phone" value="<#=rows[i].customerPhone#>" />
+			<input type="hidden" name="receive_address"  value="<#=rows[i].receiveAddr#>"/>
+			<input type="hidden" name="sub_url" value="<#=rows[i].SUB_URL#>"/>
+			<#}#>
+			<div class="layui-form-item">
+				<div class="layui-input-block">
+				<button class="layui-btn" lay-submit lay-filter="rechargeBtn">充  值</button>
+				</div>
+			</div>
+		</form>
+	</script>
+
+	<!--微信订单详情-->
+	<script type="text/template" id="wx_pay_order">
+		<form class="layui-form" method="post">
+			<div class="layui-form-item">
+				<label class="layui-form-label">二维码扫描</label>
+				<div class="layui-input-block">
+				<blockquote class="layui-elem-quote"><img style="width:200px" src="<#=rows#>" /></blockquote>
+				</div>
+			</div>
+		</form>
+	</script>
+
+	<!--QQ订单详情-->
+	<script type="text/template" id="qq_pay_order">
+		<form class="layui-form" method="post">
+			<div class="layui-form-item">
+				<label class="layui-form-label">二维码扫描</label>
+				<div class="layui-input-block">
+				<blockquote class="layui-elem-quote"><img style="width:200px" src="<#=rows#>" /></blockquote>
+				</div>
+			</div>
+		</form>
+	</script>
+
+	<!--支付宝订单详情-->
+	<script type="text/template" id="alipy_pay_order">
+		<form class="layui-form" method="post">
+			<div class="layui-form-item">
+				<label class="layui-form-label">二维码扫描</label>
+				<div class="layui-input-block">
+				<blockquote class="layui-elem-quote"><img style="width:200px" src="<#=rows#>" /></blockquote>
+				</div>
+			</div>
+		</form>
+	</script>
+
+	<!--通汇支付宝订单详情-->
+	<script type="text/template" id="thalipy_pay_order">
+		<form class="layui-form" action="/thalipypay" name="payInfo" method="post" target="_blank">
+			<#for(var i = 0; i < rows.length; i++){#>
+			<div class="layui-form-item">
+				<label class="layui-form-label">充值方式</label>
+				<div class="layui-input-block">
+				<blockquote class="layui-elem-quote">支付宝充值</blockquote>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">充值金额</label>
+				<div class="layui-input-block">
+				<blockquote class="layui-elem-quote"><#=rows[i].orderAmount#></blockquote>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">订单编号</label>
+				<div class="layui-input-block">
+				<blockquote class="layui-elem-quote"><#=rows[i].orderNo#></blockquote>
+				</div>
+			</div>
+			<input type="hidden" name="order_no" value="<#=rows[i].orderNo#>" />
+			<input type="hidden" name="order_amount" value="<#=rows[i].orderAmount#>" />
+			<input type="hidden" name="order_time" value="<#=rows[i].currentDate#>" />
+			<input type="hidden" name="input_charset" maxlength="6" value="<#=rows[i].CHARSET#>"  />
+			<input type="hidden" name="notify_url" maxlength="6" value="<#=rows[i].BACK_NOTIFY_URL#>"  />
+			<input type="hidden" name="return_url" maxlength="30" value="<#=rows[i].PAGE_NOTIFY_URL#>"  />
+			<input type="hidden" name="pay_type" maxlength="10" value="<#=rows[i].PAY_TYPE#>"  />
+			<input type="hidden" name="bank_code" maxlength="8" value="<#=rows[i].bankCode#>"  />
+			<input type="hidden" name="merchant_code" value="<#=rows[i].MER_NO#>" readonly />
+			<input type="hidden" name="product_name" value="<#=rows[i].productName#>"  />
+			<input type="hidden" name="product_num" value="<#=rows[i].productNum#>"   />
+			<input type="hidden" name="req_referer" value="<#=rows[i].referer#>"   />
+			<input type="hidden" name="customer_ip" value="<#=rows[i].customerIp#>"/>
+			<input type="hidden" name="customer_phone" value="<#=rows[i].customerPhone#>" />
+			<input type="hidden" name="receive_address"  value="<#=rows[i].receiveAddr#>"/>
+			<input type="hidden" name="sub_url" value="<#=rows[i].SUB_URL#>"/>
+			<#}#>
+			<div class="layui-form-item">
+				<div class="layui-input-block">
+				<button class="layui-btn" lay-submit lay-filter="rechargeBtn">充  值</button>
+				</div>
+			</div>
+		</form>
+	</script>
+
+	<!--智汇付订单详情-->
+	<script type="text/template" id="zhf_pay_order">
+		<form class="layui-form" action="/zhfpay" name="payInfo" method="post" target="_blank">
+			<#for(var i = 0; i < rows.length; i++){#>
+			<div class="layui-form-item">
+				<label class="layui-form-label">充值银行</label>
+				<div class="layui-input-block">
+				<blockquote class="layui-elem-quote"><#=rows[i].bankName#></blockquote>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">充值金额</label>
+				<div class="layui-input-block">
+				<blockquote class="layui-elem-quote"><#=rows[i].orderAmount#></blockquote>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">订单编号</label>
+				<div class="layui-input-block">
+				<blockquote class="layui-elem-quote"><#=rows[i].orderNo#></blockquote>
+				</div>
+			</div>
+			<input type="hidden" name="order_no" value="<#=rows[i].orderNo#>" />
+			<input type="hidden" name="order_amount" value="<#=rows[i].orderAmount#>" />
+			<input type="hidden" name="bank" value="<#=rows[i].bank#>" />
+			<#}#>
+			<div class="layui-form-item">
+				<div class="layui-input-block">
+				<button class="layui-btn" lay-submit lay-filter="rechargeBtn">充  值</button>
+				</div>
+			</div>
+		</form>
+	</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<include file="Common:head" /> 
+<body class="body-bg">
+	<div class="loader">
+        <div class="loader-inner ball-pulse-rise">
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+    <div class="JszContent" style="display: none">
+	<!-- <>顶部区域 -->
+	<include file="Common:menu" />
+	
+	<!-- <>主体容器区域 -->
+	<div class="container">
+		<div class="mid clearfix">
+			<!-- 关于我们 -->
+			<div class="pg__brandHistory-list mt--30 pb--60 clearfix">
+				<div class="main clearfix mt--10">
+					<!-- //侧边 -->
+					<div class="sidebar fl" id="J__sidebar">
+						<h2 class="hdTit">游戏介绍</h2>
+						<a <if condition="$menu eq 'PeopleIntroduction'">class="on current"</if> href="/PeopleIntroduction">真人娱乐<i></i></a>
+						<a <if condition="$menu eq 'ComputerIntroduction'">class="on current"</if> href="/ComputerIntroduction">电子游戏<i></i></a>
+						<a <if condition="$menu eq 'CpIntroduction'">class="on current"</if> href="/CpIntroduction">彩票投注<i></i></a>
+                        <!--<a <if condition="$menu eq 'QipaiIntroduction'">class="on current"</if> href="/QipaiIntroduction">棋牌游戏<i></i></a>
+                        <a <if condition="$menu eq 'TiyuIntroduction'">class="on current"</if> href="/TiyuIntroduction">体育投注<i></i></a>-->
+					</div>
+					<!-- //列表 -->
+					<style type="text/css">
+						.casino_nav a{background:#fc8e5d;display: block;width: 108px;height: 33px;text-align: center;color: #fff;line-height: 33px;border: solid 1px #f35c19;float: left;margin-right: -1px;margin-bottom: -1px;}
+						.casino_nav a:hover,.casino_nav a.cur{background:#f35c19;}
+						.casino .cas_vid{
+							display: block;float: left;margin-right: 22px;width: 196px;color: #333;text-align: center;
+						}
+						.casino .cas_vid img{margin-bottom:0;}
+						.casino table tr th{background:#aaa;color:#fff;text-align:center;font-weight:700;padding:5px 0;}
+						.casino table tr td{background:#f8f8f8;border-bottom:1px solid #eee;color:#333;text-align:center;padding:5px 0;}
+						.br_box{padding:20px 35px;margin-top:10px;}
+						.br_box .box2{display:inline-block;width:203px; margin-right:60px;}
+					</style>
+					<div class="brandHistory_list fr">
+						<div class="pg__others-panel casino">
+							<div class="sub_con">
+							<div class="casino_nav">
+								<a href="/PeopleIntroduction">百家乐</a>
+								<a href="/PeopleIntroduction/baozuo">包桌百家乐</a>
+								<a href="/PeopleIntroduction/jingmi">竞咪百家乐</a>
+								<a href="/PeopleIntroduction/longbao">龙宝百家乐</a>
+								<a href="/PeopleIntroduction/baoxian">保险百家乐</a>
+								<a href="/PeopleIntroduction/dezhou">德州扑克</a>
+								<a href="/PeopleIntroduction/erbagang">二八杠</a>
+								<a href="/PeopleIntroduction/oushi21dian" class="cur">欧式21点/21点</a>
+								<a href="/PeopleIntroduction/fantan">番摊</a>
+								<a href="/PeopleIntroduction/longhu">龙虎</a>
+								<a href="/PeopleIntroduction/lunpan">轮盘</a>
+								<a href="/PeopleIntroduction/niuniu">牛牛</a>
+								<a href="/PeopleIntroduction/sangong">三公</a>
+								<a href="/PeopleIntroduction/sedie">色碟</a>
+								<a href="/PeopleIntroduction/shaibao">骰宝</a>
+								<a href="/PeopleIntroduction/paijiu">温州牌九</a>
+							</div>
+							<div id="js_data"></div>
+							<p><input type="hidden" value="0" id="casino_nav"></p>
+							<p class="cls"></p>
+							<h5>欧式21点</h5>
+							<p>21点源于法国，只要玩家的扑克牌拥有最高21点数并大于荷官点数便获胜。牌局的最终目的，是要玩家手上拥有的牌总点数达到21点 （或最接近21点），然后和荷官比大小。</p>
+							<p><img src="Resourse/Home/images/casino/banner21b.jpg" alt="" /></p>
+							<p class="cls"></p>
+							
+							<h5>游戏规则：</h5>
+							<p>
+								1. 用8副牌。<br>
+								2. 荷官必须在17点或以上时停牌。<br>
+								3. 可针对第一次发牌拿到的任意2张牌赌注加倍。<br>
+								4. 拿到的首两张牌的牌值相同，可进行分牌。<br>
+								5. 最多只能分牌1次。<br>
+								6. 首两张牌都为A，分牌后每手牌只再派发一张牌。<br>
+								7. 分牌后不能加倍赌注。<br>
+								8. 荷官拿到A时,提供保险选项让玩家可选择是否须要下保险注。<br>
+								9. Blackjack 赔率 2:3。<br>
+								10. 保险赔率 1:2。<br>
+								11. 荷官的总牌值与玩家相同时, 将判断为和局。
+							</p>
+							
+							<h5>注意事项：</h5>
+							<p>
+								1. 所有玩家必须先下底注才能于完美对子和21+3下注。 <br>
+								2. 重复下注功能只能下注底注、完美对子和21+3，不能重复下注旁注<br>
+								3. 若在该局游戏内所有玩家爆牌或Blackjack 时，荷官揭开暗牌并结束本局，无论荷官点数是否到达17点都不再补牌。<br>
+								4. 桌台限红是本游戏桌台主要玩法的最小、最大玩法限红。玩家在每个玩法的可押注限额是玩法限红与玩家个人限红的交集。如需调节 个人限红，请联系网站客服。 <br>
+								5. 荷官发牌时，偶有系统无法判读状况时，此时荷官将重新扫瞄，直到系统能完整判读(如遇故障因素将注销所有相关注单/派彩)。<br>
+								6. 如遇结算错误，按照当期视频结果重新结算。<br>
+								7. 如游戏过程中因游戏平台网络等故障造成未能正常完成牌局,系统将取消整局玩家下注并退回下注本金 (若玩家已经是BlackJack后出现系统故障,该玩家仍然按照2:3进行派彩)。
+							</p>
+							
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- <>底部区域 -->
+	<!-- <>底部区域 -->
+	<include file="Common:foot" />
+    </div>
+    <script src="/Resourse/Home/js/app/about.js" type="text/javascript"></script>
+</body>
+</html>

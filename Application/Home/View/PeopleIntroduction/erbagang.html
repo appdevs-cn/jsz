@@ -1,0 +1,132 @@
+<include file="Common:head" /> 
+<body class="body-bg">
+	<div class="loader">
+        <div class="loader-inner ball-pulse-rise">
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+    <div class="JszContent" style="display: none">
+	<!-- <>顶部区域 -->
+	<include file="Common:menu" />
+	
+	<!-- <>主体容器区域 -->
+	<div class="container">
+		<div class="mid clearfix">
+			<!-- 关于我们 -->
+			<div class="pg__brandHistory-list mt--30 pb--60 clearfix">
+				<div class="main clearfix mt--10">
+					<!-- //侧边 -->
+					<div class="sidebar fl" id="J__sidebar">
+						<h2 class="hdTit">游戏介绍</h2>
+						<a <if condition="$menu eq 'PeopleIntroduction'">class="on current"</if> href="/PeopleIntroduction">真人娱乐<i></i></a>
+						<a <if condition="$menu eq 'ComputerIntroduction'">class="on current"</if> href="/ComputerIntroduction">电子游戏<i></i></a>
+						<a <if condition="$menu eq 'CpIntroduction'">class="on current"</if> href="/CpIntroduction">彩票投注<i></i></a>
+                        <!--<a <if condition="$menu eq 'QipaiIntroduction'">class="on current"</if> href="/QipaiIntroduction">棋牌游戏<i></i></a>
+                        <a <if condition="$menu eq 'TiyuIntroduction'">class="on current"</if> href="/TiyuIntroduction">体育投注<i></i></a>-->
+					</div>
+					<!-- //列表 -->
+					<!-- //列表 -->
+					<style type="text/css">
+						.casino_nav a{background:#fc8e5d;display: block;width: 108px;height: 33px;text-align: center;color: #fff;line-height: 33px;border: solid 1px #f35c19;float: left;margin-right: -1px;margin-bottom: -1px;}
+						.casino_nav a:hover,.casino_nav a.cur{background:#f35c19;}
+						.casino .cas_vid{
+							display: block;float: left;margin-right: 22px;width: 196px;color: #333;text-align: center;
+						}
+						.casino .cas_vid img{margin-bottom:0;}
+						.casino table tr th{background:#aaa;color:#fff;text-align:center;font-weight:700;padding:5px 0;}
+						.casino table tr td{background:#f8f8f8;border-bottom:1px solid #eee;color:#333;text-align:center;padding:5px 0;}
+						.br_box{padding:20px 35px;margin-top:10px;}
+						.br_box .box2{display:inline-block;width:203px; margin-right:60px;}
+					</style>
+					<div class="brandHistory_list fr">
+						<div class="pg__others-panel casino">
+							<div class="sub_con">
+							<div class="casino_nav">
+								<a href="/PeopleIntroduction">百家乐</a>
+								<a href="/PeopleIntroduction/baozuo">包桌百家乐</a>
+								<a href="/PeopleIntroduction/jingmi">竞咪百家乐</a>
+								<a href="/PeopleIntroduction/longbao">龙宝百家乐</a>
+								<a href="/PeopleIntroduction/baoxian">保险百家乐</a>
+								<a href="/PeopleIntroduction/dezhou">德州扑克</a>
+								<a href="/PeopleIntroduction/erbagang" class="cur">二八杠</a>
+								<a href="/PeopleIntroduction/oushi21dian">欧式21点/21点</a>
+								<a href="/PeopleIntroduction/fantan">番摊</a>
+								<a href="/PeopleIntroduction/longhu">龙虎</a>
+								<a href="/PeopleIntroduction/lunpan">轮盘</a>
+								<a href="/PeopleIntroduction/niuniu">牛牛</a>
+								<a href="/PeopleIntroduction/sangong">三公</a>
+								<a href="/PeopleIntroduction/sedie">色碟</a>
+								<a href="/PeopleIntroduction/shaibao">骰宝</a>
+								<a href="/PeopleIntroduction/paijiu">温州牌九</a>
+							</div>
+							<div id="js_data"></div>
+							<p><input type="hidden" value="0" id="casino_nav"></p>
+							<p class="cls"></p>
+							<h5>二八杠</h5>
+							<p>二八杠游戏，是利用中国麻将中，单一色筒子牌( 一筒到九筒，每一种花色4张牌， 一共36张牌)，外加白皮4张牌，共有40张牌。</p>
+							<p><img src="Resourse/Home/images/casino/tb_bn.jpg" alt="" /></p>
+							<p class="cls"></p>
+							
+							<h5>游戏玩法：</h5>
+							<p>
+								玩法很简单，区分为庄家( 1方 )跟闲家( 3方 )，总共四方，游戏开始前，需将40张牌洗干净，然后掷出3个骰子所得数字依庄家是1、上门是2、中门是3、下门是4、庄家是5、上门是6, ……依此类推。
+							</p>
+							
+							<h5>牌面点数：</h5>
+							<p>
+								开始发开牌，每家发两张牌来比点数大小，两张牌的点数相加后，取其个位数字，每家单独跟庄家比输赢，然后直接比大小，正所谓一番两瞪眼，庄家必须跟三个闲家比大小，庄家的点数，如果比闲家小，则庄家输了该赌局；反之，庄家的点数，如果比闲家大，则庄家赢了该赌局。
+							</p>
+							
+							<h5>大小：</h5>
+							<p>
+								在游戏中，先比对子大小，再比数字大小。<br>
+								比点数时有一特例，即二筒配八筒，该组合除对子外为点数最大。 <br>
+								详细大小比较请看图示。
+							</p>
+							
+							<h5>图示点数大小：</h5>
+							<p>点数大小如下图所示：( 排序由最大点数依次排由左至右到最下方最小点数 )</p>
+							<p><img src="Resourse/Home/images/casino/tb1.jpg" alt="" /></p>
+							
+							<p>和局：庄家与闲家所持牌的组合完全相同时，该局即为和局，退还本金。</p>
+							
+							<h5>派彩：</h5>
+							<p>
+								•下注上门赢，1赔0.97<br>
+								•下注上门输，1赔0.97<br>
+								•下注中门赢，1赔0.97<br>
+								•下注中门输，1赔0.97<br>
+								•下注下门赢，1赔0.97<br>
+								•下注下门输，1赔0.97<br>
+								•下注上门和局，1赔60<br>
+								•下注中门和局，1赔60<br>
+								•下注下门和局，1赔60<br>
+								•下注上门对子，1赔6<br>
+								•下注中门对子，1赔6<br>
+								•下注下门对子，1赔6
+							</p>
+							
+							<h5>补充说明：</h5>
+							<p>
+								1、每靴第四及第五局不接受对子与和局之投注<br>
+								2、(如遇故障因素将注销所有相关注单/奖金)<br>
+								3、此游戏之玩家获利率约为 98.70% 
+							</p>
+							
+							<p>以上游戏规则为通用规则，具体情况视各游戏平台而论，如有需要请查阅选择的游戏厅规则说明，最终解释权归游戏平台和博天堂所有。</p>
+							
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- <>底部区域 -->
+	<!-- <>底部区域 -->
+	<include file="Common:foot" />
+    </div>
+    <script src="/Resourse/Home/js/app/about.js" type="text/javascript"></script>
+</body>
+</html>

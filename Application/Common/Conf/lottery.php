@@ -1,0 +1,40 @@
+<?php	return array (
+    'LOTTERY' => array (
+        1 => array ( 'name' => '重庆时时彩', 'for_short' => 'CQSSC', 'status' => '1', ),
+        //17 => array ( 'name' => '金手指五分彩', 'for_short' => 'WDSSC', 'status' => '1', ),
+        //18 => array ( 'name' => '金手指二分彩', 'for_short' => 'HHSSC', 'status' => '1', ),
+        //19 => array ( 'name' => '金手指分分彩', 'for_short' => 'FGSSC', 'status' => '1', ),
+        //2 => array ( 'name' => '江西时时彩', 'for_short' => 'JXSSC', 'status' => '1', ),
+        3 => array ( 'name' => '新疆时时彩', 'for_short' => 'XJSSC', 'status' => '1', ),
+        4 => array ( 'name' => '天津时时彩', 'for_short' => 'TJSSC', 'status' => '1', ),
+        //5 => array ( 'name' => '江苏十一选五', 'for_short' => 'CQ115', 'status' => '1', ),
+        6 => array ( 'name' => '江西十一选五', 'for_short' => 'JX115', 'status' => '1', ),
+        7 => array ( 'name' => '广东十一选五', 'for_short' => 'GD115', 'status' => '1', ),
+        8 => array ( 'name' => '山东十一选五', 'for_short' => 'SD115', 'status' => '1', ),
+        24 => array ( 'name' => '山西十一选五', 'for_short' => 'SX115', 'status' => '1', ),
+        25 => array ( 'name' => '陕西十一选五', 'for_short' => 'SXX115', 'status' => '1', ),
+        9 => array ( 'name' => '广东快乐十分', 'for_short' => 'GDKLSF', 'status' => '1', ),
+        10 => array ( 'name' => '重庆快乐十分', 'for_short' => 'CQKLSF', 'status' => '1', ),
+        26 => array ( 'name' => '山西快乐十分', 'for_short' => 'SXKLSF', 'status' => '1', ),
+        27 => array ( 'name' => '陕西快乐十分', 'for_short' => 'SXXKLSF', 'status' => '1', ),
+        11 => array ( 'name' => '福彩3D', 'for_short' => '3D', 'status' => '1', ),
+        12 => array ( 'name' => '排列三', 'for_short' => 'P3', 'status' => '1', ),
+        13 => array ( 'name' => '北京快乐8', 'for_short' => 'BJKL8', 'status' => '1', ),
+        14 => array ( 'name' => '双色球', 'for_short' => 'SSQ', 'status' => '1', ),
+        15 => array ( 'name' => '江苏快3', 'for_short' => 'JSK3', 'status' => '1', ),
+        16 => array ( 'name' => '吉林快3', 'for_short' => 'JLK3', 'status' => '1', ),
+        21 => array ( 'name' => '北京PK10', 'for_short' => 'BJPK10', 'status' => '1', ),
+        //22 => array ( 'name' => '韩国1.5时时彩', 'for_short' => 'HGSSC', 'status' => '1', ),
+        //28 => array ( 'name' => '韩国幸运28', 'for_short' => 'HGXY28', 'status' => '1', ),
+        //29 => array ( 'name' => '加拿大幸运28', 'for_short' => 'JNDXY28', 'status' => '1', ),
+        30 => array ( 'name' => '北京5分彩', 'for_short' => 'BJ5F', 'status' => '1', ),
+        31 => array ( 'name' => '加拿大3分彩', 'for_short' => 'JND3F', 'status' => '1', ),
+        23 => array ( 'name' => '北京幸运28', 'for_short' => 'XY28', 'status' => '1', ),
+        32 => array ( 'name' => '腾讯分分彩', 'for_short' => 'TXSSC', 'status' => '1', ),
+        33 => array ( 'name' => 'QQ分分彩', 'for_short' => 'QQSSC', 'status' => '1', ),
+        34 => array ( 'name' => '台湾五分彩', 'for_short' => 'TWSSC', 'status' => '1', ),
+        35 => array ( 'name' => '台湾宾果', 'for_short' => 'TWKL8', 'status' => '1', )
+    )
+);
+
+?>

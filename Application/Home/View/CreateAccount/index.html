@@ -1,0 +1,200 @@
+<include file="Common:head" />
+<link rel="stylesheet" href="/Resourse/Home/js/plugins/datepicker/datepicker.css" /> 
+<body class="body-bg">
+    <div class="loader">
+        <div class="loader-inner ball-pulse-rise">
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+    <div class="JszContent" style="display: none">
+	<!-- <>顶部区域 -->
+	<include file="Common:menu" />
+	
+	<!-- <>主体容器区域 -->
+	<div class="container">
+		<div class="mid pb--50 clearfix">
+			<!-- 代理管理(团队概况) -->
+			<div class="pM__panel mt--30">
+				<include file="Common::memberMenu" />
+			</div>
+			
+			<div class="pM__panel mt--10">
+				<div class="proxyM__panel-tabLink">
+					<include file="Common::teamMemberMenu" />
+                    <div class="sub__menu clearfix">
+						<div class="menuList ml--10 fl">
+							<a class="selected" href="javascript:void(0)" data-method="createUserUrl" data-field="OrdinaryAccount">普通开户</a>
+							<a href="javascript:void(0)" data-method="createUserUrl" data-field="ConnectionAccount">链接开户</a>
+							<a href="javascript:void(0)" data-method="createUserUrl" data-field="ConnectionManagement">链接管理</a>
+						</div>
+					</div>
+                    <div class="panel-form" id="OrdinaryAccount">
+						<h3 class="fs15">温馨提示：</h3>
+						<p>自动注册的会员初始密码为 "a123456"。</p>
+						<p>为提高服务器效率，系统将自动清理注册一个月没有充值，或两个月未登陆，并且金额低于10元账户</p>
+						
+						<div class="mt--30">
+							<div class="row">
+								<span class="lbl">开户类别</span>
+								<!--<label><input class="chkbox" type="checkbox" /> 玩家</label><label class="ml--20"><input class="chkbox" type="checkbox" /> 代理</label>-->
+								<span class="chkbox J__chkbox on group" data-field="5"> 玩家</span> <span class="ml--10 group chkbox J__chkbox" data-field="4"> 代理</span>
+							</div>
+							<div class="row">
+								<span class="lbl">用户名</span>
+								<input class="ipt-text" type="text" name="username" value=""/> <i class="c--999 ml--10">5-10位字母或数字，字母开头</i>
+							</div>
+							<div class="row">
+								<span class="lbl">彩票返点</span>
+								<input class="ipt-text" type="text" name="keeppoint" onkeyup="this.value=this.value.replace(/[^\d.]/g,'');" onchange="this.value=this.value.replace(/[^\d.]/g,'');"  autocomplete="off"/> <i class="c--999 ml--10">可分配范围0.0~<?=($bonus_level)?></i>
+							</div>
+                            <input type="hidden" value="0" id="keepmin" name="keepmin">
+                            <input type="hidden" value="<?=$bonus_level?>" id="keepmax" name="keepmax">
+                            <div class="row">
+								<span class="lbl">幸运28返点</span>
+								<input class="ipt-text" type="text" name="klckeeppoint" onkeyup="this.value=this.value.replace(/[^\d.]/g,'');" onchange="this.value=this.value.replace(/[^\d.]/g,'');" autocomplete="off" /> <i class="c--999 ml--10">可分配范围0~<?=$klcBonusContent?></i>
+							</div>
+                            <div class="error_tips" style="padding-left:90px;color: #f57239">
+                                <span class="errorMsg"></span>
+                            </div>
+							<div class="row">
+								<button class="btn_view mt--20" data-method="create">创建账户</button>
+                                <if condition="$isQuate eq true">
+                                    <button class="btn_view mt--20" data-method="reviewquota">查看配额</a>
+                                </if>
+							</div>
+						</div>
+					</div>
+                    <div class="panel-form" id="ConnectionAccount" style="display: none">
+						<h3 class="fs15">温馨提示：</h3>
+						<p>自动注册连接创建成功之后，请重新加载网页。</p>
+						
+						<div class="mt--30">
+							<div class="row">
+								<span class="lbl">开户类别</span>
+								<!--<label><input class="chkbox" type="checkbox" /> 玩家</label><label class="ml--20"><input class="chkbox" type="checkbox" /> 代理</label>-->
+								<span class="chkbox J__chkbox on reggroup" data-field="5"> 玩家</span> <span class="ml--10 reggroup chkbox J__chkbox" data-field="4"> 代理</span>
+							</div>
+							<div class="row">
+								<span class="lbl">有效期</span>
+								<select class="select-control" name="limitday" id="limitday" style="height: 36px; min-width: 272px;">
+									<option value="1">1天有效</option>
+                                    <option value="3">3天有效</option>
+                                    <option value="7">7天有效</option>
+                                    <option value="15">15天有效</option>
+                                    <option value="30">30天有效</option>
+                                    <option value="90">3个月有效</option>
+                                    <option value="180" selected>6个月有效</option>
+								</select>
+							</div>
+							<div class="row">
+								<span class="lbl">使用次数</span>
+								<input class="ipt-text" type="text" name="count" value="99999"/>
+							</div>
+							<div class="row">
+								<span class="lbl">彩票返点</span>
+								<input class="ipt-text" type="text" name="regkeeppoint" onkeyup="this.value=this.value.replace(/[^\d.]/g,'');" onchange="this.value=this.value.replace(/[^\d.]/g,'');" /> <i class="c--999 ml--10">可分配范围0-12.3</i>
+							</div>
+                            <div class="row">
+								<span class="lbl">幸运28返点</span>
+								<input class="ipt-text" type="text" name="regklckeeppoint" onkeyup="this.value=this.value.replace(/[^\d.]/g,'');" onchange="this.value=this.value.replace(/[^\d.]/g,'');" /> <i class="c--999 ml--10">可分配范围0-<?=$klcBonusContent?></i>
+							</div>
+							<div class="row">
+								<button class="btn_view mt--20" data-method="createReg">生成链接</button>
+							</div>
+						</div>
+                        <input type="hidden" value="0" id="regkeepmin" name="regkeepmin">
+                        <input type="hidden" value="12.3" id="regkeepmax" name="regkeepmax">
+					</div>
+
+                    <!--连接管理-->
+                    <div class="panel-lkList" id="ConnectionManagement" style="display: none">
+						<table class="ff-hv" border="0" cellspacing="0" cellpadding="0">
+							<thead>
+								<tr>
+									<th width="30%">注册码</th>
+									<th>用户类型</th>
+									<th>彩票返点</th>
+									<th>剩余时间</th>
+									<th>剩余次数</th>
+									<th width="15%">创建时间</th>
+									<th width="15%">操作</th>
+								</tr>
+							</thead>
+							<tbody id="J__trHover">
+                                <php>
+                                    if(!empty($list)){
+                                    foreach($list as $item){
+                                        $str="";
+                                        $str = $str.$item['ser'].",";
+                                </php>
+                                <php>
+									$HTTPHOST = (empty($item['domain'])) ? $_SERVER['HTTP_HOST'] : $item['domain'];
+                                    $regurl = "http://".$HTTPHOST."/regist/regcode/".$item['ser'];
+                                </php>
+								<tr>
+									<td style="text-align: center">{$regurl}</td>
+									<td style="text-align: center"><?=($item['group']==4) ? '代理' : '会员'?></td>
+									<td style="text-align: center">{$item.point}</td>
+									<td style="text-align: center"><?=intval(($item['endtime']-time())/3600)<0 ? '过期' : intval(($item['endtime']-time())/3600)?></td>
+									<td style="text-align: center"><?=$item['count']?></td>
+									<td style="text-align: center"><?=date('Y-m-d H:i:s',$item['createtime'])?></td>
+									<td style="text-align: center">
+										<a href="javascript:void(0)" class="c--f35c19 copyregurl" data-clipboard-text="{$regurl}">复制</a>
+                                        <a href="javascript:void(0)" class="c--f35c19 ml--10"  data-method="delete" data-field="{$item.ser}">删除</a>
+									</td>
+								</tr>
+                                <php>
+                                    } 
+                                    $str = substr($str,0,strlen($str)-1);
+                                    }else {
+                                </php>
+                                <tr>
+                                    <td colspan="7" style="height: 150px;font-size: 16px;text-align: center">
+                                        暂无注册连接
+                                    </td>
+                                </tr>
+                                <php>
+                                    }
+                                </php>
+                                <input type="hidden" name="serline" id="serline" value="{$str}">
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- <>底部区域 -->
+	<include file="Common:foot" /> 
+    <script src="/Resourse/Home/js/plugins/clipboard/clipboard.min.js"></script> 
+    <script src="/Resourse/Home/js/app/creat-account.js" type="text/javascript"></script>
+    </div>
+    <!--查看剩余配额-->
+    <script type="text/template" id="review_quota">
+        <div class="popup_box">
+             <div class="popup_main">
+                <div class="popup_txt">
+                <table cellpadding="0" cellspacing="0" align="center" class="popup_table">
+                <tbody>
+                    <tr class="bgqhui">
+                        <td>区段</td><td>剩余</td>
+                    </tr>
+                    <#for(var i = 0; i < rows.length; i++){#>
+                        <#for(var j = 0; j < rows[i].length; j++){#>
+                        <tr>
+                            <td>
+                                <#=rows[i][j].key/10#>
+                            </td>
+                            <td>
+                                <#=rows[i][j].item#>个
+                            </td>
+                        </tr>
+                    <#}}#>
+                </tbody>
+                </table>
+                </div>
+            </div>
+            </div>
+    </script>
+</body>
+</html>

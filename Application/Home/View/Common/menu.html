@@ -1,0 +1,70 @@
+<input type="hidden" name="uid" value="{$Think.session.SESSION_ID}" />
+<input type="hidden" name="path" value="{$Think.session.SESSION_PATH}" />
+<div class="sec_header">
+<!-- 顶部链接 -->
+<div class="lay_topbar clearfix">
+    <div class="mid clearfix">
+        <div class="notice fl">
+            <em>公告：</em>
+            <div class="noticeCt" id="J__noticeSlider">           
+                <div id="notice__list" style="position: absolute;">
+                    <volist name="result" id="item"> 
+                    <a href="/Notice"><span>{$key+1}:{$item.content}</span></a>
+                    </volist>
+                </div>
+            </div>
+        </div>
+        <div class="rt-info fr">
+            <span class="license">合法牌照</span>
+            <!--<span class="call ml--30">客服热线：<i class="ff-hv">400-082-6666</i></span>-->
+        </div>
+    </div>
+</div>
+
+<!-- //菜单及分类导航 -->
+<div class="lay_navbar">
+    <div class="mid clearfix">
+        <div class="logo fl">
+            <a href="/index"><img src="/Resourse/Home/images/logo.png" alt="金手指" /></a>
+        </div>
+        <div class="navigation fr">
+            <ul class="hd-menu J__navMenu">
+                <li <if condition="$menu eq 'index'">class="on current"</if> ><a href="/index">首页<i></i></a></li>
+                <li <if condition="$menu eq 'live'">class="on current"</if> ><a href="/chess">真人娱乐<i></i></a></li>
+                <li <if condition="$menu eq 'bandit'">class="on current"</if> ><a href="/bandit">电子游戏<i></i></a></li>
+                <li <if condition="$menu eq 'lottery'">class="on current"</if>><a href="/Lotter/Ssc/Cqssc">彩票投注<i></i></a></li>
+                <!--<li <if condition="$menu eq 'app'">class="on current"</if> ><a href="/appdown">手机客户端<i></i></a></li>-->
+                <li <if condition="$topmenu eq 'about'">class="on current"</if> ><a href="/about">关于我们<i></i></a></li>
+                <li <if condition="$menu eq 'coupon'">class="on current"</if> ><a href="/Coupon">优惠活动<i></i></a></li>
+                <li <if condition="$menu eq 'brand'">class="on current"</if> ><a href="/brand">品牌历程<i></i></a></li>
+                
+                <!-- //未登录 -->
+                <li class="unlg ml--20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                <li class="unlg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                <li class="unlg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                
+                <!-- //已登录 -->
+                <php>
+                    if(session("SESSION_NICKNAME")!=""){
+                </php>
+                <li class="u-info J__dropdown ml--20">
+                    <a href="javascript:;"><img src="{$imgPath}" height="30" width="30" /><span class="shownickname">{$Think.session.SESSION_NICKNAME}</span><em class="arr"></em></a>
+                    <span class="dropdownMenu">
+                        <i class="arr1"></i><i class="arr2"></i>
+                        <a href="/InBox/index">消息(<span class="totalMessage">{$msgcount}</span>)</a>
+                        <a href="/User/index">会员中心</a>
+                        <a href="/Proxy/index">代理中心</a>
+                        <a href="/Finance/index/type/1">我要存款</a>
+                        <a href="/Finance/index/type/2">我要取款</a>
+                        <a href="/Finance/index/type/3">我要转账</a>
+                        <a href="javascript:void(0)" data-method=out>退出</a>
+                    </span>
+                </li>
+                <php>
+                    }
+                </php>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>	<!-- END.sec_header -->

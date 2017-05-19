@@ -1,0 +1,67 @@
+<include file="Common:head" /> 
+<body class="body-bg">
+	<div class="loader">
+        <div class="loader-inner ball-pulse-rise">
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+    <div class="JszContent" style="display: none">
+	<!-- <>顶部区域 -->
+	<include file="Common:menu" />
+	
+	<!-- <>主体容器区域 -->
+	<div class="container">
+		<div class="mid clearfix">
+			<!-- 关于我们 -->
+			<div class="pg__brandHistory-list mt--30 pb--60 clearfix">
+				<div class="main clearfix mt--10">
+					<!-- //侧边 -->
+					<div class="sidebar fl" id="J__sidebar">
+						<h2 class="hdTit">游戏介绍</h2>
+						<a <if condition="$menu eq 'PeopleIntroduction'">class="on current"</if> href="/PeopleIntroduction">真人娱乐<i></i></a>
+						<a <if condition="$menu eq 'ComputerIntroduction'">class="on current"</if> href="/ComputerIntroduction">电子游戏<i></i></a>
+						<a <if condition="$menu eq 'CpIntroduction'">class="on current"</if> href="/CpIntroduction">彩票投注<i></i></a>
+                        <!--<a <if condition="$menu eq 'QipaiIntroduction'">class="on current"</if> href="/QipaiIntroduction">棋牌游戏<i></i></a>
+                        <a <if condition="$menu eq 'TiyuIntroduction'">class="on current"</if> href="/TiyuIntroduction">体育投注<i></i></a>-->
+					</div>
+					<style type="text/css">
+						.casino .slot_bn .banner_nav{padding:30px 0 10px 0;}
+						.casino .slot_bn .banner_nav a{
+							display: inline-block;width: 140px;height: 32px;line-height: 32px;color: white;text-align: center;background: #f35c19;margin-top: 6px;
+						}
+						.casino .slot_bn .banner_nav a:hover{background:#de4501;}
+						
+						.casino img{display:block;max-width:100%;}
+						.casino .slot_d {width:188px;float: left;padding: 10px 0 0 0;text-align: center;margin-right: 41px;}
+						.casino .slot_d.mrn{margin-right:0;}
+					</style>
+					<div class="brandHistory_list fr">
+						<div class="pg__others-panel casino">
+							<div class="sub_con"><div class="slot_bn"><img src="Resourse/Home/images/slot/slot_bn.jpg">
+							<div class="banner_nav">
+								<div class="mb5">电子游艺平台：</div>
+								<a href="/bandit/type/pt">PT电子游艺</a>
+								<!--<a href="#">TTG电子游艺</a>-->
+								<a href="/bandit/type/xin">AG电子游艺</a>
+								<a href="/bandit/type/mg">MG电子游艺</a>
+								<!--<a href="#">BBIN电子游艺</a>-->
+								<!--<a href="#">BSG电子游艺</a>-->
+							</div>
+							</div><br>联手PT、TTG、AG、MG、BBIN、BSG六大经典平台提供众多游戏，如：老虎机、纸牌游戏、桌面游戏、电子扑克等上百种电子游戏。玩法种类多，中奖率高，亿万彩池爆发中…财富滚滚而来，趣味玩转不停！<br><br><h5>TTG等其他电子游艺厅调整下注额度示例：</h5><img src="Resourse/Home/images/slot/slot1.jpg"><br><br><h5>BBIN电子游戏分数兑换流程：</h5><img src="Resourse/Home/images/slot/slot2.jpg"><div class="slot_d">点击"比例"<br>选择分数兑换比例</div><div class="slot_d">建议按1:10进行兑换<br>便于获得更高盈利</div><div class="slot_d">点击"500"进行兑换分数<br>或点击"其他"<br>以横向拉杆调整欲兑换分数<br></div><div class="slot_d mrn">点击"进入游戏"，即可开始游戏。游戏完毕，点击"结算离开"完成将分数换回现金</div>
+							<p class="cls"></p>
+							<br />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- <>底部区域 -->
+	<!-- <>底部区域 -->
+	<include file="Common:foot" />
+    </div>
+    <script src="/Resourse/Home/js/app/about.js" type="text/javascript"></script>
+</body>
+</html>

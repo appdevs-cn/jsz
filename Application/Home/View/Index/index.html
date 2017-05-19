@@ -1,0 +1,353 @@
+<include file="Common:head" /> 
+<body class="body-bg">
+    <div class="loader">
+        <div class="loader-inner ball-pulse-rise">
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+    <div class="JszContent" style="display: none">
+        <!-- <>顶部区域 -->
+        <include file="Common:menu" />
+        
+        <!-- <>轮播图区域 -->
+        <div class="zone__idx-slider js_idxSlider">
+            <div class="slider-inner">
+                <ul class="slider-list">
+                    <li style="background-image: url(/Resourse/Home/images/placeholder/idx-slider-img01-1920x600.jpg);"></li>
+                    <li style="background-image: url(/Resourse/Home/images/placeholder/idx-slider-img02-1920x600.jpg);"></li>
+                    <li style="background-image: url(/Resourse/Home/images/placeholder/idx-slider-img03-1920x600.jpg);"></li>
+                </ul>
+                <div class="slider-nav">
+                    <i></i><i></i><i></i>
+                </div>
+                <div class="slider-ctlbtn">
+                    <a class="js-btn-prev"></a>
+                    <a class="js-btn-next"></a>
+                </div>
+            </div>
+        </div> <!-- END.zone-idx-slider -->
+        
+        <!-- <>主体容器区域 -->
+        <div class="container">
+            <div class="mid clearfix">
+                <!-- 1、信息统计 -->
+                <div class="zone__info-statistics mt--30">
+                    <ul class="clearfix">
+                        <li class="col1 ff-hv">
+                            <div class="item fl"><img src="/Resourse/Home/images/icon_uesr.png" /></div>
+                            <div class="item fl">
+                                    <p><i class="num" id="jsonline"><php>echo rand(3000,4000);</php></i>人</p>
+                                    <p>即时在线玩家</p>
+                            </div>
+                            <div class="item fl">
+                                <p><i class="num" id="leiji">58210</i>人</p>
+                                <p>累计注册玩家</p>
+                            </div>
+                        </li>
+                        <li class="col2 ff-hv">
+                            <div class="item fl"><img src="/Resourse/Home/images/icon_time.png" /></div>
+                            <div class="item fl">
+                                <p><i class="num">00</i>分 <i class="num">20</i>秒</p>
+                                <p>存款平均到账时间</p>
+                            </div>
+                            <div class="item fl">
+                                <p class="mt--10">支持微信、支付宝</p>
+                                <p>最低存款50元</p>
+                            </div>
+                        </li>
+                        <li class="col3 ff-hv">
+                            <div class="item fl"><img src="/Resourse/Home/images/icon_money.png" /></div>
+                            <div class="item fl">
+                                <p><i class="num">1</i>分 <i class="num">30</i>秒</p>
+                                <p>取款平均到账时间</p>
+                            </div>
+                            <div class="item fl">
+                                <dl class="mulitline">
+                                    <volist name="xReturn" id="item">
+                                    <dd class="row" style="margin-top: 0px;">
+                                        <p class="mt--10">{$item.username}</p>
+                                        <p>{$item.dateline} 取款 ￥{$item.factMoney}</p>
+                                    </dd>
+                                    </volist>
+                                </dl>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- 2、热门游戏 -->
+                <div class="zone__games-hot similarHd mt--30 clearfix">
+                    <div class="mt clearfix">
+                        <h2 class="tit fl">热门游戏</h2> <a class="arr fr" href="/bandit">更多游戏</a>
+                    </div>
+                    <div class="mc">
+                        <!-- //热门游戏 -->
+                        <div class="games__hot-grid clearfix mt--15">
+                            <!-- 大图 -->
+                            <div class="big__item fl">
+                                <a href="javascript:void(0)">
+                                    <img src="/Resourse/Home/images/placeholder/hotgame-bigimg01.jpg" height="346" width="390" />
+                                    <div class="title">
+                                        <span class="txt fl">古怪猴子</span> 
+                                        <em class="arr fr">
+                                            <if condition="$IsCreate eq 0">
+                                            <a href="javascript:void(0)" data-title="古怪猴子" data-method="CreatePtAccount">免费开户</a>
+                                            <else/>
+                                            <a href="javascript:void(0)" data-title="古怪猴子" data-method="ptGame" data-field="fm">开始游戏</a>
+                                            </if>
+                                        </em>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="sm__item">
+                                <ul>
+                                    <php>
+                                        foreach($SixTopMgGame as $key=>$item){
+                                    </php>
+                                    <li>
+                                        <img src="/Resourse/Home/images/mg/{$item['picname']}" height="170" width="261" />
+                                        <div class="ft-tit"><em class="ellipsis">{$item.ChinesGameName}</em></div>
+                                        <div class="mask">
+                                            <div class="inner">
+                                                <p>{$item.ChinesGameName}</p>
+                                                <php>
+                                                    if($IsCreate==0){
+                                                </php>
+                                                <a class="btn_view" href="javascript:void(0)" data-title="{$item.ChinesGameName}" data-method="CreateMgAccount">开通游戏</a>
+                                                <php>
+                                                    }else{
+                                                </php>
+                                                <a class="btn_view" href="javascript:void(0)" data-title="{$item.ChinesGameName}" data-method="gmGame" data-field="{$item.FlashGameID}">开始游戏</a>
+                                                <php>
+                                                    }
+                                                </php>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <php>
+                                        }
+                                    </php>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- //游戏彩池 -->
+                        <div class="games__hot-scroll clearfix mt--15">
+                            <div class="total-num fl">
+                                <div class="text">
+                                    <h3>电子游戏总彩池</h3>
+                                    <i class="num ff-hv" id="total-ticker"></i>
+                                </div>
+                            </div>
+                            <div class="games-roll">
+                                <ul class="mulitline_games clearfix">
+                                    <php>
+                                        foreach($SixDownGame as $key=>$item){
+                                            $cny = mt_rand(50000000,99999999);
+                                    </php>
+                                    <li>
+                                        <php>
+                                            if($IsCreate==0){
+                                        </php>
+                                        <a href="javascript:void(0)" data-title="{$item.ChinesGameName}" data-method="CreateMgAccount">
+                                        <php>
+                                            }else{
+                                        </php>
+                                        <a href="javascript:void(0)" data-title="{$item.ChinesGameName}" data-method="gmGame" data-field="{$item.FlashGameID}">
+                                        <php>
+                                            }
+                                        </php>
+                                            <div class="box">
+                                                <img src="/Resourse/Home/images/mg/{$item['picname']}" height="60" width="60" />
+                                                <div class="dib">
+                                                    <em class="name">{$item.ChinesGameName}</em>
+                                                    <i class="ff-hv c--999">CNY <php> echo number_format($cny,2,",","."); </php></i>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <php>
+                                        }
+                                    </php>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 3、真人娱乐 -->
+                <div class="zone__live-entertainment similarHd mt--30 clearfix">
+                    <div class="mt clearfix">
+                        <h2 class="tit fl">真人娱乐</h2> <a class="arr fr" href="/bbin">更多娱乐</a>
+                    </div>
+                    <div class="mc">
+                        <!-- //火爆、热门 -->
+                        <ul class="entertainment-list mt--20 clearfix">
+                            <li>
+                                <div class="aimg" style="background: #ffa016;">
+                                    <a href="javascript:void(0)"><img src="/Resourse/Home/images/uimg/pic_BBIN.png" height="275" /></a>
+                                </div>
+                                <div class="info clearfix">
+                                    <div class="fl">
+                                        <h2>AG琪琪<i class="tag fire">火爆</i></h2>
+                                        <label>业界首创 先发8张</label>
+                                    </div>
+                                    <if condition="$IsCreateAg eq 1">
+                                    <a class="btn transit fr" data-title="AGIN" data_method="agGame" data-field="2" href="javascript:void(0)">进入游戏</a>
+                                    <else/>
+                                    <a class="btn transit fr" href="javascript:void(0)" data-method="CreateAgAccount">免费开户</a>
+                                   </if>
+                                </div>
+                            </li>
+                             <li>
+                                <div class="aimg" style="background: #993d15;">
+                                    <a data_method="ebetGame" href="javascript:void(0)"><img src="/Resourse/Home/images/uimg/pic_linlin.png" height="275" /></a>
+                                </div>
+                                <div class="info clearfix">
+                                    <div class="fl">
+                                        <h2>eBET果果<i class="tag hot">火爆</i></h2>
+                                        <label>真人平台 历史悠久</label>
+                                    </div>
+                                   <if condition="$IsCreateEbet eq 1">
+                                    <a class="btn transit fr" data_method="ebetGame" href="javascript:void(0)">进入游戏</a>
+                                    <else/>
+                                    <a class="btn transit fr" href="javascript:void(0)" data-method="CreateEbetAccount">免费开户</a>
+                                   </if>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="aimg" style="background: #df3c3c;">
+                                    <a href="javascript:void(0)"><img src="/Resourse/Home/images/uimg/pic_opus.png" height="275" /></a>
+                                </div>
+                                <div class="info clearfix">
+                                    <div class="fl">
+                                        <h2>OPUS婷</h2>
+                                        <label>3D真人 高清画质</label>
+                                    </div>
+                                    <a class="btn transit fr" href="javascript:void(0)">即将上线</a>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        <ul class="entertainment-list entertainment-list2 clearfix">
+                            <li>
+                                <div class="aimg">
+                                    <a href="javascript:void(0)"><img src="/Resourse/Home/images/uimg/pic_HG.png" height="180" /></a>
+                                </div>
+                                <div class="info clearfix">
+                                    <div class="fl">
+                                        <h2>HG芳芳</h2>
+                                        <label>美女荷官 业界权威</label>
+                                    </div>
+                                    <a class="btn transit fr" href="javascript:void(0)">即将上线</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="aimg">
+                                    <a href="javascript:void(0)"><img src="/Resourse/Home/images/uimg/pic_MG.png" height="180" /></a>
+                                </div>
+                                <div class="info clearfix">
+                                    <div class="fl">
+                                        <h2>MG梅梅</h2>
+                                        <label>欧美风情 playboy女郎</label>
+                                    </div>
+                                    <a class="btn transit fr" href="javascript:void(0)">即将上线</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="aimg">
+                                    <a href="javascript:void(0)"><img src="/Resourse/Home/images/uimg/pic_AG.png" height="180" /></a>
+                                </div>
+                                <div class="info clearfix">
+                                    <div class="fl">
+                                        <h2>AG杲杲</h2>
+                                        <label>实时视频 现场投注</label>
+                                    </div>
+                                    <a class="btn transit fr" href="javascript:void(0)">即将上线</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- <>平台优势 -->
+        <div class="platform_advantage mt--50">
+            <div class="mid clearfix">
+                <div class="hd align-c"><span class="tit"><em>平台优势</em></span></div>
+                <div class="ct">
+                    <div class="item">
+                        <i class="img img01"></i>
+                        <h2>金手指登录器</h2>
+                        <p>一键下载，简单有效</p>
+                        <p>智能匹配最佳线路助您遨游游戏世界</p>
+                    </div>
+                    <div class="item">
+                        <i class="img img02"></i>
+                        <h2>手机投注</h2>
+                        <p>一机在手，随时行乐</p>
+                        <p>支持支付宝或微信支付，让您</p>
+                        <p>随时随地的做赢家</p>
+                    </div>
+                    <div class="item">
+                        <i class="img img03"></i>
+                        <h2>存取款优势</h2>
+                        <p>超过15家银行支持小额</p>
+                        <p>存款怡情博娱</p>
+                    </div>
+                    <div class="item">
+                        <i class="img img04"></i>
+                        <h2>卓越的客服团队</h2>
+                        <p>7x24的优秀客服</p>
+                        <p>随时在线让您游戏无忧</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- …… 左侧、右侧浮动层.Start-->
+        <!--<div class="floatBox__panel floatBox__panel-left">
+            <div class="panel__inner">
+                <div class="panel">
+                    <h3 class="fs16 pt--20">在线支付方式</h3>
+                    <div class="payway mt--15">
+                        <a href="/Finance/index/type/1"><p class="alipay">支付宝</p></a>
+                        <a href="/Finance/index/type/1"><p class="wechat">微信支付</p></a>
+                        <a href="/Finance/index/type/1"><p class="upay">银联支付</p></a>
+                    </div>
+                    
+                    <a class="btn__close-floatBox" href="javascript:;">关闭</a>
+                </div>
+            </div>
+        </div>-->
+        <!--<div class="floatBox__panel floatBox__panel-right">
+            <div class="panel__inner">
+                <div class="panel panel01">
+                    <img src="/Resourse/Home/images/pic_sevice.png" />
+                    <p class="c--999 fs14 mt--10">7×24小时在线客服</p>
+                    <h3 class="ff-hv fs20">400-099-6288</h3>
+                    <h3 class="ff-hv fs20">400-099-6208</h3>
+                    <a class="btn_service" href="#">立即咨询</a>
+                </div>
+                <div class="panel panel02 mt--10">
+                    <ul class="clearfix">
+                        <li class="first"><a href="/appdown"><em><img src="/Resourse/Home/images/icon_login.png" /></em>登录器</a></li>
+                        <li><a href="/appdown"><em><img src="/Resourse/Home/images/icon_download.png" /></em>下载</a></li>
+                        <li><a href="javascript:void(0)"><em><img src="/Resourse/Home/images/icon_register.png" /></em>注册</a></li>
+                    </ul>
+                    
+                    <a class="btn__close-floatBox" href="javascript:;">关闭</a>
+                </div>
+            </div>
+        </div>-->
+        <!-- …… 左侧、右侧浮动层.End-->
+	<!-- <>底部区域 -->
+	 <include file="Common:foot" /> 
+    </div>
+    <script type="text/javascript">
+        var jumpurl = "{$Think.config.FRAMEURL}"
+    </script>
+    <script src="/Resourse/Home/js/lib/jackpot.js" type="text/javascript"></script> 
+    <script src="/Resourse/Home/js/app/index.js?index" type="text/javascript"></script>
+</body>
+</html>

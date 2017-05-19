@@ -1,0 +1,784 @@
+<include file="Common:head" />
+<link rel="stylesheet" href="/Resourse/Home/js/plugins/datepicker/datepicker.css" />
+<body class="body-bg">
+    <div class="loader">
+        <div class="loader-inner ball-pulse-rise">
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+    <div class="JszContent" style="display: none">
+	<!-- <>顶部区域 -->
+	<include file="Common:menu" />
+	
+	<!-- <>主体容器区域 -->
+	<div class="container">
+		<div class="mid pb--50 clearfix">
+			<!-- 代理管理(会员管理) -->
+			<div class="pM__panel mt--30">
+				<include file="Common::memberMenu" />
+			</div>
+			
+			<div class="pM__panel mt--10">
+				<div class="proxyM__panel-tabLink">
+					<include file="Common::teamMemberMenu" />
+					<div class="sub__menu clearfix">
+						<div class="head__filter padding30 clearfix">
+							<div class="form fl">
+								<input class="ipt-text" type="text" name="username" placeholder="用户名" />
+								<input class="ipt-text ipt-date" type="text" name="starttime" data-datepicker="d1[lt]d2" placeholder="开始日期" />　至　<input class="ipt-text ipt-date" data-datepicker="d2[gt]d1" type="text" name="endtime" placeholder="结束日期" />
+								
+								<input class="ipt-text ml--20" type="text" name="mincapital" placeholder="输入起始查询余额" />　至　<input class="ipt-text" type="text" name="maxcapital" placeholder="输入结束查询余额" />
+								<button type="button" class="bg__f5f5f5-hover" data-method="search">查询</button>
+							</div>
+						</div>
+                        <input type="hidden" name="uid" value="" />
+                        <input type="hidden" name="p" value="1" /> 
+					</div>
+					<div class="panel-lkList">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<include file="Common:foot" /> 
+    <script src="/Resourse/Home/js/plugins/datepicker/datepicker.js"></script> 
+    <script src="/Resourse/Home/js/app/members.js?time=New Date()" type="text/javascript"></script>
+    </div>
+    <script type="text/template" id="member_list">
+        <ol style="margin:15px;color:crimson">
+            <li style="float:left">层级:</li>
+            <#=rows[0][0]['ol']#>
+        </ol>
+        <table class="ff-hv" border="0" cellspacing="0" cellpadding="0">
+			<thead>
+				<tr>
+					<th style="text-align:center;width:70px">用户名</th>
+					<th style="text-align:center;width:70px">类型</th>
+					<th style="text-align:center;width:70px">主账户</th>
+					<th style="text-align:center;width:70px">返点</th>
+					<th style="text-align:center;width:90px">登录时间</th>
+					<th style="text-align:center">状态</th>
+					<th style="text-align:center;width:70px">分红契约</th>
+                    <th style="text-align:center;width:70px">日工资契约</th>
+					<th style="width:250px">操作</th>
+				</tr>
+			</thead>
+			<tbody id="J__trHover">
+				<#for(var i = 0; i < rows.length; i++){#>
+        		<#for(var j = 0; j < rows[i].length; j++){#>
+				<tr>
+					<td style="text-align:center"><#=rows[i][j]['username']#></td>
+					<td style="text-align:center"><#=rows[i][j]['group']#></td>
+					<td style="text-align:center"><#=rows[i][j]['cur_account']#></td>
+					<td style="text-align:center"><#=rows[i][j]['bonusLevel']#></td>
+					<td style="text-align:center"><#=rows[i][j]['log_lasttime']#></td>
+					<#if(rows[i][j]['status']==1){#>
+					<td style="text-align:center" id="online<#=rows[i][j]['sec']#>">检测中...</td>
+					<#}else{#>
+					<td style="text-align:center">禁止</td>
+					<#}#>
+					<td style="text-align:center"><#=rows[i][j]['contract']#></td>
+                    <td style="text-align:center"><#=rows[i][j]['dayratecontract']#></td>
+					<td style="text-align:center"><#=rows[i][j]['operate']#></td>
+				</tr>
+				<#}}#>
+			</tbody>
+		</table>
+		<div class="zone-g-pagination mt--20 clearfix">
+			<div class="pagination-inner">
+				<div class="p-body" id="page">
+					<#=rows[0][0]['page']#>
+				</div>
+			</div>
+		</div>
+    </script>
+
+	<script type="text/template" id="empty_member_list">
+		<table class="ff-hv" border="0" cellspacing="0" cellpadding="0">
+			<thead>
+				<tr>
+					<th style="text-align:center">用户名</th>
+					<th style="text-align:center">类型</th>
+					<th style="text-align:center">主账户</th>
+					<th style="text-align:center">返点</th>
+					<th style="text-align:center">登录时间</th>
+					<th style="text-align:center">状态</th>
+					<th style="text-align:center">分红契约</th>
+                    <th style="text-align:center">日工资契约</th>
+					<th style="text-align:center">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr style="height:150px">
+					<td class="font-bold" style="font-size:16px; text-align:center" colspan="9">查询暂无记录</td>
+				</tr>
+			</tbody>
+		</table>
+	</script>
+
+	<script type="text/template" id="loading_list">
+		<table class="ff-hv" border="0" cellspacing="0" cellpadding="0">
+			<thead>
+				<tr>
+					<th style="text-align:center">用户名</th>
+					<th style="text-align:center">类型</th>
+					<th style="text-align:center">主账户</th>
+					<th style="text-align:center">返点</th>
+					<th style="text-align:center">登录时间</th>
+					<th style="text-align:center">状态</th>
+					<th style="text-align:center">分红契约</th>
+                    <th style="text-align:center">日工资契约</th>
+					<th style="text-align:center">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr style="height:150px">
+					<td class="font-bold text-center" colspan="9"><i class="icon-spinner icon-spin icon-2x pull-center"></i></td>
+				</tr>
+			</tbody>
+		</table>
+	</script>
+
+	<!--开户配额-->
+	<script type="text/template" id="set_account">
+	<div class="popup_box" id="light"> 
+		<div id="fade" class="popup_main"> 
+		<div class="account_data proxyM__panel-tabLink"> 
+		<div class="account_table panel-lkList"> 
+			<form name="paieform" id="paieform" method="post">
+			<table class="ff-hv" border="0" cellspacing="0" cellpadding="0">
+				<thead>
+				<tr>
+					<th class="text-center">开户级别</th>
+					<th class="text-center">我的剩余开户额</th>
+					<th class="text-center">下级剩余开户额</th>
+					<th class="text-center">增加下级开户额</th>
+					<th class="text-center">回收下级开户额</th>
+				</tr>
+				</thead>
+				<tbody id="set_account_content">
+				</tbody>
+			</table> 
+			</form>
+		</div>
+        <div class="layui-form-item">
+            <div class="layui-input-block" style="margin-left:45%">
+                <button class="layui-btn" type="button" data-method="sendQuota">分配配额</button>
+            </div>
+        </div> 
+		</div> 
+		</div> 
+	</div> 
+	</script>
+
+<!--下级转账-->
+<script type="text/template" id="set_transfer">
+<form action="">
+  <div class="layui-form-item">
+    <label class="layui-form-label">充值用户</label>
+    <div class="layui-input-block">
+      <blockquote class="layui-elem-quote"><#=rows[0]['uname']#></blockquote>
+      <input type="hidden" name="u" value="<#=rows[0]['uid']#>"/>
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">账户余额</label>
+    <div class="layui-input-block">
+      <blockquote class="layui-elem-quote"><#=rows[0]['money']#></blockquote>
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">转账类型</label>
+    <div class="layui-input-block">
+      <select name="type" class="select-control" style="width:190px;height:35px">
+        <option value="1">普通转账</option>
+        <option value="2">活动转账</option>
+      </select>
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">充值金额</label>
+    <div class="layui-input-inline">
+      <input type="text" name="amount" required lay-verify="required" placeholder="请输入充值金额" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">资金密码</label>
+    <div class="layui-input-inline">
+      <input type="password" name="currentPwd" required lay-verify="required" placeholder="请输入资金密码" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <div class="layui-input-block" style="margin-left:45%">
+      <button class="layui-btn" type="button" lay-submit data-method="transferMoney" lay-filter="transferMoney">转  账</button>
+    </div>
+  </div>
+</form>
+</script>
+
+<!--用户升点-->
+<script type="text/template" id="set_quota">
+  <div class="popup_box" id="light"> 
+    <div id="fade" class="popup_main"> 
+    <div class="account_data"> 
+      <div class="account_login"> 
+      <dl> 
+        <dt>
+        <span>温馨提示：</span> 
+        <span>从上一个返点级别区间升到下一个返点级别区间，代理在上个返点级别区间增加一个配额，下一个需要开户配额的 返点级别区间扣减一个对应的配额. 比如：从4.5升点到4.9，此时总代在[4.6-5.0]区间扣减一个配额，[4.0-4.5]区间增加一个配额</span> 
+        </dt> 
+        <dt> 
+        <span>账户：</span> 
+        <span class="red"><#=rows[0]['username']#></span> 
+        <span style="margin-left:80px">返点数：</span> 
+        <span class="red"><#=rows[0]['point']#></span>
+        <span style="margin-left:80px">余额：</span> 
+        <span class="red"><#=rows[0]['money']#></span>
+        </dt>
+        <#for(var i = 0; i < datas.length; i++){#>
+        <#for(var j = 0; j < datas[i].length; j++){#>
+        <dt>
+        <span>级别：</span> 
+        <span class="red"><#=datas[i][j]['p']#></span> 
+        <span style="margin-left:80px">我的剩余开户额：</span> 
+        <span class="red"><#=datas[i][j]['m']#>个</span>
+        <span style="margin-left:80px">下级剩余开户额：</span> 
+        <span class="red"><#=datas[i][j]['y']#>个</span>
+        </dt>
+        <#}}#>
+        <dd style="padding-top:20px"> 
+        <label for="oldPwd">升点类型：</label> 
+        <select name="quoatType" style="width:190px;height:35px;">
+            <option value="">请选择</option>
+            <option value="1">配额升点</option>
+            <option value="2">普通升点</option>
+        </select>
+        </dd>
+        <dd style="padding-top:20px"> 
+        <label for="oldPwd">&nbsp;&nbsp;&nbsp;升点为：</label> 
+        <select name="point" style="width:190px;height:35px;">
+            <option value="">请选择</option>
+            <#
+                $begin = Number(datas[0][0]['yb'])+0.1
+                $end = Number(datas[0][0]['mb'])
+                for(var q=$begin; q<=$end; q=q+0.1)
+            {
+            #>
+            <option value="<#=q.toFixed(1)#>"><#=q.toFixed(1)#></option>
+            <#}#>
+        </select>
+        </dd>
+      </dl> 
+      </div> 
+    </div> 
+    </div>
+    <div class="layui-form-item">
+    <div class="layui-input-block" style="margin-left:45%">
+      <button class="layui-btn" type="button" lay-submit data-method="updateUserFandian">调整返点</button>
+    </div>
+  </div> 
+  </div>
+</script>
+
+<!--签订契约-->
+<script type="text/template" id="signContract_tpl">
+<div class="popup_box" id="light"> 
+    <form id="contractForm" method="post">
+        <blockquote class="layui-elem-quote">契约状态:未签订分红契约</blockquote>
+        <blockquote class="layui-elem-quote">签约人:<#=rows[0]['uname']#></blockquote>
+        <blockquote class="layui-elem-quote">契约规则如下:契约签订成功，不能修改。如想解除，需双方同意</blockquote>
+        <php>
+            if(session("SESSION_ROLE")==3)
+            {
+        </php>
+        <blockquote class="layui-elem-quote" style="color:red">签署契约的最低分红比例：{$minGainRate}%,最高分红比例：{$maxGainRate}%</blockquote>
+        <php>
+            }
+        </php>
+        <php>
+            if(session("SESSION_ROLE")==4 && !empty($dailysales))
+            {
+        </php>
+        <blockquote class="layui-elem-quote" style="color:red">您的契约当前最低周期销量{$dailysales}元,最低亏损量{$loss},最低分红比例{$receive}%</blockquote>
+        <php>
+            }
+        </php>
+        <input type="hidden" name="u" value="<#=rows[0]['uid']#>"/>
+        <div class="proxyM__panel-tabLink">
+            <div class="panel-lkList">
+                <table class="ff-hv" border="0" cellspacing="0" cellpadding="0">
+                    <thead>
+                    <tr>
+                        <th class="text-center">周期销量(元)</th>
+                        <th class="text-center">周期亏损(元)</th>
+                        <th class="text-center">分红比例</th>
+                        <th class="text-center" style="width:100px">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="text" style="width:150px;height:34px;padding-left:10px;border:1px #ccc solid" name="sales[]" autocomplete="off" onkeyup="this.value=this.value.replace(/[^\d]/g,'');" onchange="this.value=this.value.replace(/[^\d]/g,'');" placeholder="周期销量标准，不含小数点" value="" /> 
+                            </td>
+                            <td>
+                                <input type="text" style="width:150px;height:34px;padding-left:10px;border:1px #ccc solid" name="tbloss[]" autocomplete="off" onkeyup="this.value=this.value.replace(/[^\d]/g,'');" onchange="this.value=this.value.replace(/[^\d]/g,'');" placeholder="周期亏损标准，不含小数点" value="" />
+                            </td>
+                            <td>
+                                <input type="text" style="width:150px;height:34px;padding-left:10px;border:1px #ccc solid" name="tbreceive[]" autocomplete="off" onkeyup="this.value=this.value.replace(/[^\d]/g,'');" onchange="this.value=this.value.replace(/[^\d]/g,'');" placeholder="分红比例标准，不含小数点" value="" />% 
+                            </td>
+                            <td>
+                                <a class="ml--10 layui-btn" style="cursor:pointer" data-method="addItem"><i class=" icon-plus"></i>添加规则</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block" style="margin-left:360px">
+            <button class="layui-btn" lay-submit="" type="button" data-method="sureSignContract">立即签订</button>
+            <button class="layui-btn layui-btn-primary" type="button" data-method="cancelSignContract">取消签订</button>
+            </div>
+        </div>
+    </form>
+  </div>
+</script>
+
+<!--契约签订中-->
+<script type="text/template" id="signContracting_tpl">
+<div class="popup_box" id="light"> 
+    <div class="proxyM__panel-tabLink">
+            <blockquote class="layui-elem-quote">契约状态:契约中...</blockquote>
+            <blockquote class="layui-elem-quote">签约人:等待<#=rows[0]['uname']#>与你进行签约</blockquote>
+            <blockquote class="layui-elem-quote">契约规则如下:<span style="color:green">契约签订成功，不能修改。如想解除，需双方同意[<span style="color:red">注:处于签订中的契约无法进行解除</span>]</span></blockquote>
+            <php>
+            if(session("SESSION_ROLE")==3)
+                {
+            </php>
+            <blockquote class="layui-elem-quote" style="color:red">签署契约的最低分红比例：{$minGainRate}%,最高分红比例：{$maxGainRate}%</blockquote>
+            <php>
+                }
+            </php>
+            <php>
+                if(session("SESSION_ROLE")==4 && !empty($dailysales))
+                {
+            </php>
+            <blockquote class="layui-elem-quote" style="color:red">您的契约当前最低周期销量{$dailysales}元,最低亏损量{$loss},最低分红比例{$receive}%</blockquote>
+            <php>
+                }
+            </php>
+            <div class="panel-lkList">
+                <table class="ff-hv" border="0" cellspacing="0" cellpadding="0">
+                    <thead>
+                    <tr>
+                        <th class="text-center">周期销量(元)</th>
+                        <th class="text-center">周期亏损(元)</th>
+                        <th class="text-center">分红比例</th>
+                        <th class="text-center" style="width:100px">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <#for(var i = 0; i < rows[0]['data'].length; i++){#>
+                        <tr>
+                            <td style="text-align:center">
+                                <#=rows[0]['data'][i].dailysales#>
+                            </td>
+                            <td style="text-align:center">
+                                <#=rows[0]['data'][i].loss#>
+                            </td>
+                            <td style="text-align:center">
+                                <#=rows[0]['data'][i].receive#>%
+                            </td>
+                            <td style="text-align:center">
+                                <a class="c--f35c19 ml--10 disabled">契约签订中...</a>
+                            </td>
+                        </tr>
+                        <#}#>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+  </div>
+</script>
+
+<!--契约签订成功-->
+<script type="text/template" id="signContractend_tpl">
+<div class="popup_box" id="light"> 
+    <div class="proxyM__panel-tabLink">
+        <blockquote class="layui-elem-quote">契约状态:契约成功</blockquote>
+        <blockquote class="layui-elem-quote">签约人:与<#=rows[0]['uname']#>已签订契约</blockquote>
+        <blockquote class="layui-elem-quote">契约规则如下:契约签订成功，不能修改。如想解除，需双方同意[<span style="color:red">注:处于签订中的契约无法进行解除</blockquote>
+            <php>
+            if(session("SESSION_ROLE")==3)
+                {
+            </php>
+            <blockquote class="layui-elem-quote" style="color:red">签署契约的最低分红比例：{$minGainRate}%,最高分红比例：{$maxGainRate}%</blockquote>
+            <php>
+                }
+            </php>
+            <php>
+                if(session("SESSION_ROLE")==4 && !empty($dailysales))
+                {
+            </php>
+            <blockquote class="layui-elem-quote" style="color:red">您的契约当前最低周期销量{$dailysales}元,最低亏损量{$loss},最低分红比例{$receive}%</blockquote>
+            <php>
+                }
+            </php>
+            <div class="panel-lkList">
+                <table class="ff-hv" border="0" cellspacing="0" cellpadding="0">
+                    <thead>
+                    <tr>
+                        <th class="text-center">周期销量(元)</th>
+                        <th class="text-center">周期亏损(元)</th>
+                        <th class="text-center">分红比例</th>
+                        <th class="text-center" style="width:100px">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <#for(var i = 0; i < rows[0]['data'].length; i++){#>
+                        <tr>
+                            <td style="text-align:center">
+                                <#=rows[0]['data'][i].dailysales#>
+                            </td>
+                            <td style="text-align:center">
+                                <#=rows[0]['data'][i].loss#>
+                            </td>
+                            <td style="text-align:center">
+                                <#=rows[0]['data'][i].receive#>%
+                            </td>
+                            <#
+                                if(rows[0]['data'][i].status==2){
+                            #>
+                            <td style="text-align:center">
+                                <a class="layui-btn ml--10" style="cursor:pointer" data-field="<#=rows[0]['data'][i].id#>" data-method="applyDisContract">解除契约</a>
+                            </td>
+                            <#
+                                } else if(rows[0]['data'][i].status==3){
+                            #>
+                                <a class="layui-btn ml--10" style="cursor:pointer" data-field="<#=rows[0]['data'][i].id#>" data-method="agreeDisContract">同意解约</a>
+                            <#
+                                }
+                            #>
+                        </tr>
+                        <#}#>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+  </div>
+</script>
+
+<!--契约解除-->
+<script type="text/template" id="disContracting_tpl">
+<div class="popup_box" id="light"> 
+    <div class="proxyM__panel-tabLink">
+        <blockquote class="layui-elem-quote">契约状态:契约解除中...</blockquote>
+        <blockquote class="layui-elem-quote">契约状态:<#=rows[0]['uname']#>希望解除这份契约</blockquote>
+        <blockquote class="layui-elem-quote">契约状态:契约签订成功，不能修改。如想解除，需双方同意[<span style="color:red">注:处于签订中的契约无法进行解除</blockquote>
+            <php>
+            if(session("SESSION_ROLE")==3)
+                {
+            </php>
+            <blockquote class="layui-elem-quote" style="color:red">签署契约的最低分红比例：{$minGainRate}%,最高分红比例：{$maxGainRate}%</blockquote>
+            <php>
+                }
+            </php>
+            <php>
+                if(session("SESSION_ROLE")==4 && !empty($dailysales))
+                {
+            </php>
+            <blockquote class="layui-elem-quote" style="color:red">您的契约当前最低周期销量{$dailysales}元,最低亏损量{$loss},最低分红比例{$receive}%</blockquote>
+            <php>
+                }
+            </php>
+            <div class="panel-lkList">
+                <table class="ff-hv" border="0" cellspacing="0" cellpadding="0">
+                    <thead>
+                    <tr>
+                        <th class="text-center">周期销量(元)</th>
+                        <th class="text-center">周期亏损(元)</th>
+                        <th class="text-center">分红比例</th>
+                        <th class="text-center" style="width:100px">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <#for(var i = 0; i < rows[0]['data'].length; i++){#>
+                        <tr>
+                            <td class="text-center">
+                                <#=rows[0]['data'][i].dailysales#>
+                            </td>
+                            <td class="text-center">
+                                <#=rows[0]['data'][i].loss#>
+                            </td>
+                            <td class="text-center">
+                                <#=rows[0]['data'][i].receive#>%
+                            </td>
+                            <td class="text-center">
+                                <#
+                                    if(rows[0]['data'][i].firstparty==rows[0]['data'][i].originator){
+                                #>
+                                <a class="layui-btn ml--10" style="cursor:pointer" data-field="<#=rows[0]['data'][i].id#>" data-method="agreeDisContract">同意解约</a>
+                                <#
+                                    } else {
+                                #>
+                                等待下级同意
+                                <#
+                                    }
+                                #>
+                            </td>
+                        </tr>
+                        <#}#>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+  </div>
+</script>
+
+
+
+
+
+
+
+
+
+<!--签订日工资契约-->
+<script type="text/template" id="signDayrateContract_tpl">
+<div class="popup_box" id="light"> 
+    <form id="dayratecontractForm" method="post">
+        <blockquote class="layui-elem-quote">契约状态:未签订日工资契约</blockquote>
+        <blockquote class="layui-elem-quote">签约人:<#=rows[0]['uname']#></blockquote>
+        <blockquote class="layui-elem-quote">契约规则如下:契约签订成功，不能修改。如想解除，需双方同意</blockquote>
+        <php>
+        if(!empty($dailysales)){
+        </php>
+            <blockquote class="layui-elem-quote" style="color:red">您当前日工资契约最低日量{$dailysales}元,最低日工资{$dayrate}元,最少有效人数{$numberofbet}人,最低有效金额{$moneyofbet}元</blockquote>
+        <php>
+            }
+        </php>
+        <input type="hidden" name="u" value="<#=rows[0]['uid']#>"/>
+        <div class="proxyM__panel-tabLink">
+            <div class="panel-lkList">
+                <table class="ff-hv" border="0" cellspacing="0" cellpadding="0">
+                    <thead>
+                    <tr>
+                        <th class="text-center">日销量(元)</th>
+                        <th class="text-center">奖励(元)</th>
+                        <th class="text-center">活跃人数</th>
+                        <th class="text-center">活跃金额</th>
+                        <th class="text-center" style="width:100px">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="text" style="height:34px;padding-left:10px;border:1px #ccc solid" name="sales[]" autocomplete="off" onkeyup="this.value=this.value.replace(/[^\d]/g,'');" onchange="this.value=this.value.replace(/[^\d]/g,'');" placeholder="日销量标准，不含小数点" value="" /> 
+                            </td>
+                            <td>
+                                <input type="text" style="height:34px;padding-left:10px;border:1px #ccc solid" name="reward[]" autocomplete="off" onkeyup="this.value=this.value.replace(/[^\d]/g,'');" onchange="this.value=this.value.replace(/[^\d]/g,'');" placeholder="日奖励标准，不含小数点" value="" />
+                            </td>
+                            <td>
+                                <input type="text" style="height:34px;padding-left:10px;border:1px #ccc solid" name="activepeople[]" autocomplete="off" onkeyup="this.value=this.value.replace(/[^\d]/g,'');" onchange="this.value=this.value.replace(/[^\d]/g,'');" placeholder="活跃人数" value="" />
+                            </td>
+                            <td>
+                                <input type="text" style="height:34px;padding-left:10px;border:1px #ccc solid" name="activebet[]" autocomplete="off" onkeyup="this.value=this.value.replace(/[^\d]/g,'');" onchange="this.value=this.value.replace(/[^\d]/g,'');" placeholder="活跃金额，不含小数点" value="" />
+                            </td>
+                            <td>
+                                <a class="ml--10 layui-btn" style="cursor:pointer" data-method="addDayrateItem"><i class=" icon-plus"></i>添加规则</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block" style="margin-left:360px">
+            <button class="layui-btn" lay-submit="" type="button" data-method="sureSignDayrateContract">立即签订</button>
+            <button class="layui-btn layui-btn-primary" type="button" data-method="cancelSignDayrateContract">取消签订</button>
+            </div>
+        </div>
+    </form>
+  </div>
+</script>
+
+<!--契约签订中-->
+<script type="text/template" id="signDayrateContracting_tpl">
+<div class="popup_box" id="light"> 
+    <div class="proxyM__panel-tabLink">
+            <blockquote class="layui-elem-quote">契约状态:契约中...</blockquote>
+            <blockquote class="layui-elem-quote">签约人:等待<#=rows[0]['uname']#>与你进行签约</blockquote>
+            <blockquote class="layui-elem-quote">契约规则如下:<span style="color:green">契约签订成功，不能修改。如想解除，需双方同意[<span style="color:red">注:处于签订中的契约无法进行解除</span>]</span></blockquote>
+            <php>
+            if(!empty($dailysales)){
+            </php>
+                <blockquote class="layui-elem-quote" style="color:red">您当前日工资契约最低日量{$dailysales}元,最低日工资{$dayrate}元,最少有效人数{$numberofbet}人,最低有效金额{$moneyofbet}元</blockquote>
+            <php>
+                }
+            </php>
+            <div class="panel-lkList">
+                <table class="ff-hv" border="0" cellspacing="0" cellpadding="0">
+                    <thead>
+                    <tr>
+                        <th class="text-center">日销量(元)</th>
+                        <th class="text-center">奖励(元)</th>
+                        <th class="text-center">活跃人数</th>
+                        <th class="text-center">活跃金额</th>
+                        <th class="text-center" style="width:100px">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <#for(var i = 0; i < rows[0]['data'].length; i++){#>
+                        <tr>
+                            <td style="text-align:center">
+                                <#=rows[0]['data'][i].dailysales#>
+                            </td>
+                            <td style="text-align:center">
+                                <#=rows[0]['data'][i].reward#>
+                            </td>
+                            <td style="text-align:center">
+                                <#=rows[0]['data'][i].activepeople#>
+                            </td>
+                            <td style="text-align:center">
+                                <#=rows[0]['data'][i].activebet#>
+                            </td>
+                            <td style="text-align:center">
+                                <a class="c--f35c19 ml--10 disabled">契约签订中...</a>
+                            </td>
+                        </tr>
+                        <#}#>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+  </div>
+</script>
+
+<!--契约签订成功-->
+<script type="text/template" id="signDayrateContractend_tpl">
+<div class="popup_box" id="light"> 
+    <div class="proxyM__panel-tabLink">
+        <blockquote class="layui-elem-quote">契约状态:契约成功</blockquote>
+        <blockquote class="layui-elem-quote">签约人:与<#=rows[0]['uname']#>已签订契约</blockquote>
+        <blockquote class="layui-elem-quote">契约规则如下:契约签订成功，不能修改。如想解除，需双方同意[<span style="color:red">注:处于签订中的契约无法进行解除</blockquote>
+        <php>
+        if(!empty($dailysales)){
+        </php>
+            <blockquote class="layui-elem-quote" style="color:red">您当前日工资契约最低日量{$dailysales}元,最低日工资{$dayrate}元,最少有效人数{$numberofbet}人,最低有效金额{$moneyofbet}元</blockquote>
+        <php>
+            }
+        </php>
+            <div class="panel-lkList">
+                <table class="ff-hv" border="0" cellspacing="0" cellpadding="0">
+                    <thead>
+                    <tr>
+                        <th class="text-center">日销量(元)</th>
+                        <th class="text-center">奖励(元)</th>
+                        <th class="text-center">活跃人数</th>
+                        <th class="text-center">活跃金额</th>
+                        <th class="text-center" style="width:100px">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <#for(var i = 0; i < rows[0]['data'].length; i++){#>
+                        <tr>
+                            <td style="text-align:center">
+                                <#=rows[0]['data'][i].dailysales#>
+                            </td>
+                            <td style="text-align:center">
+                                <#=rows[0]['data'][i].reward#>
+                            </td>
+                            <td style="text-align:center">
+                                <#=rows[0]['data'][i].activepeople#>
+                            </td>
+                            <td style="text-align:center">
+                                <#=rows[0]['data'][i].activebet#>
+                            </td>
+                            <#
+                                if(rows[0]['data'][i].status==2){
+                            #>
+                            <td style="text-align:center">
+                                <a class="layui-btn ml--10" style="cursor:pointer" data-field="<#=rows[0]['data'][i].id#>" data-method="applyDisDayrateContract">解除契约</a>
+                            </td>
+                            <#
+                                } else if(rows[0]['data'][i].status==3) {
+                            #>
+                            <td style="text-align:center">
+                                <a class="layui-btn ml--10 layui-btn-normal" style="cursor:pointer" data-field="<#=rows[0]['data'][i].id#>" data-method="agreeDisDayrateContract">同意解约</a>
+                            </td>
+                            <#
+                                }
+                            #>
+                        </tr>
+                        <#}#>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+  </div>
+</script>
+
+<!--契约解除-->
+<script type="text/template" id="disDayrateContracting_tpl">
+<div class="popup_box" id="light"> 
+    <div class="proxyM__panel-tabLink">
+        <blockquote class="layui-elem-quote">契约状态:契约解除中...</blockquote>
+        <blockquote class="layui-elem-quote">契约状态:<#=rows[0]['uname']#>希望解除这份契约</blockquote>
+        <blockquote class="layui-elem-quote">契约状态:契约签订成功，不能修改。如想解除，需双方同意[<span style="color:red">注:处于签订中的契约无法进行解除</blockquote>
+        <php>
+        if(!empty($dailysales)){
+        </php>
+            <blockquote class="layui-elem-quote" style="color:red">您当前日工资契约最低日量{$dailysales}元,最低日工资{$dayrate}元,最少有效人数{$numberofbet}人,最低有效金额{$moneyofbet}元</blockquote>
+        <php>
+            }
+        </php>
+            <div class="panel-lkList">
+                <table class="ff-hv" border="0" cellspacing="0" cellpadding="0">
+                    <thead>
+                    <tr>
+                        <th class="text-center">日销量(元)</th>
+                        <th class="text-center">奖励(元)</th>
+                        <th class="text-center">活跃人数</th>
+                        <th class="text-center">活跃金额</th>
+                        <th class="text-center" style="width:100px">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <#for(var i = 0; i < rows[0]['data'].length; i++){#>
+                        <tr>
+                            <td style="text-align:center">
+                                <#=rows[0]['data'][i].dailysales#>
+                            </td>
+                            <td style="text-align:center">
+                                <#=rows[0]['data'][i].reward#>
+                            </td>
+                            <td style="text-align:center">
+                                <#=rows[0]['data'][i].activepeople#>
+                            </td>
+                            <td style="text-align:center">
+                                <#=rows[0]['data'][i].activebet#>
+                            </td>
+                            <td class="text-center">
+                                <#
+                                    if(rows[0]['data'][i].firstparty==rows[0]['data'][i].originator){
+                                #>
+                                <a class="layui-btn ml--10" style="cursor:pointer" data-field="<#=rows[0]['data'][i].id#>" data-method="agreeDisDayrateContract">同意解约</a>
+                                <#
+                                    } else {
+                                #>
+                                等待下级同意
+                                <#
+                                    }
+                                #>
+                            </td>
+                        </tr>
+                        <#}#>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+  </div>
+</script>
+</body>
+</html>

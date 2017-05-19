@@ -1,0 +1,70 @@
+<include file="Common:head" />
+<link rel="stylesheet" href="/Resourse/Home/css/lottery-trend.css" />
+<body class="body-bg">
+	<div class="loader">
+        <div class="loader-inner ball-pulse-rise">
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+	<div class="JszContent" style="display: none">
+	<!-- <>顶部区域 -->
+	<include file="Common:lotteryMenu" />
+	
+	<!-- <>主体容器区域 -->
+	<div class="container" style="margin-top: 130px!important">
+		<div class="account_box" style="margin-top:0">
+                <main style="font-weight:300">
+                    <div class="syyx-1">
+                        <div class="center">
+                            <div class="tab">
+                            <!-- tab内容 -->
+                                <div class="page-content noselect default-cursor">
+                                    <div class="page-container-bg">
+                                        <div class="page-container">
+                                            <div class="lottery-nav">
+                                                <div class="menu">
+                                                    <div class="title"><span>金手指2分</span><i class="arrow down"></i></div>
+                                                    <div class="list">
+                                                        <div class="line"></div>
+                                                        <div class="category">
+                                                            <div class="logo u9"></div>
+                                                            <div class="items"> <a href="/trend/yfssc" data-name="fbffc1m">金手指分分彩</a> <a href="/trend/efssc" data-name="fbffc3m">金手指2分彩</a> <a href="/trend/wfssc" data-name="fbffc5m">金手指5分彩</a> </div>
+                                                        </div>
+                                                        <div class="line"></div>
+                                                        <div class="category">
+                                                            <div class="logo ssc"></div>
+                                                            <div class="items"> <a href="/trend/cqssc" data-name="cqssc">重庆时时彩</a> <a href="/trend/xjssc" data-name="xjssc">新疆时时彩</a> <a href="/trend/tjssc" data-name="tjssc">天津时时彩</a> <a href="/trend/bjssc" data-name="tjssc">北京五分彩</a> <a href="/trend/jndssc" data-name="tjssc">加拿大3.5分彩</a><a href="/trend/twssc" data-name="twssc">台湾五分彩</a><a href="/trend/txssc" data-name="tjssc">腾讯分分彩</a><a href="/trend/qqssc" data-name="tjssc">QQ分分彩</a></div>
+                                                        </div>
+                                                        <div class="line"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="trend-method"><a data-type="WuXing" class="">五星</a><a data-type="HouSan" class="">后三</a><a data-type="ZhongSan" class="">中三</a><a data-type="QianSan" class="">前三</a><a data-type="HouEr" class="active">后二</a><a data-type="QianEr">前二</a></div>
+                                            </div>
+                                            <div class="trend-control"><div class="tools"><label><input name="guides" type="checkbox" checked="checked">辅助线</label><label><input name="lostNum" type="checkbox" checked="checked">遗漏</label><label><input name="lostLine" type="checkbox">遗漏条</label><label><input name="trend" type="checkbox" checked="checked">走势</label></div><div class="time"><a data-command="latest-30">最近30期</a><a data-command="latest-50">最近50期</a><a data-command="date-today">今日数据</a><a data-command="date-yesterday">昨日数据</a><a data-command="date-before-yesterday">前日数据</a></div></div>
+                                            <div class="trend-wrapper"></div>
+                                        </div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+	</div>
+	
+	<!-- <>底部区域 -->
+	<include file="Common:foot" /> 
+    </div>
+	<script type="text/javascript" src="/Resourse/Home/js/lib/core.js"></script>
+  <script type="text/javascript" src="/Resourse/Home/js/lib/jquery.plugins.js"></script>
+  <script type="text/javascript" src="/Resourse/Home/js/lib/jquery.alert.js"></script>
+  <script type="text/javascript" src="/Resourse/Home/js/app/lottery-trend.js"></script>
+  <script src="/Resourse/Home/js/effect/jquery.textScroll.js"></script>
+  <script src="/Resourse/Home/js/app/trend.js" type="text/javascript"></script>
+  <script type="text/javascript">
+        var Lottery = {"id":18};
+        $(document).ready(function() {
+            TrendSSC.init();
+        });
+    </script>
+</body>
+</html>

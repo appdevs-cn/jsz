@@ -1,0 +1,105 @@
+<include file="Common:head" /> 
+<body class="body-bg">
+	<div class="loader">
+        <div class="loader-inner ball-pulse-rise">
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+    <div class="JszContent" style="display: none">
+	<!-- <>顶部区域 -->
+	<include file="Common:menu" />
+	
+	<!-- <>主体容器区域 -->
+	<div class="container">
+		<div class="mid clearfix">
+			<!-- 关于我们 -->
+			<div class="pg__brandHistory-list mt--30 pb--60 clearfix">
+				<div class="main clearfix mt--10">
+					<!-- //侧边 -->
+					<div class="sidebar fl" id="J__sidebar">
+						<h2 class="hdTit">游戏介绍</h2>
+						<a <if condition="$menu eq 'PeopleIntroduction'">class="on current"</if> href="/PeopleIntroduction">真人娱乐<i></i></a>
+						<a <if condition="$menu eq 'ComputerIntroduction'">class="on current"</if> href="/ComputerIntroduction">电子游戏<i></i></a>
+						<a <if condition="$menu eq 'CpIntroduction'">class="on current"</if> href="/CpIntroduction">彩票投注<i></i></a>
+                        <a <if condition="$menu eq 'QipaiIntroduction'">class="on current"</if> href="/QipaiIntroduction">棋牌游戏<i></i></a>
+                        <a <if condition="$menu eq 'TiyuIntroduction'">class="on current"</if> href="/TiyuIntroduction">体育投注<i></i></a>
+					</div>
+					<!-- //列表 -->
+					<style type="text/css">
+						.casino .poker_bn .banner_nav{padding:30px 0 10px 0;}
+						.casino .poker_bn .banner_nav a{
+							display: inline-block;width: 140px;height: 32px;line-height: 32px;color: white;text-align: center;background: #f35c19;margin-top: 6px;
+						}
+						.casino .poker_bn .banner_nav a:hover,.casino .poker_bn .banner_nav a.current{background:#de4501;}
+						
+						.casino .poker_tab{clear:both;height:35px;margin:20px 0;padding:0;}
+						.casino .poker_tab li{border-bottom:0 none;float:left;}
+						.casino .poker_tab li a{background:#eee;border:1px solid #ccc;display:block;height:33px;line-height:33px;width:150px;margin-right:-1px;text-align:center;}
+						.casino .poker_tab li.active a{background:#f35c19;color:#fff;}
+					</style>
+					<div class="brandHistory_list fr">
+						<div class="pg__others-panel casino">
+							<div class="sub_con">
+							<div class="poker_bn">
+								<img src="https://a01image.cfsicao.com/static/A01P/_default/__static/__images/help_center/poker/ag_poker_bn.jpg">
+								<div class="banner_nav">
+									棋牌游戏：
+									<div class="pokernav">
+										<a href="/QipaiIntroduction">德州扑克</a> 
+										<a class="current" href="/QipaiIntroduction/Quesheng">雀神麻将</a>
+										<a href="/QipaiIntroduction/Niuniu">牛牛</a>
+									</div>
+								</div>
+							</div>
+							
+							<br>这里提供经典德州扑克游戏，简单注册即可随时开始游戏，存款安全，取款快速；24小时在线中文服务，是玩棋牌游戏的不二之选。 开启运气 &amp;技术双重赢取巨额财富之门，下一个百万富翁就是您！
+							
+							<ul class="poker_tab">
+								<li class="active"><a href="#poker1-tab" _href="#poker1">麻将游戏说明</a></li>
+								<li><a href="#poker2-tab" _href="#poker2">游戏规则</a></li>
+								<li><a href="#poker3-tab" _href="#poker3">特色功能</a></li>
+								<li><a href="#poker4-tab" _href="#poker4">常见问题</a></li>
+								<li><a href="javascript:;">了解更多</a></li>
+							</ul>
+							
+							<p class="cls"></p>
+							<div class="kenobox" id="poker1" style="display: block; ">
+								<h5>游戏说明:</h5>1.游戏玩法采用广东麻将+血战到底的规则：只许碰不许吃；胡完以后继续打，直到三家胡牌或者流局。第一个赢家不一定赢最多，被胡牌的玩家<br>也可以赢，增加游戏的乐趣性。<br>2.玩牌过程透明：玩家胡牌后手牌掀开，且该玩家所有打出牌当时手上的牌均可供查看。游戏结束后，牌墙未摸的牌也会按顺序全部打开，可以<br>核对整副麻将的数量是否准确。<br>3.胡牌后可选择换桌，玩牌效率大提高。<br>4.结算规则公平：即时结算杠钱；资产为0时认输，该玩家不能再继续牌局；单次赢钱额度超过自己当前余额时，只能赢取与当前余额相同的额度。<br>5.实时人工服务：玩牌过程中可随时呼叫巡场员或客服人员帮助解决您在牌局过程中遇到的问题。<br>6.所有可疑牌局将会将视频文件公示到网站，所有玩家均可发表评论并分析，确保官网评判公正公开。
+							</div>
+							
+							<div class="kenobox" id="poker2" style="display: none; ">
+								<h5>玩法说明</h5>游戏用牌：使用108张牌，筒、条、万各36张。玩家可碰、杠、胡，胡牌允许放炮胡，不允许吃牌。<br>血战玩法：一家胡牌以后，其他玩家还能继续打，直到有3家都胡或者余下的玩家家流局，胡牌玩家可即时离开牌桌并完成结算。<p></p><br><p></p><h5>庄家</h5>每局游戏随机庄家。<p></p><br><p></p><h5>碰杠牌</h5>碰牌：玩家打牌后，如果手上有两张与打出牌一样的牌可碰牌。<br>放杠：玩家打牌之后，如果自己手上有三张跟那被打出的牌一样的，就可以“杠牌”，这种杠牌叫做“放杠”，放杠指打出杠牌的玩家。<br>暗杠：如果是手内摸有四张相同的牌，取出杠牌，则叫做“暗杠”，暗杠三张牌牌面朝下，一张牌面朝上，与明杠展示一致。<br>明杠：如果是已经碰牌了，却又再摸入一张相同的牌。另外与放杠对应的杠牌玩家的行为也称为明杠。<br>杠牌后的杠牌得分在完成杠牌时立即结算显示。<p></p><br><p></p><h5>打骰子</h5>游戏开始打骰子决定摸牌位子<br>以两个骰子的数字加起来的数字决定摸牌方位，以两个骰子中较小的数字决定摸牌的具体位子。<br>庄家方位：5/9。<br>庄家的下家（逆时针方向）：2/6/10。<br>庄家的对家：3/7/11。<br>庄家的上家（逆时针方向）：4/8/12。<br>骰子较小的数字决定摸牌的初始位子，例如较小的数字是3表示逆时针方向，在具体方位上从第4墩开始抓牌。<p></p><br><p></p><h5>胡牌规则</h5>胡牌要求3xN+2（一对）形式（杠出的牌除外）胡牌不计番数，没有七对、七星不靠、全不靠、推不倒等国标胡牌方式，不计大小胡。<br>漏胡：如果玩家1打出一张牌，玩家2可以胡牌但是没有选择胡牌，在玩家2进张以前，其他玩家再打出同样的牌玩家2不能胡牌。<br>一炮多响：玩家打出一张牌，桌上超过2个玩家同时用这一张牌胡牌。<br>抢杠胡：先碰，再摸张4张牌明杠，此时其他玩家可抢杠胡，抢杠胡的情况下，杠牌玩家支付抢杠玩家3倍自摸的钱。<br>注：抢杠只会在明杠的情况下出现，放杠跟暗杠不会出现抢杠。<p></p><br><p></p><h5>游戏流程</h5>选择大房间→等待配桌→满4人无需准备游戏开始<p></p><br><p></p><h5>结算规则</h5>放炮：2倍底分x1，放炮玩家支付给赢牌玩家2倍底分。<br>自摸：自摸：2倍底分x其他未胡牌人数。自摸玩家获得其他未胡牌玩家每人2倍底分。<br>放杠：1倍底分x其他未胡牌人数。<br>暗杠：2倍底分x其他未胡牌人数。杠牌玩家获得其他未胡牌玩家每人2倍底分。<br>明杠：1倍底分x其他未胡牌人数。<br>抢杠胡牌：2倍底分*其他未胡牌人数。杠牌玩家支付胡牌玩家<br>注：1:开杠就结算，系统抽取赢家收入的2%。<br>2:玩家一次最多只能赢取与自己资产数相同的资产。在4人的100底分局中，当您自摸胡牌时，如果您胡牌时的资产数为300，您最多只能赢300而不是600。<p></p><br><p></p><h5>抽水</h5>开杠、胡牌立即结算，系统抽玩家赢取额度的2%作为佣金（抽水）。<p></p><br><p></p><h5>积分</h5>麻将每次产生输赢结算，输的玩家获得积分。<br>积分=本次结算金额*2%<br>比如：血战场底分100的牌局中，ABCD共4名玩家，A吃胡B，A从B赢200，B玩家得到积分:200*2%=4积分。<p></p><br><p></p><h5>有效投注</h5>每一场有抽佣的牌局，游戏玩家都可以获得与底分等额的有效投注；如果玩家在麻将牌局中的输值合计（每次输值的合计）大于底分，玩家在本局的有效投注等于总输值。<br><p></p>
+							</div>
+							
+							<div class="kenobox" id="poker3" style="display: none; ">
+								<h5>胡牌后查牌</h5>胡牌后可查看玩家当时打出时的手牌，可直接在手牌上投诉该玩家。<p></p><br><p></p><h5>牌局回放</h5>每局牌都支持视频回放，可查询牌局过程的任意细节。<p></p><br><p></p><h5>牌友记录</h5>记录与自己对战过的玩家与输赢，一眼即可找到那个他（她）。<p></p><br><p></p><h5>投诉</h5>遭遇不公平？您可以投诉，客服人员收到投诉后会在24小时内回复。<p></p><br><h5>帮助</h5>牌局过程中遇到有不明白的地方可以呼叫巡场员，随时解答您的疑问。<p></p><br><h5>标记点</h5>对玩家的出牌有疑问？您可以标记指定的牌，在该玩家倒牌后查阅他打出牌当时的手牌。<p></p><br>
+							</div>
+							
+							<div class="kenobox" id="poker4" style="display: none; ">
+								<h5>麻将游戏的有效投注怎么算？</h5>每一场有抽佣的牌局，游戏玩家都可以获得与底分等额的有效投注；如果玩家在麻将牌局中的输值合计（每次输值的合计）大于底分，玩家在本局的有效投注等于总输值。<br>例如：某一局底分100的游戏，结果如下:<div class="tbl"><table width="100%" border="0" cellspacing="1" cellpadding="0"><tbody><tr><th width="12%">玩家</th><th width="11%">暗杠</th><th width="11%">明杠</th><th width="11%">放杠</th><th width="11%">被杠</th><th width="11%">被胡牌</th><th width="11%">胡牌</th><th width="11%">总计</th><th width="11%">备注</th></tr><tr><td>A</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>200</td><td>200</td><td>第1个胡牌</td></tr><tr class="_r"><td>B</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>-100</td><td>-400</td><td>&nbsp;</td><td>-500</td><td>&nbsp;</td></tr><tr><td>C</td><td>&nbsp;</td><td>200</td><td>&nbsp;</td><td>&nbsp;</td><td>-200</td><td>200</td><td>200</td><td>第2个胡牌</td></tr><tr class="_r"><td>D</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>-100</td><td>&nbsp;</td><td>200</td><td>200</td><td>自摸（第3）</td></tr></tbody></table></div><br>
+				本局各玩家有效投注：<div class="tbl"><table width="100%" border="0" cellspacing="1" cellpadding="0"><tbody><tr><th width="34%">玩家</th><th width="33%">有效投注</th><th width="33%">备注</th></tr><tr><td>A</td><td>100</td><td>A没有输值</td></tr><tr class="_r"><td>B</td><td>500</td><td>B游戏中总输值500</td></tr><tr><td>C</td><td>200</td><td>C游戏中总输值200</td></tr><tr class="_r"><td>D</td><td>100</td><td>D游戏中总输值100</td></tr></tbody></table></div><br><p></p><h5>麻将游戏的积分怎么算？</h5>麻将每次产生输赢结算，输家得到积分。<br>积分= 本次结算金额*2%<br>比如：血战场底分100的牌局中，ABCD共4名玩家，A吃胡B，A赢了B 200，B得到积分: 4.0积分（200*2%）；<br>而后BCD继续游戏（A胡牌不再参与本局游戏），B自摸，B赢400（赢C、D各200），C、D各自新增积分: 4积分（200*2%）<p></p><br><p></p><h5>什么是即时结算？</h5>您好，由于麻将游戏中开杠种类与数量的不固定，为了减少玩家余额不足结算的情况，游戏中开杠、胡牌立即结算，而不是在游戏局结束后合并结算。余额不足的玩家，自动离开游戏。<p></p><br><p></p><h5>进入麻将游戏的最小额度要求？</h5>您好，进入麻将游戏，账户余额至少是游戏场底分的6倍。比如：50的游戏场，最小进入余额是300。<p></p><br><p></p><h5>为什么我七对的牌不能胡牌呢？</h5>您好，因为我们麻将玩法不做大胡，因此没有碰碰胡或者是十三幺等特殊胡牌牌型。<p></p><br><p></p><h5>为什么玩家单次最多只能赢取与自己资产数相同的资产？</h5>您好，我们鼓励玩家进入游戏时带入更多额度。玩家带入游戏的额度过低，存在余额不足赔付的可能，为了体现游戏公平原则，平台规定玩家单次最多只能赢取与自己资产数相同的资产，您在4人游戏的100/200场自摸胡牌时，游戏余额为300，只能赢300而不是600，其他三个玩家每人付出100。<p></p><br><p></p><h5>我怀疑同桌玩家之间出牌送碰，我该怎么办？</h5>您好，在该玩家胡牌后，您可以点击该玩家打出的手牌，查看该玩家出牌是否符合情理，如果有多次明显不符合情理的出牌，您可以投诉该玩家，客服人员会帮助您处理。<p></p><br><p></p><h5>桌面上碰出的牌都会带一个箭头是什么意思？</h5>您好，碰出的牌上面的箭头指向送碰的玩家。<p></p><br><p></p><h5>桌面上出现半透明的牌，是有什么特殊的意义吗？</h5>您好，半透明的牌是送碰玩家打出牌，送碰玩家胡牌后，点击该玩家面前的半透明的牌可以查询到该玩家在送碰时的手牌。<p></p><br><p></p><h5>牌局回放中的节点是什么意思？</h5>您好，节点的是指所有的拦牌行为，包括碰牌、杠牌、胡牌等操作。<p></p>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- <>底部区域 -->
+	<!-- <>底部区域 -->
+	<include file="Common:foot" />
+    </div>
+    <script src="/Resourse/Home/js/app/about.js" type="text/javascript"></script>
+	<script type="text/javascript">
+        $(function(){
+            $(".poker_tab li").on("click", function(){
+                $(this).addClass("active").siblings().removeClass("active");
+                $(".kenobox").hide();
+                $("#poker"+($(this).index()+1)).show();
+            });
+        });
+    </script>
+</body>
+</html>

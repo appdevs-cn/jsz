@@ -1,0 +1,109 @@
+<include file="Common:head" /> 
+<body class="body-bg">
+	<div class="loader">
+        <div class="loader-inner ball-pulse-rise">
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+    <div class="JszContent" style="display: none">
+	<!-- <>顶部区域 -->
+	<include file="Common:menu" />
+	
+	<!-- <>主体容器区域 -->
+	<div class="container">
+		<div class="mid clearfix">
+			<!-- 关于我们 -->
+			<div class="pg__brandHistory-list mt--30 pb--60 clearfix">
+				<div class="main clearfix mt--10">
+					<!-- //侧边 -->
+					<div class="sidebar fl" id="J__sidebar">
+						<h2 class="hdTit">游戏介绍</h2>
+						<a <if condition="$menu eq 'PeopleIntroduction'">class="on current"</if> href="/PeopleIntroduction">真人娱乐<i></i></a>
+						<a <if condition="$menu eq 'ComputerIntroduction'">class="on current"</if> href="/ComputerIntroduction">电子游戏<i></i></a>
+						<a <if condition="$menu eq 'CpIntroduction'">class="on current"</if> href="/CpIntroduction">彩票投注<i></i></a>
+                        <!--<a <if condition="$menu eq 'QipaiIntroduction'">class="on current"</if> href="/QipaiIntroduction">棋牌游戏<i></i></a>
+                        <a <if condition="$menu eq 'TiyuIntroduction'">class="on current"</if> href="/TiyuIntroduction">体育投注<i></i></a>-->
+					</div>
+					<!-- //列表 -->
+					<!-- //列表 -->
+					<style type="text/css">
+						.casino_nav a{background:#fc8e5d;display: block;width: 108px;height: 33px;text-align: center;color: #fff;line-height: 33px;border: solid 1px #f35c19;float: left;margin-right: -1px;margin-bottom: -1px;}
+						.casino_nav a:hover,.casino_nav a.cur{background:#f35c19;}
+						.casino .cas_vid{
+							display: block;float: left;margin-right: 22px;width: 196px;color: #333;text-align: center;
+						}
+						.casino .cas_vid img{margin-bottom:0;}
+						.casino table tr th{background:#aaa;color:#fff;text-align:center;font-weight:700;padding:5px 0;}
+						.casino table tr td{background:#f8f8f8;border-bottom:1px solid #eee;color:#333;text-align:center;padding:5px 0;}
+						.br_box{padding:20px 35px;margin-top:10px;}
+						.br_box .box2{display:inline-block;width:203px; margin-right:60px;}
+					</style>
+					<div class="brandHistory_list fr">
+						<div class="pg__others-panel casino">
+							<div class="sub_con">
+							<div class="casino_nav">
+								<a href="/PeopleIntroduction">百家乐</a>
+								<a href="/PeopleIntroduction/baozuo">包桌百家乐</a>
+								<a href="/PeopleIntroduction/jingmi">竞咪百家乐</a>
+								<a href="/PeopleIntroduction/longbao">龙宝百家乐</a>
+								<a href="/PeopleIntroduction/baoxian">保险百家乐</a>
+								<a href="/PeopleIntroduction/dezhou" class="cur">德州扑克</a>
+								<a href="/PeopleIntroduction/erbagang">二八杠</a>
+								<a href="/PeopleIntroduction/oushi21dian">欧式21点/21点</a>
+								<a href="/PeopleIntroduction/fantan">番摊</a>
+								<a href="/PeopleIntroduction/longhu">龙虎</a>
+								<a href="/PeopleIntroduction/lunpan">轮盘</a>
+								<a href="/PeopleIntroduction/niuniu">牛牛</a>
+								<a href="/PeopleIntroduction/sangong">三公</a>
+								<a href="/PeopleIntroduction/sedie">色碟</a>
+								<a href="/PeopleIntroduction/shaibao">骰宝</a>
+								<a href="/PeopleIntroduction/paijiu">温州牌九</a>
+							</div>
+							<div id="js_data"></div>
+							<p><input type="hidden" value="0" id="casino_nav"></p>
+							<p class="cls"></p>
+							<h5>德州扑克</h5>
+							<p>德州扑克Texas Hold'em，使用52张扑克牌，玩法是利用2张底牌与牌桌上的5张公牌，共7张牌，再取其中5张组成最佳牌组，玩家单纯与庄家比拚牌型大小而不用考虑花色，是一款考验智力与运气的扑克游戏</p>
+							<p><img src="Resourse/Home/images/casino/tp_bn.jpg" alt="" /></p>
+							<p class="cls"></p>
+							
+							<h5>游戏玩法：</h5>
+							<p>
+								牌局开始，闲家在时限内下注并决定是否加注：
+							</p>
+							<p>
+								<table width="100%" border="0" cellspacing="1" cellpadding="0"><tbody><tr><th width="21%">下注</th><th width="20%">注额</th><th width="59%">说明</th></tr><tr><td>底注　Ante</td><td>&nbsp;</td><td>底注的下注金额须符合限额大小。</td></tr><tr class="_r"><td>翻牌　Flop</td><td>2倍底注</td><td>可加注或弃牌，弃牌则输掉底注，加注后庄家在赌桌上分配3张公牌。<br>（未在倒数时限内跟注，视同弃牌）</td></tr><tr><td>转牌　Turn</td><td>1倍底注</td><td>可加注或过牌，过牌不需再下注，加注或过牌后庄家在赌桌上<br>分配第4张公牌。</td></tr><tr class="_r"><td>河牌　River</td><td>1倍底注</td><td>可加注或过牌，过牌不需再下注，加注或过牌后庄家在赌桌上分配<br>第5张公牌并摊牌。</td></tr></tbody></table>
+							</p>
+							<p>摊牌后，闲家与庄家以自己的2张底牌加上桌面5张公牌，共7张牌中取最大的5张牌型组合决定胜负。</p>
+							
+							•若牌型组合在顺子以上(含顺子)，获胜时可取得Ante、Flop、Turn、River个别1：1的下注赔率奖金；若牌型组合在三条以下(含三条)，获胜时可取得Flop、Turn、River个别1：1的下注赔率奖金。<br>
+							•庄家与闲家牌型组合相同时将取中扑克数字最大的定胜负，若数字依然相同时则为平局，闲家将拿回所有下注金额，不含Bonus。<br>
+							
+							<h5>赔率表：</h5>
+							<p>不同平台的同一游戏玩法，赔率可能不一样，具体以各游戏厅界面所展示的赔率为准。以下赔率以波音厅为例：</p>
+							<p>
+								<table width="100%" border="0" cellspacing="1" cellpadding="0"><tbody><tr><th width="50%">牌型组合</th><th width="50%">赔率</th></tr><tr><td>A-A</td><td>1︰30</td></tr><tr class="_r"><td>A-K（相同花色）</td><td>1：25</td></tr><tr><td>A-Q or A-J（相同花色）</td><td>1：20</td></tr><tr class="_r"><td>A-K（不同花色）</td><td>1：15</td></tr><tr><td>K-K or Q-Q or J-J</td><td>1：10</td></tr><tr class="_r"><td>A-Q or A-J（不同花色）</td><td>1：5</td></tr><tr><td>2到10任何一对</td><td>1：3</td></tr></tbody></table>
+							</p>
+							
+							<h5>获胜组合：</h5>
+							<p>
+								<table width="100%" border="0" cellspacing="1" cellpadding="0"><tbody><tr><th width="27%">牌型组合大小</th><th width="47%">牌型说明</th><th width="26%">图解</th></tr><tr><td>同花大顺</td><td>10~ACE花色相同的顺子</td><td><img src="Resourse/Home/images/casino/tp1.png"></td></tr><tr class="_r"><td>同花顺</td><td>5张花色相同数字相连的牌</td><td><img src="Resourse/Home/images/casino/tp2.png"></td></tr><tr><td>四条</td><td>有4张数字同的牌</td><td><img src="Resourse/Home/images/casino/tp3.png"></td></tr><tr class="_r"><td>葫芦</td><td>三条与一对组合的牌</td><td><img src="Resourse/Home/images/casino/tp4.png"></td></tr><tr><td>同花</td><td>5张花色相同的牌</td><td><img src="Resourse/Home/images/casino/tp5.png"></td></tr><tr class="_r"><td>顺子</td><td>5张数字相连的牌</td><td><img src="Resourse/Home/images/casino/tp6.png"></td></tr><tr><td>三条</td><td>有3张数字相同的牌</td><td><img src="Resourse/Home/images/casino/tp7.png"></td></tr><tr class="_r"><td>两对</td><td>有两组一对的牌</td><td><img src="Resourse/Home/images/casino/tp8.png"></td></tr><tr><td>一对</td><td>有2张数字相同的牌</td><td><img src="Resourse/Home/images/casino/tp9.png"></td></tr><tr class="_r"><td>高牌</td><td>无法组成任一牌型的散牌；五张牌中，取数字<br>最大定胜负，若数字相同，则依序比较第二、<br>第三、第四和第五大的点数，如果五张牌都相<br>同，则视为和局。 <br>示范牌型：A 3 9 7 5<br>比牌顺序：1 5 2 3 4</td><td><img src="Resourse/Home/images/casino/tp1.png"></td></tr></tbody></table>
+							</p>
+							
+							<p>以上游戏规则为通用规则，具体情况视各游戏平台而论，如有需要请查阅选择的游戏厅规则说明，最终解释权归游戏平台和博天堂所有。</p>
+							
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- <>底部区域 -->
+	<!-- <>底部区域 -->
+	<include file="Common:foot" />
+    </div>
+    <script src="/Resourse/Home/js/app/about.js" type="text/javascript"></script>
+</body>
+</html>

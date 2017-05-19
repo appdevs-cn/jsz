@@ -1,0 +1,142 @@
+<include file="Common:head" />
+<style type="text/css">
+    .uc__stationMsg tr .btn_view{display: none; background: #fff; border: 1px solid #ddd; color: #333; padding: 0 30px; line-height: 30px;}
+    .proxyM__panel-tabLink .panel-lkList table tr.on{background:#fff;}
+    .uc__stationMsg tr.on .btn_view{display: inline-block;}
+    .proxyM__panel-tabLink .panel-lkList table th, .proxyM__panel-tabLink .panel-lkList table td{padding: 15px 0;}
+</style>
+<body class="body-bg">
+    <div class="loader">
+        <div class="loader-inner ball-pulse-rise">
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+    <div class="JszContent" style="display: none">
+	<!-- <>顶部区域 -->
+	<include file="Common:menu" />
+	
+	<!-- <>主体容器区域 -->
+	<div class="container">
+		<div class="mid pb--50 clearfix">
+			<!-- 代理管理(团队概况) -->
+			<include file="Common::memberMenu" />
+            <div class="pM__panel mt--10">
+				<div class="proxyM__panel-tabLink">
+					<div class="head__nav clearfix">
+						<div class="navList ml--10 fl">
+                            <a class="on" href="/InBox">站内信 (<span class="totalMessage">{$msgcount}</span>)</a>
+							<a href="/Sms">短信订阅</a>
+						</div>
+						<div class="fr"><a class="btn_view J__replyMsg" data-method='sendmail' href="javascript:;" style="border-radius:0;margin: 12px 30px 0 0; padding: 0 30px;">发站内信</a></div>
+					</div>
+					
+					<div class="panel-lkList" id="mail">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<form name="messageFrom" id="messageFrom" method="POST">
+        <input type="hidden" name="p" value="1" />
+    </form>
+	<!-- <>底部区域 -->
+	 <include file="Common:foot" /> 
+    </div>
+    <script src="/Resourse/Home/js/app/message.js" type="text/javascript"></script>
+
+    <script type="text/template" id="mail_list">
+        <div style="padding: 10px 30px 0;">
+            <table class="uc__stationMsg ff-hv" border="0" cellspacing="0" cellpadding="0">
+			<tbody id="J__trHover">
+				<#for(var i = 0; i < rows.length; i++){#>
+        		<#for(var j = 0; j < rows[i].length; j++){#>
+				<tr>
+					<td>
+                        <img class="v__top" src="<#=rows[i][j]['head']#>" height="50" width="50" />
+                        <div class="dib v__middle ml--10">
+                            <h1>发件人:<#=rows[i][j]['fjusername']#></h1>
+                            <h2>标题:<#=rows[i][j]['title']#></h2>
+                            <p class="c--999">内容:<#=rows[i][j]['content']#></p>
+                            <p class="mt--10"><i class="c--999"><#=rows[i][j]['sendtime']#></i></p>
+                        </div>
+                    </td>
+                    <td class="align-c" width="10%">
+                        <a class="btn_view J__replyMsg" data-username="<#=rows[i][j]['fjusername']#>" data-uid="<#=rows[i][j]['fjuid']#>" href="javascript:;" data-method='replaymail'>回复</a>
+                    </td>
+				</tr>
+				<#}}#>
+			</tbody>
+		</table>
+		<div class="zone-g-pagination mt--20 clearfix">
+			<div class="pagination-inner">
+				<div class="p-body" id="page">
+					<#=rows[0][0]['page']#>
+				</div>
+			</div>
+		</div>
+    </script>
+
+    <script type="text/template" id="empty_mail_list">
+        <div class="padding30">
+            <h2 class="c--999 ff-hv">您暂时还没有站内信！</h2>
+        </div>
+    </script>
+
+    <script type="text/template" id="send_mail">
+        <div class="js-dlg-replyMsg dlg-goldFinger" style="height: 480px; width: 700px;display:block">
+            <div class="inner">
+                <div class="ct">
+                    <div class="form">
+                        <ul>
+                            <li>收信人：　
+                                <select name="tid" class="select-control" style="height: 36px; min-width: 272px;">
+                                    <#
+                                        var jsonobj=eval('('+rows[0]+')');
+                                    #>
+                                    <option select value="<#=jsonobj['parent_id']#>">上级</option>
+                                    <#
+                                    if(jsonobj['userlist']!=null){
+                                    for(var i = 0; i < jsonobj['userlist'].length; i++){#>
+                                    <option value="<#=jsonobj['userlist'][i]['id']#>">下级-<#=jsonobj['userlist'][i]['username']#></option>
+                                    <#}}#>
+                                </select>
+                            </li>
+                            <li>主　题：　<input type="text" name="title" style="width: 500px;" /></li>
+                            <li><label class="v__top">正　文：</label>　<textarea class="ipt-area" id="content" name="content" style="width: 500px;"></textarea></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="btns">
+                    <button class="cancel-btn transit" type="button" data-method="close">取消</button>
+                    <button class="submit-btn transit ml--20" type="button" data-method="send">确定</button>
+                </div>
+            </div>
+        </div>
+    </script>
+
+
+    <script type="text/template" id="replay_mail">
+        <div class="js-dlg-replyMsg dlg-goldFinger" style="height: 480px; width: 700px;display:block">
+            <div class="inner">
+                <div class="ct">
+                    <div class="form">
+                        <ul>
+                            <li>收信人：　
+                                <select name="tid" class="select-control" style="height: 36px; min-width: 272px;">
+                                    <option select value="<#=rows.uid#>">回复发件人</option>
+                                </select>
+                            </li>
+                            <li>主　题：　<input type="text" name="title" style="width: 500px;" /></li>
+                            <li><label class="v__top">正　文：</label>　<textarea class="ipt-area" id="content" name="content" style="width: 500px;"></textarea></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="btns">
+                    <button class="cancel-btn transit" type="button" data-method="close">取消</button>
+                    <button class="submit-btn transit ml--20" type="button" data-method="send">确定</button>
+                </div>
+            </div>
+        </div>
+    </script>
+</body>
+</html>

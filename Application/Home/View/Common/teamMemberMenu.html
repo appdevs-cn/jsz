@@ -1,0 +1,70 @@
+<div class="head__nav clearfix">
+    <div class="navList ml--10 fl">
+        <a <if condition="$proxymanager eq 'team'">class="on"</if> href="/Proxy/index">团队概况</a>
+        <php>
+            if($userType==0){
+        </php>
+        <a <if condition="$proxymanager eq 'createuser'">class="on"</if> href="/CreateAccount/index">开户中心</a>
+        <php>
+            }
+        </php>
+        <a <if condition="$proxymanager eq 'members'">class="on"</if> href="/Member/index">会员管理</a>
+        <php>
+            if($userType==0 && session("SESSION_ROLE")==4){
+        </php>
+        <php>
+            if($share_switch==1 && $dayrate_switch==0){
+        </php>
+        <a <if condition="$proxymanager eq 'contract'">class="on"</if> href="/replayContract">契约分红管理</a>
+        <php>
+            }
+        </php>
+        <php>
+            if($dayrate_switch==1 && $share_switch==0){
+        </php>
+        <a <if condition="$proxymanager eq 'contract'">class="on"</if> href="/dayratereplayContract">契约日工资管理</a>
+        <php>
+            }
+        </php>
+         <php>
+            if($dayrate_switch==1 && $share_switch==1){
+        </php>
+        <a <if condition="$proxymanager eq 'contract'">class="on"</if> href="/replayContract">契约管理</a>
+        <php>
+            }
+        </php>
+        <php>
+            }
+        </php>
+        <php>
+            if($share_switch==1 && $dayrate_switch==0){
+        </php>
+        <a <if condition="$proxymanager eq 'lookcontract'">class="on"</if> href="/LookContract">分红管理</a>
+        <php>
+            }
+        </php>
+        <php>
+            if($dayrate_switch==1 && $share_switch==0){
+        </php>
+        <a <if condition="$proxymanager eq 'lookcontract'">class="on"</if> href="/LookContract">日工资管理</a>
+        <php>
+            }
+        </php>
+        <php>
+            if($dayrate_switch==1 && $share_switch==1){
+        </php>
+        <a <if condition="$proxymanager eq 'lookcontract'">class="on"</if> href="/LookContract">日工资/分红管理</a>
+        <php>
+            }
+        </php>
+        <a <if condition="$proxymanager eq 'thirdgame'">class="on"</if> href="/ProxyMgRecord/index">真人/百家乐/电游</a>
+        <a <if condition="$proxymanager eq 'onlinemembers'">class="on"</if> href="/OnlineMember/index">在线会员</a>
+        <a <if condition="$proxy eq 'record'">class="on"</if> href="/ProxyRecord/index">彩票游戏记录</a>
+        <a <if condition="$proxymanager eq 'proxychangerecord'">class="on"</if> href="/ProxyChangeRecord/index">帐变记录</a>
+        <a <if condition="$blanceDetail eq 'blanceDetail'">class="on"</if> href="/RechargeWithDrawRecord/index">资金明细</a>
+        <a <if condition="$proxymanager eq 'teamreport'">class="on"</if> href="/TeamReport/index">团队报表</a>
+        <if condition="$showDividend eq true">
+        <!--<a <if condition="$proxymanager eq 'dividend'">class="on"</if> href="/Dividend/index">红利领取</a>-->
+        </if>
+    </div>
+</div>

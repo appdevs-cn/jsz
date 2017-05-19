@@ -1,0 +1,256 @@
+<include file="Common:head" /> 
+<body class="body-bg">
+    <div class="loader">
+        <div class="loader-inner ball-pulse-rise">
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+    <div class="JszContent" style="display: none">
+	<!-- <>顶部区域 -->
+	<include file="Common:menu" />
+	<!-- <>轮播图区域 -->
+	<div class="zone__idx-slider js_idxSlider zone__slider-electronicGames mid mt--10">
+		<div class="slider-inner">
+			<ul class="slider-list">
+				<li style="background-image: url(/Resourse/Home/images/placeholder/slider-banner-img01-1200x300.jpg);"></li>
+				<li style="background-image: url(/Resourse/Home/images/placeholder/slider-banner-img02-1200x300.jpg);"></li>
+			</ul>
+			<div class="slider-nav">
+				<i></i><i></i>
+			</div>
+			<div class="slider-ctlbtn">
+				<a class="js-btn-prev"></a>
+				<a class="js-btn-next"></a>
+			</div>
+		</div>
+	</div> <!-- END.zone-idx-slider -->
+	
+	<!-- <>主体容器区域 -->
+	<div class="container">
+		<div class="mid clearfix">
+			<!-- 筛选 -->
+			<div class="electronicGames-filter mt--15">
+				<div class="head__nav clearfix">
+					<div class="navList fl">
+						<a class="on" href="javascript:void(0)">热门游戏</a>
+						<a href="#">最新游戏</a>
+						<a href="#">彩金池游戏</a>
+						<a href="#">全部</a>
+					</div>
+					<div class="searchBox fr" id="searchContent">
+						
+					</div>
+				</div>
+				<div class="sub__menu clearfix">
+					<div class="menuList fl">
+						<a href="javascript:void(0)">选择游戏</a>
+						<a href="javascript:void(0)" class="selected" data-field="1" data-method="SearchMgGame">MG</a>
+						<a href="javascript:void(0)" data-field="2" data-method="SearchPtGame">PT</a>
+						<a href="javascript:void(0)" data-field="3" data-method="SearchAgGame">XIN</a>
+					</div>
+					
+					<div class="selectFilter fr">
+						<div class="lossLine J__filter-lossLine pos-rel">
+							<a class="label">赔钱线数<em class="arr"></em></a>
+							<span class="selectLists">
+								<a href="#">全部</a>
+								<a href="#">1-9线</a>
+								<a href="#">10-30线</a>
+								<a href="#">31-50线</a>
+							</span>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			
+			<!-- 电子游戏列表 -->
+			<div class="pg__electronicGames-list mt--15 pb--50 clearfix" id="ComputerGame">
+				
+			</div>
+		</div>
+	</div>
+	<!-- <>底部区域 -->
+	<include file="Common:foot" /> 
+    </div>
+    <script src="/Resourse/Home/js/app/bandit.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(function(){
+			var type = "{$type}"
+			if(type=="mg")
+			{
+				$('.menuList').find('a').removeClass('selected')
+                $('a[data-method="SearchMgGame"]').addClass('selected')
+                $('input[name=ChineseGameName]').val("")
+                index.MgSearchContent()
+                index.MgGameList()
+			}
+			else if(type=="pt")
+			{
+				$('.menuList').find('a').removeClass('selected')
+                $('a[data-method="SearchPtGame"]').addClass('selected')
+                $('input[name=ChineseGameName]').val("")
+                index.PtSearchContent()
+                index.PtGameList()
+			}
+			else if(type=="xin")
+			{
+				$('.menuList').find('a').removeClass('selected')
+                $('a[data-method="SearchAgGame"]').addClass('selected')
+                $('input[name=ChineseGameName]').val("")
+                index.AgSearchContent()
+                index.AgGameList()
+			}
+		})
+	</script>
+	<!--MG游戏搜索-->
+	<script type="text/template" id="mggame_search">
+		<div class="inner">
+			<form id="MgGameForm" method="post">
+				<input type="hidden" name="p" value="1" />
+				<input class="ipt-key" type="text" value="" name="ChineseGameName" placeholder="请输入游戏名" />
+				<a class="ipt-btn transit" href="javascript:void(0)" data-method="SearchMg"></a>
+			</form>
+		</div>
+	</script>
+
+	<!--MG游戏列表-->
+	<script type="text/template" id="mggame_list">
+		<ul class="clearfix">
+			<#for(var i = 0; i < rows.length; i++){#>
+        	<#for(var j = 0; j < rows[i].length; j++){#>
+			<li>
+				<div class="aimg">
+					<img src="/Resourse/Home/images/mg/<#=rows[i][j]['picname']#>" height="200" width="291" />
+					<div class="mask">
+						<div class="inner">
+							<#
+								if(rows[i][j]['IsCreate']==1){
+							#>
+							<a class="btn_view" href="javascript:void(0)" data-title="<#=rows[i][j]['ChinesGameName']#>" data-method="gmGame" data-field="<#=rows[i][j]['FlashGameID']#>">开始游戏</a>
+							<#
+								} else {
+							#>
+							<a class="btn_view" href="javascript:void(0)" data-title="<#=rows[i][j]['ChinesGameName']#>" data-method="CreateMgAccount">免费开户</a>
+							<#
+								}
+							#>
+						</div>
+					</div>
+				</div>
+				<div class="ft-tit clearfix">
+					<a class="title ellipsis fl" href="#"><i class="c--999">MG</i> <#=rows[i][j]['ChinesGameName']#></a>
+				</div>
+			</li>
+			<#}}#>
+		</ul>
+		<div class="zone-g-pagination mt--20 clearfix">
+			<div class="pagination-inner">
+				<div class="p-body" id="page">
+					<#=rows[0][0]['page']#>
+				</div>
+			</div>
+		</div>
+	</script>
+
+	<!--PT游戏搜索-->
+	<script type="text/template" id="ptgame_search">
+		<div class="inner">
+			<form id="PtGameForm" method="post">
+				<input type="hidden" name="p" value="1" />
+				<input class="ipt-key" type="text" value="" name="ChineseGameName" placeholder="请输入游戏名" />
+				<a class="ipt-btn transit" href="javascript:void(0)" data-method="SearchPt"></a>
+			</form>
+		</div>
+	</script>
+
+	<!--PT游戏列表-->
+	<script type="text/template" id="ptgame_list">
+		<ul class="clearfix">
+			<#for(var i = 0; i < rows.length; i++){#>
+        	<#for(var j = 0; j < rows[i].length; j++){#>
+			<li>
+				<div class="aimg">
+					<img src="/Resourse/Home/images/pt/<#=rows[i][j]['picname']#>" height="200" width="291" />
+					<div class="mask">
+						<div class="inner">
+							<#
+								if(rows[i][j]['IsCreate']==1){
+							#>
+							<a class="btn_view" href="javascript:void(0)" data-title="<#=rows[i][j]['ChinesGameName']#>" data-method="ptGame" data-field="<#=rows[i][j]['FL']#>">开始游戏</a>
+							<#
+								} else {
+							#>
+							<a class="btn_view" href="javascript:void(0)" data-title="<#=rows[i][j]['ChinesGameName']#>" data-method="CreatePtAccount">免费开户</a>
+							<#
+								}
+							#>
+						</div>
+					</div>
+				</div>
+				<div class="ft-tit clearfix">
+					<a class="title ellipsis fl" href="#"><i class="c--999">PT</i> <#=rows[i][j]['ChinesGameName']#></a>
+				</div>
+			</li>
+			<#}}#>
+		</ul>
+		<div class="zone-g-pagination mt--20 clearfix">
+			<div class="pagination-inner">
+				<div class="p-body" id="page">
+					<#=rows[0][0]['page']#>
+				</div>
+			</div>
+		</div>
+	</script>
+
+	<!--AG游戏搜索-->
+	<script type="text/template" id="aggame_search">
+		<div class="inner">
+			<form id="AgGameForm" method="post">
+				<input type="hidden" name="p" value="1" />
+				<input class="ipt-key" type="text" value="" name="ChineseGameName" placeholder="请输入游戏名" />
+				<a class="ipt-btn transit" href="javascript:void(0)" data-method="SearchAg"></a>
+			</form>
+		</div>
+	</script>
+
+	<!--AG游戏列表-->
+	<script type="text/template" id="aggame_list">
+		<ul class="clearfix">
+			<#for(var i = 0; i < rows.length; i++){#>
+        	<#for(var j = 0; j < rows[i].length; j++){#>
+			<li>
+				<div class="aimg">
+					<img src="/Resourse/Home/images/ag/<#=rows[i][j]['picurl']#>" height="200" width="291" />
+					<div class="mask">
+						<div class="inner">
+							<#
+								if(rows[i][j]['IsCreate']==1){
+							#>
+							<a class="btn_view" href="javascript:void(0)" data-title="<#=rows[i][j]['ChinesGameName']#>" data-method="agGame" data-field="<#=rows[i][j]['GI_gametype']#>">开始游戏</a>
+							<#
+								} else {
+							#>
+							<a class="btn_view" href="javascript:void(0)" data-title="<#=rows[i][j]['ChinesGameName']#>" data-method="CreateAgAccount">免费开户</a>
+							<#
+								}
+							#>
+						</div>
+					</div>
+				</div>
+				<div class="ft-tit clearfix">
+					<a class="title ellipsis fl" href="#"><i class="c--999">XIN</i> <#=rows[i][j]['ChinesGameName']#></a>
+				</div>
+			</li>
+			<#}}#>
+		</ul>
+		<div class="zone-g-pagination mt--20 clearfix">
+			<div class="pagination-inner">
+				<div class="p-body" id="page">
+					<#=rows[0][0]['page']#>
+				</div>
+			</div>
+		</div>
+	</script>
+</body>
+</html>

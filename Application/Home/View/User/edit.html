@@ -1,0 +1,649 @@
+<include file="Common:head" />
+<link rel="stylesheet" href="/Resourse/Home/js/plugins/fileUpload/jquery.fileupload.css" /> 
+
+<style type="text/css">
+    .data-financeList ul li{padding: 30px 0;}
+    .data-financeList ul li.two{border-top: 1px solid #eee;}
+    .bind__card{background:#fcfcfc;border:1px solid #ddd;border-radius:3px; line-height:100px;width:530px; position:relative;}
+    .bind__card img{margin:-2px 5px 0 30px;vertical-align:middle;}
+    .bind__card.on{background:#fff3ed;border-color:#ff7800;}
+    .bind__card.on .tag{background:url(/Resourse/Home/images/icon-bank-selected.png) no-repeat;height:38px;width:38px; position:absolute;top:31px;right:-19px;}
+</style>
+<body class="body-bg">
+    <div class="loader">
+        <div class="loader-inner ball-pulse-rise">
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+    <div class="JszContent" style="display: none">
+	<!-- <>顶部区域 -->
+	<include file="Common:menu" />
+	
+	<!-- <>主体容器区域 -->
+	<div class="container">
+		<div class="mid pb--50 clearfix">
+			<!-- 修改资料(登录密码) -->
+			<include file="Common::memberMenu" />
+			
+			<div class="pM__panel mt--10">
+				<div class="proxyM__panel-tabLink">
+					<div class="head__nav clearfix">
+						<div class="navList ml--10 fl">
+							<a class="on" href="javascript:void(0)" data-field="basic_information" data-method="loadTpl">基本资料</a>
+							<a href="javascript:void(0)" data-field="phone_code" data-method="loadTpl">电话号码</a>
+							<a href="javascript:void(0)" data-field="bind_name" data-method="loadTpl">绑定持卡人</a>
+                            <a href="javascript:void(0)" data-field="bind_card" data-method="loadTpl">银行卡资料</a>
+                            <a href="javascript:void(0)" data-field="change_pt_password" data-method="loadTpl">PT密码</a>
+                            <a href="javascript:void(0)" data-field="change_ebet_password" data-method="loadTpl">EBET密码</a>
+							<a href="javascript:void(0)" data-field="change_password" data-method="loadTpl">登录密码</a>
+							<a href="javascript:void(0)" data-field="set_security_code" data-method="loadTpl">资金密码</a>
+							<a href="javascript:void(0)" data-field="secret_security" data-method="loadTpl">密码保护</a>
+							<a href="javascript:void(0)" data-field="bind_google_verification" data-method="loadTpl">Google验证</a>
+							<a href="javascript:void(0)" data-field="email_addr" data-method="loadTpl">邮箱地址</a>
+                            <a href="javascript:void(0)" data-field="information" data-method="loadTpl">账户信息</a>
+						</div>
+					</div>
+					<div class="panel-form">
+                        
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<include file="Common:foot" /> 
+    </div>
+    <script type="text/javascript" src="/Resourse/Home/js/plugins/fileUpload/jquery.ui.widget.js"></script> 
+    <script type="text/javascript" src="/Resourse/Home/js/plugins/fileUpload/jquery.iframe-transport.js"></script> 
+    <script type="text/javascript" src="/Resourse/Home/js/plugins/fileUpload/jquery.fileupload.js"></script> 
+    <script src="/Resourse/Home/js/lib/jquery.cookie.js" type="text/javascript"></script>
+    <script src="/Resourse/Home/js/app/user.edit.js?123456" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function(){
+            var type = "{$type}"
+            if(type=="bindbank")
+            {
+                $('a[data-method="loadTpl"]').on('click', function(e){
+                    $target = $(e.target)
+                    tplmode = $(this).attr('data-field')
+                    switch(tplmode)
+                    {
+                        case 'bind_card':index.LoadBankCard();break;
+                    }
+                    $('a[data-method="loadTpl"]').removeClass("on")
+                    $(this).addClass("on")
+                }),$('.navList').find("a:eq(3)").trigger("click")
+            }
+            else if(type=="changePwd")
+            {
+                $('a[data-method="loadTpl"]').on('click', function(e){
+                    $target = $(e.target)
+                    tplmode = $(this).attr('data-field')
+                    switch(tplmode)
+                    {
+                        case 'change_password':index.LoadChangeLoginPassword();break;
+                    }
+                    $('a[data-method="loadTpl"]').removeClass("on")
+                    $(this).addClass("on")
+                }),$('.navList').find("a:eq(6)").trigger("click")
+            }
+            else if(type=="bindEmail")
+            {
+                $('a[data-method="loadTpl"]').on('click', function(e){
+                    $target = $(e.target)
+                    tplmode = $(this).attr('data-field')
+                    switch(tplmode)
+                    {
+                        case 'email_addr':index.LoadEmail();break;
+                    }
+                    $('a[data-method="loadTpl"]').removeClass("on")
+                    $(this).addClass("on")
+                }),$('.navList').find("a:eq(10)").trigger("click")
+            }
+            else if(type=="bindTel")
+            {
+                $('a[data-method="loadTpl"]').on('click', function(e){
+                    $target = $(e.target)
+                    tplmode = $(this).attr('data-field')
+                    switch(tplmode)
+                    {
+                        case 'phone_code':index.LoadTel();break;
+                    }
+                    $('a[data-method="loadTpl"]').removeClass("on")
+                    $(this).addClass("on")
+                }),$('.navList').find("a:eq(1)").trigger("click")
+            }
+            else if(type=="other")
+            {
+                $('a[data-method="loadTpl"]').on('click', function(e){
+                    $target = $(e.target)
+                    tplmode = $(this).attr('data-field')
+                    switch(tplmode)
+                    {
+                        case 'basic_information':index.LoadBickInfomation();break;
+                    }
+                    $('a[data-method="loadTpl"]').removeClass("on")
+                    $(this).addClass("on")
+                }),$('.navList').find("a:eq(0)").trigger("click")
+            }
+        })
+    </script>
+    <!--加载基本资料模板-->
+	<script type="text/template" id="basic_information">
+    <div class="mt--10">
+        <div class="row">
+            <span class="lbl fl pt--10">我的图像</span>
+            <div class="u__uploadImg-thumb dib clearfix" style="padding: 0 10px 0 4px;">
+                <a class="btn-upload">
+                    <div class="list">
+                        <img src="{$imgPath}" class="head" height="100" width="100" />
+                    </div>
+                    <form id="fileupload" action="/uploadhead" method="POST" enctype="multipart/form-data"> 
+                    <span class="mask"><i>重新上传</i></span>
+                    <input type="file" name="head" /> 
+                    </form>
+                </a>
+            </div>
+            <span class="c--999 ff-hv dib v__top mt--20"><em class="c--f35c19 db fs14">修改图像</em>只支持 JPG、PNG、GIF，大小不超过 5M</span>
+        </div>
+        
+        <div class="row">
+            <span class="lbl">账户昵称</span>
+            <input class="ipt-text" id="newNickname" type="text" name="newNickname" value="<#=rows[0].nickname#>" />
+        </div>
+        <div class="row">
+            <span class="lbl">个性签名</span>
+            <input class="ipt-text" id="loginask" type="text" name="loginask" value="<#=rows[0].loginask#>" />
+        </div>
+        <div class="error_tips" style="padding-left:90px;color: #f57239">
+            <span class="errorMsg"></span>
+        </div>
+        <div class="row">
+            <button class="btn_view mt--20" data-method="updateNickname">提交</button>
+        </div>
+    </div>
+    </script>
+
+    <!--电话号码模板-->
+    <script type="text/template" id="phone_code">
+    <div class="mt--10" id="telItem" <#(rows!="") ? echo('style="display:none"') : ''#> >
+        <div class="row">
+            <span class="lbl">电话号码</span>
+            <input class="ipt-text" type="text" name="telphone" /> <i class="c--999 ml--10">请留下真实的电话号码，以便及时获取网站优惠信息。</i>
+        </div>
+        <div class="row">
+            <span class="lbl">验证码</span>
+            <input class="ipt-text" type="text" name="vcode" />
+            <input class="btn_view ml--10" id="getvcodeid" onclick="GetVcode(this)" style="background: none; color: #ff7800; padding: 0;" value="获取验证码" type="button" />
+        </div>
+        <div class="error_tips" style="padding-left:90px;color: #f57239">
+            <span class="errorMsg"></span>
+        </div>
+        <div class="row">
+            <button class="btn_view mt--20" id="J__bindTel" data-method="bindTel">绑定电话</button>
+        </div>
+    </div>
+    <#
+        if(rows!=""){
+    #>
+    <div class="mt--10">
+        <div class="row">
+            <span class="lbl v__top"><img class="v__top" src="/Resourse/Home/images/icon_done.png"></span>
+            <div class="dib">
+                <h2 class="ff-hv fs24">电话已绑定：<#=rows#></h2>
+            </div>
+        </div>
+        <div class="row">
+            <button class="btn_view mt--20 bg__f5f5f5-hover" data-method="updateTel" style="border: 1px solid #ddd; color: #333;">修改</button>
+        </div>
+    </div>
+    <#
+        }
+    #>
+    </script>
+
+    <!--邮箱地址模板-->
+    <script type="text/template" id="email_addr">
+    <div class="mt--10" id="emailItem" <#(rows!="") ? echo('style="display:none"') : ""#> >
+        <div class="row">
+            <span class="lbl">邮箱地址</span>
+            <input class="ipt-text" type="text" name="email" /> <i class="c--999 ml--10">请留下真实的电子邮箱，以便及时获取网站优惠信息。</i>
+        </div>
+        <div class="row">
+            <span class="lbl">验证码</span>
+            <input class="ipt-text" type="text" name="emailVcode" />
+            <input class="btn_view ml--10" id="getemailvcodeid" onclick="SendEmailVcodeFunc(this)" style="background: none; color: #ff7800; padding: 0;" value="获取验证码" type="button" />
+        </div>
+        <div class="error_tips" style="padding-left:90px;color: #f57239">
+            <span class="errorMsg"></span>
+        </div>
+        <div class="row">
+            <button class="btn_view mt--20" id="J__bindTel" data-method="BindEmail">绑定邮箱</button>
+        </div>
+    </div>
+    <#
+        if(rows!=""){
+    #>
+    <div class="mt--10">
+        <div class="row">
+            <span class="lbl v__top"><img class="v__top" src="/Resourse/Home/images/icon_done.png"></span>
+            <div class="dib">
+                <h2 class="ff-hv fs24">邮箱已绑定：<#=rows#></h2>
+                <i class="c--999 db">请留下真实的电子邮箱，以便及时获取网站优惠信息。</i>
+            </div>
+        </div>
+        <div class="row">
+            <button class="btn_view mt--20 bg__f5f5f5-hover" data-method="updateEmail" style="border: 1px solid #ddd; color: #333;">修改</button>
+        </div>
+    </div>
+    <#
+        }
+    #>
+    </script>
+
+    
+    <!--绑定持卡人-->
+    <script type="text/template" id="bind_name">
+    <#
+        if(rows.realname==""){  
+    #>
+    <div class="mt--10">
+        <div class="row">
+            <span class="lbl">绑定真实姓名</span>
+            <input class="ipt-text" type="text" name="realname" placeholder="银行卡开户名"/> <i class="c--999 ml--10">请绑定您银行卡的开户姓名，绑定后将不得自行修改。</i>
+        </div>
+        <div class="row">
+            <span class="lbl">资金密码</span>
+            <input class="ipt-text" type="password" <#(rows.fundcode==0) ? echo('disabled placeholder="请先设置资金密码"') : ''#> name="fundcode" /> <i class="c--999 ml--10"></i>
+        </div>
+        <div class="error_tips" style="padding-left:90px;color: #f57239">
+            <span class="errorMsg"></span>
+        </div>
+        <div class="row">
+            <button class="btn_view mt--20" data-method="bindname" id="J__bindTel">绑定</button>
+        </div>
+    </div>
+    <#
+        } else {
+    #>
+    <div class="mt--10">
+        <div class="row">
+            <span class="lbl v__top"><img class="v__top" src="/Resourse/Home/images/icon_done.png"></span>
+            <div class="dib">
+                <h2 class="ff-hv fs24">持卡人：<#=rows.realname#></h2>
+                <i class="c--999 db">如需对银行卡持卡人进行解除绑定，请联系在线客服。</i>
+            </div>
+        </div>
+    </div>
+    <#
+        }
+    #>
+    </script>
+
+    <!--绑定银行卡-->
+    <script type="text/template" id="bind_card">
+    <div class="mt--10" id="bankitem" <#(rows[0]!="") ? echo('style="display:none"') : ''#>>
+        <div class="row">
+            <span class="lbl">真实姓名</span>
+            <#=realname#>
+        </div>
+        <div class="row">
+            <span class="lbl">银行账号</span>
+            <input type="text" class="ipt-text" name="accountnum" placeholder="输入银行卡号" value="" autocomplete="off" maxlength="19" onkeyup="this.value=this.value.replace(/[^\d]/g,'');" onchange="this.value=this.value.replace(/[^\d]/g,'');">
+        </div>
+        <div class="row">
+            <span class="lbl">确认账号</span>
+            <input type="text" class="ipt-text" name="comfirmaccountnum" placeholder="确认卡号,禁止粘贴" value="" autocomplete="off" maxlength="19" onkeyup="this.value=this.value.replace(/[^\d]/g,'');" onchange="this.value=this.value.replace(/[^\d]/g,'');" onpaste="return false">
+        </div>
+        
+        <div class="row">
+            <span class="lbl fl pt--10">银行名称</span>
+            <!-- 银行支付 -->
+            <div class="bank__name-list clearfix" style="padding: 0 100px 0 94px;">
+                <h2 class="fs16 fl w100 mt--15">指定合作银行 <i class="c--999 fs12">(单次取款限额400万，到账时间45分钟内到账)</i></h2>
+                <div class="fl">
+                    <a href="javascript:;" data-method="bindbank" data-field="2" class="selected"><i class="i1"></i>中国工商银行</a>
+                    <a href="javascript:;" data-method="bindbank" data-field="9"><i class="i2"></i>中国农业银行</a>
+                    <a href="javascript:;" data-method="bindbank" data-field="3"><i class="i3"></i>中国建设银行</a>
+                    <a href="javascript:;" data-method="bindbank" data-field="12"><i class="i4"></i>中信银行</a>
+                    <a href="javascript:;" data-method="bindbank" data-field="8"><i class="i5"></i>民生银行</a>
+                    <a href="javascript:;" data-method="bindbank" data-field="1"><i class="i6"></i>招商银行</a>
+                </div>
+                <div class="fs14 fl w100 mt--10"><span id="J__showAllBank" style="cursor: pointer;font-weight: 700;">展开更多↓</span></div>
+                
+                <div class="fl w100 mb--10 moreBankList" style="display: none;">
+                    <h2 class="fs16 fl w100 mt--20">非指定合作银行 <i class="c--999 fs12">(单次取款限额400万，到账时间按照银行实际操作时间)</i></h2>
+                    <div class="fl">
+                        <a href="javascript:;" data-method="bindbank" data-field="4"><i class="i7"></i>中国交通银行</a>
+                        <a href="javascript:;" data-method="bindbank" data-field="14"><i class="i8"></i>广东发展银行</a>
+                        <a href="javascript:;" data-method="bindbank" data-field="15"><i class="i9"></i>深圳发展银行</a>
+                        <a href="javascript:;" data-method="bindbank" data-field="18"><i class="i10"></i>兴业银行</a>
+                        <a href="javascript:;" data-method="bindbank" data-field="10"><i class="i11"></i>光大银行</a>
+                        <a href="javascript:;" data-method="bindbank" data-field="7"><i class="i12"></i>平安银行</a>
+                        <a href="javascript:;" data-method="bindbank" data-field="5"><i class="i13"></i>中国银行</a>
+                        <a href="javascript:;" data-method="bindbank" data-field="17"><i class="i14"></i>华夏银行</a>
+                        <a href="javascript:;" data-method="bindbank" data-field="19"><i class="i15"></i>邮政储蓄银行</a>
+                        <a href="javascript:;" data-method="bindbank" data-field="6"><i class="i17"></i>上海浦东发展银行</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <span class="lbl">请选择省份</span>
+            <select class="select-control" name="bindprovince" style="height: 36px; min-width: 272px;">
+                <option>请选择</option>
+            </select>
+        </div>
+        <div class="row">
+            <span class="lbl">请选择城市</span>
+            <select class="select-control" name="bindcity" style="height: 36px; min-width: 272px;">
+                <option value="1">请选择</option>
+            </select>
+        </div>
+        <div class="row">
+            <span class="lbl">资金密码</span>
+            <input class="ipt-text" type="password" name="bindSecurityPassword" placeholder="输入资金密码" value="">
+        </div>
+        <div class="error_tips" style="padding-left:90px;color: #f57239">
+            <span class="errorMsg"></span>
+        </div>
+        <div class="row">
+            <button class="btn_view mt--20" data-method="bindcard">提交</button>
+        </div>
+    </div>
+    <#
+        if(rows[0]!=""){
+    #>
+    <p class="padding10" id="bankitemhr" <#(rows[0]!="") ? echo('style="display:none"') : ''#>>-------------------------------------------------------------------------------------------------------------------------</p>
+    <div class="mt--10">
+        <div class="row" style="padding-left:32px;" id="J__bindBankCard">
+            <h2 class="fs24">银行卡已绑定 <b class="ff-hv"><#=rows[0].length#></b>张</h2>
+            <#
+                for(var i=0; i<rows[0].length; i++){
+            #>
+            <p class="fs14 mt--20">提现银行卡<#=i+1#></p>
+            <div data-field="<#=rows[0][i].id#>" class="bind__card mt--10 <#(rows[0][i].moren==1) ? echo('on') : ''#>">
+                <img src="/Resourse/Home/images/bank/cmbGrey_1.png" /> <span class="fs20"><#=rows[0][i].bank#></span> <em class="c--999 fs18 ml--60"><#=rows[0][i].card#></em> <i class="c--999 fs18 ml--60"><#=rows[0][i].realname#></i>
+                <i class="tag"></i>
+            </div>
+            <#
+                }
+            #>
+        </div>
+        <div class="row">
+            <button class="btn_view mt--20" style="margin-left:32px;" data-method="addNewBankCard">添加银行卡</button>
+        </div>
+    </div>
+    <#
+        }
+    #>
+    </script>
+
+    <!--修改登录密码-->
+    <script type="text/template" id="change_password">
+    <div class="mt--10">
+        <div class="row">
+            <span class="lbl">原始密码</span>
+            <input class="ipt-text" type="password" name="oldpassword" /> <i class="c--999 ml--10" style="color:#ff7800 !important">为了您的账户资金安全，请您妥善保管您的会员账号和密码。</i>
+        </div>
+        <div class="row">
+            <span class="lbl">新密码</span>
+            <input class="ipt-text" type="password" name="newpassword" />
+        </div>
+        <div class="row">
+            <span class="lbl">确认密码</span>
+            <input class="ipt-text" type="password" name="comfirmpassword" />
+        </div>
+        <div class="error_tips" style="padding-left:90px;color: #f57239">
+            <span class="errorMsg"></span>
+        </div>
+        <div class="row">
+            <button class="btn_view mt--20" data-method="changepassword" id="J__bindTel">修改密码</button>
+        </div>
+    </div>
+    </script>
+
+    <!--修改pt登录密码-->
+    <script type="text/template" id="change_pt_password">
+    <div class="mt--10">
+        <div class="row">
+            <span class="lbl">原始密码</span>
+            <input class="ipt-text" type="password" name="ptoldpassword" /> <i class="c--999 ml--10" style="color:#ff7800 !important">为了您的账户资金安全，请您妥善保管您的会员账号和密码[PT初始密码:a123456]。</i>
+        </div>
+        <div class="row">
+            <span class="lbl">新密码</span>
+            <input class="ipt-text" type="password" name="ptnewpassword" />
+        </div>
+        <div class="row">
+            <span class="lbl">确认密码</span>
+            <input class="ipt-text" type="password" name="ptcomfirmpassword" />
+        </div>
+        <div class="error_tips" style="padding-left:90px;color: #f57239">
+            <span class="errorMsg"></span>
+        </div>
+        <div class="row">
+            <button class="btn_view mt--20" data-method="changeptpassword" id="J__bindTel">修改密码</button>
+        </div>
+    </div>
+    </script>
+
+    <!--修改ebet登录密码-->
+    <script type="text/template" id="change_ebet_password">
+    <div class="mt--10">
+        <div class="row">
+            <span class="lbl">原始密码</span>
+            <input class="ipt-text" type="password" name="ebetoldpassword" /> <i class="c--999 ml--10" style="color:#ff7800 !important">为了您的账户资金安全，请您妥善保管您的会员账号和密码[EBET初始密码:a123456]。</i>
+        </div>
+        <div class="row">
+            <span class="lbl">新密码</span>
+            <input class="ipt-text" type="password" name="ebetnewpassword" />
+        </div>
+        <div class="row">
+            <span class="lbl">确认密码</span>
+            <input class="ipt-text" type="password" name="ebetcomfirmpassword" />
+        </div>
+        <div class="error_tips" style="padding-left:90px;color: #f57239">
+            <span class="errorMsg"></span>
+        </div>
+        <div class="row">
+            <button class="btn_view mt--20" data-method="changeebetpassword" id="J__bindTel">修改密码</button>
+        </div>
+    </div>
+    </script>
+
+    <!--资金密码-->
+    <script type="text/template" id="set_security_code">
+    <#
+        if(rows==false){  
+    #>
+    <div class="mt--10">
+        <div class="row">
+            <span class="lbl">资金密码</span>
+            <input class="ipt-text" type="password" name="SecurityPassword" /><i class="c--999 ml--10" style="color:#ff7800 !important">为了您的账户资金安全，资金密码不能与登录密码一致。</i>
+        </div>
+        <div class="row">
+            <span class="lbl">确认密码</span>
+            <input class="ipt-text" type="password" name="comfSecurityPassword" />
+        </div>
+        <div class="error_tips" style="padding-left:90px;color: #f57239">
+            <span class="errorMsg"></span>
+        </div>
+        <div class="row">
+            <button class="btn_view mt--20" data-method="setsecuritycode" id="J__bindTel">设置资金密码</button>
+        </div>
+    </div>
+    <#
+        } else {
+    #>
+    <div class="mt--10">
+        <div class="row">
+            <span class="lbl">原始密码</span>
+            <input class="ipt-text" type="password" name="oldSecurityPassword" /> <i class="c--999 ml--10" style="color:#ff7800 !important">为了您的账户资金安全，资金密码不能与登录密码一致。</i>
+        </div>
+        <div class="row">
+            <span class="lbl">新密码</span>
+            <input class="ipt-text" type="password" name="newSecurityPassword" />
+        </div>
+        <div class="row">
+            <span class="lbl">确认密码</span>
+            <input class="ipt-text" type="password" name="comfirmSecurityPassword" />
+        </div>
+        <div class="error_tips" style="padding-left:90px;color: #f57239">
+            <span class="errorMsg"></span>
+        </div>
+        <div class="row">
+            <button class="btn_view mt--20" data-method="changesecuritycode" id="J__bindTel">修改资金密码</button>
+        </div>
+    </div>
+    <#
+        }
+    #>
+    </script>
+
+    <!--密保问题-->
+    <script type="text/template" id="secret_security">
+    <#
+    if(!rows){  
+    #>
+    <div class="mt--10">
+        <div class="row">
+            <span class="lbl">问题</span>
+            <select class="select-control" name="question" style="height: 36px; min-width: 272px;">
+                <option>请选择</option>
+            </select>
+            <i class="c--999 ml--10">密保问题绑定后将不得自行修改。</i>
+        </div>
+        <div class="row">
+            <span class="lbl">答案</span>
+            <input class="ipt-text" type="text" name="answer">
+        </div>
+        <div class="row">
+            <span class="lbl">资金密码</span>
+            <input class="ipt-text" type="password" name="SecurityPassword">
+        </div>
+        
+        <div class="row">
+            <button class="btn_view mt--20" data-method="setsecretsecurity">提交</button>
+        </div>
+    </div>
+    <#
+        } else {
+    #>
+        <div class="mt--10">
+            <div class="row">
+                <span class="lbl v__top"><img class="v__top" src="/Resourse/Home/images/icon_done.png"></span>
+                <div class="dib">
+                    <h2 class="ff-hv fs24">密保已绑定</h2>
+                    <i class="c--999 db">如需更换密保问题，请联系在线客服。</i>
+                </div>
+            </div>
+        </div>
+    <#
+        }
+    #>
+    </script>
+
+    <!--谷歌验证-->
+    <script type="text/template" id="bind_google_verification">
+    <#
+        if(!rows){
+    #>
+    <div class="mt--10">
+        <div class="row">
+            <span class="lbl">动态密码</span>
+            <input class="ipt-text" type="text" readonly name="googleSecret" value="">
+        </div>
+        <div class="row">
+            <span class="lbl">资金密码</span>
+            <input class="ipt-text" type="password" name="SecurityPassword">
+            <div class="clearfix mt--30" style="padding: 0 100px 0 94px;">
+                <p class="c--999 fs14">绑定完毕后即可用Google动态密码进行登录</p>
+                <p class="c--999 mt--15">Android：</p>
+                <p><a href="http://shouji.baidu.com/software/item?docid=3832652&amp;from=as">http://shouji.baidu.com/software/item?docid=3832652&amp;from=as</a></p>
+                <p class="c--999 mt--15">IOS：</p>
+                <p><a href="https://itunes.apple.com/cn/app/google-authenticator/id388497605?mt=8">https://itunes.apple.com/cn/app/google-authenticator/id388497605?mt=8</a></p>
+                <p class="c--999 mt--15">安装Google身份验证器：</p>
+                <p><a href="https://support.google.com/accounts/answer/1066447">https://support.google.com/accounts/answer/1066447</a></p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <button class="btn_view mt--20" data-method="bindgoogleverification">立即绑定</button>
+        </div>
+    </div>
+    <#
+        } else {
+    #>
+        <div class="mt--10">
+            <div class="row">
+                <span class="lbl v__top"><img class="v__top" src="/Resourse/Home/images/icon_done.png"></span>
+                <div class="dib">
+                    <h2 class="ff-hv fs24">谷歌登录已绑定</h2>
+                    <i class="c--999 db">如需解绑，请联系在线客服。</i>
+                </div>
+            </div>
+        </div>
+    <#
+        }
+    #>
+    </script>
+
+    <!--综合信息-->
+    <script type="text/template" id="Information_tpl">
+    <div class="mt--10">
+        <div class="row" style="padding-left:32px;">
+            <div class="u__safeSetting">
+                <div class="fs18 c--333 mt--10">安全等级 <em class="ml--20" style="color:#46af1e;"><#=rows.lecelStatus#></em> <span class="ico-star2 ml--10"><i style="width:<#=rows.score#>%;"></i></span></div>
+                <div class="lg-log dib mt--10">
+                    <div class="fs14 mt--5"><em class="c--999 dib" style="width:84px;">最近登录地址</em> <span class="ml--10"><#=rows.address#></span></div>
+                    <div class="fs14 mt--5"><em class="c--999 dib" style="width:84px;">最近登录IP</em> <span class="ml--10"><#=rows.loginIp#></span></div>
+                    <div class="fs14 mt--5"><em class="c--999 dib" style="width:84px;">最近登录时间</em> <span class="ml--10"><#=rows.log_lasttime#></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pM__panel mt--10">
+        <div class="proxyM__panel-analysis">
+            <h2 class="fs18" style="padding: 15px 30px;">余额详情</h2>
+            <div class="data-statistic data-financeList padding30">
+                <div class="bg--ffa939 c--fff dib" style="border-radius: 2px; padding: 20px 0 20px 20px; width: 350px;">
+                    <h3 class="fs16">主账户额度</h3>
+                    <span class="c--fff">￥ <i class="ff-hv fs20"><#=rows.cur_account#></i></span>
+                </div>
+                <php>
+                    if($share_switch==1){
+                </php>
+                <div class="bg--6dbcff c--fff dib ml--10" style="border-radius: 2px; padding: 20px 0 20px 20px; width: 350px;">
+                    <h3 class="fs16">分红钱包额度</h3>
+                    <span class="c--fff">￥ <i class="ff-hv fs20"><#=rows.wallet_account#></i></span>
+                </div>
+                <php>
+                    }
+                </php>
+            </div>
+        </div>
+    </div>
+    
+    <div class="pM__panel mt--10">
+        <div class="proxyM__panel-analysis">
+            <h2 class="fs18" style="padding: 15px 30px;">各厅详细余额</h2>
+            <div class="data-statistic data-financeList">
+                <ul class="clearfix">
+                    <li class="first">
+                        <h2>MG旗舰厅</h2> <span class="c--f35c19">￥ <i class="fs20 ff-hv"><#=rows.mg_account#></i></span>
+                    </li>
+                    <li>
+                        <h2>eBET国际厅</h2> <span class="c--f35c19">￥ <i class="fs20 ff-hv"><#=rows.ebet_account#></i></span>
+                    </li>
+                    <li>
+                        <h2>AG国际厅</h2> <span class="c--f35c19">￥ <i class="fs20 ff-hv"><#=rows.ag_account#></i></span>
+                    </li>
+                    <li>
+                        <h2>PT旗舰厅</h2> <span class="c--f35c19">￥ <i class="fs20 ff-hv"><#=rows.pt_account#></i></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </script>
+</body>
+</html>

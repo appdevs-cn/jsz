@@ -1,0 +1,85 @@
+<div class="pM__panel mt--30">
+    <div class="proxyM__panel-uinfo clearfix padding30">
+        <div class="lt-uinfo">
+            <a href="/User/edit"><img class="img dib v__top head" src="{$imgPath}" height="100" width="100" /></a>
+            <div class="info dib ml--20">
+                <h2 class="name shownickname">{$userInfo->nickname}</h2>
+                <div class="fs14 c--999 mt--10">会员等级:  <img src="/Resourse/Home/images/vip/icon-lvl-{$userLevel}.png"/><a style="cursor: pointer" class="layui-btn layui-btn-mini ml--10" data-method="userlevelcoment" style="background: none; color: #ff7800; padding: 0;">等级说明</a></div>
+                <php>$moneyarr = explode("-",$userInfo->money);</php>
+                <php>
+                    if($share_switch==1){
+                </php>
+                <label class="c--999 db fs14 mt--10">主账户/钱包 <b class="fs18 c--f35c19 ff-hv ml--10 financeMoney">{$moneyarr[0]}/{$moneyarr[1]}</b> <a class="ml--10" href="/SelfChangeRecord/index">查看明细＞</a></label>
+                <php>
+                    } else {
+                </php>
+                <label class="c--999 db fs14 mt--10">主账户 <b class="fs18 c--f35c19 ff-hv ml--10 financeMoney">{$moneyarr[0]}</b> <a class="ml--10" href="/SelfChangeRecord/index">查看明细＞</a></label>
+                <php>
+                    }
+                </php>
+            </div>
+        </div>
+        <div class="rt-menu">
+            <ul class="clearfix">
+                <li <if condition="$menu eq 'user'">class="ico1 current"<else/>class="ico1"</if>><a href="/User/index">会员中心</a></li>
+                <li <if condition="$menu eq 'useredit'">class="ico4 current"<else/>class="ico4"</if>><a href="/User/edit">修改资料</a></li>
+                <li <if condition="$menu eq 'finance'">class="ico2 current"<else/>class="ico2"</if>><a href="/Finance/index/type/1">资金管理</a></li>
+                <li <if condition="$menu eq 'selfRecord'">class="ico1 current"<else/>class="ico1"</if>><a href="/SelfRecord/index">我的报表</a></li>
+                <php>
+                    if(session("SESSION_ROLE")!=5){
+                </php>
+                <li <if condition="$menu eq 'proxy'">class="ico3 current"<else/>class="ico3"</if>><a href="/Proxy/index">代理管理</a></li>
+                <php>
+                    }
+                </php>
+                <li <if condition="$menu eq 'message'">class="ico5 current"<else/>class="ico5"</if>><a href="/InBox/index">站内信及订阅</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script type="text/template" id="userLevelComment">
+<form class="layui-form" action="">
+  <div class="layui-form-item">
+    <blockquote class="layui-elem-quote">
+        vip0默认等级<br/>
+        vip1审核的7天内(充值、投注)日均满足5000元，即可提升VIP1，提款次数为5次<br/>
+        vip2审核的7天内(充值、投注)日均满足1万元，即可提升VIP2，提款次数为6次<br/>
+        vip3审核的7天内(充值、投注)日均满足5万元，即可提升VIP3，提款次数为6次<br/>
+        vip4审核的7天内(充值、投注)日均满足10万元，即可提升VIP4，提款次数为8次<br/>
+        vip5审核的7天内(充值、投注)日均满足20万元，即可提升VIP5，提款次数为8次<br/>
+        vip6审核的7天内(充值、投注)日均满足30万元，即可提升VIP6，提款次数为10次<br/>
+        vip7审核的7天内(充值、投注)日均满足50万元，即可提升VIP7，提款次数为20次<br/>
+        vip8审核的7天内(充值、投注)日均满100万元，即可提升VIP8，提款次数为20次<br/>
+        vip9审核的7天内(充值、投注)日均满足300万元，即可提升VIP9，提款次数无限制<br/>
+    </blockquote>
+  </div>
+  <div class="layui-form-item">
+    <blockquote class="layui-elem-quote layui-quote-nm">1、升级的优势：升级后可享有提款次数增加，提款优先处理等！</blockquote>
+  </div>
+  <div class="layui-form-item">
+    <blockquote class="layui-elem-quote layui-quote-nm">2、VIP等级有效期保留7天，7天考核期内如达到相应VIP条件，每周一调整时则升降至相应VIP等级！</blockquote>
+  </div>
+  <div class="layui-form-item">
+    <blockquote class="layui-elem-quote layui-quote-nm">3、每周星期一审核,7天为一周期,当周结束后，次日审核升级，一个月审核4次！</blockquote>
+  </div>
+  <div class="layui-form-item">
+    <blockquote class="layui-elem-quote layui-quote-nm">4、若会员有不良记录则无法参与升级行列，例：对打套利等不正当手段则无法参与！</blockquote>
+  </div>
+</form>
+</script>
+
+<script type="text/javascript">
+$(function(){
+    $('a[data-method="userlevelcoment"]').on("click", function(){
+        $.dialog.open({
+            title: '用户等级说明',
+            width: 700,
+            height:560,
+            type: 'prompt'
+        }).ready(function(o) {
+            o.html(tpl('#userLevelComment'));
+        })
+    })
+})
+</script>

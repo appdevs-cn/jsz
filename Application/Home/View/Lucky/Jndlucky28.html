@@ -1,0 +1,330 @@
+<include file="Common:head" />
+<link rel="stylesheet" href="/Resourse/Home/css/Luck28.css">
+<body class="body-bg">
+	<input type="hidden" id="lottery_id" value="xy28">
+	<input type="hidden" name="lid" value="29">
+	<input type="hidden" name="d" value="">
+    <input type="hidden" name="lotteryName" value="加拿大幸运28">
+	<span id="current_endtime" style="display:none"></span>
+	<div class="loader">
+        <div class="loader-inner ball-pulse-rise">
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+	<div class="JszContent" style="display: none">
+	<!-- <>顶部区域 -->
+	<include file="Common:lotteryMenu" />
+	
+	<!-- <>主体容器区域 -->
+	<div class="container" style="margin-top: 130px!important">
+		<div class="mid pb--50 clearfix">
+			<!-- 游戏中心(任选) -->
+			<div class="gc__head-wrapper mt--30 clearfix lm0">
+				<!--面板内容-->
+				<div style="height: 100%;text-align:center">
+					<div style="padding-top: 40px">
+						<i class="icon-spinner icon-spin"></i>
+            			<span style="color:#de4501;font-weight:700"><strong>加载中...</strong></span>
+					</div>
+				</div>
+			</div>
+			
+			<div class="g-k-kl28-bot"> 
+                <div class="g-k-kl28-item"> 
+                    <div class="g-k-kl28-botm" id="playnum"> 
+                    <ul class="sx-top guess-t clearfix"> 
+                    <li code="0"> <span>00</span> <span>x959.18</span> </li> 
+                    <li code="1"> <span>01</span> <span>x324.75</span> </li> 
+                    <li code="2"> <span>02</span> <span>x164.34</span> </li> 
+                    <li code="3"> <span>03</span> <span>x97.41</span> </li> 
+                    <li code="4"> <span>04</span> <span>x65.73</span> </li> 
+                    <li code="5"> <span>05</span> <span>x46.5</span> </li> 
+                    <li code="6"> <span>06</span> <span>x35.42</span> </li> 
+                    <li code="7"> <span>07</span> <span>x27.12</span> </li> 
+                    <li code="8"> <span>08</span> <span>x21.91</span> </li> 
+                    <li code="9"> <span>09</span> <span>x17.7</span> </li> 
+                    </ul> 
+                    <div class="sx-right sx-common guess-t "> 
+                    <ul class="clearfix"> 
+                    <li code="13"> <span>13</span> <span>x13.01</span> </li> 
+                    <li code="12"> <span>12</span> <span>x13.49</span> </li> 
+                    <li code="11"> <span>11</span> <span>x14.06</span> </li> 
+                    <li code="10"> <span>10</span> <span>x15.64</span> </li> 
+                    </ul> 
+                    </div> 
+                    <ul class="sx-bottom guess-t clearfix" style="height: 70px"> 
+                    <li code="23"> <span>23</span> <span>x64.94</span> </li> 
+                    <li code="22"> <span>22</span> <span>x47.07</span> </li> 
+                    <li code="21"> <span>21</span> <span>x34.88</span> </li> 
+                    <li code="20"> <span>20</span> <span>x27.55</span> </li> 
+                    <li code="19"> <span>19</span> <span>x21.64</span> </li> 
+                    <li code="18"> <span>18</span> <span>x17.99</span> </li> 
+                    <li code="17"> <span>17</span> <span>x15.44</span> </li> 
+                    <li code="16"> <span>16</span> <span>x14.27</span> </li> 
+                    <li code="15"> <span>15</span> <span>x13.29</span> </li> 
+                    <li code="14"> <span>14</span> <span>x13.14</span> </li> 
+                    </ul> 
+                    <div class="sx-left sx-common guess-t"> 
+                    <ul class="clearfix"> 
+                    <li code="24"> <span>24</span> <span>x98.61</span> </li> 
+                    <li code="25"> <span>25</span> <span>x162.38</span> </li> 
+                    <li code="26"> <span>26</span> <span>x328.55</span> </li> 
+                    <li code="27"> <span>27</span> <span>x974.81</span> </li> 
+                    </ul> 
+                    </div> 
+                    <div class="guess-tb"> 
+                    <table class="guess-bot dxdsTop" style="line-height:44px"> 
+                    <tbody> 
+                        <tr> 
+                        <td colspan="2" code="大"><p>BIG<span>大</span>x2</p></td> 
+                        <td colspan="2" code="小"><p>SMALL<span>小</span>x2</p></td> 
+                        <td code="单"><p>ODD<span>单</span>x2</p></td> 
+                        <td code="双"><p>EVEN<span>双</span>x2</p></td> 
+                        </tr> 
+                        <tr> 
+                        <td code="大单">大/单x4.1</td> 
+                        <td code="大双">大/双x4.1</td> 
+                        <td code="小单">小/单x4.1</td> 
+                        <td code="小双">小/双x4.1</td> 
+                        <td code="极大"><p><span>极大</span>&nbsp;&nbsp;x10</p></td> 
+                        <td code="极小"><p><span>极小</span>&nbsp;&nbsp;x10</p></td> 
+                        </tr> 
+                    </tbody> 
+                    </table> 
+                    </div> 
+                    </div> 
+                    <div class="xiazhu-cm" style="padding: 20px 150px"> 
+                    <div class="bet-info clearfix"> 
+                    <p class="pull-left"> <span style="color:#a02f2b"><i>当前投注：</i> <input type="text" value="0" id="tmoney" />元</span> <span style="color:#a02f2b"><i>余额：</i><em id="playaccount">0.0000</em>元 <a href="javascript:;" class="refresh"></a></span> </p> 
+                    <button class="pull-right" data-method="dy">自定义</button> 
+                    <ul class="pull-right sleitem"> 
+                    <em><li class="cm1"><span style="color:#a02f2b">50</span><input class="inp-sty-2" hidden="hidden" type="text" value="50" maxlength="5" disabled="disabled" /></li></em> 
+                    <em><li class="cm2"><span style="color:#a02f2b">100</span><input class="inp-sty-2" hidden="hidden" type="text" value="100" maxlength="5" disabled="disabled" /></li></em> 
+                    <em><li class="cm3"><span style="color:#a02f2b">500</span><input class="inp-sty-2" hidden="hidden" type="text" value="500" maxlength="5" disabled="disabled" /></li></em> 
+                    <em><li class="cm4"><span style="color:#a02f2b">1000</span><input class="inp-sty-2" hidden="hidden" type="text" value="1000" maxlength="5" disabled="disabled" /></li></em> 
+                    <em><li class="cm5"><span style="color:#a02f2b">5000</span><input class="inp-sty-2" hidden="hidden" type="text" value="5000" maxlength="5" disabled="disabled" /></li></em> 
+                    </ul> 
+                    </div> 
+                    <div class="button-info"> 
+                    <div> 
+                    <a class="bet quickBet" href="javascript:;" data-method="quickBet"><i></i>确认投注</a> 
+                    </div> 
+                    <div style="display:none;" id="savezdy"> 
+                    <a class="bet" href="javascript:;" data-method="savezdy"><i></i>保存自定义</a> 
+                    </div> 
+                    </div> 
+                    </div> 
+                </div> 
+                </div> 
+		</div>
+	</div>
+	
+	<!-- …… 右侧浮动工具条.Start-->
+	<div class="game__toolbar-panel" style="top:300px">
+		<div class="panel__inner">
+			<ul class="clearfix">
+				<li class="first"><a href="/InBox"><img src="/Resourse/Home/images/cp/icon_message.png" /><p>消息</p></a></li>
+				<li class="J__floatToolbar">
+					<a href="#"><img src="/Resourse/Home/images/cp/icon_edit.png" /><p>订单</p></a>
+					
+					<!--//浮动弹窗-->
+					<div class="popup__floatBox">
+						<i class="arr1"></i><i class="arr2"></i>
+						<h2 class="fs20 align-c mt--20">最近投注</h2>
+						<div style="margin: 10px 30px 20px; overflow-y: auto; height: 401px;position: relative;" id="buyrecorditem">
+							<!--最近投注-->
+						</div>
+					</div>
+				</li>
+				<li><a href="/appdown"><img src="/Resourse/Home/images/cp/icon_phone.png" /><p>手机</p></a></li>
+				<li><a href="/appdown"><img src="/Resourse/Home/images/cp/icon_pc.png" /><p>PC</p></a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- …… 右侧浮动工具条.End-->
+	
+	<!-- <>底部区域 -->
+	<include file="Common:foot" /> 
+	<div id="newMessageDIV" style="display:none"></div>
+	<div id="newMessageDIV0" style="display:none"></div>
+	<div id="newMessageDIV1" style="display:none"></div>
+	<div id="newMessageDIV2" style="display:none"></div>
+	<div id="newMessageDIV3" style="display:none"></div>
+	<div id="newMessageDIV4" style="display:none"></div>
+    </div>
+	<script type="text/javascript" src="/Resourse/Home/js/lib/angular.min.js"></script>
+	<script type="text/javascript" src="/Resourse/Home/js/app/util.js"></script>
+	<script src="/Resourse/Home/js/lib/jquery.cookie.js" type="text/javascript"></script>
+	<script src="/Resourse/Home/js/app/xy28.js" type="text/javascript"></script>
+
+	<!--面板内容-->
+	<script type="text/template" id="display_tpl">
+		<a class="game-logo fl" href="javascript:;"><img style="width:110px;height:50px" src="/Resourse/Home/images/lottery/加拿大幸运28.png" /></a>
+			<div class="pM__panel panelTime fl">
+				<div class="lottery__panel-deadline clearfix">
+					<div class="stage-text fl ff-hv fs16 mt--20 ml--30">
+						<label class="db">第 <span id="current_issue"><#=rows[0]['series_number']#></span></label>
+						<em>截止时间</em>
+					</div>
+					<div class="deadline-num" id="count_down">
+						<i>00</i>
+						<i>00</i>
+						<i>00</i>
+					</div>
+				</div>
+			</div>
+			<div class="pM__panel panelResult fr">
+				<div class="lottery__panel-stageResult clearfix">
+					<div class="stage-text fl ff-hv fs16 mt--20 ml--30">
+						<label class="db">第 <span id="lastSeries"><#=rows[0]['last_series_number']#></span></label>
+						<em>期开奖结果</em>
+					</div>
+					<div class="lottery-num lottery-num3 ml--20 fl" id="opennumer">
+                         <#
+                            var num = rows[0]['last_number'].split(',');
+                        #>
+                        <i class="bg--ff621c" id="num0"><#=num[0]#></i>
+                        <i class="plus2">+</i>
+                        <i class="bg--ff621c" id="num1"><#=num[1]#></i>
+                        <i class="plus2">+</i>
+                        <i class="bg--ff621c" id="num2"><#=num[2]#></i>
+                        <i class="plus2">=</i>
+                        <i class="bg--ff621c" id="num3"><#=num[3]#></i>
+					</div>
+					<div class="lottery-recent fr">
+						<div class="lotteryRecord J__lotteryRecord pos-rel">
+							<a class="label">近期开奖<em class="arr"></em></a>
+							<div class="lotteryRecord-list">
+								<i class="arr1"></i><i class="arr2"></i>
+								
+								<h2 class="fs20 align-c mt--20">近期开奖</h2>
+								<div style="padding: 10px 30px 20px; overflow-y: auto; height: 350px;">
+									<table class="ff-hv" border="0" cellspacing="0" cellpadding="0" id="game_jwuqi">
+										<thead>
+											<tr>
+												<th class="align-l" width="28%">期号</th>
+												<th class="align-l">开奖号</th>
+											</tr>
+										</thead>
+										<tbody>
+											<#for(var i=0; i<rows[0]['recentBit'].length; i++){#>
+											<tr>
+												<td><#=rows[0]['recentBit'][i]['series_number']#></td>
+												<td>
+													<div class="number">
+                                                         <#
+                                                            var numl = rows[0]['recentBit'][i]['lottery_number'].split(",")
+                                                        #>
+                                                        <i><#=numl[0]#></i>
+                                                        <i style="background:none;color:#737373">+</i>
+                                                        <i><#=numl[1]#></i>
+                                                        <i style="background:none;color:#737373">+</i>
+                                                        <i><#=numl[2]#></i>
+                                                        <i style="background:none;color:#737373">=</i>
+                                                        <i><#=numl[3]#></i>
+													</div>
+												</td>
+											</tr>
+											<#}#>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</script>
+
+	<!--投注记录-->
+	<script type="text/template" id="buyrecord_tpl">
+		<table class="ff-hv" border="0" cellspacing="0" cellpadding="0">
+			<thead>
+				<tr>
+					<th class="align-l">期号</th>
+					<th>彩种</th>
+					<th>金额</th>
+					<th>奖金</th>
+					<th>状态</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+			<#
+				if(rows[0].length!=0){
+			#>
+			<#for(var i=0; i<rows.length; i++){#>
+			<#for(var j=0; j<rows[i].length; j++){#>
+				<tr>
+					<td>
+						<#=rows[i][j]['serial']#>
+					</td>
+					<td class="align-c">
+						<#=rows[i][j]['lotteryName']#>
+					</td>
+					<td class="align-c">
+						<#=rows[i][j]['monetary']#>
+					</td>
+					<td class="align-c">
+						<#=rows[i][j]['bonus']#>
+					</td>
+					<td class="align-c">
+						<#=rows[i][j]['status']#>
+					</td>
+					<td class="align-c">
+						<#=rows[i][j]['operate']#>
+					</td>
+				</tr>
+			<#}}#>
+			<#} else {#>
+				<tr>
+					<td colspan="6" style="border-bottom: 0;">
+						<div class="c--999 fs16 align-c" style="padding: 100px 0;">当前没有投注记录！</div>
+					</td>
+				</tr>
+			<#}#>
+			</tbody>
+		</table>
+</script>
+
+<!-- 订单详情 -->
+<script type="text/template" id="detail_record">
+<div class="popup_box" id="detailrecord" style="position: relative;">
+    <div class="popup_main">
+        <div class="popup_txt2">
+            <div class="popup_txtl">
+                <h3>注单编号：<#=rows[0]['serial_number']#></h3>
+                <ul class="popup_txtul">
+                    <li><span>用户名:</span><p><#=rows[0]['username']#></p></li>
+                    <li><span>期号:</span><p><#=rows[0]['series']#></p></li>
+                    <li><span>彩种:</span><p><#=rows[0]['lotteryName']#></p></li>
+                    <li><span>彩种玩法:</span><p><#=rows[0]['name']#></p></li>
+                    <li><span>投注时间:</span><p><#=rows[0]['buy_time']#></p></li>
+                    <li><span>号码位置:</span><p><#=rows[0]['position']#></p></li>
+                    <li><span>开奖号码:</span>
+                        <p>
+                            <#for(var i=0; i<rows[0]['lottery_number'].length; i++){#>
+                            <i><#=rows[0]['lottery_number'].charAt(i)#></i>
+                            <#}#>
+                        </p>
+                    </li>
+                    <li><span>倍数:</span><p><#=rows[0]['multiple']#>倍</p></li>
+                    <li><span>注单金额:</span><p><#=rows[0]['monetary']#>元</p></li>
+                    <li><span>注单状态:</span><p class="red"><#=rows[0]['status']#></p></li>
+                    <li><span>中奖金额:</span><p><#=rows[0]['bonus']#>元</p></li>
+                    <li><span>动态奖金:</span><p><#=rows[0]['fd']#></p></li>
+                </ul>
+            </div>
+
+            <div class="popup_txtr" style="height: 300px">
+                <h3>投注内容</h3>
+                <div class="popup_txtin" id="nomallcontent" style="height: 480px; overflow-y: auto">
+                    <#=rows[0]['buy_number']#>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</script>
+</body>
+</html>

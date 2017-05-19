@@ -1,0 +1,134 @@
+<include file="Common:head" /> 
+<body class="body-bg">
+	<div class="loader">
+        <div class="loader-inner ball-pulse-rise">
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+    <div class="JszContent" style="display: none">
+	<!-- <>顶部区域 -->
+	<include file="Common:menu" />
+	
+	<!-- <>主体容器区域 -->
+	<div class="container">
+		<div class="mid clearfix">
+			<!-- 关于我们 -->
+			<div class="pg__brandHistory-list mt--30 pb--60 clearfix">
+				<div class="main clearfix mt--10">
+					<!-- //侧边 -->
+					<div class="sidebar fl" id="J__sidebar">
+						<h2 class="hdTit">游戏介绍</h2>
+						<a <if condition="$menu eq 'PeopleIntroduction'">class="on current"</if> href="/PeopleIntroduction">真人娱乐<i></i></a>
+						<a <if condition="$menu eq 'ComputerIntroduction'">class="on current"</if> href="/ComputerIntroduction">电子游戏<i></i></a>
+						<a <if condition="$menu eq 'CpIntroduction'">class="on current"</if> href="/CpIntroduction">彩票投注<i></i></a>
+                        <!--<a <if condition="$menu eq 'QipaiIntroduction'">class="on current"</if> href="/QipaiIntroduction">棋牌游戏<i></i></a>
+                        <a <if condition="$menu eq 'TiyuIntroduction'">class="on current"</if> href="/TiyuIntroduction">体育投注<i></i></a>-->
+					</div>
+					<!-- //列表 -->
+					<!-- //列表 -->
+					<style type="text/css">
+						.casino_nav a{background:#fc8e5d;display: block;width: 108px;height: 33px;text-align: center;color: #fff;line-height: 33px;border: solid 1px #f35c19;float: left;margin-right: -1px;margin-bottom: -1px;}
+						.casino_nav a:hover,.casino_nav a.cur{background:#f35c19;}
+						.casino .cas_vid{
+							display: block;float: left;margin-right: 22px;width: 196px;color: #333;text-align: center;
+						}
+						.casino .cas_vid img{margin-bottom:0;}
+						.casino table tr th{background:#aaa;color:#fff;text-align:center;font-weight:700;padding:5px 0;}
+						.casino table tr td{background:#f8f8f8;border-bottom:1px solid #eee;color:#333;text-align:center;padding:5px 0;}
+						.br_box{padding:20px 35px;margin-top:10px;}
+						.br_box .box2{display:inline-block;width:203px; margin-right:60px;}
+					</style>
+					<div class="brandHistory_list fr">
+						<div class="pg__others-panel casino">
+							<div class="sub_con">
+							<div class="casino_nav">
+								<a href="/PeopleIntroduction" class="cur">百家乐</a>
+								<a href="/PeopleIntroduction/baozuo">包桌百家乐</a>
+								<a href="/PeopleIntroduction/jingmi">竞咪百家乐</a>
+								<a href="/PeopleIntroduction/longbao">龙宝百家乐</a>
+								<a href="/PeopleIntroduction/baoxian">保险百家乐</a>
+								<a href="/PeopleIntroduction/dezhou">德州扑克</a>
+								<a href="/PeopleIntroduction/erbagang">二八杠</a>
+								<a href="/PeopleIntroduction/oushi21dian">欧式21点/21点</a>
+								<a href="/PeopleIntroduction/fantan">番摊</a>
+								<a href="/PeopleIntroduction/longhu">龙虎</a>
+								<a href="/PeopleIntroduction/lunpan">轮盘</a>
+								<a href="/PeopleIntroduction/niuniu">牛牛</a>
+								<a href="/PeopleIntroduction/sangong">三公</a>
+								<a href="/PeopleIntroduction/sedie">色碟</a>
+								<a href="/PeopleIntroduction/shaibao">骰宝</a>
+								<a href="/PeopleIntroduction/paijiu">温州牌九</a>
+							</div>
+							<div id="js_data"></div>
+							<p><input type="hidden" value="0" id="casino_nav"></p>
+							<p class="cls"></p>
+							<h5>百家乐简介</h5>
+							<p>长期以来，百家乐是亚洲、欧洲和拉丁美洲最受欢迎的游戏之一，玩法简单，却刺激紧张!<br></p>
+							<h5>百家乐教学视频</h5>
+							<p><a href="javascript:showNewVideoFlash('Resourse/Home/video/guide_video04.swf');" class="cas_vid" _href="javascript:showNewVideoFlash('Resourse/Home/video/guide_video04.swf');"><img src="Resourse/Home/images/casino/c1_i1.jpg">经典百家乐教学视频</a><a href="javascript:showNewVideoFlash('Resourse/Home/video/guide_video02.swf');" class="cas_vid" _href="javascript:showNewVideoFlash('Resourse/Home/video/guide_video02.swf');"><img src="Resourse/Home/images/casino/c1_i2.jpg">连环百家乐教学视频</a><a href="javascript:showNewVideoFlash('Resourse/Home/video/guide_video01.swf');" class="cas_vid" _href="javascript:showNewVideoFlash('Resourse/Home/video/guide_video01.swf');"><img src="Resourse/Home/images/casino/c1_i3.jpg">包桌百家乐教学视频</a><a href="javascript:showNewVideoFlash('Resourse/Home/video/guide_video03.swf');" class="cas_vid" _href="javascript:showNewVideoFlash('Resourse/Home/video/guide_video03.swf');"><img src="Resourse/Home/images/casino/c1_i4.jpg">LED百家乐教学视频</a></p>
+							<div class="cb"></div>
+							<p><br><br></p>
+							<p class="cls"></p>
+							
+							<h5>如何胜出：</h5>
+							<p>百家乐中将发两份牌&lt;&lt;庄家&gt;&gt; 和&lt;&lt;闲家&gt;&gt;，总数得9点或最接近9点的一家胜出。<br></p>
+							<p></p>
+							<h5>操作及下注指南：</h5>
+							<p>1.点击下注的筹码，再点击桌上下注任何一块( 闲家、庄家或和)。<br>2.闲家和庄家将获发两张牌，加起来等於10作0点，总和超过9，则只算总数中的个位。<br>3.任何一家拿到9点（天生赢家），牌局就算结束，不再补牌。<br>4.派出两张牌後，如果任何一手牌的头两张牌的牌面为0至7，将依照补牌规则多发一张牌，不可以任选补牌。<br>5.没有任何一手牌获得超过三张牌。<br></p>
+							
+							<h5>游戏玩法：</h5>
+							<p>本游戏采用8副牌（每副牌52张）来进行，游戏牌数合计416张。<br> “闲家”“庄家”各先派两张牌，以“闲家”先发，如第一轮未分出胜负需再按“牌例”发第二轮的牌，最多每方3张牌，谁最接近9点即为胜方，相同点数即和局 。<br></p>
+							
+							<h5>游戏规则：</h5>
+							<p>1. 点数计算</p>
+							<div class="tbl"><table width="100%" border="0" cellspacing="1" cellpadding="0"><tbody><tr><th width="50%">牌面</th><th width="50%">点数&nbsp;</th></tr><tr><td>2 至 9</td><td>根据其数值显示的点数</td></tr><tr class="_r"><td>Ace</td><td>1</td></tr><tr><td>K或Q或J或10</td><td>0</td></tr></tbody></table></div>
+							<p><br>*当任何一家头两张牌的点数总和为8或9，就称为(天生赢家)。<br>*派出两张牌後，如果需要补牌，将依照博牌规则向需要补牌方多发一张牌。<br>例子:<br>4 + 2 + 6 = 2 <br>5 + 6 + 8 = 9 <br>10 + 10 + 10 = 0 <br><br>2. 补牌规则</p>
+							<div class="tbl"><table width="100%" border="0" cellspacing="1" cellpadding="0"><tbody><tr><th width="15%">&nbsp;闲两牌合计点数</th><th width="17%">&nbsp;(闲家)</th><th width="17%">庄两牌合计点数&nbsp;</th><th width="51%">(庄家)&nbsp;</th></tr><tr><td>0</td><td>必须博牌</td><td>0</td><td>必须博牌</td></tr><tr class="_r"><td>1</td><td>必须博牌</td><td>1</td><td>必须博牌</td></tr><tr><td>2</td><td>必须博牌</td><td>2</td><td>必须博牌</td></tr><tr class="_r"><td>3</td><td>必须博牌</td><td>3</td><td>若闲家博得第三张牌是8点，庄家不得博牌</td></tr><tr><td>4</td><td>必须博牌</td><td>4</td><td>若闲家博得第三张牌是0，1，8，9点， 庄家不得博牌</td></tr><tr class="_r"><td>5</td><td>必须博牌</td><td>5</td><td>若闲家博得第三张牌是0，1，2，3，8，9点， 庄家不得博牌</td></tr><tr><td>6</td><td>不得博牌</td><td>6</td><td>若闲家博得第三张牌是6 或 7点，庄家必须博牌</td></tr><tr class="_r"><td>7</td><td>不得博牌</td><td>7</td><td>不得博牌</td></tr><tr><td>8</td><td>例牌，即定胜负</td><td>8</td><td>例牌，即定胜负</td></tr><tr class="_r"><td>9</td><td>例牌，即定胜负</td><td>9</td><td>例牌，即定胜负</td></tr></tbody></table></div>
+							<p><br>* 庄闲任何一方两牌合计8、9点为例牌，对方不须博牌，即定胜负。庄闲两方头两张牌各得6或7点，即和局。<br><br></p>
+							
+							<h5>派彩赔率：</h5><p>本游戏为玩家提供百家乐玩法和免佣百家乐玩法。这两种玩法的博牌规则和投注种类一致，但投注庄的派彩方式有区别。不同平台的同一游戏玩法，赔率可能不一样，具体以各游戏厅界面所展示的赔率为准。以下赔率以AG国际厅为例：<br><br>百家乐∶</p>
+							<div class="tbl"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr><th width="33%">投注项目</th><th width="67%">赔率&nbsp;</th></tr><tr><td>闲家</td><td>1 ：1 (开和局时退回下注金额)</td></tr><tr class="_r"><td>庄家</td><td>1 ：0.95 (如庄以6点取胜，则赔一半；开和局时退回下注金额)</td></tr><tr><td>和局</td><td>1 ：8</td></tr><tr class="_r"><td>闲对子</td><td>1 ：11</td></tr><tr><td>庄对子</td><td>1 ：11</td></tr><tr class="_r"><td>大</td><td>1 ：0.5</td></tr><tr><td>小</td><td>1 ：1.5</td></tr></tbody></table></div>
+							<p><br>免佣百家乐∶</p>
+							<div class="tbl"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr><th width="33%">投注项目</th><th width="67%">赔率&nbsp;</th></tr><tr><td>闲家</td><td>1 ：1 (开和局时退回下注金额)</td></tr><tr class="_r"><td>庄家</td><td>1 ：1 (如庄以6点取胜，则赔一半；开和局时退回下注金额)</td></tr><tr><td>和局</td><td>1 ：8</td></tr><tr class="_r"><td>闲对子</td><td>1 ：11</td></tr><tr><td>庄对子</td><td>1 ：11</td></tr><tr class="_r"><td>大</td><td>1 ：0.5</td></tr><tr><td>小</td><td>1 ：1.5</td></tr></tbody></table></div>
+							<p><br> <br></p>
+							<h5>大小、庄/闲对子：</h5>
+							<p>1.大小∶指根据当局所开之牌张数的总和为依据，4张牌为小，5张牌或6张牌为大。游戏中，若庄家及闲家各只发两张牌，合共4张牌，即押注「小」者为胜。相反，若庄、闲任一方有博牌，令总牌数为5或6张，即押注「大」者为胜。<br>2.庄/闲对子 ：指根据当局所开之牌的庄/闲前两张牌的牌面（数字或字母，不计花式）为依据，牌面相同为对子。游戏中，庄家前两张牌的牌面相同，为庄对子，即押注「庄对」者为胜。闲家前两张牌牌面相同，为闲对子，即押注「闲对」者为胜。<br><br></p>
+							<h5>龙宝</h5><p>若玩家于庄龙宝或闲龙宝下注，派彩根据不同的胜出情况而定。根据传统玩法的庄/闲牌型：<br></p>
+							<div class="tbl"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr><th width="33%">庄 / 闲胜出情况</th><th width="67%">赔率</th></tr><tr><td>以非例牌赢9点</td><td>30</td></tr><tr class="_r"><td>以非例牌赢8点</td><td>10</td></tr><tr><td>以非例牌赢7点</td><td>6</td></tr><tr class="_r"><td>以非例牌赢6点</td><td>4</td></tr><tr><td>以非例牌赢5点</td><td>2</td></tr><tr class="_r"><td>以非例牌赢4点</td><td>1</td></tr><tr><td>以例牌胜出</td><td>1</td></tr><tr class="_r"><td>例牌和局</td><td>退回下注</td></tr></tbody></table></div>
+							<p><br>请注意∶<br>* 非例牌定义：只有两张牌，且和不是8点或9点；及所有三张牌的情况。<br>* 例牌定义：两张牌，且和为8点或9点。<br>* 当每一靴牌进入第31局或以後，玩家将不得投注大小。<br>* 桌台限红是本游戏桌台主要玩法的最小、最大玩法限红。玩家在每个玩法的可押注限额是玩法限红与玩家个人限红的交集。如需调节个人限<br>红，请联系网站客服。<br>* 荷官发牌时，偶有系统无法判读状况时，此时荷官将重新扫描，直到系统能够完整判读(如遇故障因素将注销所有相关注单/派彩)。<br>* 如遇结算错误，按照当期视频结果重新结算。<br><br></p>
+							
+							<h5>牌路介紹：</h5>
+							<p>「路」的意思，是百家乐开牌的结果记录。<img src="Resourse/Home/images/casino/r1.jpg"><br><br><strong>一、开牌结果的纪录</strong><br>红色珠为庄，蓝色珠为闲, 绿色珠为和，红点在珠的左上角代表庄对，蓝点在珠的右下角代表闲对，如果同时出现庄对和闲对，则左珠的上角和右下角标示红点和蓝点。 <br><br><strong>二、大路</strong><br>红圈为庄，蓝圈为闲, 庄一列, 闲一列, 序排列出, 如果和的话, 会用一条绿色斜线代表，如果之后连续出现和，便用绿色数字代替。<br><br><strong>三、大眼路</strong><br>大眼路是根据大路延伸出来，从大路的第2列第2行开始分析出来，若那位置没有结果，则以大路的第3列第1行开始分析。如下图：<br><br></p>
+							<div class="br_box"><img src="Resourse/Home/images/casino/r2.jpg" class="img1"><br><br>先从座标1(第2列第2行)分析，若座标1无庄或闲，则以座标2(第3列第1行)开始分析。<div class="cb"></div></div>
+							<p><br><br>大眼路画蓝圈规则：</p>
+							<div class="br_box"><div class="box2"><strong>1、向下</strong> <img src="Resourse/Home/images/casino/r3.jpg">以大路最新的结果，水平方式跟前一列作对比，如无结果，则于大眼路画蓝圈。</div><div class="box2"><strong>2、换列</strong> <img src="Resourse/Home/images/casino/r4.jpg">以大路最新的结果，如比对前一列与前二列结果位置是不齐整，则于大眼路画蓝圈。</div><div class="cb"></div></div>
+							<p><br><br>大眼路写法画红圈规则：</p>
+							<div class="br_box"><div class="box2"><strong>1、向下</strong> <img src="Resourse/Home/images/casino/r5.jpg">以大路最新的结果，水平方式跟前一列作对比，不论结果为庄或闲，则于大眼路画红圈。</div><div class="box2">&nbsp; <img src="Resourse/Home/images/casino/r6.jpg">以大路最新的结果，水平方式跟前一列作对比，如前一列的前二行或以上都无结果，则于大眼路画红圈。</div><div class="box2 mrn"><strong>2、换列</strong> <img src="Resourse/Home/images/casino/r7.jpg">以大路最新的结果，如比对前一列与前二列结果位置是齐整，则于大眼路画红圈。</div><div class="cb"></div></div>
+							<p><br><br><strong>四、小路</strong><br>小路是根据大路延伸出来，从大路的第3列第2行开始分析出来，若那位置没有结果，则以大路的第4列第1行开始分析。如下图：</p>
+							<div class="br_box"><img src="Resourse/Home/images/casino/r8.jpg" class="img1"><br><br>先从座标1(第3列第2行)分析，若座标1无庄或闲，则以座标2(第4列第1行)开始分<div class="cb"></div></div><p><br><br>小路写法画蓝圈规则：</p><div class="br_box"><div class="box2"><strong>1、向下</strong> <img src="Resourse/Home/images/casino/r9.jpg">以大路最新的结果，水平方式跟前二列作对比，如无结果，则于小眼路画蓝点。</div><div class="box2 mrn"><strong>2、换列</strong> <img src="Resourse/Home/images/casino/r10.jpg">以大路最新的结果，如比对前一列与前二列结果位置是齐整，则于大眼路画红圈。</div><div class="cb"></div></div>
+							
+							<p><br><br>小路写法画红圈规则：</p>
+							<div class="br_box"><div class="box2"><strong>1、向下</strong> <img src="Resourse/Home/images/casino/r11.jpg">以大路最新的结果，水平方式跟前二列作对比，不论结果为庄或闲，则于大眼路画红点</div><div class="box2">&nbsp; <img src="Resourse/Home/images/casino/r12.jpg">以大路最新的结果，水平方式跟前二列作对比，如前二列的前二行或以上都无结果，则于大眼路画红点。</div><div class="box2 mrn"><strong>2、换列</strong> <img src="Resourse/Home/images/casino/r13.jpg">以大路最新的结果，如比对前一列与前三列结果位置是齐整，则于大眼路画红点。</div><div class="cb"></div></div>
+							<p><br><br><strong>五、小强路</strong><br>小路是根据大路延伸出来，从大路的第4列第2行开始分析出来，若那位置没有结果，则以大路的第5列第1行开始分析。<br>如下图：</p>
+							<div class="br_box"><img src="Resourse/Home/images/casino/r14.jpg" class="img1"><br><br>先从座标1(第4列第2行)分析，若座标1无庄或闲，则以座标2(第5列第1行)开始分析。<div class="cb"></div></div>
+							<p><br><br>小强路画蓝色斜线规则：</p>
+							<div class="br_box"><div class="box2"><strong>1、向下</strong> <img src="Resourse/Home/images/casino/r15.jpg">以大路最新的结果，水平方式跟前三列作对比，如无结果，则于大眼路画蓝色斜线。</div><div class="box2 mrn"><strong>2、换列</strong> <img src="Resourse/Home/images/casino/r16.jpg">以大路最新的结果，如比对前一列与前四列结果位置是不齐整，则于大眼路蓝色斜线。</div><div class="cb"></div></div>
+							<p><br><br>小强路画红色斜线规则：</p>
+							<div class="br_box"><div class="box2"><strong>1、向下</strong> <img src="Resourse/Home/images/casino/r17.jpg">以大路最新的结果，水平方式跟前三列作对比，不论结果为庄或闲，则于大眼路画红色斜线。</div><div class="box2 ">&nbsp; <img src="Resourse/Home/images/casino/r18.jpg">以大路最新的结果，水平方式跟前三列作对比，如前三列的前二行或以上都无结果，则于大眼路画红色斜线。</div><div class="box2 mrn"><strong>2、换列</strong> <img src="Resourse/Home/images/casino/r19.jpg">以大路最新的结果，如比对前一列与前四列结果位置是齐整，则于大眼路画红色斜线。</div><div class="cb"></div></div>
+							<p><br><br><strong>六、庄问路、闲问路</strong><br>此功能是模拟下一局如果开庄或闲时，大路、大眼路、小路、小强路的结果。令玩家更方便及快速地判断该如何投注下一局。<br>如下图：模拟下一局开庄或闲的路<br><br><img src="Resourse/Home/images/casino/r20.jpg"><br></p>
+							<p></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- <>底部区域 -->
+	<!-- <>底部区域 -->
+	<include file="Common:foot" />
+    </div>
+    <script src="/Resourse/Home/js/app/about.js" type="text/javascript"></script>
+</body>
+</html>

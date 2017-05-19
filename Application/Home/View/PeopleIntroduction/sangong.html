@@ -1,0 +1,138 @@
+<include file="Common:head" /> 
+<body class="body-bg">
+	<div class="loader">
+        <div class="loader-inner ball-pulse-rise">
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+    <div class="JszContent" style="display: none">
+	<!-- <>顶部区域 -->
+	<include file="Common:menu" />
+	
+	<!-- <>主体容器区域 -->
+	<div class="container">
+		<div class="mid clearfix">
+			<!-- 关于我们 -->
+			<div class="pg__brandHistory-list mt--30 pb--60 clearfix">
+				<div class="main clearfix mt--10">
+					<!-- //侧边 -->
+					<div class="sidebar fl" id="J__sidebar">
+						<h2 class="hdTit">游戏介绍</h2>
+						<a <if condition="$menu eq 'PeopleIntroduction'">class="on current"</if> href="/PeopleIntroduction">真人娱乐<i></i></a>
+						<a <if condition="$menu eq 'ComputerIntroduction'">class="on current"</if> href="/ComputerIntroduction">电子游戏<i></i></a>
+						<a <if condition="$menu eq 'CpIntroduction'">class="on current"</if> href="/CpIntroduction">彩票投注<i></i></a>
+                        <!--<a <if condition="$menu eq 'QipaiIntroduction'">class="on current"</if> href="/QipaiIntroduction">棋牌游戏<i></i></a>
+                        <a <if condition="$menu eq 'TiyuIntroduction'">class="on current"</if> href="/TiyuIntroduction">体育投注<i></i></a>-->
+					</div>
+					<!-- //列表 -->
+					<style type="text/css">
+						.casino_nav a{background:#fc8e5d;display: block;width: 108px;height: 33px;text-align: center;color: #fff;line-height: 33px;border: solid 1px #f35c19;float: left;margin-right: -1px;margin-bottom: -1px;}
+						.casino_nav a:hover,.casino_nav a.cur{background:#f35c19;}
+						.casino .cas_vid{
+							display: block;float: left;margin-right: 22px;width: 196px;color: #333;text-align: center;
+						}
+						.casino .cas_vid img{margin-bottom:0;}
+						.casino table tr th{background:#aaa;color:#fff;text-align:center;font-weight:700;padding:5px 0;}
+						.casino table tr td{background:#f8f8f8;border-bottom:1px solid #eee;color:#333;text-align:center;padding:5px 0;}
+						.br_box{padding:20px 35px;margin-top:10px;}
+						.br_box .box2{display:inline-block;width:203px; margin-right:60px;}
+					</style>
+					<div class="brandHistory_list fr">
+						<div class="pg__others-panel casino">
+							<div class="sub_con">
+							<div class="casino_nav">
+								<a href="/PeopleIntroduction">百家乐</a>
+								<a href="/PeopleIntroduction/baozuo">包桌百家乐</a>
+								<a href="/PeopleIntroduction/jingmi">竞咪百家乐</a>
+								<a href="/PeopleIntroduction/longbao">龙宝百家乐</a>
+								<a href="/PeopleIntroduction/baoxian">保险百家乐</a>
+								<a href="/PeopleIntroduction/dezhou">德州扑克</a>
+								<a href="/PeopleIntroduction/erbagang">二八杠</a>
+								<a href="/PeopleIntroduction/oushi21dian">欧式21点/21点</a>
+								<a href="/PeopleIntroduction/fantan">番摊</a>
+								<a href="/PeopleIntroduction/longhu">龙虎</a>
+								<a href="/PeopleIntroduction/lunpan">轮盘</a>
+								<a href="/PeopleIntroduction/niuniu">牛牛</a>
+								<a href="/PeopleIntroduction/sangong" class="cur">三公</a>
+								<a href="/PeopleIntroduction/sedie">色碟</a>
+								<a href="/PeopleIntroduction/shaibao">骰宝</a>
+								<a href="/PeopleIntroduction/paijiu">温州牌九</a>
+							</div>
+							<div id="js_data"></div>
+							<p><input type="hidden" value="0" id="casino_nav"></p>
+							<p class="cls"></p>
+							<h5>三公</h5>
+							<p>三公(3 Face / 3 Picture)是百家乐玩法的一种变形。会员与庄家赌点数、赌公牌数，还可以赌特殊牌型。下注简单、节奏明快，在新兴的游戏中受到欢迎。</p>
+							<p><img src="Resourse/Home/images/casino/three_pairs.jpg" alt="" /></p>
+							<p class="cls"></p>
+							
+							<h5>游戏玩法：</h5>
+							<p>
+								•游戏中共设计1门庄家及3门闲家，会员可任意进行投注。<br>
+								•使用1副扑克牌，下注结束后开始发牌，发牌时先开头牌决定发牌顺序，再以逆时钟方向进行，每门连续发3张牌。<br>
+								•游戏主旨为闲家与庄家比较牌的 点数高低来决定胜负。<br>
+								•会员可以有以下的下注选择 ： <br>
+								闲 1 ： 赢、输、和、三公、对牌以上 <br>
+								闲 2 ： 赢、输、和、三公、对牌以上 <br> 
+								闲 3 ： 赢、输、和、三公、对牌以上 <br>
+								庄家 ： 对牌以上 <br>
+								注 ：各下注以及对牌以上赔率请见派彩说明。<br>
+								•头牌 ：荷官每局开始会先开「头牌」，依据头牌点数(从庄家方位逆时针方向算起)决定开牌位置。<br>
+								•开牌顺序 ： 以逆时针方向开牌 (如下)<br>
+							</p>
+							<p>
+								<table width="100%" border="0" cellspacing="1" cellpadding="0"><tbody><tr><td width="50%">头牌为A、5、9、K</td><td width="50%">发牌顺序为庄，闲1，闲2，闲3</td></tr><tr class="_r"><td>头牌为2、6、10</td><td>发牌顺序为闲1，闲2，闲3，庄</td></tr><tr><td>头牌为3、7、J</td><td>发牌顺序为闲2，闲3，庄，闲1</td></tr><tr class="_r"><td>头牌为4、8、Q</td><td>发牌顺序为闲3，庄，闲1，闲2</td></tr><tr><td colspan="2">按上方表列顺序 ，每家发 3 张 再轮到下一家</td></tr></tbody></table>
+							</p>
+							
+							<h5>牌面点数：</h5>
+							<p>
+								•三公以牌面点数的总和来比较大小，加上公牌(J，Q，K)来变化大小牌型。<br>
+								•公牌及10点以「0」点计，其它牌则以牌面点数来计算，总和超过10或20则取其个位数字来看。<br>
+								•公牌以「P」来代表，1张公牌显示为「P」，2张公牌显示为「2P」，3张公牌（三公）显示为「3P」。<br>
+								•牌面的显示方法为「公牌+点数」，例如拿到1张公牌与点数和为8，则显示「P8」，2张公牌与点数和为0，则显示「2P0」。<br>
+								•最大牌型为「三公」，其次为「双公9」；牌型中若无公牌，则最大牌型为9点，扑克牌的花色无任何影响。<br>
+								•双方点数与公牌数相同时则为和，出现和牌时，会员若下注「输」或「赢」则退回注额。<br>
+								•基本的牌型大小 ：<br>
+							</p>
+							<p>
+								<table width="100%" border="0" cellspacing="1" cellpadding="0"><tbody><tr><td width="20%">三公 (3P)</td><td width="30%">J、Q、K为公</td><td width="19%">双公4 (2P4)</td><td width="31%">其中2牌为公，另1张牌为4点</td></tr><tr class="_r"><td>双公9 (2P9)</td><td>其中2牌为公，另1张牌为9点</td><td>单公4 (P4)</td><td>其中1牌为公，合计点数为4点</td></tr><tr><td>单公9 (P9)</td><td>其中1牌为公，合计点数为9点</td><td>4点 (4)</td><td>合计点数为4点</td></tr><tr class="_r"><td>9点 (9)</td><td>合计点数为9点</td><td>双公3 (2P3)</td><td>其中2牌为公，另1张牌为3点</td></tr><tr><td>双公8 (2P8)</td><td>其中2牌为公，另1张牌为8点</td><td>单公3 (P3)</td><td>其中1牌为公，合计点数为3点</td></tr><tr class="_r"><td>单公8 (P8)</td><td>其中1牌为公，合计点数为8点</td><td>3点 (3)</td><td>合计点数为3点</td></tr><tr><td>8点 (8)</td><td>合计点数为8点</td><td>双公2 (2P2)</td><td>其中2牌为公，另1张牌为2点</td></tr><tr class="_r"><td>双公7 (2P7)</td><td>其中2牌为公，另1张牌为7点</td><td>单公2 (P2)</td><td>其中1牌为公，合计点数为2点</td></tr><tr><td>单公7 (P7)</td><td>其中1牌为公，合计点数为7点</td><td>2点 (2)</td><td>合计点数为2点</td></tr><tr class="_r"><td>7点 (7)</td><td>合计点数为7点</td><td>双公1 (2P1)</td><td>其中2牌为公，另1张牌为1点</td></tr><tr><td>双公6 (2P6)</td><td>其中2牌为公，另1张牌为6点</td><td>单公1 (P1)</td><td>其中1牌为公，合计点数为1点</td></tr><tr class="_r"><td>单公6 (P6)</td><td>其中1牌为公，合计点数为6点</td><td>1点 (1)</td><td>合计点数为1点</td></tr><tr><td>6点 (6)</td><td>合计点数为6点</td><td>双公0 (2P0)</td><td>其中2牌为公，另1张牌为10点</td></tr><tr class="_r"><td>双公5 (2P5)</td><td>其中2牌为公，另1张牌为5点</td><td>单公0 (P0)</td><td>其中1牌为公，合计点数为10或20点</td></tr><tr><td>单公5 (P5)</td><td>其中1牌为公，合计点数为5点</td><td>0点 (0)</td><td>合计点数为10或20点</td></tr><tr class="_r"><td>5点 (5)</td><td>合计点数为5点</td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table>
+							</p>
+							<p>「对牌以上」的定义 ：</p>
+							<p>
+								<table width="100%" border="0" cellspacing="1" cellpadding="0"><tbody><tr><td width="22%">同花顺</td><td width="78%">手牌中的3张牌为连续且同花色的牌，如「10♠，J♠，Q♠」，A可大可小注。</td></tr><tr class="_r"><td>三条</td><td>手牌中的3张牌皆为相同牌面的牌，如「10♠ ，10<span style="font-size:10px">◆</span> ，10♣」。</td></tr><tr><td>顺子</td><td>手牌中的3张牌为连续时，如「10♠，J<span style="font-size:10px">◆</span> ，Q♣ 」，不分花色，A可大可小注。</td></tr><tr class="_r"><td>同花</td><td>手牌中的3张牌皆为同花色时(不需连续)，如「2♠ ，7♠ ，Q♠」。</td></tr><tr><td>一对</td><td>手牌中的3张牌其中两张点数相同时，即为一对，如「10♠ ，10♣，Q♠」。</td></tr></tbody></table>
+							</p>
+							<p style="color:red;">注：「同花顺／顺子」最大牌型为「Q，K，A」，最小牌型为「A，2，3」，无「K，A，2」这个组合。</p>
+							
+							<h5>派彩：</h5>
+							<p>不同平台的同一游戏玩法，赔率可能不一样，具体以各游戏厅界面所展示的赔率为准。以下赔率以波音厅为例：</p>
+							<p>
+								<table width="100%" border="0" cellspacing="1" cellpadding="0"><tbody><tr><th width="50%">开牌结果</th><th width="50%">赔率</th></tr><tr><td>(闲)赢</td><td>1 : 1</td></tr><tr class="_r"><td>(闲)输</td><td>1 : 1</td></tr><tr><td>和</td><td>1 : 8</td></tr><tr class="_r"><td>三公</td><td>1 : 16</td></tr></tbody></table>
+							</p>
+							<p>
+								无抽水的设计，但下列两种状况有特殊赔率 ： <br>
+								1.投注「赢」，闲家以6点的任意牌型组合胜出，则获1赔0.5。 <br>
+								2.投注「输」，庄家以6点的任意牌型组合胜出，则获1赔0.5。 
+							</p>
+							
+							<p>对牌以上的赔率设定如下：</p>
+							<p>
+								<table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr><th width="50%">开牌结果</th><th width="50%">赔率</th></tr><tr><td>同花顺</td><td>1 : 40</td></tr><tr class="_r"><td>三条</td><td>1 : 30</td></tr><tr><td>顺子</td><td>1 : 6</td></tr><tr class="_r"><td>同花</td><td>1 : 3</td></tr><tr><td>一对</td><td>1 : 1</td></tr></tbody></table>
+							</p>
+							
+							<p>以上游戏规则为通用规则，具体情况视各游戏平台而论，如有需要请查阅选择的游戏厅规则说明，最终解释权归游戏平台和博天堂所有。</p>
+							
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- <>底部区域 -->
+	<!-- <>底部区域 -->
+	<include file="Common:foot" />
+    </div>
+    <script src="/Resourse/Home/js/app/about.js" type="text/javascript"></script>
+</body>
+</html>

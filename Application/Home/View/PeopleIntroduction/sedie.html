@@ -1,0 +1,110 @@
+<include file="Common:head" /> 
+<body class="body-bg">
+	<div class="loader">
+        <div class="loader-inner ball-pulse-rise">
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+    <div class="JszContent" style="display: none">
+	<!-- <>顶部区域 -->
+	<include file="Common:menu" />
+	
+	<!-- <>主体容器区域 -->
+	<div class="container">
+		<div class="mid clearfix">
+			<!-- 关于我们 -->
+			<div class="pg__brandHistory-list mt--30 pb--60 clearfix">
+				<div class="main clearfix mt--10">
+					<!-- //侧边 -->
+					<div class="sidebar fl" id="J__sidebar">
+						<h2 class="hdTit">游戏介绍</h2>
+						<a <if condition="$menu eq 'PeopleIntroduction'">class="on current"</if> href="/PeopleIntroduction">真人娱乐<i></i></a>
+						<a <if condition="$menu eq 'ComputerIntroduction'">class="on current"</if> href="/ComputerIntroduction">电子游戏<i></i></a>
+						<a <if condition="$menu eq 'CpIntroduction'">class="on current"</if> href="/CpIntroduction">彩票投注<i></i></a>
+                        <!--<a <if condition="$menu eq 'QipaiIntroduction'">class="on current"</if> href="/QipaiIntroduction">棋牌游戏<i></i></a>
+                        <a <if condition="$menu eq 'TiyuIntroduction'">class="on current"</if> href="/TiyuIntroduction">体育投注<i></i></a>-->
+					</div>
+					<!-- //列表 -->
+					<style type="text/css">
+						.casino_nav a{background:#fc8e5d;display: block;width: 108px;height: 33px;text-align: center;color: #fff;line-height: 33px;border: solid 1px #f35c19;float: left;margin-right: -1px;margin-bottom: -1px;}
+						.casino_nav a:hover,.casino_nav a.cur{background:#f35c19;}
+						.casino .cas_vid{
+							display: block;float: left;margin-right: 22px;width: 196px;color: #333;text-align: center;
+						}
+						.casino .cas_vid img{margin-bottom:0;}
+						.casino table tr th{background:#aaa;color:#fff;text-align:center;font-weight:700;padding:5px 0;}
+						.casino table tr td{background:#f8f8f8;border-bottom:1px solid #eee;color:#333;text-align:center;padding:5px 0;}
+						.br_box{padding:20px 35px;margin-top:10px;}
+						.br_box .box2{display:inline-block;width:203px; margin-right:60px;}
+					</style>
+					<div class="brandHistory_list fr">
+						<div class="pg__others-panel casino">
+							<div class="sub_con">
+							<div class="casino_nav">
+								<a href="/PeopleIntroduction">百家乐</a>
+								<a href="/PeopleIntroduction/baozuo">包桌百家乐</a>
+								<a href="/PeopleIntroduction/jingmi">竞咪百家乐</a>
+								<a href="/PeopleIntroduction/longbao">龙宝百家乐</a>
+								<a href="/PeopleIntroduction/baoxian">保险百家乐</a>
+								<a href="/PeopleIntroduction/dezhou">德州扑克</a>
+								<a href="/PeopleIntroduction/erbagang">二八杠</a>
+								<a href="/PeopleIntroduction/oushi21dian">欧式21点/21点</a>
+								<a href="/PeopleIntroduction/fantan">番摊</a>
+								<a href="/PeopleIntroduction/longhu">龙虎</a>
+								<a href="/PeopleIntroduction/lunpan">轮盘</a>
+								<a href="/PeopleIntroduction/niuniu">牛牛</a>
+								<a href="/PeopleIntroduction/sangong">三公</a>
+								<a href="/PeopleIntroduction/sedie" class="cur">色碟</a>
+								<a href="/PeopleIntroduction/shaibao">骰宝</a>
+								<a href="/PeopleIntroduction/paijiu">温州牌九</a>
+							</div>
+							<div id="js_data"></div>
+							<p><input type="hidden" value="0" id="casino_nav"></p>
+							<p class="cls"></p>
+							<h5>色碟</h5>
+							<p>色碟始于1909，用家里随处可得的器具即可进行这项游戏，用碗盖住碟上的双色钮扣4颗，快速摇动后出现的结果做为下注组合，简单有趣，因此很快便流行起来。</p>
+							<p><img src="Resourse/Home/images/casino/cp_bn.jpg" alt="" /></p>
+							<p class="cls"></p>
+							
+							<h5>游戏玩法：</h5>
+							<p>
+								荷官将4颗红白双色的钮扣放入碟中，盖上碗后上下摇碟；完成摇碟动作后静置于画面中供会员下注。下注时间结束将碗打开，依开出结果派彩
+							</p>
+							
+							<h5>派彩：</h5>
+							<p>不同平台的同一游戏玩法，赔率可能不一样，具体以各游戏厅界面所展示的赔率为准。以下赔率以波音厅为例：</p>
+							<p>
+								<table width="100%" border="0" cellspacing="1" cellpadding="0"><tbody><tr><th width="33%">下注组合</th><th width="20%">赔率</th><th width="47%">说明</th></tr><tr><td><img src="Resourse/Home/images/casino/cp1.png"></td><td>1:12</td><td class="tl">开出4个红色钮扣。</td></tr><tr class="_r"><td><img src="Resourse/Home/images/casino/cp2.png"></td><td>1:12</td><td class="tl">开出4个白色钮扣。</td></tr><tr><td><img src="Resourse/Home/images/casino/cp3.png"></td><td>1:2.6</td><td class="tl">开出3个白色，1个红色钮扣。</td></tr><tr class="_r"><td><img src="Resourse/Home/images/casino/cp4.png"></td><td>1:2.6</td><td class="tl">开出3个白色，1个红色钮扣。</td></tr><tr><td>单</td><td>1:0.96</td><td class="tl"><div class="fl"><img src="Resourse/Home/images/casino/cp5.png"><br><img src="Resourse/Home/images/casino/cp6.png"></div><div class="fl st">开出(3个红色，1个白色钮扣)、<br>(3个白色，1个红色钮扣)属「单」。</div></td></tr><tr class="_r"><td>双</td><td>1:0.96</td><td class="tl"><div class="fl"><img src="Resourse/Home/images/casino/cp7.png"><br><img src="Resourse/Home/images/casino/cp8.png"><br><img src="Resourse/Home/images/casino/cp9.png"></div><div class="fl st"><br>开出(4个红色钮扣)、(4个白色钮扣)、<br>(2个白色、2个红色钮扣)属「双」。</div></td></tr></tbody></table>
+							</p>
+							
+							<p>
+								1、本游戏进行方式为最接近实境赌场之设置，若有发生特殊情形将依本公司公告之办法处理。<br>
+								2、荷官在游戏进行中若不慎让碗、碟或钮扣掉落，将物件放回定位后，重新进行摇碟。<br>
+								3.、若开出结果时有钮扣重叠无法判定结果时，荷官将用玻璃棒分开重叠的钮扣。<br>
+								4、荷官若没有摇碟就开碟，或在下注时间尚未结束前即开碟，该局将判定为无效，并退还所有下注本金。<br>
+								5.荷官摇碟后开碟过程:如出现【开碟中的碗触碰到钮扣】，最终以开碟后钮扣倒下的颜色为最终结果。<br>
+							</p>
+							
+							<h5>补充说明：</h5>
+							<p>
+								1、如遇故障因素将注销所有相关注单/奖金。<br>
+								2.、色碟游戏进行每90局后，系统会自动清除牌路。
+							</p>
+							
+							<p>以上游戏规则为通用规则，具体情况视各游戏平台而论，如有需要请查阅选择的游戏厅规则说明，最终解释权归游戏平台和博天堂所有。</p>
+							
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- <>底部区域 -->
+	<!-- <>底部区域 -->
+	<include file="Common:foot" />
+    </div>
+    <script src="/Resourse/Home/js/app/about.js" type="text/javascript"></script>
+</body>
+</html>

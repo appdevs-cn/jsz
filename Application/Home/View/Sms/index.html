@@ -1,0 +1,100 @@
+<include file="Common:head" />
+<style type="text/css">
+    .uc__stationMsg tr .btn_view{display: none; background: #fff; border: 1px solid #ddd; color: #333; padding: 0 30px; line-height: 30px;}
+    .proxyM__panel-tabLink .panel-lkList table tr.on{background:#fff;}
+    .uc__stationMsg tr.on .btn_view{display: inline-block;}
+    .proxyM__panel-tabLink .panel-lkList table th, .proxyM__panel-tabLink .panel-lkList table td{padding: 15px 0;}
+</style>
+<body class="body-bg">
+    <div class="loader">
+        <div class="loader-inner ball-pulse-rise">
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+    <div class="JszContent" style="display: none">
+	<!-- <>顶部区域 -->
+	<include file="Common:menu" />
+	
+	<!-- <>主体容器区域 -->
+	<div class="container">
+		<div class="mid pb--50 clearfix">
+			<!-- 代理管理(团队概况) -->
+			<include file="Common::memberMenu" />
+            <div class="pM__panel mt--10">
+				<div class="proxyM__panel-tabLink">
+					<div class="head__nav clearfix">
+						<div class="navList ml--10 fl">
+                            <a href="/InBox">站内信 (<span class="totalMessage">{$msgcount}</span>)</a>
+							<a class="on" href="/Sms">短信订阅</a>
+						</div>
+					</div>
+					
+					<div class="panel-lkList">
+						<!-- 站内信-订阅 -->
+						<div class="padding30">
+							<h2 class="fs16">请选择需要订阅的内容：</h2>
+							<div class="panel__msgSubscribe mt--15">
+								<ul class="clearfix">
+									<li class="first">
+										<span class="fl">取款</span>
+										<span class="fr">
+	        								<em class="c--ccc fs12 mr--10">取款时短信通知</em> 
+                                            <input class="cp__checkbox-switch" value="1" <if condition="$xReturn['withdrawnotice'] eq 1">checked</if> name="withdrawnotice" type="checkbox" />
+	        							</span>
+									</li>
+									<li>
+										<span class="fl">修改登录密码</span>
+										<span class="fr">
+                                            <em class="c--ccc fs12 mr--10">修改登录密码时短信通知</em> 
+	        								<input class="cp__checkbox-switch" <if condition="$xReturn['updateloginpwdnotice'] eq 1">checked</if> name="updateloginpwdnotice" type="checkbox" />
+	        							</span>
+									</li>
+									<li>
+										<span class="fl">修改资金密码</span>
+										<span class="fr">
+                                            <em class="c--ccc fs12 mr--10">修改资金密码时短信通知</em> 
+	        								<input class="cp__checkbox-switch" <if condition="$xReturn['updatefundpwdnotice'] eq 1">checked</if> name="updatefundpwdnotice" type="checkbox" />
+	        							</span>
+									</li>
+									<li>
+										<span class="fl">修改账户姓名</span>
+										<span class="fr">
+                                            <em class="c--ccc fs12 mr--10">修改账户姓名时短信通知</em> 
+	        								<input class="cp__checkbox-switch" <if condition="$xReturn['updaterealnamenotice'] eq 1">checked</if>  name="updaterealnamenotice" type="checkbox" />
+	        							</span>
+									</li>
+									<li>
+										<span class="fl">绑定银行资料</span>
+										<span class="fr">
+                                            <em class="c--ccc fs12 mr--10">绑定银行资料时短信通知</em> 
+	        								<input class="cp__checkbox-switch" <if condition="$xReturn['bindbanknotice'] eq 1">checked</if> name="bindbanknotice" type="checkbox" />
+	        							</span>
+									</li>
+									<li>
+										<span class="fl">修改电话</span>
+										<span class="fr">
+                                            <em class="c--ccc fs12 mr--10">修改电话时短信通知</em> 
+	        								<input class="cp__checkbox-switch" <if condition="$xReturn['updatetelnotice'] eq 1">checked</if> name="updatetelnotice" type="checkbox" />
+	        							</span>
+									</li>
+									<li>
+										<span class="fl">登录短信</span>
+										<span class="fr">
+	        								<em class="c--ccc fs12 mr--10">开启登录通知</em> 
+                                            <input class="cp__checkbox-switch" <if condition="$xReturn['loginnotice'] eq 1">checked</if> name="loginnotice" type="checkbox" />
+	        							</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- <>底部区域 -->
+	 <include file="Common:foot" /> 
+    </div>
+    <script src="/Resourse/Home/js/app/sms.js" type="text/javascript"></script>
+</body>
+</html>

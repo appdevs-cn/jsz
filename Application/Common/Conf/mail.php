@@ -1,0 +1,1 @@
+<?php	return array ( 'MAILTYPE' => array ( 0 => '系统消息',1=>'中奖消息' ));?>

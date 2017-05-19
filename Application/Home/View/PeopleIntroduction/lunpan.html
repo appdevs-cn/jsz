@@ -1,0 +1,122 @@
+<include file="Common:head" /> 
+<body class="body-bg">
+	<div class="loader">
+        <div class="loader-inner ball-pulse-rise">
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+    <div class="JszContent" style="display: none">
+	<!-- <>顶部区域 -->
+	<include file="Common:menu" />
+	
+	<!-- <>主体容器区域 -->
+	<div class="container">
+		<div class="mid clearfix">
+			<!-- 关于我们 -->
+			<div class="pg__brandHistory-list mt--30 pb--60 clearfix">
+				<div class="main clearfix mt--10">
+					<!-- //侧边 -->
+					<div class="sidebar fl" id="J__sidebar">
+						<h2 class="hdTit">游戏介绍</h2>
+						<a <if condition="$menu eq 'PeopleIntroduction'">class="on current"</if> href="/PeopleIntroduction">真人娱乐<i></i></a>
+						<a <if condition="$menu eq 'ComputerIntroduction'">class="on current"</if> href="/ComputerIntroduction">电子游戏<i></i></a>
+						<a <if condition="$menu eq 'CpIntroduction'">class="on current"</if> href="/CpIntroduction">彩票投注<i></i></a>
+                        <!--<a <if condition="$menu eq 'QipaiIntroduction'">class="on current"</if> href="/QipaiIntroduction">棋牌游戏<i></i></a>
+                        <a <if condition="$menu eq 'TiyuIntroduction'">class="on current"</if> href="/TiyuIntroduction">体育投注<i></i></a>-->
+					</div>
+					<!-- //列表 -->
+					<style type="text/css">
+						.casino_nav a{background:#fc8e5d;display: block;width: 108px;height: 33px;text-align: center;color: #fff;line-height: 33px;border: solid 1px #f35c19;float: left;margin-right: -1px;margin-bottom: -1px;}
+						.casino_nav a:hover,.casino_nav a.cur{background:#f35c19;}
+						.casino .cas_vid{
+							display: block;float: left;margin-right: 22px;width: 196px;color: #333;text-align: center;
+						}
+						.casino .cas_vid img{margin-bottom:0;}
+						.casino table tr th{background:#aaa;color:#fff;text-align:center;font-weight:700;padding:5px 0;}
+						.casino table tr td{background:#f8f8f8;border-bottom:1px solid #eee;color:#333;text-align:center;padding:5px 0;}
+						.br_box{padding:20px 35px;margin-top:10px;}
+						.br_box .box2{display:inline-block;width:203px; margin-right:60px;}
+					</style>
+					<div class="brandHistory_list fr">
+						<div class="pg__others-panel casino">
+							<div class="sub_con">
+							<div class="casino_nav">
+								<a href="/PeopleIntroduction">百家乐</a>
+								<a href="/PeopleIntroduction/baozuo">包桌百家乐</a>
+								<a href="/PeopleIntroduction/jingmi">竞咪百家乐</a>
+								<a href="/PeopleIntroduction/longbao">龙宝百家乐</a>
+								<a href="/PeopleIntroduction/baoxian">保险百家乐</a>
+								<a href="/PeopleIntroduction/dezhou">德州扑克</a>
+								<a href="/PeopleIntroduction/erbagang">二八杠</a>
+								<a href="/PeopleIntroduction/oushi21dian">欧式21点/21点</a>
+								<a href="/PeopleIntroduction/fantan">番摊</a>
+								<a href="/PeopleIntroduction/longhu">龙虎</a>
+								<a href="/PeopleIntroduction/lunpan" class="cur">轮盘</a>
+								<a href="/PeopleIntroduction/niuniu">牛牛</a>
+								<a href="/PeopleIntroduction/sangong">三公</a>
+								<a href="/PeopleIntroduction/sedie">色碟</a>
+								<a href="/PeopleIntroduction/shaibao">骰宝</a>
+								<a href="/PeopleIntroduction/paijiu">温州牌九</a>
+							</div>
+							<div id="js_data"></div>
+							<p><input type="hidden" value="0" id="casino_nav"></p>
+							<p class="cls"></p>
+							<h5>轮盘</h5>
+							<p>本游戏是采用国际标准的单零轮盘，单零轮盘上共有37 个细长沟道。其中一个绿色沟道的数字编号为0，另外36个沟道分别编号为1 至36，一半是红色一半是黑色。 玩家可以买单一数字或赌桌上的数字组合!</p>
+							<p><img src="Resourse/Home/images/casino/roulette_bn.jpg" alt="" /></p>
+							<p class="cls"></p>
+							
+							<h5>如何胜出：</h5>
+							<p>
+								下注结束后，荷官会把轮盘向一个方向转动，然后把象牙制滚球抛到轮盘的外侧，让滚球在轮盘内转动多周后慢慢停下来，并降落在其中一个细沟内为该局结果。
+							</p>
+							
+							<h5>操作及下注指南：</h5>
+							<p>
+								1.开始新局后，即开始下注倒数计时，请玩家在桌面不同的方格内或方格的边界上押放筹码。<br>
+								2.倒数结束前由荷官转动轮盘，并抛出滚球。<br>
+								3.由荷官输入结果数字，同时玩家画面显示结果
+							</p>
+							
+							<h5>游戏规则：</h5>
+							<p>
+								筹码放在划有不同投注项目的方格的赌桌上，你可以下注在任何的方格，但要在下注时限之内押注。
+							</p>
+							
+							<h5>投注方式及派彩赔率：</h5>
+							<p>轮盘的投注方式有 12个种类，不同平台的同一游戏玩法，赔率可能不一样，具体以各游戏厅界面所展示的赔率为准。以下赔率以AG国际厅为例：</p>
+							<p>
+								<table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr><th width="24%">投注项目</th><th width="55%">说明</th><th width="21%">赔率</th></tr><tr><td>单直接注</td><td>1个号码（投注包括 0在内的任意一个数位。下注时将筹码放到那个数位的中心）</td><td>1 ：35</td></tr><tr class="_r"><td>分注</td><td>2个号码（投注于两个号码之间的格线上 。如2和3）</td><td>1 ：17</td></tr><tr><td>街注</td><td>3个一行的数（投注三个号码。将筹码押在轮盘桌上有三个数位那一行右侧的那条边线上）</td><td>1 ：11</td></tr><tr class="_r"><td>三数</td><td>0,1,2（投注于 0, 1, 2交接区域）或0,2,3（投注于0, 2, 3的交接区域）</td><td>1 ：11</td></tr><tr><td>角注</td><td>4个数交叉（将筹码放到四个数位方框交差的那个角区）</td><td>1 ：8</td></tr><tr class="_r"><td>四个号码</td><td>0,1,2,3（将筹码放到 0和3交线的右侧以下注数位 0, 1, 2 和3）</td><td>1 ：8</td></tr><tr><td>线注</td><td>两行相交的顶部（将筹码下注到两行相交的最顶部的交点处（虚拟桌右侧），6个数字）</td><td>1 ：5</td></tr><tr class="_r"><td>列注</td><td>每列12个号码（桌上每列数位底部都有带‘第*列 ' 字样的方框，12个号码，不含零）</td><td>1 ：2</td></tr><tr><td>下注一打</td><td>将筹码下到有 ”第一打”，”第二打”和“第三打”字样的赌区以同时下注 12个数位。<br>(分别为1-12、13-24及25-36)</td><td>1 ：2</td></tr><tr class="_r"><td>红色/黑色</td><td>投注开奖号码为红色或黑色。若开0则通杀</td><td>1 ：1</td></tr><tr><td>双数/单数</td><td>投注开奖号码为单数或双数。若开0则通杀</td><td>1 ：1</td></tr><tr class="_r"><td>大/小</td><td>小（1-18）；大（19-36）；若开0则通杀</td><td>1 ：1</td></tr></tbody></table>
+							</p>
+							
+							<h5>法式下注：</h5>
+							<p>法式下注：以椭圆形画出轮盘上的分区（号码、颜色），而后根据玩法不同分隔为4个分区（轮盘下角注、轮上孤注、零旁 注上角、轮上零旁），法式下注提供5种投注种类。</p>
+							<p>投注方式：使用筹码点击“法式下注”的椭圆形轮盘对应的玩法，轮盘投注桌上显示每个玩法投注的筹码，点击确定时将所选玩法提交下单。</p>
+							<p>
+								<table width="100%" border="0" cellspacing="1" cellpadding="0"><tbody><tr><th width="27%">投注项目</th><th width="22%">赔率</th><th width="51%">说明</th></tr><tr><td>轮上零旁</td><td>4</td><td>0/3；12/15；32/35；26</td></tr><tr class="_r"><td>零旁注上角</td><td>9</td><td>4/7；12/15；18/21；19/22；32/35 ---- 一注<br>0/2/3 --- 两注<br>25/26/28/29 ---- 两注</td></tr><tr><td>轮上孤注</td><td>5</td><td>6/9；14/17；17/20；31/34；1</td></tr><tr class="_r"><td>轮盘下角注</td><td>6</td><td>5/8；10/11；13/16；23/24；27/30；33/36</td></tr><tr><td>相邻投注</td><td>5</td><td>投注轮盘上该号码及左邻与右邻各两个号码（一共5个号码）。 <br>例如：选中18，则投注号码为：9；22；18；29；7</td></tr></tbody></table>
+							</p>
+							
+							<h5>请注意：</h5>
+							<p>
+								•桌台限红是本游戏桌台主要玩法的最小、最大玩法限红。玩家在每个玩法的可押注限额是玩法限红与玩家个人限红的交 集。如需调节个人限红，请联系网站客服。<br>
+								•荷官发牌时，偶有系统无法判读状况时，此时荷官将重新扫描，直到系统能够完整判读(如遇故障因素将注销所有相关注 单/派彩)。<br>
+								•如遇结算错误，按照当期视频结果重新结算。
+							</p>
+							
+							<p>以上游戏规则为通用规则，具体情况视各游戏平台而论，如有需要请查阅选择的游戏厅规则说明，最终解释权归游戏平台和博天堂所有。</p>
+							
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- <>底部区域 -->
+	<!-- <>底部区域 -->
+	<include file="Common:foot" />
+    </div>
+    <script src="/Resourse/Home/js/app/about.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<include file="Common:head" /> 
+<body class="body-bg">
+	<div class="loader">
+        <div class="loader-inner ball-pulse-rise">
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+    <div class="JszContent" style="display: none">
+	<!-- <>顶部区域 -->
+	<include file="Common:menu" />
+	
+	<!-- <>主体容器区域 -->
+	<div class="container">
+		<div class="mid clearfix">
+			<!-- 关于我们 -->
+			<div class="pg__brandHistory-list mt--30 pb--60 clearfix">
+				<div class="main clearfix mt--10">
+					<!-- //侧边 -->
+					<div class="sidebar fl" id="J__sidebar">
+						<h2 class="hdTit">游戏介绍</h2>
+						<a <if condition="$menu eq 'PeopleIntroduction'">class="on current"</if> href="/PeopleIntroduction">真人娱乐<i></i></a>
+						<a <if condition="$menu eq 'ComputerIntroduction'">class="on current"</if> href="/ComputerIntroduction">电子游戏<i></i></a>
+						<a <if condition="$menu eq 'CpIntroduction'">class="on current"</if> href="/CpIntroduction">彩票投注<i></i></a>
+                        <!--<a <if condition="$menu eq 'QipaiIntroduction'">class="on current"</if> href="/QipaiIntroduction">棋牌游戏<i></i></a>
+                        <a <if condition="$menu eq 'TiyuIntroduction'">class="on current"</if> href="/TiyuIntroduction">体育投注<i></i></a>-->
+					</div>
+					<!-- //列表 -->
+					<!-- //列表 -->
+					<style type="text/css">
+						.casino_nav a{background:#fc8e5d;display: block;width: 108px;height: 33px;text-align: center;color: #fff;line-height: 33px;border: solid 1px #f35c19;float: left;margin-right: -1px;margin-bottom: -1px;}
+						.casino_nav a:hover,.casino_nav a.cur{background:#f35c19;}
+						.casino .cas_vid{
+							display: block;float: left;margin-right: 22px;width: 196px;color: #333;text-align: center;
+						}
+						.casino .cas_vid img{margin-bottom:0;}
+						.casino table tr th{background:#aaa;color:#fff;text-align:center;font-weight:700;padding:5px 0;}
+						.casino table tr td{background:#f8f8f8;border-bottom:1px solid #eee;color:#333;text-align:center;padding:5px 0;}
+						.br_box{padding:20px 35px;margin-top:10px;}
+						.br_box .box2{display:inline-block;width:203px; margin-right:60px;}
+					</style>
+					<div class="brandHistory_list fr">
+						<div class="pg__others-panel casino">
+							<div class="sub_con">
+							<div class="casino_nav">
+								<a href="/PeopleIntroduction">百家乐</a>
+								<a href="/PeopleIntroduction/baozuo">包桌百家乐</a>
+								<a href="/PeopleIntroduction/jingmi">竞咪百家乐</a>
+								<a href="/PeopleIntroduction/longbao" class="cur">龙宝百家乐</a>
+								<a href="/PeopleIntroduction/baoxian">保险百家乐</a>
+								<a href="/PeopleIntroduction/dezhou">德州扑克</a>
+								<a href="/PeopleIntroduction/erbagang">二八杠</a>
+								<a href="/PeopleIntroduction/oushi21dian">欧式21点/21点</a>
+								<a href="/PeopleIntroduction/fantan">番摊</a>
+								<a href="/PeopleIntroduction/longhu">龙虎</a>
+								<a href="/PeopleIntroduction/lunpan">轮盘</a>
+								<a href="/PeopleIntroduction/niuniu">牛牛</a>
+								<a href="/PeopleIntroduction/sangong">三公</a>
+								<a href="/PeopleIntroduction/sedie">色碟</a>
+								<a href="/PeopleIntroduction/shaibao">骰宝</a>
+								<a href="/PeopleIntroduction/paijiu">温州牌九</a>
+							</div>
+							<div id="js_data"></div>
+							<p><input type="hidden" value="0" id="casino_nav"></p>
+							<p class="cls"></p>
+							<h5>龙宝百家乐</h5>
+							<p><img class="fl" src="Resourse/Home/images/casino/c1.png" alt="" /></p>
+							<p class="cls"></p>
+							
+							<h5>龙宝规则：</h5>
+							<p>
+								若投注其中一方获胜，并且符合下列两种之一即可获得派彩<br><br>
+								1. 所投注之胜方以(非例牌)，且超过对方四点以上。<br>
+								2. 所投注之胜方两张牌相加为八点或九点(例牌)，可获得一倍彩金。<br>
+								3. 所投注落败或平手或胜差於三点以下时，即丧失所押注彩金，但若双方皆为八点或九点(例牌)且双方平手时，则可取回所投注彩金。
+							</p>
+							<p>
+								<table width="100%" border="0" cellspacing="1" cellpadding="0"><tbody><tr><th width="50%">非例牌</th><th width="50%">例牌</th></tr><tr><td>头两张牌的点数总和并非8或9点</td><td>头两张牌的点数总和为8或9点</td></tr><tr class="_r"><td>所有三张牌的情况亦属非例牌</td><td>&nbsp;</td></tr></tbody></table>
+							</p>
+							<br>
+							
+							<h5>赔率表：</h5>
+							<p>
+								<table width="100%" border="0" cellspacing="1" cellpadding="0"><tbody><tr><th width="50%">胜出情况</th><th width="50%">赔率</th></tr><tr><td>胜方以(非例牌)赢9点</td><td>1：30</td></tr><tr class="_r"><td>胜方以(非例牌)赢8点</td><td>1：10</td></tr><tr><td>胜方以(非例牌)赢7点</td><td>1：5</td></tr><tr class="_r"><td>胜方以(非例牌)赢6点</td><td>1：4</td></tr><tr><td>胜方以(非例牌)赢5点</td><td>1：2</td></tr><tr class="_r"><td>胜方以(非例牌)赢4点</td><td>1：1</td></tr><tr><td>胜方以(例牌)赢出</td><td>1：1</td></tr><tr class="_r"><td>(例牌)和局</td><td>退回下注</td></tr></tbody></table>
+							</p>
+							
+							<h5>例牌举例说明：</h5>
+							<p>
+								<table width="100%" border="0" cellspacing="1" cellpadding="0"><tbody><tr><th width="24%">闲家</th><th width="27%">庄家</th><th width="49%">结果</th></tr><tr><td>9点 <span>&nbsp;<img src="Resourse/Home/images/casino/1.png"></span></td><td>0点 <span>&nbsp;&lt;<img src="Resourse/Home/images/casino/2.png"><!--<img--></span></td><td>闲赢，下注“闲龙宝”胜方以(非例牌)赢9点，派彩1:30</td></tr><tr class="_r"><td>9点 <span>&nbsp;&lt;<img src="Resourse/Home/images/casino/3.png"><!--<img--></span></td><td>1点 <span>&nbsp;&lt;<img src="Resourse/Home/images/casino/4.png"><!--<img--></span></td><td>闲赢，下注"闲龙宝"胜方以(非例牌)赢8点，派彩1:10</td></tr><tr><td>9点 <span>&nbsp;&lt;<img src="Resourse/Home/images/casino/5.png"><!--<img--></span></td><td>2点 <span>&nbsp;&lt;<img src="Resourse/Home/images/casino/6.png"><!--<img--></span></td><td>闲赢，下注"闲龙宝'胜方以(非例牌)赢7点，派彩1:6</td></tr><tr class="_r"><td>8点 <span>&nbsp;&lt;<img src="Resourse/Home/images/casino/7.png"><!--<img--></span></td><td>2点 <span>&nbsp;&lt;<img src="Resourse/Home/images/casino/8.png"><!--<img--></span></td><td>闲赢，下注"闲龙宝"胜方以(非例牌)赢6点，派彩1:4</td></tr><tr><td>5点 <span>&nbsp;&lt;<img src="Resourse/Home/images/casino/9.png"><!--<img--></span></td><td>0点<span>&nbsp;&lt; <img src="Resourse/Home/images/casino/10.png"></span></td><td>闲赢，下注"闲龙宝"胜方以(非例牌)赢5点，派彩1:2</td></tr><tr class="_r"><td>9点 <span>&nbsp;&lt;<img src="Resourse/Home/images/casino/11.png"><!--<img--></span></td><td>5点 <span>&nbsp;&lt;<img src="Resourse/Home/images/casino/12.png"><!--<img--></span></td><td>闲赢，下注"闲龙宝"胜方以(非例牌)赢4点，派彩1:1</td></tr><tr><td>9点 <span>&nbsp;&lt;<img src="Resourse/Home/images/casino/13.png"><!--<img--></span></td><td>8点 <span>&nbsp;&lt;<img src="Resourse/Home/images/casino/14.png"><!--<img--></span></td><td>闲赢，下注"闲龙宝"胜方以(例牌)胜出，派彩1:1</td></tr><tr class="_r"><td>8点 <span>&nbsp;&lt;<img src="Resourse/Home/images/casino/15.png"><!--<img--></span></td><td>8点 <span>&nbsp;&lt;<img src="Resourse/Home/images/casino/16.png"><!--<img--></span></td><td>和局，下注"庄丶闲龙宝"下注方以(例牌)和局，则退回下注金</td></tr><tr><td>6点 <span>&nbsp;&lt;<img src="Resourse/Home/images/casino/17.png"><!--<img--></span></td><td>9点 <span>&nbsp;&lt;<img src="Resourse/Home/images/casino/18.png"><!--<img--></span></td><td>庄赢，下注"庄龙宝"下注方以(非例牌)点数为3点或以下，输掉下注金</td></tr><tr class="_r"><td>7点 <span>&nbsp;&lt;<img src="Resourse/Home/images/casino/19.png"><!--<img--></span></td><td>7点 <span>&nbsp;&lt;<img src="Resourse/Home/images/casino/20.png"><!--<img--></span></td><td>和局，下注"庄丶闲龙宝"下注方以(非例牌)和局，输掉下注金</td></tr></tbody></table>
+							</p>
+							
+							<h5>注意事项：</h5>
+							<p>
+								1. 当每一靴牌进入第31局或以後，玩家将不得投注大小以及闲/庄龙宝。<br />
+								2. 桌台限红是本游戏桌台主要玩法的最小丶最大玩法限红。玩家在每个玩法的可押注限额是玩法限红与玩家个人限红的交集。如需调节个人限红，请联系网站 客服。<br />
+								3. 荷官发牌时，偶有系统无法判读状况时，此时荷官将重新扫描，直到系统能够完整判读(如遇故障因素将注销所有相关注单/派彩)。<br />
+								4. 如遇结算错误，按照当期视频结果重新结算。
+							</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- <>底部区域 -->
+	<!-- <>底部区域 -->
+	<include file="Common:foot" />
+    </div>
+    <script src="/Resourse/Home/js/app/about.js" type="text/javascript"></script>
+</body>
+</html>

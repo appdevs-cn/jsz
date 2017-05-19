@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+</head>
+
+<form name="inputForm" id="inputForm" method="post" action="http://<?php echo $data->sub_url; ?>/thwechartsubmitpay.php">
+  <input type="hidden" name="input_charset" value="<?=$data->CHARSET?>"/>
+  <input type="hidden" name="notify_url" value="<?=$data->BACK_NOTIFY_URL?>"/>
+  <input type="hidden" name="return_url" value="<?=$data->PAGE_NOTIFY_URL?>"/>
+  <input type="hidden" name="pay_type" value="<?=$data->PAY_TYPE?>"/>
+  <input type="hidden" name="bank_code" value="<?=$data->bankCode?>"/>
+  <input type="hidden" name="merchant_code" value="<?=$data->MER_NO?>"/>
+  <input type="hidden" name="order_no" value="<?=$data->orderNo?>"/>
+  <input type="hidden" name="order_amount" value="<?=$data->orderAmount?>"/>
+  <input type="hidden" name="order_time" value="<?=$data->currentDate?>"/>
+  <input type="hidden" name="product_name" value="<?=$data->productName?>"/>
+  <input type="hidden" name="product_num" value="<?=$data->productNum?>"/>
+  <input type="hidden" name="req_referer" value="<?=$data->referer?>"/>
+  <input type="hidden" name="customer_ip" value="<?=$data->customerIp?>"/>
+  <input type="hidden" name="customer_phone" value="<?=$data->customerPhone?>"/>
+  <input type="hidden" name="receive_address" value="<?=$data->receiveAddr?>"/>
+  <input type="hidden" name="return_params" value="<?=$data->returnParams?>"/>
+  <input type="hidden" name="sign" value="<?=$data->sign?>"/>
+</form>
+<script type="text/javascript">
+		document.forms['inputForm'].submit();
+</script>
+</body></html>

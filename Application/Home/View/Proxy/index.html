@@ -1,0 +1,287 @@
+<include file="Common:head" />
+<link rel="stylesheet" href="/Resourse/Home/js/plugins/datepicker/datepicker.css" /> 
+<body class="body-bg">
+    <div class="loader">
+        <div class="loader-inner ball-pulse-rise">
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+    <div class="JszContent" style="display: none">
+	<!-- <>顶部区域 -->
+	<include file="Common:menu" />
+	
+	<!-- <>主体容器区域 -->
+	<div class="container">
+		<div class="mid pb--50 clearfix">
+			<!-- 代理管理(团队概况) -->
+			<div class="pM__panel mt--30">
+				<include file="Common::memberMenu" />
+			</div>
+			
+			<div class="pM__panel mt--10">
+				<div class="proxyM__panel-tabLink">
+					<include file="Common::teamMemberMenu" />
+					<div class="foot__menu clearfix">
+                        <php>
+                            $report = (array)$teamInfo['report'];
+                        </php>
+						<div class="item i1">
+							<h4>今日返点</h4><label class="ff-hv"><php>echo ($report['fandianAmount']==null) ? 0.0000 : $report['fandianAmount']</php></label>
+						</div>
+						<div class="item i2">
+							<h4>今日佣金</h4><label class="ff-hv"><php>echo ($report['commission']==null) ? 0.0000 : $report['commission']</php></label>
+						</div>
+						<div class="item i3">
+							<h4>团队人数</h4><label class="ff-hv">{$teamInfo['wjcount']+$teamInfo['dlcount']}人</label>
+						</div>
+						<div class="item i4">
+							<h4>在线人数</h4><label class="ff-hv"><span id="online">0</span>人</label>
+						</div>
+						<div class="item i5">
+							<h4>团队余额</h4><label class="ff-hv">{$teamInfo['teamMoney']}</label>
+						</div>
+						<div class="item i6 pl--20">
+                            <php>
+                                $quoat = (array)$teamInfo['quota'];
+                                $q = $x = '';
+                                foreach($quoat as $k=>$v)
+                                {
+                                    if(in_array($k,array(127,126,125,124)))
+                                    {
+                                        $q .= ($k/10)." ";
+                                        $x .= $v." ";
+                                    }
+                                }
+                            </php>
+							<p class="mt--10">区间:{$q}</p>
+                            <p>剩余:{$x}</p>
+                            <p>可用:{$x}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="pM__panel mt--10">
+				<div class="proxyM__panel-tabLink" style="border-bottom:1px solid rgba(100,100,100,.1);">
+					<div class="head__nav clearfix">
+						<div class="navList ml--10 fl">
+							<a class="on" href="javascript:;" data-field="cp" data-method="selchart"><em data-st-panel-cls="J__swtNav">彩票娱乐</em></a>
+							<a href="javascript:;" data-field="xy28" data-method="selchart"><em data-st-panel-cls="J__swtNav">幸运28</em></a>
+							<a href="javascript:;" data-field="ag" data-method="selchart"><em data-st-panel-cls="J__swtNav">AG游戏</em></a>
+							<a href="javascript:;" data-field="mg" data-method="selchart"><em data-st-panel-cls="J__swtNav">MG游戏</em></a>
+							<a href="javascript:;" data-field="pt" data-method="selchart"><em data-st-panel-cls="J__swtNav">PT游戏</em></a>
+							<a href="javascript:;" data-field="ebet" data-method="selchart"><em data-st-panel-cls="J__swtNav">EBET游戏</em></a>
+						</div>
+					</div>
+				</div>
+
+				<div class="proxyM__panel-analysis" id="cp">
+					<div class="head__filter clearfix">
+						<div class="dateline fl">
+							<a class="btn_view" href="javascript:void(0)" date-method="reportRadio" data-field="today">今天</a>
+							<a class="btn_view" href="javascript:void(0)" date-method="reportRadio" data-field="yestoday">昨天</a>
+							<a class="btn_view" href="javascript:void(0)" date-method="reportRadio" data-field="sevenday">最近七天</a>
+						</div>
+						<div class="form fl ml--20">
+							<input class="ipt-text ipt-date" type="text" name="starttime" data-datepicker="d1[lt]d2" placeholder="开始日期" />　至　<input class="ipt-text ipt-date" data-datepicker="d2[gt]d1" type="text" name="endtime" placeholder="结束日期" />
+							<button class="bg__f5f5f5-hover" data-method="search">查询</button>
+						</div>
+					</div>
+					<div class="data-statistic">
+						<ul class="clearfix">
+							<li class="first i1">
+								<div class="data"><h4>充值</h4><label class="ff-hv" id="recharge">0.0000</label></div>
+							</li>
+							<li class="i2">
+								<div class="data"><h4>提现</h4><label class="ff-hv" id="withdraw">0.0000</label></div>
+							</li>
+							<li class="i3">
+								<div class="data"><h4>销量</h4><label class="ff-hv" id="sales">0.0000</label></div>
+							</li>
+							<li class="i4">
+								<div class="data"><h4>奖金</h4><label class="ff-hv" id="bonus">0.0000</label></div>
+							</li>
+							<li class="i5">
+								<div class="data"><h4>返点</h4><label class="ff-hv" id="fd">0.0000</label></div>
+							</li>
+						</ul>
+					</div>
+					<div class="sevenDay-trend">
+						<div class="chart">
+							
+						</div>
+					</div>
+				</div>
+
+				<div class="proxyM__panel-analysis" id="xy28" style="display: none">
+					<div class="head__filter clearfix">
+						<div class="dateline fl">
+							<a class="btn_view" href="javascript:void(0)" date-method="reportXy28Radio" data-field="today">今天</a>
+							<a class="btn_view" href="javascript:void(0)" date-method="reportXy28Radio" data-field="yestoday">昨天</a>
+							<a class="btn_view" href="javascript:void(0)" date-method="reportXy28Radio" data-field="sevenday">最近七天</a>
+						</div>
+						<div class="form fl ml--20">
+							<input class="ipt-text ipt-date" type="text" name="xy28starttime" data-datepicker="d1[lt]d2" placeholder="开始日期" />　至　<input class="ipt-text ipt-date" data-datepicker="d2[gt]d1" type="text" name="xy28endtime" placeholder="结束日期" />
+							<button class="bg__f5f5f5-hover" data-method="searchXy28">查询</button>
+						</div>
+					</div>
+					<div class="data-statistic">
+						<ul class="clearfix">
+							<li class="i3">
+								<div class="data"><h4>销量</h4><label class="ff-hv" id="xy28sales">0.0000</label></div>
+							</li>
+							<li class="i4">
+								<div class="data"><h4>奖金</h4><label class="ff-hv" id="xy28bonus">0.0000</label></div>
+							</li>
+							<li class="i5">
+								<div class="data"><h4>返点</h4><label class="ff-hv" id="xy28fd">0.0000</label></div>
+							</li>
+						</ul>
+					</div>
+					<div class="sevenDay-trend">
+						<div class="xy28chart">
+							
+						</div>
+					</div>
+				</div>
+
+				<!--AG-->
+				<div class="proxyM__panel-analysis" id="ag" style="display: none">
+					<div class="head__filter clearfix">
+						<div class="dateline fl">
+							<a class="btn_view" href="javascript:void(0)" date-method="reportAgRadio" data-field="today">今天</a>
+							<a class="btn_view" href="javascript:void(0)" date-method="reportAgRadio" data-field="yestoday">昨天</a>
+							<a class="btn_view" href="javascript:void(0)" date-method="reportAgRadio" data-field="sevenday">最近七天</a>
+						</div>
+						<div class="form fl ml--20">
+							<input class="ipt-text ipt-date" type="text" name="Agstarttime" data-datepicker="d1[lt]d2" placeholder="开始日期" />　至　<input class="ipt-text ipt-date" data-datepicker="d2[gt]d1" type="text" name="Agendtime" placeholder="结束日期" />
+							<button class="bg__f5f5f5-hover" data-method="searchAg">查询</button>
+						</div>
+					</div>
+					<div class="data-statistic">
+						<ul class="clearfix">
+							<li class="i3">
+								<div class="data"><h4>销量</h4><label class="ff-hv" id="agsales">0.0000</label></div>
+							</li>
+							<li class="i4">
+								<div class="data"><h4>盈利</h4><label class="ff-hv" id="aggain">0.0000</label></div>
+							</li>
+						</ul>
+					</div>
+					<div class="sevenDay-trend">
+						<div class="agchart">
+							
+						</div>
+					</div>
+				</div>
+
+				<!--MG-->
+				<div class="proxyM__panel-analysis" id="mg" style="display: none">
+					<div class="head__filter clearfix">
+						<div class="dateline fl">
+							<a class="btn_view" href="javascript:void(0)" date-method="reportMgRadio" data-field="today">今天</a>
+							<a class="btn_view" href="javascript:void(0)" date-method="reportMgRadio" data-field="yestoday">昨天</a>
+							<a class="btn_view" href="javascript:void(0)" date-method="reportMgRadio" data-field="sevenday">最近七天</a>
+						</div>
+						<div class="form fl ml--20">
+							<input class="ipt-text ipt-date" type="text" name="Mgstarttime" data-datepicker="d1[lt]d2" placeholder="开始日期" />　至　<input class="ipt-text ipt-date" data-datepicker="d2[gt]d1" type="text" name="Mgendtime" placeholder="结束日期" />
+							<button class="bg__f5f5f5-hover" data-method="searchMg">查询</button>
+						</div>
+					</div>
+					<div class="data-statistic">
+						<ul class="clearfix">
+							<li class="i3">
+								<div class="data"><h4>销量</h4><label class="ff-hv" id="mgsales">0.0000</label></div>
+							</li>
+							<li class="i3">
+								<div class="data"><h4>中奖</h4><label class="ff-hv" id="mgbonus">0.0000</label></div>
+							</li>
+							<li class="i4">
+								<div class="data"><h4>盈利</h4><label class="ff-hv" id="mggain">0.0000</label></div>
+							</li>
+						</ul>
+					</div>
+					<div class="sevenDay-trend">
+						<div class="mgchart">
+							
+						</div>
+					</div>
+				</div>
+
+				<!--PT-->
+				<div class="proxyM__panel-analysis" id="pt" style="display: none">
+					<div class="head__filter clearfix">
+						<div class="dateline fl">
+							<a class="btn_view" href="javascript:void(0)" date-method="reportPtRadio" data-field="today">今天</a>
+							<a class="btn_view" href="javascript:void(0)" date-method="reportPtRadio" data-field="yestoday">昨天</a>
+							<a class="btn_view" href="javascript:void(0)" date-method="reportPtRadio" data-field="sevenday">最近七天</a>
+						</div>
+						<div class="form fl ml--20">
+							<input class="ipt-text ipt-date" type="text" name="Ptstarttime" data-datepicker="d1[lt]d2" placeholder="开始日期" />　至　<input class="ipt-text ipt-date" data-datepicker="d2[gt]d1" type="text" name="Ptendtime" placeholder="结束日期" />
+							<button class="bg__f5f5f5-hover" data-method="searchPt">查询</button>
+						</div>
+					</div>
+					<div class="data-statistic">
+						<ul class="clearfix">
+							<li class="i3">
+								<div class="data"><h4>销量</h4><label class="ff-hv" id="ptsales">0.0000</label></div>
+							</li>
+							<li class="i3">
+								<div class="data"><h4>中奖</h4><label class="ff-hv" id="ptbonus">0.0000</label></div>
+							</li>
+							<li class="i4">
+								<div class="data"><h4>盈利</h4><label class="ff-hv" id="ptgain">0.0000</label></div>
+							</li>
+						</ul>
+					</div>
+					<div class="sevenDay-trend">
+						<div class="ptchart">
+							
+						</div>
+					</div>
+				</div>
+
+				<!--EBET-->
+				<div class="proxyM__panel-analysis" id="ebet" style="display: none">
+					<div class="head__filter clearfix">
+						<div class="dateline fl">
+							<a class="btn_view" href="javascript:void(0)" date-method="reportEbetRadio" data-field="today">今天</a>
+							<a class="btn_view" href="javascript:void(0)" date-method="reportEbetRadio" data-field="yestoday">昨天</a>
+							<a class="btn_view" href="javascript:void(0)" date-method="reportEbetRadio" data-field="sevenday">最近七天</a>
+						</div>
+						<div class="form fl ml--20">
+							<input class="ipt-text ipt-date" type="text" name="Ebetstarttime" data-datepicker="d1[lt]d2" placeholder="开始日期" />　至　<input class="ipt-text ipt-date" data-datepicker="d2[gt]d1" type="text" name="Ebetendtime" placeholder="结束日期" />
+							<button class="bg__f5f5f5-hover" data-method="searchEbet">查询</button>
+						</div>
+					</div>
+					<div class="data-statistic">
+						<ul class="clearfix">
+							<li class="i3">
+								<div class="data"><h4>销量</h4><label class="ff-hv" id="ebetsales">0.0000</label></div>
+							</li>
+							<li class="i3">
+								<div class="data"><h4>中奖</h4><label class="ff-hv" id="ebetbonus">0.0000</label></div>
+							</li>
+							<li class="i4">
+								<div class="data"><h4>盈利</h4><label class="ff-hv" id="ebetgain">0.0000</label></div>
+							</li>
+						</ul>
+					</div>
+					<div class="sevenDay-trend">
+						<div class="ebetchart">
+							
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- <>底部区域 -->
+	<include file="Common:foot" /> 
+    <script src="/Resourse/Home/js/plugins/highcharts/highcharts.js"></script>
+    <script src="/Resourse/Home/js/plugins/datepicker/datepicker.js"></script> 
+    <script src="/Resourse/Home/js/app/proxy.js" type="text/javascript"></script>
+    </div>
+</body>
+</html>

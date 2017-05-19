@@ -1,0 +1,164 @@
+<!-- <>顶部区域 -->
+<input type="hidden" name="uid" value="{$Think.session.SESSION_ID}" />
+<input type="hidden" name="path" value="{$Think.session.SESSION_PATH}" />
+<div class="sec_header">
+    <!-- 顶部链接 -->
+    <div class="lay_topbar clearfix">
+        <div class="mid clearfix">
+            <div class="notice fl">
+                <!--公告：尊敬的会员，您好！手机支付渠道每日维护时间为：每天晚上 9 点至第二天早上 9 点-->
+                <em>公告：</em>
+                <div class="noticeCt" id="J__noticeSlider">           
+                    <div id="notice__list" style="position: absolute;">
+                        <volist name="result" id="item"> 
+                        <a href="/Notice"><span>{$key+1}:{$item.content}</span></a>
+                        </volist>
+                    </div>
+                </div>
+            </div>
+            <div class="rt-info fr">
+                <span class="license">合法牌照</span>
+                <!--<span class="call ml--30">客服热线：<i class="ff-hv">400-082-6666</i></span>-->
+            </div>
+        </div>
+    </div>
+    
+    <!-- //菜单及分类导航 -->
+    <div class="lay_navbar">
+        <div class="mid clearfix">
+            <div class="logo fl">
+                <a href="/index"><img src="/Resourse/Home/images/logo.png" alt="金手指" /></a>
+            </div>
+            <div class="navigation fr">
+                <ul class="hd-menu2 J__navMenu">
+                    <li class="u-info nav__gameAll J__dropdown ml--20"><a class="menu" href="/index">首页<i></i></a></li>
+                    <!-- //全部游戏 -->
+                    <li class="u-info nav__gameAll J__dropdown ml--20 on current">
+                        <a class="menu" href="javascript:;">全部游戏<em class="arr"></em><i></i></a>
+                        <div class="dropdownMenu2" style="right: -555px">
+                            <!--<i class="arr1"></i><i class="arr2"></i>-->
+                            <div class="game__list mt--20 clearfix">
+                                <div class="item col2">
+                                    <h2 class="fs16 c--f35c19">时时彩</h2>
+                                    <ul class="clearfix">
+                                        <li><a href="/Lotter/Ssc/Cqssc">重庆时时彩 <label class="hot">热门</label></a></li>
+                                        <!--<li><a href="/Lotter/LF/lf">龙虎[重庆SSC] <label class="hot">热门</label></a></li>-->
+                                        <li><a href="/Lotter/Ssc/Xjssc">新疆时时彩</a></li>
+                                        <li><a href="/Lotter/Ssc/Tjssc">天津时时彩</a></li>
+                                        <li><a href="/Lotter/Ssc/Twssc">台湾5分彩 <label class="new">最新</label></a></li>
+                                        <li><a href="/Lotter/Ssc/Bj5f">北京5分彩 <label class="new">最新</label></a></li>
+                                        <li><a href="/Lotter/Ssc/Txssc">腾讯分分彩 <label class="new">最新</label></a></li>
+                                        <li><a href="/Lotter/Ssc/Qqssc">QQ分分彩 <label class="new">最新</label></a></li>
+                                        <li><a href="/Lotter/Ssc/Jnd3f">加拿大3.5分 <label class="new">最新</label></a></li>
+                                    </ul>
+                                </div>
+                                <div class="item">
+                                    <h2 class="fs16 c--f35c19">11选5</h2>
+                                    <ul class="clearfix">
+                                        <li><a href="/Lotter/11x5/Gdxw">广东11选5</a></li>
+                                        <li><a href="/Lotter/11x5/Sdxw">山东11选5</a></li>
+                                        <li><a href="/Lotter/11x5/Sxxw">山西11选5</a></li>
+                                        <li><a href="/Lotter/11x5/Jxxw">江西11选5</a></li>
+                                        <!--<li><a href="/Lotter/11x5/Jsxw">江苏11选5</a></li>-->
+                                    </ul>
+                                </div>
+                                <div class="item">
+                                    <h2 class="fs16 c--f35c19">3D/P3</h2>
+                                    <ul class="clearfix">
+                                        <li><a href="/Lotter/Welfare/3d">福彩3D</a></li>
+                                        <li><a href="/Lotter/Welfare/p3">排列三</a></li>
+                                    </ul>
+                                </div>
+                                <div class="item col2">
+                                    <h2 class="fs16 c--f35c19">快乐彩</h2>
+                                    <ul class="clearfix">
+                                        <li><a href="/Lotter/Klsf/Cqklsf">重庆快乐十分</a></li>
+                                        <li><a href="/Lotter/Klsf/Gdklsf">广东快乐十分</a></li>
+                                        <li><a href="/Lotter/Klsf/Sxklsf">山西快乐十分</a></li>
+                                        <li><a href="/Lotter/K3/Jsk3">江苏快三</a></li>
+                                        <li><a href="/Lotter/K3/Jlk3">吉林快三</a></li>
+                                        <li><a href="/Lotter/K8/Bjk8">北京快乐8</a></li>
+                                        <li><a href="/Lotter/K8/Twk8">台湾宾果</a></li>
+                                        <li><a href="/Lotter/Bjpk10/Pk10">北京PK10</a></li>
+                                        <li><a href="/Lotter/Lucky/lucky28">北京幸运28</a></li>
+                                        <!--<li><a href="/Lotter/Lucky/Jndlucky28">加拿大幸运28</a></li>-->
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="game__pic mt--30 clearfix">
+                                <a href="/Cp"><img src="/Resourse/Home/images/cp/placeholder/nav-game-img01.jpg" style="width: 360px" /></a>
+                                <a href="/bandit"><img src="/Resourse/Home/images/cp/placeholder/nav-game-img02.jpg" style="width: 360px" /></a>
+                                <a href="/chess"><img src="/Resourse/Home/images/cp/placeholder/nav-game-img03.jpg" style="width: 360px" /></a>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- //账号管理 -->
+                    <li class="u-info nav__accountManage J__dropdown ml--20">
+                        <a class="menu" href="javascript:;">账号管理<em class="arr"></em><i></i></a>
+                        <div class="dropdownMenu2" style="display: none;">
+                            <!--<i class="arr1"></i><i class="arr2"></i>-->
+                            <a href="/User/index">会员中心</a>
+                            <a href="/User/edit">账户信息</a>
+                        </div>
+                    </li>
+                    <!-- //报表管理 -->
+                    <li class="u-info nav__reportManage J__dropdown ml--20">
+                        <a class="menu" href="javascript:;">报表管理<em class="arr"></em><i></i></a>
+                        <div class="dropdownMenu2">
+                            <!--<i class="arr1"></i><i class="arr2"></i>-->
+                            <a href="/SelfRecord/index">彩票投注</a>
+                            <a href="/SelfAddRecord/index">彩票追号</a>
+                            <a href="/MgRecord/index">真人/百家乐/电游</a>
+                            <a href="/TransferDetail/index">转账记录</a>
+                            <a href="/SelfRechargeWithDrawRecord/index">存取记录</a>
+                            <a href="/SelfReport/index">彩票报表</a>
+                        </div>
+                    </li>
+                    <php>
+                    if(session("SESSION_ROLE")!=5){
+                    </php>
+                    <li class="u-info nav__accountManage J__dropdown ml--20">
+                        <a class="menu" href="javascript:;">代理管理<em class="arr"></em><i></i></a>
+                        <div class="dropdownMenu2" style="display: none;">
+                            <!--<i class="arr1"></i><i class="arr2"></i>-->
+                            <a href="/Proxy/index">团队概况</a>
+                            <a href="/CreateAccount/index">开户中心</a>
+                            <a href="/Member/index">会员管理</a>
+                            <a href="/RechargeWithDrawRecord/index">存取款记录</a>
+                            <a href="/TeamReport/index">团队报表</a>
+                        </div>
+                    </li>
+                    <php>
+                        }
+                    </php>
+                    
+                    <!-- //已登录 -->
+                    <li class="u-info u-gameInfo J__dropdown ml--20">
+                        <a class="menu" href="javascript:;"><img class="uimg" src="{$imgPath}" height="30" width="30" /><span class="shownickname">{$Think.session.SESSION_NICKNAME}</span><em class="arr"></em></a>
+                        <div class="dropdownMenu2" style="display: none;">
+                            <i class="arr1"></i><i class="arr2"></i>
+                            <php>
+                                $arr = explode("-",$money);
+                            </php>
+                            <php>
+                                if($share_switch==1){
+                            </php>
+                            <a class="lbl clearfix" href="javascript:;"><em class="fl usermoney">可用余额 ￥{$arr[0]}</em> <em class="fr c--f35c19 getnewmoney">刷新</em></a>
+                            <a class="lbl clearfix" href="javascript:;"><em class="fl wallet_account">分红钱包 ￥{$arr[1]}</em></a>
+                            <php>
+                                }else{
+                            </php>
+                            <a class="lbl clearfix" href="javascript:;"><em class="fl usermoney">可用余额 ￥{$arr[0]}</em> <em class="fr c--f35c19 getnewmoney">刷新</em></a>
+                            <php>
+                                }
+                            </php>
+                            <a href="/Finance/index/type/1">我要存款</a>
+                            <a href="/Finance/index/type/2">我要取款</a>
+                            <a href="javascript:void(0)" data-method=out>退出</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>	<!-- END.sec_header -->

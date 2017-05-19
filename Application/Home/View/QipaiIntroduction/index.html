@@ -1,0 +1,96 @@
+<include file="Common:head" /> 
+<body class="body-bg">
+	<div class="loader">
+        <div class="loader-inner ball-pulse-rise">
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+    <div class="JszContent" style="display: none">
+	<!-- <>顶部区域 -->
+	<include file="Common:menu" />
+	
+	<!-- <>主体容器区域 -->
+	<div class="container">
+		<div class="mid clearfix">
+			<!-- 关于我们 -->
+			<div class="pg__brandHistory-list mt--30 pb--60 clearfix">
+				<div class="main clearfix mt--10">
+					<!-- //侧边 -->
+					<div class="sidebar fl" id="J__sidebar">
+						<h2 class="hdTit">游戏介绍</h2>
+						<a <if condition="$menu eq 'PeopleIntroduction'">class="on current"</if> href="/PeopleIntroduction">真人娱乐<i></i></a>
+						<a <if condition="$menu eq 'ComputerIntroduction'">class="on current"</if> href="/ComputerIntroduction">电子游戏<i></i></a>
+						<a <if condition="$menu eq 'CpIntroduction'">class="on current"</if> href="/CpIntroduction">彩票投注<i></i></a>
+                        <a <if condition="$menu eq 'QipaiIntroduction'">class="on current"</if> href="/QipaiIntroduction">棋牌游戏<i></i></a>
+                        <a <if condition="$menu eq 'TiyuIntroduction'">class="on current"</if> href="/TiyuIntroduction">体育投注<i></i></a>
+					</div>
+					<!-- //列表 -->
+					<style type="text/css">
+						.casino .poker_bn .banner_nav{padding:30px 0 10px 0;}
+						.casino .poker_bn .banner_nav a{
+							display: inline-block;width: 140px;height: 32px;line-height: 32px;color: white;text-align: center;background: #f35c19;margin-top: 6px;
+						}
+						.casino .poker_bn .banner_nav a:hover,.casino .poker_bn .banner_nav a.current{background:#de4501;}
+						
+						.casino .poker_tab{clear:both;height:35px;margin:20px 0;padding:0;}
+						.casino .poker_tab li{border-bottom:0 none;float:left;}
+						.casino .poker_tab li a{background:#eee;border:1px solid #ccc;display:block;height:33px;line-height:33px;width:150px;margin-right:-1px;text-align:center;}
+						.casino .poker_tab li.active a{background:#f35c19;color:#fff;}
+					</style>
+					<div class="brandHistory_list fr">
+						<div class="pg__others-panel casino">
+							<div class="sub_con">
+							<div class="poker_bn">
+								<img src="https://a01image.cfsicao.com/static/A01P/_default/__static/__images/help_center/poker/poker_bn.jpg">
+								<div class="banner_nav">
+									棋牌游戏：
+									<div class="pokernav">
+										<a class="current" href="/QipaiIntroduction">德州扑克</a> 
+										<a href="/QipaiIntroduction/Quesheng">雀神麻将</a>
+										<a href="/QipaiIntroduction/Niuniu">牛牛</a>
+									</div>
+								</div>
+							</div>
+							
+							<br>这里提供经典德州扑克游戏，简单注册即可随时开始游戏，存款安全，取款快速；24小时在线中文服务，是玩棋牌游戏的不二之选。 开启运气 &amp;技术双重赢取巨额财富之门，下一个百万富翁就是您！
+							
+							<ul class="poker_tab">
+								<li class="active"><a href="#poker1-tab" _href="#poker1">扑克游戏规则</a></li>
+								<li><a href="#poker2-tab" _href="#poker2">牌桌类型</a></li>
+								<li><a href="#poker3-tab" _href="#poker3">彩池分配</a></li>
+								<li><a href="#poker4-tab" _href="#poker4">游戏过程中玩家的操作</a></li>
+								<li><a href="javascript:;">了解更多</a></li>
+							</ul>
+							
+							<p class="cls"></p>
+							<div class="kenobox" id="poker1" style="display: block; "><h5>大牌德州</h5>大牌德州扑克只使用6到A的扑克牌。<br>1、游戏人数：2-5人。<br>2、扑克牌数：在大牌德州玩法中，使用1副52张的标准扑克牌（去掉大小王），去掉了2-5点数的扑克牌，剩余36张扑克牌；<br>3、成牌规则：同经典德州扑克一致，每个玩家使用两张手牌与桌面的五张公共牌组成最佳牌型，牌型最大的玩家获胜。 A、6、7、8、9是最小的顺子。<br>4、庄家位置：第一个入座的玩家为庄家。庄家左边第一个玩家是每轮下注第一个的玩家。<br>5、盲注要求：在底牌发牌前，所有玩家自动下盲注。盲注下完后，每个玩家发两张底牌。<br>6、输赢限制：下注次数无限制；玩家每次下注不小于盲注，但每个玩家的单局内总下注金额有封顶限制。<br><br><h5>游戏流程</h5>1、开局、洗牌：确定参与游戏的玩家与庄家(按钮)位置；<br>2、发牌前下盲注：在经典德州中，大小盲注玩家自动下注大盲注、小盲注；在大牌德州中，所有玩家自动下底注（盲注）。<br>3、系统为每位玩家发两张底牌。<br>4、翻牌前下注<br>5、销一张牌后发出三张公共牌。<br>6、翻牌下注。<br>7、销一张牌后发出一张公共牌（转牌）。<br>8、转牌下注。<br>9、销一张牌后发出一张公共牌（河牌）。<br>10、河牌下注。<br>11、若有两家以上未弃牌则斗牌比大小，依胜负分配总彩金。<br><br><h5>牌型组合大小</h5>皇家同花顺＞同花顺＞四条＞葫芦＞同花＞顺子＞三条＞两对＞对子＞高牌<br><br> <img src="https://a01image.cfsicao.com/static/A01P/_default/__static/__images/help_center/poker/poker1.jpg"></div>
+							
+							<div class="kenobox" id="poker2" style="display: none; "><h5>5人急速桌</h5>急速桌是快节奏的扑克游戏，玩家每一局都与玩家群（相同盲注级别）里随机选出的玩家游戏，而不是牌桌上固定的玩家。<br><br>具体如下：<br>1、急速扑克的玩家位置与庄家按钮随机。<br>2、系统优先按5人一桌分配玩家，如果游戏桌人数大于等于2人，5秒内没有新玩家入座，系统自动开始游戏。<br>3、游戏开始后，玩家可以随时弃牌。即便当前还没有轮到玩家表态，也可以使用"快速弃牌"立即弃牌。<br>4、玩家弃牌后，会换到新的牌桌，与新的玩家一起开始新一局游戏。如果玩家选择了"结算后换桌"，弃牌后留在当前牌桌直到结算后分配到新一局游戏。<br>5、玩家可以使用"结束返回大厅"在本局结束后返回大厅。或选择"结算后换桌"，而后点击"返回大厅"。</div>
+							
+							<div class="kenobox" id="poker3" style="display: none; ">当没有牌手全押(all-in)时，彩池由未弃牌的牌手中牌型最大的者独得。<br>当有一或多个牌手全押时，超过此牌手押注金额的部份将会形成一个或多个边池。<br><br><div class="pk_box1">当一局结束而且所有已“全押”的牌手没有胜出时，边池（side pot）和主池（main pot）皆由牌面最佳获胜的牌手赢得。<br>当一局结束而且有“全押”的牌手赢牌时，主池归该牌手，而边池由拥有第二大牌面的牌手赢得。</div><br><h5>主池、边池分配范例</h5><br>3个玩家坐下玩牌，玩家A（50筹码），玩家B（80筹码），玩家C（100筹码）。A下注50（all in），B加注到80 （all in） ，C跟注80。形成了边池、主池，A的50筹码与B、C的50筹码相关，形成主池150，B、C的筹码形成边池60。<br><br>如果A获胜，A赢得主池150，B、C竞争边池；<br>如果B或C获胜，赢得主池+边池的合计筹码。</div>
+							
+							<div class="kenobox" id="poker4" style="display: none; "><h5>庄家位置：</h5>第一个进入牌桌的玩家为第一局庄家，一局结束后庄家位置顺时针方向轮转。<br><br><h5>大/小盲注：</h5>经典德州中庄家左手起第一个玩家下小盲，左手起第二个玩家下大盲。<br><br><h5>过牌：</h5>如果本轮之前无人下注，玩家可以选择“过牌”。玩家选择“过牌”后，便轮到玩家顺时针方向的下一位玩家行动。过牌并不放弃竞逐底池，只是放弃下注的权利。如果所有玩家都过牌，该轮下注即告结束。<br><br><h5>弃牌：</h5>弃牌表示放弃竞逐底池。弃牌后，玩家在牌局结束前无须也无权下注，无权赢得该局底池。<br><br><h5>跟注：</h5>如果本轮之前已经有人下注，玩家可以选择“跟注”。跟注表示下和对手相同金额的注。<br><br><h5>加注：</h5>如果本轮之前已经有人下注，玩家可以选择“加注”。加注表示玩家先跟注，再下更大金额的注。之后玩家要想继续竞逐底池，就必须对“加注”进行“跟注”或“加注”（即再加注）。<br><br><h5>过牌/弃牌：</h5>如果本轮其他玩家都选择过牌，无需操作，系统帮忙选择过牌；如果本轮有其他玩家加注，系统帮忙选择弃牌；此操作一次有效，生效后重置。<br><br><h5>加任意注：</h5>无论其他玩家加注多少额度，系统帮忙选择以跟注或者all in，当局有效。</div><div id="poker5"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- <>底部区域 -->
+	<!-- <>底部区域 -->
+	<include file="Common:foot" />
+    </div>
+    <script src="/Resourse/Home/js/app/about.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function(){
+            $(".poker_tab li").on("click", function(){
+                $(this).addClass("active").siblings().removeClass("active");
+                $(".kenobox").hide();
+                $("#poker"+($(this).index()+1)).show();
+            });
+        });
+    </script>
+</body>
+</html>

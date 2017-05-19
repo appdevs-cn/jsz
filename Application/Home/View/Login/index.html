@@ -1,0 +1,242 @@
+<include file="Common:head" /> 
+<body>
+	<!-- <>顶部区域 -->
+	<div class="sec_header">
+		<!-- 顶部链接 -->
+		<div class="lay_topbar clearfix">
+			<div class="mid clearfix">
+				<div class="rt-info fr">
+					<span class="license">合法牌照</span>
+				<!--	<span class="call ml--30">客服热线：<i class="ff-hv">400-666-6666</i></span>-->
+				</div>
+			</div>
+		</div>
+		
+		<!-- //菜单及分类导航 -->
+		<div class="lay_navbar">
+			<div class="mid clearfix">
+				<div class="logo fl">
+					<a href="index.html"><img src="/Resourse/Home/images/logo.png" alt="金手指" /></a>
+				</div>
+				<div class="navigation fr">
+					<ul class="hd-menu J__navMenu" style="margin-right:170px">
+						<li><a href="javascript:void(0)">首页<i></i></a></li>
+						<li><a href="javascript:void(0)">真人娱乐<i></i></a></li>
+						<li><a href="javascript:void(0)">电子游戏<i></i></a></li>
+						<li><a href="javascript:void(0)">彩票投注<i></i></a></li>
+						<li><a href="/about">关于我们<i></i></a></li>
+						<li><a href="javascript:void(0)">优惠活动<i></i></a></li>
+						<li><a href="javascript:void(0)">品牌历程<i></i></a></li>
+						
+						<!-- //未登录 -->
+						<li class="unlg ml--20 on current"><a href="/">登录</a></li>
+            <php>
+              if($isShow){
+            </php>
+						<li class="unlg"><a href="/LiveRegiest" target="_blank">注册</a></li>
+						<li class="unlg"><a href="{$gameUrl}" target="_blank">试玩</a></li>
+            <php>
+              }
+            </php>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>	<!-- END.sec_header -->
+	
+	<!-- <>登录|注册|忘记密码 -->
+	<div class="sec_lgReg_wrapper">
+		<div class="lgreg-form-panel mid clearfix">
+			<img class="moden" src="/Resourse/Home/images/pic_moden.png" height="470" />
+			<img class="slogan" src="/Resourse/Home/images/text.png" height="300" />
+			
+			<div class="form">
+				<div class="tabs">
+					<!--<span class="first on"><a data-st-panel-cls="J__swtLgReg">手机登录</a></span>-->
+					<span class="on"><a data-st-panel-cls="J__swtLgReg">账号登录</a></span>
+				</div>
+				<div class="conts fl">
+					<form action="#" method="post">
+						<!-- 1、手机登录 -->
+						<div class="J__swtLgReg" style="display: none;">
+							<div class="row">
+								<div class="iptbox">
+									<input class="ipt-text" type="text" name="telphone" placeholder="手机号" />
+								</div>
+							</div>
+							<div class="row">
+								<div class="iptbox" style="width: 185px;">
+									<input class="ipt-text" type="text" name="validcode" placeholder="验证码" style="width: 160px;" />
+								</div>
+								<button class="btn_sendcode" type="button">获取验证码</button>
+							</div>
+						</div>
+						<!-- 2、账号登录 -->
+						<div class="J__swtLgReg" style="display: block;">
+							<div class="row">
+								<div class="iptbox">
+									<input class="ipt-text" type="text" name="name" placeholder="账号" />
+								</div>
+							</div>
+							<div class="row">
+								<div class="iptbox">
+									<input class="ipt-text" type="password" name="pwd" placeholder="密码" />
+								</div>
+							</div>
+                            <div class="row">
+                                <div id="slider"> 
+                                    <div id="slider_bg"></div> 
+                                    <span id="label">&gt;&gt;</span> 
+                                    <span id="labelTip">拖动滑块验证</span> 
+                                </div>
+                            </div>
+						</div>
+						
+						<div class="error_tips">
+								<span id="error"></span>
+						</div>
+						<div class="row">
+							<a data-method=login class="btn-submit bg__f35c19-hover transit dib" href="javascript:;">登录</a>
+						</div>
+						<div class="row ckbox-radio">
+							<a class="lk_forget" style="cursor: pointer" data-method="find_password">忘记密码？</a>&nbsp;&nbsp;<a style="cursor: pointer;display: none;" class="lk_forget" data-method="oath">谷歌登录?</a>
+						</div>
+					</form>
+					<div class="foot-info">
+						<span class="text"><i>合法牌照，实地赌厅认证</i></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- <>底部区域 -->
+<div class="sec_footer">
+    <div class="mid clearfix ff-hv">
+        <ul class="links dib">
+            <li><a href="/index">首页</a></li>
+            <li><a href="/about">关于我们</a></li>
+            <li><a href="/contact">联系我们</a></li>
+            <li><a href="/betting">博彩责任</a></li>
+            <li><a href="/privacy">隐私安全</a></li>
+            <li><a href="/disclaimer">免责声明</a></li>
+            <li><a href="/PeopleIntroduction">游戏介绍</a></li>
+            <li><a href="#">代理合作</a></li>
+            <li><a href="/Zchelp">帮助中心</a></li>
+        </ul>
+        <div class="copyright">
+            <p>Copyright © 2016-2017 金手指官方网站   <php>echo $_SERVER['SERVER_NAME']</php> Online Game. All rights reserved.</p>
+        </div>
+        <p><img src="/Resourse/Home/images/inx_footer.png" /></p>
+    </div>
+</div>
+<!--[if IE]>
+    <script src="/Resourse/Home/js/effect/jquery.placeholder.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("[placeholder]").placeholder();
+        });
+    </script>
+<![endif]--> 
+<script src="/Resourse/Home/js/effect/jquery.textScroll.js"></script>
+<script src="/Resourse/Home/js/effect/simple-switch-tab.js"></script>
+<script src="/Resourse/Home/js/lib/aes.js" type="text/javascript"></script> 
+<script src="/Resourse/Home/js/lib/pad-zeropadding-min.js" type="text/javascript"></script>
+<script src="/Resourse/Home/js/plugins/slideunlock/jquery.slideunlock.js" type="text/javascript"></script>
+<script src="/Resourse/Home/js/plugins/dialog/dialog.js" type="text/javascript"></script>
+<script src="/Resourse/Home/js/plugins/tpl/tpl.js" type="text/javascript"></script>
+<script src="/Resourse/Home/js/plugins/layui/layui.js" type="text/javascript"></script>
+<script src="/Resourse/Home/js/lib/jquery.cookie.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+$(function(){
+    //function killerrors() { return true; }
+    //window.onerror = killerrors;
+})
+</script>
+
+<script src="/Resourse/Home/js/app/login.js"></script>
+
+<!--找回登录密码-->
+<script type="text/template" id="find_password">
+<form class="layui-form" action="">
+  <div class="layui-form-item">
+    <blockquote class="layui-elem-quote layui-quote-nm">注意:短信30秒内只能发送1条，1分钟内只能发送2条，30分钟内只能发送3条。请妥善操作！如果绑定手机遗失或者忘记绑定号码，请联系客服找回密码！</blockquote>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">用户名</label>
+    <div class="layui-input-block">
+      <input type="text" name="username" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+	<div class="layui-form-item">
+    <label class="layui-form-label">手机号码</label>
+    <div class="layui-input-inline">
+      <input type="text" name="tel" required  lay-verify="required" placeholder="请输入绑定的手机号" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">验证码</label>
+    <div class="layui-input-inline">
+      <input type="text" name="telVcode" required  lay-verify="required" placeholder="验证码" autocomplete="off" class="layui-input">
+    </div>
+    <input class="btn_view ml--10"  id="getelvcodeid" onclick="SendTelVcodeFunc(this)" style="border:none;cursor:pointer;background: none; color: #ff7800; padding: 0;" value="获取验证码" type="button" />
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">新密码</label>
+    <div class="layui-input-inline">
+      <input type="password" name="newpwd" required lay-verify="required" placeholder="请输入新密码" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <div class="layui-input-block">
+      <button class="layui-btn" lay-submit lay-filter="forgotPassword">修改密码</button>
+      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+    </div>
+  </div>
+</form>
+</script>
+
+<!--谷歌登录-->
+<script type="text/template" id="oath_login">
+<form class="layui-form" action="">
+  <div class="layui-form-item">
+	<label class="layui-form-label">温馨提示</label>
+    <div class="layui-input-block">
+      <blockquote class="layui-elem-quote">手机下载google authenticator客户端,输入用户名获取动态码,动态码只需首次输入。动态码每一分钟更新一次；若想在换回密码登录，请联系客服解除谷歌验证登录</blockquote>
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">用户名</label>
+    <div class="layui-input-block">
+      <input type="text" name="oathusername" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item" id="pathimgpathhrefdd" style="display:none;">
+	  <label class="layui-form-label">动态码</label>
+    <div class="layui-input-inline">
+      <blockquote class="layui-elem-quote" id="pathimgpathhref"></blockquote>
+    </div>
+  </div>
+	<div class="layui-form-item">
+    <label class="layui-form-label">登录密码</label>
+    <div class="layui-input-inline">
+      <input type="password" name="pwd" required lay-verify="required" placeholder="请输入登录密码" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">动态验证码</label>
+    <div class="layui-input-inline">
+      <input type="text" name="oathcode" required lay-verify="required" placeholder="请输入验证码" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <div class="layui-input-block">
+      <button class="layui-btn" lay-submit lay-filter="oathLogin">登录</button>
+      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+    </div>
+  </div>
+</form>
+</script>
+</body>
+</html>
