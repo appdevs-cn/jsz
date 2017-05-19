@@ -2,3 +2,6 @@
 *.swp
 Application/Runtime/*
 Uploads/*
+out/
+.idea/
+target/
