@@ -17,7 +17,7 @@ class LoginController extends Controller
 
     private $Common;
 
-    public function _initialize()
+    public function cc()
     {
         // CC防御模块
         $this->_Securityconfig = get_cfg_value();
@@ -246,7 +246,7 @@ class LoginController extends Controller
         session($username."checkverify",null);
         // 检查用户是否存在
         $isHave = M("user")->where(array("username"=>$username))->field("id")->find();
-        if(1==count($isHave))
+	if(1==count($isHave))
         {
             $md5 = substr(md5($username.mktime()),0,32);
             session($username."checkverify",$md5);

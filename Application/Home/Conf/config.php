@@ -1,9 +1,9 @@
 <?php
 
 return array(
-    'TMPL_ACTION_SUCCESS'       =>  APP_PATH.'Home/View/Prompt/success.html', // 默认成功跳转对应的模板文件
-    'TMPL_ACTION_ERROR'       =>  APP_PATH.'Home/View/Prompt/error.html', // 默认成功跳转对应的模板文件
-    'TMPL_EXCEPTION_FILE'       =>  APP_PATH.'Home/View/Prompt/exception.html', // 默认成功跳转对应的模板文件
+    //'TMPL_ACTION_SUCCESS'       =>  APP_PATH.'Home/View/Prompt/success.html', // 默认成功跳转对应的模板文件
+    //'TMPL_ACTION_ERROR'       =>  APP_PATH.'Home/View/Prompt/error.html', // 默认成功跳转对应的模板文件
+    //'TMPL_EXCEPTION_FILE'       =>  APP_PATH.'Home/View/Prompt/exception.html', // 默认成功跳转对应的模板文件
 
     //加载自定义标签
 	'TAGLIB_PRE_LOAD'=>'Common\\LibTag\\Appdevs,Common\\LibTag\\Other',//预加载的tag
@@ -75,11 +75,6 @@ return array(
     // 提款次数限制
     'WITHDRAWCOUNT' => array(0=>5,1=>5,2=>6,3=>6,4=>8,5=>8,6=>10,7=>20,8=>20),
 
-    /*SeasLog配置*/
-    'LOG_RECORD' =>  true,
-    'LOG_TYPE' => "SeasLog",
-    'LOG_PATH' => '',
-    'LOG_LOGGER' => '',
 
 );
 

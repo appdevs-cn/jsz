@@ -42,7 +42,6 @@ return $config = array(
 
 	// 额外的数据库连接
 	'DB_CONFIG1' => 'mysqli://app:123456@127.0.0.1:3306/cpsystemdb#utf8',
-
 	// 打印trace
 	// 'SHOW_PAGE_TRACE'		=>	1,
 
@@ -50,7 +49,6 @@ return $config = array(
 	'URL_PATHINFO_DEPR'     => '/', 
 	'DATA_CACHE_TYPE'       => 'File',  
 	'REDIS_HOST'            => '127.0.0.1',
-    'TUISONG_HOST'          => '127.0.0.1',
 	'REDIS_PORT'            => 6379,
 	'REDIS_AUTH'            => '',
 	'REDIS_EXPIRE'			=> 3600,
@@ -66,7 +64,6 @@ return $config = array(
 
 	"DB_SQL_BUILD_CACHE" => true,
 	"DB_SQL_BUILD_LENGTH" => 50,
-
 
 	//自定义变量配置
 	"PASSWORD_HALT"			=>	"bolehalt",      //用户登录密码的加盐值

@@ -14,7 +14,7 @@ use Think\Model\MongoModel;
 class SessionToMongoModel extends MongoModel
 {
 
-    protected $connection = "mongo://app:123456@192.168.1.4:27017/admin";
+    protected $connection = "mongo://app:123456@127.0.0.1:27017/admin";
     protected $tableName = "session";
     protected $dbName = 'order';
 }

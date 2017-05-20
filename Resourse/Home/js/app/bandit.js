@@ -93,7 +93,7 @@
             data = $("#MgGameForm").serialize()
             $.post('/SearchMgGame',data,function(data){
                 if(data.length==0)
-                {
+                {	return;
                     alertify.error("<div class='text'><i class='ico-error'></i>抱歉，暂无符合筛选条件的游戏::>_<::<i class='err-close'></i></div>")
                     $("input[name=ChineseGameName]").val("")
                     indexHandler.MgGameList()

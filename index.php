@@ -12,17 +12,8 @@
 // 应用入口文件
 // 检测PHP环境
 
-if ($_SERVER['HTTP_HOST'] == 'www.jszapi.com' || $_SERVER['HTTP_HOST'] == 'www.jszgame.com' ) {
-//skip
-} else {
-    if ($_SERVER['HTTP_X_FORWARDED_PROTO'] == 'http') {
-        Header('Location: https://' . $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] . '');
-        exit;
-    }
-}
 if (version_compare(PHP_VERSION, '5.3.0', '<'))
     die('require PHP > 5.3.0 !');
-
 //检查url地址
 $query = $_SERVER["QUERY_STRING"];
 if (false !== strpos($query, "execute")) {
