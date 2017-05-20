@@ -1,7 +1,7 @@
 *.DS_Store
 *.swp
-Application/Runtime/*
-Uploads/*
+Application/Runtime/
+Uploads/
 out/
 .idea/
 target/
