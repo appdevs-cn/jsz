@@ -574,7 +574,9 @@ return $UrlRules = array(
 
     "LotteryTrend" => "DisplayBuy/LotteryCodeTrend",
 
-    "Promotion" => "Promotion/index", //活动列表页
+    "promotion" => "Promotion/index", //活动列表页
+
+    "p_show" => "Promotion/show", //活动详情页
 
 );
 
