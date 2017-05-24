@@ -38,7 +38,7 @@ class PromotionController extends CommonController
                         }
                         break;
                     case 'return_rate':
-                        $value = sprintf("%.2f%", $value * 100);
+                        $value = sprintf("%.2f", $value * 100) . '%';
                         break;
                 }
             }
