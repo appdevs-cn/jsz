@@ -30,6 +30,8 @@ class PromotionController extends CommonController
                     case 'level':
                         if($value > 3) {
                             $value = $level2vip[$value];
+                        }elseif ($value == 0) {
+                            $value = '所有会员';
                         }
                         break;
                     case 'max_count':
