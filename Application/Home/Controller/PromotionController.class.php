@@ -14,9 +14,14 @@ class PromotionController extends CommonController
         $pid = I('get.pid');
         $promotion = M('Promotion')->where("id = $pid")->find();
         $category_info = M('PromotionCategory')->where("id = {$promotion['cid']}")->find();
+        $description = $category_info['description'];
+        $description = '<p>'.implode('</p><p>', explode("\n", $description)) . '</p>';
+        $comment = $category_info['comment'];
+        $comment = '<p>' . implode('</p><p>', explode("\n", $comment)) . '</p>';
         $this->assign('title', $promotion['title']);
         $this->assign('subtitle', $promotion['subtitle']);
-        $this->assign('description', $category_info['description']);
+        $this->assign('description', $description);
+        $this->assign('comment', $comment);
         $this->display();
     }
 }
