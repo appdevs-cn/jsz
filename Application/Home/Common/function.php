@@ -2036,4 +2036,50 @@ function new_stripslashes($string)
 
 }
 
+function parse_promotion_config($config)
+{
+    $rows = [];
+    $configs = explode(";", $config);
+    foreach ($configs as $config) {
+        if(trim($config) == '') {
+            continue;
+        }
+        $tmp_configs = explode(",", $config);
+        $row = [];
+        foreach ($tmp_configs as $tmp_config) {
+            $tmp = explode(":", $tmp_config);
+            $row[$tmp[0]] = $tmp[1];
+        }
+        $rows[] = $row;
+    }
+    return $rows;
+}
+
+function config_key_en_2_zn($keys)
+{
+    $row = [];
+    foreach ($keys as $key) {
+        switch ($key) {
+            case 'level':
+                $str = '等级';
+                break;
+            case 'return_rate':
+                $str = '返利比例';
+                break;
+            case 'flow_rate':
+                $str = '流水倍数';
+                break;
+            case 'max_count':
+                $str = '最高返利';
+                break;
+            case 'comment':
+                $str = '备注说明';
+                break;
+        }
+        $row[] = $str;
+    }
+    return $row;
+}
+
+
 ?>

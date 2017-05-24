@@ -16,59 +16,36 @@
 			<div class="pg__discountActivity-detail mt--20 pb--50 clearfix">
 				<div class="head"><h3 class="fs18">活动详情</h3></div>
 				<div class="main mt--10 clearfix">
-					<h2 class="align-c fs24">晋升星级会员，礼金最高2999元</h2>
-					<p class="align-c fs14 c--999 mt--10">长期活动</p>
+					<h2 class="align-c fs24">{$title}</h2>
+					<p class="align-c fs14 c--999 mt--10">{$subtitle}</p>
 					<div class="tab-desc mt--30">
 						<table class="ff-hv" border="0" cellspacing="0" cellpadding="0">
 							<thead>
 								<tr>
-									<th class="align-l" width="60%">周有效投注额累计达到</th>
-									<th>晋升会员星级</th>
-									<th>晋级礼金</th>
+									<foreach name="keys" item="key">
+										<if condition="$key eq 'comment'">
+											<th class="align-l" width="60%">{$key}</th>
+										<else/>
+											<th>{$key}</th>
+										</if>
+									</foreach>
 								</tr>
 							</thead>
 							<tbody>
+								<foreach name="rows" item="row">
 								<tr>
-									<td>＜10万</td>
-									<td class="align-c">1 星会员</td>
-									<td class="align-c">无</td>
+									<foreach name="row" item="value">
+										<td class="align-c">{$value}</td>
+									</foreach>
 								</tr>
-								<tr>
-									<td>≥10万</td>
-									<td class="align-c">2 星会员</td>
-									<td class="align-c">99元</td>
-								</tr>
-								<tr>
-									<td>≥50万</td>
-									<td class="align-c">3 星会员</td>
-									<td class="align-c">199元</td>
-								</tr>
-								<tr>
-									<td>≥100万</td>
-									<td class="align-c">4 星会员</td>
-									<td class="align-c">599元</td>
-								</tr>
-								<tr>
-									<td>≥300万或一次性存款￥50万</td>
-									<td class="align-c">5 星会员</td>
-									<td class="align-c">999元</td>
-								</tr>
-								<tr>
-									<td>≥500万或一次性存款￥100万</td>
-									<td class="align-c">6 星会员</td>
-									<td class="align-c">1999元</td>
-								</tr>
-								<tr>
-									<td>≥1000万或一次性存款￥200万</td>
-									<td class="align-c">7 星会员</td>
-									<td class="align-c">2999元</td>
-								</tr>
+								</foreach>
 							</tbody>
 						</table>
 					</div>
 					<div class="activity-rules mt--30">
 						<h4 class="fs16">活动规则：</h4>
 						{$description}
+						<p></p>
 						<h4 class="fs16">温馨提示：</h4>
 						{$comment}
 						<p>尊敬的会员，如果您有任何疑问，请联系 <a class="c--f35c19" href="#">在线客服</a></p>
