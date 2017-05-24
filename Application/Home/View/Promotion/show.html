@@ -22,11 +22,11 @@
 						<table class="ff-hv" border="0" cellspacing="0" cellpadding="0">
 							<thead>
 								<tr>
-									<foreach name="keys" item="key">
-										<if condition="$key eq 'comment'">
-											<th class="align-l" width="60%">{$key}</th>
+									<foreach name="keys" item="val">
+										<if condition="$val eq '备注说明'">
+											<th class="align-c" width="40%">{$val}</th>
 										<else/>
-											<th>{$key}</th>
+											<th>{$val}</th>
 										</if>
 									</foreach>
 								</tr>
