@@ -53,102 +53,20 @@
 			<!-- 优惠活动列表 -->
 			<div class="pg__discountActivity-list mt--15 pb--50 clearfix">
 				<ul class="clearfix">
+					<foreach name="promotions" item="promotion">
 					<li>
 						<div class="aimg fl">
-							<a href="优惠活动-详情.html"><img src="img/placeholder/discount-img01.jpg" height="200" width="291" /></a>
+							<a href="/p_show/pid/{$promotion['id']}"><img src="img/placeholder/discount-img01.jpg" height="200" width="291" /></a>
 						</div>
 						<div class="rt-info clearfix">
 							<div class="inner">
-								<h2 class="title new"><a href="优惠活动-详情.html">金鸡鸣春贺新岁 盈佳送礼闹新春</a> <i class="tag">最新</i></h2>
-								<span class="desc db c--999">春节疯狂红包送不停</span>
+								<h2 class="title new"><a href="/p_show/pid/{$promotion['id']}">{$promotion['title']}</a> <i class="tag">最新</i></h2>
+								<span class="desc db c--999">{$promotion['subtitle']}</span>
 								<label class="time">1月26日 - 2月7日</label>
 							</div>
 						</div>
 					</li>
-					<li>
-						<div class="aimg fl">
-							<a href="优惠活动-详情.html"><img src="img/placeholder/discount-img02.jpg" height="200" width="291" /></a>
-						</div>
-						<div class="rt-info clearfix">
-							<div class="inner">
-								<h2 class="title new"><a href="优惠活动-详情.html">AG旗舰厅奇彩缤纷，多送200%</a> <i class="tag">最新</i></h2>
-								<span class="desc db c--999">500万豪礼送不停！</span>
-								<label class="time">1月09日 - 1月24日</label>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="aimg fl">
-							<a href="优惠活动-详情.html"><img src="img/placeholder/discount-img03.jpg" height="200" width="291" /></a>
-						</div>
-						<div class="rt-info clearfix">
-							<div class="inner">
-								<h2 class="title normal"><a href="优惠活动-详情.html">VIP豪华海外之旅，带你享受欧美风情</a> <i class="tag">常规</i></h2>
-								<span class="desc db c--999">辉煌赢家 与您同行</span>
-								<label class="time">长期活动</label>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="aimg fl">
-							<a href="优惠活动-详情.html"><img src="img/placeholder/discount-img04.jpg" height="200" width="291" /></a>
-						</div>
-						<div class="rt-info clearfix">
-							<div class="inner">
-								<h2 class="title normal"><a href="优惠活动-详情.html">老虎机首存即送50%，最高2888元</a> <i class="tag">常规</i></h2>
-								<span class="desc db c--999">春节疯狂红包送不停</span>
-								<label class="time">长期活动</label>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="aimg fl">
-							<a href="优惠活动-详情.html"><img src="img/placeholder/discount-img05.jpg" height="200" width="291" /></a>
-						</div>
-						<div class="rt-info clearfix">
-							<div class="inner">
-								<h2 class="title end"><a href="优惠活动-详情.html">赢家电玩更给力</a> <i class="tag">往期</i></h2>
-								<span class="desc db c--999">周末加送 1388元</span>
-								<label class="time">此活动已结束</label>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="aimg fl">
-							<a href="优惠活动-详情.html"><img src="img/placeholder/discount-img06.jpg" height="200" width="291" /></a>
-						</div>
-						<div class="rt-info clearfix">
-							<div class="inner">
-								<h2 class="title end"><a href="优惠活动-详情.html">AG旗舰厅金秋狂欢季</a> <i class="tag">往期</i></h2>
-								<span class="desc db c--999">全民连赢争霸赛</span>
-								<label class="time">此活动已结束</label>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="aimg fl">
-							<a href="优惠活动-详情.html"><img src="img/placeholder/discount-img02.jpg" height="200" width="291" /></a>
-						</div>
-						<div class="rt-info clearfix">
-							<div class="inner">
-								<h2 class="title new"><a href="优惠活动-详情.html">AG旗舰厅奇彩缤纷，多送200%</a> <i class="tag">最新</i></h2>
-								<span class="desc db c--999">500万豪礼送不停！</span>
-								<label class="time">1月09日 - 1月24日</label>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="aimg fl">
-							<a href="优惠活动-详情.html"><img src="img/placeholder/discount-img03.jpg" height="200" width="291" /></a>
-						</div>
-						<div class="rt-info clearfix">
-							<div class="inner">
-								<h2 class="title normal"><a href="优惠活动-详情.html">VIP豪华海外之旅，带你享受欧美风情</a> <i class="tag">常规</i></h2>
-								<span class="desc db c--999">辉煌赢家 与您同行</span>
-								<label class="time">长期活动</label>
-							</div>
-						</div>
-					</li>
+					</foreach>
 				</ul>
 				
 				<!-- <>分页.pagination -->

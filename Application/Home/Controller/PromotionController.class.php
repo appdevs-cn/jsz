@@ -6,6 +6,8 @@ class PromotionController extends CommonController
     public function index()
     {
         $this->menu = "promotion";
+        $promotions = M('Promotion')->where("status = 0")->order("mtime desc")->select();
+        $this->assign('promotions', $promotions);
         $this->display();
     }
 
