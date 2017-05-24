@@ -572,7 +572,9 @@ return $UrlRules = array(
 
     "reg/:type\S" => "Regeist/index",
 
-    "LotteryTrend" => "DisplayBuy/LotteryCodeTrend"
+    "LotteryTrend" => "DisplayBuy/LotteryCodeTrend",
+
+    "Promotion" => "Promotion/index", //活动列表页
 
 );
 
