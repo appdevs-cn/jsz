@@ -93,7 +93,7 @@
                     alertify.error("<div class='text'><i class='ico-error'></i>抱歉，暂无符合筛选条件的游戏::>_<::<i class='err-close'></i></div>")
                     indexHandler.PromotionList()
                 }
-                $('#PromotionList').html(tpl("#promotion_list",{rows:[data]}))
+                $('#PromotionList').html(tpl("#promotion_list",{rows:[data.list], page:[data.page]}))
                 $(".pageCls").on("click",function(){
                     $('input[name=p]').val($(this).attr("p"))
                     indexHandler.PromotionList()

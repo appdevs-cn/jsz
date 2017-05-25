@@ -89,16 +89,16 @@
 	<!--MG游戏列表-->
 	<script type="text/template" id="promotion_list">
 		<ul class="clearfix">
-			<#for(var i = 0; i < rows.list.length; i++){#>
-        	<#for(var j = 0; j < rows.list[i].length; j++){#>
+			<#for(var i = 0; i < rows.length; i++){#>
+        	<#for(var j = 0; j < rows[i].length; j++){#>
 			<li>
 				<div class="aimg fl">
-					<a href="/p_show/pid/<#=rows.list[i][j]['id']#>"><img src="img/placeholder/discount-img01.jpg" height="200" width="291" /></a>
+					<a href="/p_show/pid/<#=rows[i][j]['id']#>"><img src="img/placeholder/discount-img01.jpg" height="200" width="291" /></a>
 				</div>
 				<div class="rt-info clearfix">
 					<div class="inner">
-						<h2 class="title new"><a href="/p_show/pid/<#=rows.list[i][j]['id']#>"><#=rows.list[i][j]['title']#></a> <i class="tag">最新</i></h2>
-						<span class="desc db c--999"><#=rows.list[i][j]['subtitle']#></span>
+						<h2 class="title new"><a href="/p_show/pid/<#=rows[i][j]['id']#>"><#=rows[i][j]['title']#></a> <i class="tag">最新</i></h2>
+						<span class="desc db c--999"><#=rows[i][j]['subtitle']#></span>
 						<label class="time">1月26日 - 2月7日</label>
 					</div>
 				</div>
@@ -108,7 +108,7 @@
 		<div class="zone-g-pagination mt--20 clearfix">
 			<div class="pagination-inner">
 				<div class="p-body" id="page">
-					<#=rows.page#>
+					<#=page[0]#>
 				</div>
 			</div>
 		</div>
