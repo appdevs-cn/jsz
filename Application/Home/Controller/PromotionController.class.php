@@ -39,9 +39,6 @@ class PromotionController extends CommonController
         //分页显示
         $page = $p->show();
         $promotions = M('Promotion')->where($map)->limit($p->firstRow,$p->listRows)->order("mtime desc")->select();
-        //$this->assign('promotions', $promotions);
-        //$this->assign('page', $page);
-        //$this->display();
         $data = [
             'list' => $promotions,
             'page' => $page,
@@ -49,7 +46,7 @@ class PromotionController extends CommonController
         echo json_encode($data);
     }
 
-    public function show()
+    public function getPromotionDetail()
     {
         $pid = I('get.pid');
         $promotion = M('Promotion')->where("id = $pid")->find();

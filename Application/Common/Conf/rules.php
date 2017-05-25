@@ -578,7 +578,7 @@ return $UrlRules = array(
 
     "getPromotionList" => "Promotion/getPromotionList", //获取活动列表信息
 
-    "p_show" => "Promotion/show", //活动详情页
+    "promotion/:pid\d" => "Promotion/getPromotionDetail", //活动详情页
 
 );
 

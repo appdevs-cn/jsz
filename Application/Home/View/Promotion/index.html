@@ -39,35 +39,14 @@
 						<a href="#">往期优惠</a>
 					</div>
 					<div class="searchBox fr" id="SearchContent">
-						<!-- <div class="inner">
-							<form action="#" method="post">
-								<input class="ipt-key" type="text" name="kw" placeholder="搜索优惠" />
-								<input class="ipt-btn transit" type="submit" />
-								<a class="ipt-btn transit" href="javascript:;"></a>
-							</form>
-						</div> -->
+
 					</div>
 				</div>
 			</div>
 			
 			<!-- 优惠活动列表 -->
 			<div class="pg__discountActivity-list mt--15 pb--50 clearfix" id="PromotionList">
-				<!-- <ul class="clearfix">
-					<foreach name="promotions" item="promotion">
-					<li>
-						<div class="aimg fl">
-							<a href="/p_show/pid/{$promotion['id']}"><img src="img/placeholder/discount-img01.jpg" height="200" width="291" /></a>
-						</div>
-						<div class="rt-info clearfix">
-							<div class="inner">
-								<h2 class="title new"><a href="/p_show/pid/{$promotion['id']}">{$promotion['title']}</a> <i class="tag">最新</i></h2>
-								<span class="desc db c--999">{$promotion['subtitle']}</span>
-								<label class="time">1月26日 - 2月7日</label>
-							</div>
-						</div>
-					</li>
-					</foreach>
-				</ul> -->
+
 			</div>
 		</div>
 	</div>
@@ -93,11 +72,11 @@
         	<#for(var j = 0; j < rows[i].length; j++){#>
 			<li>
 				<div class="aimg fl">
-					<a href="/p_show/pid/<#=rows[i][j]['id']#>"><img src="img/placeholder/discount-img01.jpg" height="200" width="291" /></a>
+					<a href="/promotiondetail/pid/<#=rows[i][j]['id']#>"><img src="img/placeholder/discount-img01.jpg" height="200" width="291" /></a>
 				</div>
 				<div class="rt-info clearfix">
 					<div class="inner">
-						<h2 class="title new"><a href="/p_show/pid/<#=rows[i][j]['id']#>"><#=rows[i][j]['title']#></a> <i class="tag">最新</i></h2>
+						<h2 class="title new"><a href="/promotiondetail/pid/<#=rows[i][j]['id']#>"><#=rows[i][j]['title']#></a> <i class="tag">最新</i></h2>
 						<span class="desc db c--999"><#=rows[i][j]['subtitle']#></span>
 						<label class="time">1月26日 - 2月7日</label>
 					</div>
