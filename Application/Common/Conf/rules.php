@@ -574,11 +574,11 @@ return $UrlRules = array(
 
     "LotteryTrend" => "DisplayBuy/LotteryCodeTrend",
 
+    "promotion/:pid\d" => "Promotion/getPromotionDetail", //活动详情页
+
     "promotion" => "Promotion/index", //活动列表页
 
     "getPromotionList" => "Promotion/getPromotionList", //获取活动列表信息
-
-    "promotion/:pid\d" => "Promotion/getPromotionDetail", //活动详情页
 
 );
 
