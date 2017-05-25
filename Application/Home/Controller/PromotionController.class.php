@@ -6,8 +6,32 @@ class PromotionController extends CommonController
     public function index()
     {
         $this->menu = "promotion";
-        $promotions = M('Promotion')->where("status = 0")->order("mtime desc")->select();
+        $map['status'] = 0;
+        $count = M('Promotion')->where($map)->count();
+        import("Class.Page");
+        //分页循环变量
+        $listvar = 'list';
+        //每页显示的数据量
+        $listRows = C("LISTROWS");
+        $roolPage = C("ROOLPAGE");
+        $url = "";
+        //获取数据总数
+        $totalRows = $_count;
+        $p=new \Page($totalRows, $listRows, http_build_query($map),$url);
+
+        //分页栏每页显示的页数
+        $p->rollPage = (ceil($totalRows/$listRows)<=$roolPage) ? ceil($totalRows/$listRows) : $roolPage;
+        $pages = C('PAGE');
+        //可以使用该方法前用C临时改变配置
+        $lottery = C("LOTTERY");
+        foreach ($pages as $key => $value) {
+            $p->setConfig($key, $value);
+        }
+        //分页显示
+        $page = $p->show();
+        $promotions = M('Promotion')->where($map)->limit($p->firstRow,$p->listRows)->order("mtime desc")->select();
         $this->assign('promotions', $promotions);
+        $this->assign('page', $page);
         $this->display();
     }
 
