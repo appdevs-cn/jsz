@@ -87,7 +87,7 @@
         ,PromotionList: function()
         {
             data = $("#PromotionSearchForm").serialize()
-            $.post('/promotion',data,function(data){
+            $.post('/getPromotionList',data,function(data){
                 if(data.length==0)
                 {	return;
                     alertify.error("<div class='text'><i class='ico-error'></i>抱歉，暂无符合筛选条件的游戏::>_<::<i class='err-close'></i></div>")

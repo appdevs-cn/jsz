@@ -5,11 +5,16 @@ class PromotionController extends CommonController
 {
     public function index()
     {
+        $this->menu = "promotion";
+        $this->display();
+    }
+
+    public function getPromotionList()
+    {
         $title = I('post.title');
         if($title) {
             $map['title'] = array("like","%".$title."%");
         }
-        $this->menu = "promotion";
         $map['status'] = 0;
         $count = M('Promotion')->where($map)->count();
         import("Class.Page");
