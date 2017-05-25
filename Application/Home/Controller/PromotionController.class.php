@@ -5,6 +5,10 @@ class PromotionController extends CommonController
 {
     public function index()
     {
+        $title = I('post.title');
+        if($title) {
+            $map['title'] = array("like","%".$title."%");
+        }
         $this->menu = "promotion";
         $map['status'] = 0;
         $count = M('Promotion')->where($map)->count();
@@ -12,11 +16,11 @@ class PromotionController extends CommonController
         //分页循环变量
         $listvar = 'list';
         //每页显示的数据量
-        $listRows = C("LISTROWS");
+        $listRows = 8;//C("LISTROWS");
         $roolPage = C("ROOLPAGE");
         $url = "";
         //获取数据总数
-        $totalRows = $_count;
+        $totalRows = $count;
         $p=new \Page($totalRows, $listRows, http_build_query($map),$url);
 
         //分页栏每页显示的页数
@@ -30,9 +34,14 @@ class PromotionController extends CommonController
         //分页显示
         $page = $p->show();
         $promotions = M('Promotion')->where($map)->limit($p->firstRow,$p->listRows)->order("mtime desc")->select();
-        $this->assign('promotions', $promotions);
-        $this->assign('page', $page);
-        $this->display();
+        //$this->assign('promotions', $promotions);
+        //$this->assign('page', $page);
+        //$this->display();
+        $data = [
+            'list' => $promotions,
+            'page' => $page,
+        ];
+        echo json_encode($data);
     }
 
     public function show()
